@@ -38,5 +38,29 @@
         "desc": "Brilho intenso, proteção térmica e selagem das cutículas."
       }
     }
+  },
+  "Footer": {
+    "description": "Cosméticos capilares de alta performance para quem exige o melhor tratamento todos os dias.",
+    "links": {
+      "institutional": {
+        "title": "Institucional",
+        "about": "Sobre Nós",
+        "privateLabel": "Private Label",
+        "distributor": "Seja Distribuidor"
+      },
+      "support": {
+        "title": "Suporte",
+        "faq": "Dúvidas Frequentes",
+        "shipping": "Políticas de Envio",
+        "returns": "Trocas e Devoluções"
+      }
+    },
+    "contact": {
+      "title": "Fale Conosco",
+      "address": "Av. Exemplo, 123 - São Paulo, SP",
+      "email": "contato@diamanteprofissional.com.br",
+      "phone": "(11) 99999-9999"
+    },
+    "rights": "© {year} Diamante Profissional. Todos os direitos reservados."
   }
 }
