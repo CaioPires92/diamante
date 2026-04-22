@@ -42,11 +42,10 @@ export function ProductSection() {
           start: 'top 75%',
           once: true,
         },
-        y: 40,
-        opacity: 0,
-        duration: 1.2,
-        stagger: 0.15,
-        ease: 'power4.out'
+        y: 60, /* Movimento mais curto e elegante */
+        duration: 1,
+        stagger: 0.1,
+        ease: 'power3.out'
       });
     }
 
@@ -74,26 +73,10 @@ export function ProductSection() {
         </div>
 
         <div className={`${styles.grid} prod-grid`}>
-          {productsData.map((product) => (
+          {productsData.map((product, index) => (
             <div 
               key={product.id} 
-              className={`${styles.card} prod-card`}
-              onMouseEnter={(e) => {
-                gsap.to(e.currentTarget, { 
-                  y: -10, 
-                  backgroundColor: 'rgba(255, 255, 255, 0.8)',
-                  duration: 0.5, 
-                  ease: "power2.out" 
-                });
-              }}
-              onMouseLeave={(e) => {
-                gsap.to(e.currentTarget, { 
-                  y: 0, 
-                  backgroundColor: 'rgba(255, 255, 255, 0.4)',
-                  duration: 0.5, 
-                  ease: "power2.out" 
-                });
-              }}
+              className={`${styles.card} prod-card ${index === 1 ? styles.featured : ''}`}
             >
               <div className={styles.imageWrapper}>
                 <Image 

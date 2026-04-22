@@ -52,7 +52,7 @@ export function HeroSection() {
   }, { scope: sectionRef });
 
   return (
-    <section className={styles.hero} ref={sectionRef} style={{ background: 'transparent' }}>
+    <section className={styles.hero} ref={sectionRef}>
       <div className={styles.background}>
         <Image 
           src="/imgs/hero_v1.png" 

@@ -1,0 +1,36 @@
+.divider {
+  height: 120px;
+  width: 100%;
+  margin-top: -60px; /* Sobrepõe levemente o final do fade da Hero */
+  margin-bottom: -60px; /* Puxa o início da ProductSection */
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+  /* O segredo do blur suave na transição */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 30%,
+    black 70%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 30%,
+    black 70%,
+    transparent 100%
+  );
+}
+
+.glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(197, 148, 65, 0.05) 0%,
+    transparent 70%
+  );
+}

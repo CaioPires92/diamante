@@ -4,22 +4,22 @@
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1; /* Fica atrás de tudo */
+  z-index: -2; /* Fica atrás de tudo, inclusive de outros elementos de fundo */
   pointer-events: none;
   overflow: hidden;
-  background-color: var(--color-white);
 }
 
-.shape {
+.globalBg {
   position: absolute;
-  filter: blur(10px); /* Suaviza as bordas para fundir com o fundo */
-  mix-blend-mode: multiply; /* Faz a parte branca da imagem sumir e sobrar só o dourado */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
-.image {
-  width: auto;
-  height: auto;
-  max-width: none;
+.bgImage {
+  object-fit: cover;
+  opacity: 0.8; /* Ajuste sutil para não brigar com o conteúdo */
 }
 
 .overlay {
@@ -28,12 +28,6 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at center, transparent 0%, var(--color-white) 90%);
-  opacity: 0.5;
-}
-
-@media (max-width: 768px) {
-  .shape {
-    transform: scale(0.6) !important;
-  }
+  /* Degradê que ajuda a suavizar a transição com a Hero */
+  background: linear-gradient(180deg, rgba(250, 250, 248, 0.9) 0%, rgba(250, 250, 248, 0) 20%, rgba(250, 250, 248, 0) 80%, rgba(250, 250, 248, 0.8) 100%);
 }

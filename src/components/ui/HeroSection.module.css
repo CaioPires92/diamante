@@ -5,7 +5,9 @@
   min-height: auto;
   display: block;
   overflow: hidden;
-  background-color: transparent;
+  background-color: #F8F4EF;
+  z-index: 1;
+  padding-bottom: 40px; /* Reduzido de 80px para aproximar as seções */
 }
 
 .background {
@@ -20,6 +22,9 @@
   height: auto;
   display: block;
   opacity: 1;
+  /* Cria uma máscara que desvanece suavemente no final */
+  mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
 }
 
 .overlay {
@@ -63,11 +68,11 @@
 .title {
   font-family: var(--font-playfair);
   font-size: var(--text-hero);
-  color: var(--color-black);
-  margin-bottom: var(--space-6);
+  color: #2D2A26;
+  margin-bottom: var(--space-4);
+  font-weight: 500;
+  letter-spacing: var(--tracking-tight);
   line-height: 1.1;
-  font-weight: 400;
-  white-space: pre-line;
 }
 
 .highlight {
@@ -78,11 +83,10 @@
 .subtitle {
   font-family: var(--font-inter);
   font-size: var(--text-lg);
-  color: var(--color-gray-700);
-  line-height: var(--leading-normal);
-  margin-bottom: var(--space-12);
+  color: #6B625A;
   max-width: 500px;
-  font-weight: 500;
+  margin-bottom: var(--space-12);
+  line-height: var(--leading-relaxed);
 }
 
 .actions {

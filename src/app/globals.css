@@ -5,9 +5,9 @@
   --color-gold-light: #D4A85C;
 
   /* Cores Neutras */
-  --color-black: #1A1A1A;
-  --color-dark: #2D2D2D;
-  --color-gray-700: #4A4A4A;
+  --color-black: #2D2A26; /* Marrom Premium solicitado */
+  --color-dark: #3D3935;
+  --color-gray-700: #6B625A; /* Marrom Sépia para subtítulos */
   --color-gray-500: #8A8A8A;
   --color-gray-300: #D1D1D1;
   --color-gray-100: #F5F5F3;
@@ -96,7 +96,7 @@
 html, body {
   max-width: 100vw;
   overflow-x: hidden;
-  background-color: var(--color-white);
+  background-color: transparent;
   color: var(--color-black);
   scroll-behavior: smooth;
 }
