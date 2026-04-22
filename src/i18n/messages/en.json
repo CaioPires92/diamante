@@ -1,0 +1,36 @@
+{
+  "Home": {
+    "title": "Salon-quality hair, every day.",
+    "subtitle": "In-house hair cosmetics, developed for salons and clients who demand real results.",
+    "viewCollection": "Discover the professional line"
+  },
+  "Common": {
+    "learnMore": "Learn more",
+    "contact": "Contact",
+    "buyNow": "Buy now",
+    "whatsapp": "Contact via WhatsApp"
+  },
+  "Header": {
+    "products": "Products",
+    "about": "About Us",
+    "contact": "Contact"
+  },
+  "Products": {
+    "title": "Our Featured Products",
+    "subtitle": "Discover the premium hair care line",
+    "items": {
+      "shampoo": {
+        "name": "Supreme Shampoo",
+        "desc": "Gentle and purifying cleanse with nanotech active ingredients."
+      },
+      "mask": {
+        "name": "Reconstructive Mask",
+        "desc": "Deep hydration and extreme damage repair."
+      },
+      "serum": {
+        "name": "Finishing Serum",
+        "desc": "Intense shine, thermal protection, and cuticle sealing."
+      }
+    }
+  }
+}

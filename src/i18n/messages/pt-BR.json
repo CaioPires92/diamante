@@ -1,0 +1,36 @@
+{
+  "Home": {
+    "title": "Cabelo tratado como em salão, todos os dias.",
+    "subtitle": "Cosméticos capilares de fabricação própria, desenvolvidos para salões e clientes que exigem resultado real.",
+    "viewCollection": "Conhecer a linha profissional"
+  },
+  "Common": {
+    "learnMore": "Saiba mais",
+    "contact": "Contato",
+    "buyNow": "Comprar agora",
+    "whatsapp": "Fale pelo WhatsApp"
+  },
+  "Header": {
+    "products": "Produtos",
+    "about": "Sobre Nós",
+    "contact": "Contato"
+  },
+  "Products": {
+    "title": "Nossos Produtos em Destaque",
+    "subtitle": "Descubra a linha premium de cuidados com os fios",
+    "items": {
+      "shampoo": {
+        "name": "Shampoo Supreme",
+        "desc": "Limpeza suave e purificadora com ativos nanotecnológicos."
+      },
+      "mask": {
+        "name": "Máscara Reconstrutora",
+        "desc": "Hidratação profunda e reparação de danos extremos."
+      },
+      "serum": {
+        "name": "Sérum Finalizador",
+        "desc": "Brilho intenso, proteção térmica e selagem das cutículas."
+      }
+    }
+  }
+}

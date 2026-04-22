@@ -1,0 +1,73 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4) var(--space-10);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-inter), sans-serif;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 400ms cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid transparent;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-extreme);
+  position: relative;
+  overflow: hidden;
+}
+
+.primary {
+  background: var(--gradient-gold);
+  color: var(--color-white);
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.primary:hover {
+  background: var(--color-gold-light);
+  box-shadow: var(--shadow-gold);
+  transform: translateY(-2px);
+}
+
+.secondary {
+  background: rgba(26, 26, 26, 0.3);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--color-gold);
+  border: 1px solid rgba(197, 148, 65, 0.4);
+}
+
+.secondary:hover {
+  background: rgba(197, 148, 65, 0.1);
+  border-color: var(--color-gold);
+  color: var(--color-gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(197, 148, 65, 0.15);
+}
+
+.whatsapp {
+  background-color: transparent;
+  color: var(--color-pure-white);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+}
+
+.whatsapp:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+.ghost {
+  background: transparent;
+  color: var(--color-gray-300);
+}
+
+.ghost:hover {
+  color: var(--color-white);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.fullWidth {
+  width: 100%;
+}

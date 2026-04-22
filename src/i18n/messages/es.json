@@ -1,0 +1,35 @@
+{
+  "Home": {
+    "title": "Belleza que transforma. Ciencia que cuida.",
+    "subtitle": "Cosméticos capilares de alto rendimiento con fabricación 100% propia. Presente en más de 4 países y aprobados por ANVISA — para profesionales que exigen resultados y consumidores que valoran la calidad."
+  },
+  "Common": {
+    "learnMore": "Saber más",
+    "contact": "Contacto",
+    "buyNow": "Comprar ahora",
+    "whatsapp": "Contactar por WhatsApp"
+  },
+  "Header": {
+    "products": "Productos",
+    "about": "Sobre Nosotros",
+    "contact": "Contacto"
+  },
+  "Products": {
+    "title": "Nuestros Productos Destacados",
+    "subtitle": "Descubre la línea premium de cuidado capilar",
+    "items": {
+      "shampoo": {
+        "name": "Shampoo Supreme",
+        "desc": "Limpieza suave y purificadora con activos nanotecnológicos."
+      },
+      "mask": {
+        "name": "Mascarilla Reconstructora",
+        "desc": "Hidratación profunda y reparación de daños extremos."
+      },
+      "serum": {
+        "name": "Sérum Finalizador",
+        "desc": "Brillo intenso, protección térmica y sellado de cutículas."
+      }
+    }
+  }
+}
