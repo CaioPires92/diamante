@@ -7,7 +7,6 @@ import { useGSAP } from '@gsap/react';
 import { Container } from './Container';
 import styles from './HeroSection.module.css';
 import { Button } from './Button';
-import { BadgeCheck, FlaskConical, Diamond, HandCoins } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 gsap.registerPlugin(useGSAP);
@@ -111,22 +110,37 @@ export function HeroSection({
 
           <div className={`${styles.trustBadges} anim-item`}>
             <div className={styles.badgeItem}>
-              <BadgeCheck className={styles.badgeIcon} size={32} strokeWidth={1.5} />
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={styles.badgeIcon}>
+                <path d="M3.85 8.62a4 4 0 0 1 4.77-4.77 4 4 0 0 1 6.76 0 4 4 0 0 1 4.77 4.77 4 4 0 0 1 0 6.76 4 4 0 0 1-4.77 4.77 4 4 0 0 1-6.76 0 4 4 0 0 1-4.77-4.77 4 4 0 0 1 0-6.76Z" />
+                <path d="m9 12 2 2 4-4" />
+              </svg>
               <span>FABRICAÇÃO<br/>PRÓPRIA</span>
             </div>
             <div className={styles.badgeDivider} />
             <div className={styles.badgeItem}>
-              <FlaskConical className={styles.badgeIcon} size={32} strokeWidth={1.5} />
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={styles.badgeIcon}>
+                <path d="M10 2v8L4.5 20.29A1 1 0 0 0 5.4 21.7h13.2a1 1 0 0 0 .9-1.41L14 10V2" />
+                <path d="M8.5 2h7" />
+              </svg>
               <span>FÓRMULAS<br/>EXCLUSIVAS</span>
             </div>
             <div className={styles.badgeDivider} />
             <div className={styles.badgeItem}>
-              <Diamond className={styles.badgeIcon} size={32} strokeWidth={1.5} />
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" className={styles.badgeIcon}>
+                <path d="M6 3h12l4 6-10 12L2 9Z" />
+                <path d="M11 3 8 9l3 12" />
+                <path d="M13 3l3 6-3 12" />
+                <path d="M5 9h14" />
+                <path d="M2 9l9-6 2 0 9 6" />
+              </svg>
               <span>QUALIDADE<br/>PROFISSIONAL</span>
             </div>
             <div className={styles.badgeDivider} />
             <div className={styles.badgeItem}>
-              <HandCoins className={styles.badgeIcon} size={32} strokeWidth={1.5} />
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" className={styles.badgeIcon}>
+                <path d="M11 15h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 17" />
+                <path d="m7 21 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-5.4a2 2 0 0 0-2.8-2.8L15 13" />
+              </svg>
               <span>PREÇO<br/>JUSTO</span>
             </div>
           </div>
