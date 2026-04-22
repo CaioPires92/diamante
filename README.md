@@ -1,37 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Diamante Profissional — Premium Web Experience
 
-## Getting Started
+Este é o repositório da plataforma digital da **Diamante Profissional**, focada em cosméticos capilares de alta performance. O projeto foi desenvolvido com uma estética "Clean Luxury", priorizando performance, elegância e micro-interações fluidas.
 
-First, run the development server:
+## 💎 Premium Visual Stack
 
+O projeto utiliza tecnologias de ponta para entregar uma experiência de usuário de nível editorial:
+
+### 1. Sistema de Animação (GSAP)
+Utilizamos o **GSAP (GreenSock Animation Platform)** para todas as interações dinâmicas:
+- **Header Shimmer**: Efeito de brilho metálico contínuo na borda inferior da Navbar.
+- **Hero Light Sweep**: Um feixe de luz global que percorre a seção Hero a cada 8 segundos, simulando reflexos de iluminação de estúdio.
+- **Micro-interações de Botão**: Efeitos de escala e "shimmer" interno nos CTAs para feedback tátil premium.
+- **Staggered Entrance**: Carregamento progressivo dos elementos da página para um reveal suave.
+
+### 2. Smooth Scrolling (Lenis)
+Implementamos o **Lenis Scroll** para substituir a rolagem padrão do navegador por uma navegação com inércia:
+- **Duração**: 1.5s para um movimento "sedoso".
+- **Física**: Curva de easing customizada para evitar paradas bruscas.
+- **Performance**: Baixo consumo de CPU, mantendo 60fps constantes.
+
+### 3. Design System "Clean Luxury"
+- **Glassmorphism**: Header fixo com alta transparência (`opacity: 0.02`), `backdrop-filter: blur(4px)` e bordas douradas translúcidas.
+- **Tipografia Editorial**: Uso de *Playfair Display* para títulos e *Inter* para corpo de texto, garantindo legibilidade e sofisticação.
+- **Paleta Champagne**: Cores baseadas em tons de dourado suave, off-white e preto profundo.
+
+---
+
+## 🚀 Como Iniciar
+
+### Pré-requisitos
+- Node.js 20+
+- npm ou pnpm
+
+### Instalação
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Desenvolvimento
+```bash
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🌍 Internacionalização (i18n)
+O projeto utiliza `next-intl` para suporte multi-idioma:
+- **Português (pt-BR)**
+- **Inglês (en)**
+- **Espanhol (es)**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Os arquivos de tradução estão localizados em `src/i18n/messages/`.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# diamante
+---
+*Diamante Profissional — Onde a ciência encontra a sofisticação.*

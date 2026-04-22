@@ -11,19 +11,35 @@ import { useTranslations } from 'next-intl';
 
 gsap.registerPlugin(useGSAP);
 
-export function HeroSection({
-  tagline = "Premium Hair Care",
-}: {
-  tagline?: string;
-}) {
+export function HeroSection() {
   const t = useTranslations('Home');
   const common = useTranslations('Common');
-  
+  const sectionRef = useRef<HTMLElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
 
-  useGSAP(() => {
+  useGSAP((context) => {
+    // Shimmer sweep animation - Using context.selector for reliability
+    const sweep = context.selector?.(`.${styles.shimmerOverlay}`)[0];
+    
+    if (sweep) {
+      const sweepTl = gsap.timeline({ 
+        repeat: -1, 
+        repeatDelay: 4 // Reduced for testing, was 8
+      });
+      
+      sweepTl.fromTo(sweep, 
+        { left: '-100%', opacity: 0 }, 
+        { 
+          left: '120%', 
+          opacity: 1, // Full opacity (controlled by CSS alpha)
+          duration: 3, 
+          ease: "power2.inOut" 
+        }
+      );
+    }
+
     // Select all animatable elements inside the content container
-    const elements = gsap.utils.toArray('.anim-item', contentRef.current);
+    const elements = gsap.utils.toArray('.anim-item', sectionRef.current);
     
     gsap.from(elements, {
       y: 30,
@@ -33,10 +49,10 @@ export function HeroSection({
       ease: "power3.out",
       delay: 0.1
     });
-  }, { scope: contentRef });
+  }, { scope: sectionRef });
 
   return (
-    <section className={styles.hero}>
+    <section className={styles.hero} ref={sectionRef}>
       <div className={styles.background}>
         <Image 
           src="/imgs/hero_v1.png" 
@@ -49,6 +65,8 @@ export function HeroSection({
         />
 
       </div>
+
+      <div className={styles.shimmerOverlay} />
 
       <Container className={styles.content}>
         <div ref={contentRef} className={styles.textContent}>

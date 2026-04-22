@@ -216,3 +216,22 @@
     flex: 0 0 40%;
   }
 }
+
+.shimmerOverlay {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 70%; /* Um pouco mais largo */
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.05) 20%,
+    rgba(255, 255, 255, 0.25) 50%,
+    rgba(255, 255, 255, 0.05) 80%,
+    transparent 100%
+  );
+  transform: skewX(-25deg);
+  pointer-events: none;
+  z-index: 2; /* Entre o fundo (1) e o conteúdo (3) */
+}

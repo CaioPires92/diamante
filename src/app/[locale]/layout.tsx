@@ -3,6 +3,7 @@ import { Playfair_Display, Inter } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { Header } from '@/components/ui/Header';
+import { SmoothScroll } from '@/components/ui/SmoothScroll';
 import '../globals.css';
 
 const playfair = Playfair_Display({
@@ -39,11 +40,13 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} data-scroll-behavior="smooth">
+    <html lang={locale}>
       <body className={`${playfair.variable} ${inter.variable}`}>
         <NextIntlClientProvider messages={messages}>
-          <Header locale={locale} />
-          {children}
+          <SmoothScroll>
+            <Header locale={locale} />
+            {children}
+          </SmoothScroll>
         </NextIntlClientProvider>
       </body>
     </html>
