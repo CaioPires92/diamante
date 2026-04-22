@@ -1,8 +1,14 @@
 {
   "Home": {
-    "title": "Belleza que transforma. Ciencia que cuida.",
-    "subtitle": "Cosméticos capilares de alto rendimiento con fabricación 100% propia. Presente en más de 4 países y aprobados por ANVISA — para profesionales que exigen resultados y consumidores que valoran la calidad.",
-    "viewCollection": "Conocer la línea profesional"
+    "title": "Belleza que transforma.\nCiencia que cuida.\n<highlight>Todos los días.</highlight>",
+    "subtitle": "Cosméticos capilares de <strong>fabricación propia</strong>, desarrollados para salones y clientes que exigen <strong>resultados reales</strong>.",
+    "viewCollection": "Conocer la línea profesional",
+    "badges": {
+      "manufacturing": "FABRICACIÓN PROPIA",
+      "exclusive": "FÓRMULAS EXCLUSIVAS",
+      "quality": "CALIDAD PROFESIONAL",
+      "price": "PRECIO JUSTO"
+    }
   },
   "Common": {
     "learnMore": "Saber más",

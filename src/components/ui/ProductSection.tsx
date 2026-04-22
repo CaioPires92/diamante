@@ -31,29 +31,34 @@ export function ProductSection() {
   const common = useTranslations('Common');
   const sectionRef = useRef<HTMLElement>(null);
 
-  useGSAP(() => {
-    // Header animation
+  useGSAP((context) => {
+    // Reveal animation on scroll
+    const cards = context.selector?.('.prod-card');
+    
+    if (cards) {
+      gsap.from(cards, {
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top 75%',
+          once: true,
+        },
+        y: 40,
+        opacity: 0,
+        duration: 1.2,
+        stagger: 0.15,
+        ease: 'power4.out'
+      });
+    }
+
+    // Header reveal
     gsap.from('.prod-header', {
       scrollTrigger: {
         trigger: '.prod-header',
-        start: 'top 80%',
+        start: 'top 90%',
       },
       y: 30,
       opacity: 0,
-      duration: 0.8,
-      ease: 'power2.out'
-    });
-
-    // Cards staggered animation
-    gsap.from('.prod-card', {
-      scrollTrigger: {
-        trigger: '.prod-grid',
-        start: 'top 75%',
-      },
-      y: 40,
-      opacity: 0,
-      duration: 0.8,
-      stagger: 0.2,
+      duration: 1,
       ease: 'power3.out'
     });
   }, { scope: sectionRef });
@@ -70,7 +75,26 @@ export function ProductSection() {
 
         <div className={`${styles.grid} prod-grid`}>
           {productsData.map((product) => (
-            <div key={product.id} className={`${styles.card} prod-card`}>
+            <div 
+              key={product.id} 
+              className={`${styles.card} prod-card`}
+              onMouseEnter={(e) => {
+                gsap.to(e.currentTarget, { 
+                  y: -10, 
+                  backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                  duration: 0.5, 
+                  ease: "power2.out" 
+                });
+              }}
+              onMouseLeave={(e) => {
+                gsap.to(e.currentTarget, { 
+                  y: 0, 
+                  backgroundColor: 'rgba(255, 255, 255, 0.4)',
+                  duration: 0.5, 
+                  ease: "power2.out" 
+                });
+              }}
+            >
               <div className={styles.imageWrapper}>
                 <Image 
                   src={product.image} 
@@ -84,7 +108,10 @@ export function ProductSection() {
                 <h3 className={styles.productName}>{t(`items.${product.id}.name`)}</h3>
                 <p className={styles.productDesc}>{t(`items.${product.id}.desc`)}</p>
                 <button className={styles.action}>
-                  {common('learnMore')} <span>→</span>
+                  {common('learnMore')} 
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+                  </svg>
                 </button>
               </div>
             </div>

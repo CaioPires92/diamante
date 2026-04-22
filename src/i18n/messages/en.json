@@ -1,8 +1,14 @@
 {
   "Home": {
-    "title": "Salon-quality hair, every day.",
-    "subtitle": "In-house hair cosmetics, developed for salons and clients who demand real results.",
-    "viewCollection": "Discover the professional line"
+    "title": "Salon-quality hair,\nevery single day.\n<highlight>Professional care.</highlight>",
+    "subtitle": "<strong>In-house</strong> hair cosmetics, developed for salons and clients who demand <strong>real results</strong>.",
+    "viewCollection": "Discover the professional line",
+    "badges": {
+      "manufacturing": "IN-HOUSE MANUFACTURING",
+      "exclusive": "EXCLUSIVE FORMULAS",
+      "quality": "PROFESSIONAL QUALITY",
+      "price": "FAIR PRICE"
+    }
   },
   "Common": {
     "learnMore": "Learn more",

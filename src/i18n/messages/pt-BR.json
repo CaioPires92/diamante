@@ -1,8 +1,14 @@
 {
   "Home": {
-    "title": "Cabelo tratado como em salão, todos os dias.",
-    "subtitle": "Cosméticos capilares de fabricação própria, desenvolvidos para salões e clientes que exigem resultado real.",
-    "viewCollection": "Conhecer a linha profissional"
+    "title": "Cabelo tratado\ncomo em salão,\n<highlight>todos os dias.</highlight>",
+    "subtitle": "Cosméticos capilares de <strong>fabricação própria</strong>, desenvolvidos para salões e clientes que exigem <strong>resultado real</strong>.",
+    "viewCollection": "Conhecer a linha profissional",
+    "badges": {
+      "manufacturing": "FABRICAÇÃO PRÓPRIA",
+      "exclusive": "FÓRMULAS EXCLUSIVAS",
+      "quality": "QUALIDADE PROFISSIONAL",
+      "price": "PREÇO JUSTO"
+    }
   },
   "Common": {
     "learnMore": "Saiba mais",

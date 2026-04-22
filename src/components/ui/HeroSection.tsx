@@ -52,7 +52,7 @@ export function HeroSection() {
   }, { scope: sectionRef });
 
   return (
-    <section className={styles.hero} ref={sectionRef}>
+    <section className={styles.hero} ref={sectionRef} style={{ background: 'transparent' }}>
       <div className={styles.background}>
         <Image 
           src="/imgs/hero_v1.png" 
@@ -75,13 +75,15 @@ export function HeroSection() {
           </div>
 
           <h1 className={`${styles.title} anim-item`}>
-            Cabelo tratado<br />
-            como em salão,<br />
-            <span className={styles.highlight}>todos os dias.</span>
+            {t.rich('title', {
+              highlight: (chunks) => <span className={styles.highlight}>{chunks}</span>
+            })}
           </h1>
 
           <p className={`${styles.subtitle} anim-item`}>
-            Cosméticos capilares de <strong>fabricação própria</strong>, desenvolvidos para salões e clientes que exigem <strong>resultado real</strong>.
+            {t.rich('subtitle', {
+              strong: (chunks) => <strong>{chunks}</strong>
+            })}
           </p>
 
           <div className={`${styles.actions} anim-item`}>
@@ -132,7 +134,7 @@ export function HeroSection() {
                 <path d="M3.85 8.62a4 4 0 0 1 4.77-4.77 4 4 0 0 1 6.76 0 4 4 0 0 1 4.77 4.77 4 4 0 0 1 0 6.76 4 4 0 0 1-4.77 4.77 4 4 0 0 1-6.76 0 4 4 0 0 1-4.77-4.77 4 4 0 0 1 0-6.76Z" />
                 <path d="m9 12 2 2 4-4" />
               </svg>
-              <span>FABRICAÇÃO<br/>PRÓPRIA</span>
+              <span>{t('badges.manufacturing')}</span>
             </div>
             <div className={styles.badgeDivider} />
             <div className={styles.badgeItem}>
@@ -140,7 +142,7 @@ export function HeroSection() {
                 <path d="M10 2v8L4.5 20.29A1 1 0 0 0 5.4 21.7h13.2a1 1 0 0 0 .9-1.41L14 10V2" />
                 <path d="M8.5 2h7" />
               </svg>
-              <span>FÓRMULAS<br/>EXCLUSIVAS</span>
+              <span>{t('badges.exclusive')}</span>
             </div>
             <div className={styles.badgeDivider} />
             <div className={styles.badgeItem}>
@@ -151,7 +153,7 @@ export function HeroSection() {
                 <path d="M5 9h14" />
                 <path d="M2 9l9-6 2 0 9 6" />
               </svg>
-              <span>QUALIDADE<br/>PROFISSIONAL</span>
+              <span>{t('badges.quality')}</span>
             </div>
             <div className={styles.badgeDivider} />
             <div className={styles.badgeItem}>
@@ -159,7 +161,7 @@ export function HeroSection() {
                 <path d="M11 15h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 17" />
                 <path d="m7 21 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-5.4a2 2 0 0 0-2.8-2.8L15 13" />
               </svg>
-              <span>PREÇO<br/>JUSTO</span>
+              <span>{t('badges.price')}</span>
             </div>
           </div>
         </div>

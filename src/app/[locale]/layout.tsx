@@ -4,6 +4,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { Header } from '@/components/ui/Header';
 import { SmoothScroll } from '@/components/ui/SmoothScroll';
+import { FluidBackground } from '@/components/ui/FluidBackground';
 import '../globals.css';
 
 const playfair = Playfair_Display({
@@ -44,6 +45,7 @@ export default async function LocaleLayout({
       <body className={`${playfair.variable} ${inter.variable}`}>
         <NextIntlClientProvider messages={messages}>
           <SmoothScroll>
+            <FluidBackground />
             <Header locale={locale} />
             {children}
           </SmoothScroll>

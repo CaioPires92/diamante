@@ -5,7 +5,7 @@
   min-height: auto;
   display: block;
   overflow: hidden;
-  background-color: #fff;
+  background-color: transparent;
 }
 
 .background {
@@ -67,6 +67,7 @@
   margin-bottom: var(--space-6);
   line-height: 1.1;
   font-weight: 400;
+  white-space: pre-line;
 }
 
 .highlight {
