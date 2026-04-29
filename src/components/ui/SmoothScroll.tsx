@@ -2,6 +2,8 @@
 
 import { ReactNode, useEffect } from 'react';
 import Lenis from 'lenis';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 export function SmoothScroll({ children }: { children: ReactNode }) {
   useEffect(() => {
@@ -14,16 +16,22 @@ export function SmoothScroll({ children }: { children: ReactNode }) {
       touchMultiplier: 2,
     });
 
-    // Loop de animação (RAF)
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
+    // Sincroniza o Lenis com o ScrollTrigger do GSAP
+    lenis.on('scroll', ScrollTrigger.update);
 
-    requestAnimationFrame(raf);
+    // Adiciona o Lenis ao Ticker do GSAP
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000);
+    });
+
+    // Desativa lagSmoothing do GSAP para evitar conflitos com Lenis
+    gsap.ticker.lagSmoothing(0);
 
     // Limpeza ao desmontar
     return () => {
+      gsap.ticker.remove((time) => {
+        lenis.raf(time * 1000);
+      });
       lenis.destroy();
     };
   }, []);

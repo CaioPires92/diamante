@@ -4,7 +4,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -2; /* Fica atrás de tudo, inclusive de outros elementos de fundo */
+  z-index: -10; /* Lowered significantly to stay behind everything */
   pointer-events: none;
   overflow: hidden;
 }
@@ -19,15 +19,7 @@
 
 .bgImage {
   object-fit: cover;
-  opacity: 0.8; /* Ajuste sutil para não brigar com o conteúdo */
+  opacity: 0.6; /* Reduced opacity for better contrast */
 }
 
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  /* Degradê que ajuda a suavizar a transição com a Hero */
-  background: linear-gradient(180deg, rgba(250, 250, 248, 0.9) 0%, rgba(250, 250, 248, 0) 20%, rgba(250, 250, 248, 0) 80%, rgba(250, 250, 248, 0.8) 100%);
-}
+/* Removed fixed overlay that was washing out content */

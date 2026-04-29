@@ -18,38 +18,28 @@ export function HeroSection() {
   const contentRef = useRef<HTMLDivElement>(null);
 
   useGSAP((context) => {
-    // Shimmer sweep animation - Using context.selector for reliability
-    const sweep = context.selector?.(`.${styles.shimmerOverlay}`)[0];
-    
-    if (sweep) {
-      const sweepTl = gsap.timeline({ 
-        repeat: -1, 
-        repeatDelay: 4 // Reduced for testing, was 8
-      });
-      
-      sweepTl.fromTo(sweep, 
-        { left: '-100%', opacity: 0 }, 
-        { 
-          left: '120%', 
-          opacity: 1, // Full opacity (controlled by CSS alpha)
-          duration: 3, 
-          ease: "power2.inOut" 
-        }
-      );
+    // Background Image Zoom Entrance
+    const heroImage = context.selector?.(`.${styles.backgroundImage}`)[0];
+    if (heroImage) {
+      gsap.fromTo(heroImage, { scale: 1.08, opacity: 0 }, { scale: 1, opacity: 1, duration: 1.6, ease: 'power3.out' });
     }
 
-    // Select all animatable elements inside the content container
+    // Shimmer sweep animation
+    const sweep = context.selector?.(`.${styles.shimmerOverlay}`)[0];
+    if (sweep) {
+      gsap.to(sweep, {
+        left: '120%',
+        duration: 4,
+        repeat: -1,
+        repeatDelay: 3,
+        ease: "power1.inOut"
+      });
+    }
+
+    // Advanced Text Reveal
     const elements = gsap.utils.toArray('.anim-item', sectionRef.current);
-    
-    gsap.from(elements, {
-      y: 30,
-      opacity: 0,
-      duration: 1.2,
-      stagger: 0.2,
-      ease: "power3.out",
-      delay: 0.1
-    });
-  }, { scope: sectionRef });
+    gsap.fromTo(elements, { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 1, stagger: 0.16, ease: 'power3.out' });
+  }, { scope: sectionRef, dependencies: [] });
 
   return (
     <section className={styles.hero} ref={sectionRef}>

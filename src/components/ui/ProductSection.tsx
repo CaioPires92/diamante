@@ -7,21 +7,25 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import { useTranslations } from 'next-intl';
 import { Container } from './Container';
+import { ProductCard } from './ProductCard';
 import styles from './ProductSection.module.css';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const productsData = [
   {
-    id: 'shampoo',
+    id: 'shampoo-supreme',
+    slug: 'shampoo-supreme-caviar',
     image: '/imgs/product1.png',
   },
   {
-    id: 'mask',
+    id: 'mask-supreme',
+    slug: 'mascara-supreme-tratamento',
     image: '/imgs/product2.png',
   },
   {
-    id: 'serum',
+    id: 'serum-supreme',
+    slug: 'serum-supreme-finish',
     image: '/imgs/product3.png',
   }
 ];
@@ -33,16 +37,20 @@ export function ProductSection() {
 
   useGSAP((context) => {
     // Reveal animation on scroll
-    const cards = context.selector?.('.prod-card');
+    const cards = context.selector?.(`.${styles.cardWrapper}`);
     
     if (cards) {
-      gsap.from(cards, {
+      gsap.fromTo(cards, {
+        y: 60,
+        opacity: 0,
+      }, {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: 'top 75%',
           once: true,
         },
-        y: 60, /* Movimento mais curto e elegante */
+        y: 0,
+        opacity: 1,
         duration: 1,
         stagger: 0.1,
         ease: 'power3.out'
@@ -50,17 +58,20 @@ export function ProductSection() {
     }
 
     // Header reveal
-    gsap.from('.prod-header', {
+    gsap.fromTo('.prod-header', {
+      y: 30,
+      opacity: 0,
+    }, {
       scrollTrigger: {
         trigger: '.prod-header',
         start: 'top 90%',
       },
-      y: 30,
-      opacity: 0,
+      y: 0,
+      opacity: 1,
       duration: 1,
       ease: 'power3.out'
     });
-  }, { scope: sectionRef });
+  }, { scope: sectionRef, dependencies: [] });
 
   return (
     <section id="products" className={styles.section} ref={sectionRef}>
@@ -74,29 +85,15 @@ export function ProductSection() {
 
         <div className={`${styles.grid} prod-grid`}>
           {productsData.map((product, index) => (
-            <div 
-              key={product.id} 
-              className={`${styles.card} prod-card ${index === 1 ? styles.featured : ''}`}
-            >
-              <div className={styles.imageWrapper}>
-                <Image 
-                  src={product.image} 
-                  alt={t(`items.${product.id}.name`)} 
-                  fill 
-                  className={styles.image}
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
-              </div>
-              <div className={styles.content}>
-                <h3 className={styles.productName}>{t(`items.${product.id}.name`)}</h3>
-                <p className={styles.productDesc}>{t(`items.${product.id}.desc`)}</p>
-                <button className={styles.action}>
-                  {common('learnMore')} 
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
-                  </svg>
-                </button>
-              </div>
+            <div key={product.id} className={styles.cardWrapper}>
+              <ProductCard
+                id={product.id}
+                slug={product.slug}
+                image={product.image}
+                name={t(`items.${product.id}.name`)}
+                description={t(`items.${product.id}.desc`)}
+                isFeatured={index === 1}
+              />
             </div>
           ))}
         </div>

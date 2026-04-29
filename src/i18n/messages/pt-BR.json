@@ -19,24 +19,282 @@
   "Header": {
     "products": "Produtos",
     "about": "Sobre Nós",
+    "privateLabel": "Private Label",
     "contact": "Contato"
   },
   "Products": {
     "title": "Nossos Produtos em Destaque",
     "subtitle": "Descubra a linha premium de cuidados com os fios",
     "items": {
-      "shampoo": {
+      "shampoo-supreme": {
         "name": "Shampoo Supreme",
         "desc": "Limpeza suave e purificadora com ativos nanotecnológicos."
       },
-      "mask": {
-        "name": "Máscara Reconstrutora",
-        "desc": "Hidratação profunda e reparação de danos extremos."
+      "mask-supreme": {
+        "name": "Máscara Supreme",
+        "desc": "Nutrição profunda e reconstrução da fibra capilar com extrato de caviar."
       },
-      "serum": {
-        "name": "Sérum Finalizador",
-        "desc": "Brilho intenso, proteção térmica e selagem das cutículas."
+      "serum-supreme": {
+        "name": "Sérum Supreme",
+        "desc": "Finalização luxuosa, brilho espelhado e proteção contra o frizz."
       }
+    }
+  },
+  "Catalog": {
+    "Hero": {
+      "tagline": "LINHA PROFISSIONAL",
+      "title": "Catálogo de Produtos",
+      "subtitle": "Explore nossa linha completa de tratamentos desenvolvidos para máxima performance profissional."
+    },
+    "Filters": {
+      "all": "Todos",
+      "treatment": "Tratamento",
+      "finishing": "Finalizadores",
+      "wash": "Lavatório"
+    },
+    "EmptyState": "Nenhum produto encontrado para esta categoria."
+  },
+  "Features": {
+    "title": "Por que Diamante Profissional?",
+    "tagline": "DIFERENCIAIS",
+    "items": {
+      "factory": {
+        "title": "Fábrica Própria",
+        "desc": "Controle total da produção — do insumo ao produto final, garantindo pureza e eficácia."
+      },
+      "tech": {
+        "title": "Tecnologia Bio-Advanced",
+        "desc": "Fórmulas exclusivas que unem ciência e natureza para resultados de salão em casa."
+      },
+      "anvisa": {
+        "title": "Regulamentação ANVISA",
+        "desc": "Toda a nossa linha é rigorosamente testada e aprovada pelos órgãos competentes."
+      },
+      "intl": {
+        "title": "Presença Internacional",
+        "desc": "Exportamos para mais de 4 países, levando a qualidade brasileira para o mundo."
+      },
+      "portfolio": {
+        "title": "+200 Produtos",
+        "desc": "Um portfólio completo para atender todas as necessidades de cuidados capilares."
+      },
+      "premium": {
+        "title": "Premium Acessível",
+        "desc": "Alta performance profissional com o melhor custo-benefício do mercado."
+      }
+    }
+  },
+  "Lapidacao": {
+    "tagline": "CARRO-CHEFE",
+    "title": "Lapidação: O Cronograma Capilar Definitivo",
+    "description": "Uma jornada de 4 passos que transforma a saúde dos seus fios. Da limpeza profunda à selagem absoluta, cada etapa foi desenhada com tecnologia nanoprocessada para resultados imediatos.",
+    "steps": {
+      "step1": {
+        "title": "1. Limpar",
+        "description": "Remoção de impurezas sem agredir a fibra capilar."
+      },
+      "step2": {
+        "title": "2. Selar",
+        "description": "Preparação das cutículas para receber o tratamento."
+      },
+      "step3": {
+        "title": "3. Reconstruir",
+        "description": "Reposição de massa e queratina perdida."
+      },
+      "step4": {
+        "title": "4. Hidratar",
+        "description": "Brilho extremo e maciez de longa duração."
+      }
+    },
+    "cta": "Conhecer a Linha Completa"
+  },
+  "PrivateLabel": {
+    "tagline": "PARA EMPREENDEDORES",
+    "title": "Private Label: Sua Marca de Cosméticos Começa Aqui",
+    "description": "Transforme sua visão em realidade com nossa infraestrutura de ponta. Oferecemos fabricação própria, desenvolvimento de fórmulas exclusivas e suporte completo para criar sua linha premium com a qualidade Diamante.",
+    "features": {
+      "manufacturing": "Infraestrutura Completa",
+      "formulas": "Fórmulas Exclusivas",
+      "design": "Suporte em Design",
+      "quality": "Qualidade Certificada"
+    },
+    "cta": "Falar com um Consultor"
+  },
+  "Impact": {
+    "title": "Nossa Presença em Números",
+    "stats": {
+      "products": {
+        "value": "200",
+        "label": "Produtos no Portfólio",
+        "suffix": "+"
+      },
+      "countries": {
+        "value": "4",
+        "label": "Países Alcançados",
+        "suffix": ""
+      },
+      "clients": {
+        "value": "10",
+        "label": "Mil Clientes Atendidos",
+        "suffix": "k+"
+      },
+      "years": {
+        "value": "12",
+        "label": "Anos de Experiência",
+        "suffix": "+"
+      }
+    }
+  },
+  "FinalCTA": {
+    "title": "Pronto para Transformar sua Experiência?",
+    "description": "Seja você um profissional em busca da melhor performance ou um empreendedor querendo sua própria marca, a Diamante é o seu próximo passo.",
+    "ctaShop": "Ir para Loja Online",
+    "ctaBusiness": "Seja um Parceiro"
+  },
+  "About": {
+    "Hero": {
+      "tagline": "NOSSA HISTÓRIA",
+      "title": "A Ciência por Trás\nda Verdadeira Beleza",
+      "subtitle": "Desde a fundação, a Diamante Profissional tem um único propósito: entregar resultados excepcionais através de cosmética avançada e fabricação própria."
+    },
+    "Manifesto": {
+      "title": "Mais que um Cosmético,\num Tratamento Profundo.",
+      "paragraph1": "Nascemos da necessidade de salões de beleza de alto padrão por produtos que entregassem performance real, sem comprometer a saúde a longo prazo dos fios. Cada fórmula que criamos é o resultado de anos de pesquisa e testes rigorosos.",
+      "paragraph2": "Não acreditamos em soluções mágicas ou superficiais. Acreditamos na química precisa, em ingredientes da mais alta pureza e no domínio absoluto do processo de fabricação."
+    },
+    "Laboratory": {
+      "tagline": "ESTRUTURA",
+      "title": "Do Laboratório para o Seu Salão",
+      "description": "Nossa fábrica própria é o coração da Diamante. Ter controle total sobre a linha de produção nos permite garantir que cada lote tenha exatamente a mesma excelência do nosso padrão ouro inicial.",
+      "stats": {
+        "production": "Alta Capacidade Produtiva Mensal",
+        "quality": "Rigoroso Controle de Qualidade",
+        "tech": "Nanotecnologia em Nossos Ativos"
+      }
+    },
+    "Values": {
+      "tagline": "NOSSOS PILARES",
+      "title": "O Padrão Diamante",
+      "items": {
+        "performance": {
+          "title": "Performance Comprovada",
+          "desc": "Produtos desenvolvidos primeiro para as bancadas dos melhores profissionais, depois para o mundo."
+        },
+        "ethics": {
+          "title": "Ética e Transparência",
+          "desc": "Fórmulas livres de promessas falsas. Entregamos exatamente o que está no rótulo."
+        },
+        "innovation": {
+          "title": "Inovação Contínua",
+          "desc": "Laboratório de P&D focado em antecipar as necessidades do mercado global da beleza."
+        }
+      }
+    }
+  },
+  "ContactPage": {
+    "Hero": {
+      "tagline": "ATENDIMENTO",
+      "title": "Como Podemos Ajudar?",
+      "subtitle": "Entre em contato com nossa equipe especializada para tirar dúvidas, fazer parcerias ou solicitar orçamentos."
+    },
+    "Info": {
+      "title": "Nossos Canais",
+      "sac": {
+        "label": "SAC Comercial",
+        "value": "(11) 99999-9999"
+      },
+      "email": {
+        "label": "E-mail",
+        "value": "contato@diamanteprofissional.com.br"
+      },
+      "address": {
+        "label": "Matriz",
+        "value": "Av. Exemplo, 123 - São Paulo, SP"
+      },
+      "hours": {
+        "label": "Horário de Atendimento",
+        "value": "Segunda a Sexta, 08h às 18h"
+      }
+    },
+    "Form": {
+      "title": "Envie uma Mensagem",
+      "fields": {
+        "name": "Nome Completo",
+        "email": "E-mail Corporativo",
+        "phone": "Telefone / WhatsApp",
+        "subject": "Assunto",
+        "message": "Sua Mensagem"
+      },
+      "subjects": {
+        "general": "Dúvida Geral",
+        "distributor": "Quero ser Distribuidor",
+        "privateLabel": "Private Label"
+      },
+      "submit": "Enviar Mensagem",
+      "sending": "Enviando...",
+      "successTitle": "Mensagem Enviada!",
+      "successMessage": "Obrigado por entrar em contato. Nossa equipe retornará o mais breve possível."
+    }
+  },
+  "ProductDetail": {
+    "labels": {
+      "howToUse": "Modo de Uso",
+      "benefits": "Benefícios Técnicos",
+      "ingredients": "Composição / Ativos",
+      "related": "Você também pode gostar",
+      "buyNow": "Solicitar via WhatsApp",
+      "line": "Linha",
+      "features": "Diferenciais"
+    }
+  },
+  "PrivateLabelPage": {
+    "Hero": {
+      "tagline": "PRIVATE LABEL",
+      "title": "Sua Própria Marca de Cosméticos",
+      "subtitle": "Desenvolvemos produtos de alta performance com a sua assinatura. Da formulação à entrega, nós cuidamos de tudo."
+    },
+    "Benefits": {
+      "title": "Por que terceirizar com a Diamante?",
+      "items": {
+        "profit": {
+          "title": "Alta Lucratividade",
+          "desc": "Aumente as margens de lucro do seu salão ou distribuidora vendendo produtos com a sua própria marca."
+        },
+        "quality": {
+          "title": "Fórmulas Validadas",
+          "desc": "Acesso ao nosso laboratório premium e fórmulas que já são sucesso no mercado profissional."
+        },
+        "support": {
+          "title": "Suporte Regulatório",
+          "desc": "Cuidamos de toda a burocracia técnica, incluindo registros na ANVISA e adequações legais."
+        }
+      }
+    },
+    "Process": {
+      "title": "Como Funciona",
+      "steps": {
+        "1": {
+          "title": "Diagnóstico & Escolha",
+          "desc": "Definição do mix de produtos e testes das fórmulas em nosso laboratório."
+        },
+        "2": {
+          "title": "Design & Rótulo",
+          "desc": "Nossa equipe ajuda a personalizar as embalagens com a identidade da sua marca."
+        },
+        "3": {
+          "title": "Produção & ANVISA",
+          "desc": "Fabricação em larga escala seguindo rígidos padrões de qualidade e registros."
+        },
+        "4": {
+          "title": "Pronto para Venda",
+          "desc": "Você recebe os produtos finalizados, prontos para encantar seus clientes."
+        }
+      }
+    },
+    "CTA": {
+      "title": "Pronto para Dar o Próximo Passo?",
+      "subtitle": "Fale com um consultor comercial e descubra como é fácil lançar a sua marca.",
+      "button": "Falar com Consultor via WhatsApp"
     }
   },
   "Footer": {
@@ -46,6 +304,7 @@
         "title": "Institucional",
         "about": "Sobre Nós",
         "privateLabel": "Private Label",
+        "contact": "Fale Conosco",
         "distributor": "Seja Distribuidor"
       },
       "support": {

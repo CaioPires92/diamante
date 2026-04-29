@@ -25,18 +25,140 @@
     "title": "Our Featured Products",
     "subtitle": "Discover the premium hair care line",
     "items": {
-      "shampoo": {
+      "shampoo-supreme": {
         "name": "Supreme Shampoo",
         "desc": "Gentle and purifying cleanse with nanotech active ingredients."
       },
-      "mask": {
-        "name": "Reconstructive Mask",
-        "desc": "Deep hydration and extreme damage repair."
+      "mask-supreme": {
+        "name": "Supreme Mask",
+        "desc": "Deep nutrition and hair fiber reconstruction with caviar extract."
       },
-      "serum": {
-        "name": "Finishing Serum",
-        "desc": "Intense shine, thermal protection, and cuticle sealing."
+      "serum-supreme": {
+        "name": "Supreme Serum",
+        "desc": "Luxurious finishing, mirrored shine and frizz protection."
       }
     }
+  },
+  "ProductDetail": {
+    "labels": {
+      "howToUse": "How to Use",
+      "benefits": "Technical Benefits",
+      "ingredients": "Composition / Actives",
+      "related": "You may also like",
+      "buyNow": "Request via WhatsApp",
+      "line": "Line",
+      "features": "Differentials"
+    }
+  },
+  "Catalog": {
+    "Hero": {
+      "tagline": "PROFESSIONAL LINE",
+      "title": "Product Catalog",
+      "subtitle": "Explore our complete line of treatments developed for maximum professional performance."
+    },
+    "Filters": {
+      "all": "All",
+      "treatment": "Treatment",
+      "finishing": "Finishers",
+      "wash": "Wash"
+    },
+    "EmptyState": "No products found for this category."
+  },
+  "Features": {
+    "title": "Why Diamante Profissional?",
+    "tagline": "DIFFERENTIALS",
+    "items": {
+      "factory": {
+        "title": "In-house Factory",
+        "desc": "Total production control — from raw material to final product, ensuring purity and effectiveness."
+      },
+      "tech": {
+        "title": "Bio-Advanced Tech",
+        "desc": "Exclusive formulas that combine science and nature for salon results at home."
+      },
+      "anvisa": {
+        "title": "ANVISA Regulated",
+        "desc": "Our entire line is rigorously tested and approved by the competent authorities."
+      },
+      "intl": {
+        "title": "Global Presence",
+        "desc": "We export to more than 4 countries, bringing Brazilian quality to the world."
+      },
+      "portfolio": {
+        "title": "+200 Products",
+        "desc": "A complete portfolio to meet all hair care needs."
+      },
+      "premium": {
+        "title": "Affordable Premium",
+        "desc": "High professional performance with the best cost-benefit in the market."
+      }
+    }
+  },
+  "Lapidacao": {
+    "tagline": "FLAGSHIP LINE",
+    "title": "Lapidação: The Ultimate Hair Schedule",
+    "description": "A 4-step journey that transforms the health of your hair. From deep cleansing to absolute sealing, each stage was designed with nanoprocessed technology for immediate results.",
+    "steps": {
+      "step1": {
+        "title": "1. Cleanse",
+        "description": "Removal of impurities without damaging the hair fiber."
+      },
+      "step2": {
+        "title": "2. Seal",
+        "description": "Cuticle preparation to receive the treatment."
+      },
+      "step3": {
+        "title": "3. Reconstruct",
+        "description": "Replacement of lost mass and keratin."
+      },
+      "step4": {
+        "title": "4. Hydrate",
+        "description": "Extreme shine and long-lasting softness."
+      }
+    },
+    "cta": "Explore the Complete Line"
+  },
+  "PrivateLabel": {
+    "tagline": "FOR ENTREPRENEURS",
+    "title": "Private Label: Your Cosmetic Brand Starts Here",
+    "description": "Turn your vision into reality with our cutting-edge infrastructure. We offer in-house manufacturing, exclusive formula development, and full support to create your premium line with Diamante quality.",
+    "features": {
+      "manufacturing": "Full Infrastructure",
+      "formulas": "Exclusive Formulas",
+      "design": "Design Support",
+      "quality": "Certified Quality"
+    },
+    "cta": "Talk to a Consultant"
+  },
+  "Impact": {
+    "title": "Our Presence in Numbers",
+    "stats": {
+      "products": {
+        "value": "200",
+        "label": "Products in Portfolio",
+        "suffix": "+"
+      },
+      "countries": {
+        "value": "4",
+        "label": "Countries Reached",
+        "suffix": ""
+      },
+      "clients": {
+        "value": "10",
+        "label": "Thousand Happy Clients",
+        "suffix": "k+"
+      },
+      "years": {
+        "value": "12",
+        "label": "Years of Experience",
+        "suffix": "+"
+      }
+    }
+  },
+  "FinalCTA": {
+    "title": "Ready to Transform Your Experience?",
+    "description": "Whether you are a professional seeking peak performance or an entrepreneur starting your own brand, Diamante is your next step.",
+    "ctaShop": "Go to Online Shop",
+    "ctaBusiness": "Become a Partner"
   }
 }

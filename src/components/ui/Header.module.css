@@ -8,8 +8,16 @@
   backdrop-filter: blur(8px); 
   -webkit-backdrop-filter: blur(8px);
   width: 100%;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Smoother transition */
   overflow: hidden;
+}
+
+.scrolled {
+  background: rgba(250, 250, 248, 0.85); /* Premium opaque off-white */
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border-bottom-color: rgba(201, 157, 74, 0.3);
 }
 
 .headerContainer {

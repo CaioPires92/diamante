@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
@@ -16,6 +16,16 @@ export function Header({ locale }: { locale: string }) {
   const t = useTranslations('Header');
   const router = useRouter();
   const pathname = usePathname();
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleLocaleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const newLocale = e.target.value;
@@ -34,6 +44,9 @@ export function Header({ locale }: { locale: string }) {
   };
 
   useGSAP(() => {
+    // Entrance Animation
+    gsap.fromTo(headerRef.current, { y: -24, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out' });
+
     const shimmer = headerRef.current?.querySelector(`.${styles.borderShimmer}`);
     if (shimmer) {
       const tl = gsap.timeline({ repeat: -1, repeatDelay: 6 });
@@ -42,10 +55,10 @@ export function Header({ locale }: { locale: string }) {
         { left: '150%', duration: 4.5, ease: "power1.inOut" }
       );
     }
-  }, { scope: headerRef });
+  }, { scope: headerRef, dependencies: [] });
 
   return (
-    <header className={styles.header} ref={headerRef}>
+    <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`} ref={headerRef}>
       <Container size="wide" className={styles.headerContainer}>
         {/* Lado Esquerdo: Logo */}
         <div className={styles.logoWrapper}>
@@ -56,13 +69,16 @@ export function Header({ locale }: { locale: string }) {
 
         {/* Centro: Menu */}
         <nav className={styles.nav}>
-          <Link href={`/${locale}/#products`} className={styles.navLink}>
+          <Link href={`/${locale}/products`} className={styles.navLink}>
             {t('products')}
           </Link>
-          <Link href={`/${locale}/#about`} className={styles.navLink}>
+          <Link href={`/${locale}/about`} className={styles.navLink}>
             {t('about')}
           </Link>
-          <Link href={`/${locale}/#contact`} className={styles.navLink}>
+          <Link href={`/${locale}/private-label`} className={styles.navLink}>
+            {t('privateLabel')}
+          </Link>
+          <Link href={`/${locale}/contact`} className={styles.navLink}>
             {t('contact')}
           </Link>
         </nav>

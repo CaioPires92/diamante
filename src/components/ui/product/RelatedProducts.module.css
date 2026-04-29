@@ -1,0 +1,30 @@
+.section {
+  padding: clamp(6rem, 10vw, 10rem) 0;
+  background-color: #F8F4EF;
+}
+
+.title {
+  font-family: var(--font-playfair);
+  font-size: var(--text-h2);
+  color: #2D2A26;
+  margin-bottom: var(--space-12);
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+}
+
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

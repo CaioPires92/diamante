@@ -4,9 +4,10 @@ import { useTranslations } from 'next-intl';
 import { Container } from './Container';
 import styles from './Footer.module.css';
 
-export function Footer() {
+export function Footer({ locale }: { locale?: string }) {
   const t = useTranslations('Footer');
   const currentYear = new Date().getFullYear();
+  const effectiveLocale = locale || 'pt-BR';
 
   return (
     <footer className={styles.footer}>
@@ -40,9 +41,9 @@ export function Footer() {
             <div className={styles.navColumn}>
               <h4 className={styles.navTitle}>{t('links.institutional.title')}</h4>
               <ul className={styles.navList}>
-                <li><Link href="/about">{t('links.institutional.about')}</Link></li>
-                <li><Link href="/private-label">{t('links.institutional.privateLabel')}</Link></li>
-                <li><Link href="/distributor">{t('links.institutional.distributor')}</Link></li>
+                <li><Link href={`/${effectiveLocale}/about`}>{t('links.institutional.about')}</Link></li>
+                <li><Link href={`/${effectiveLocale}/private-label`}>{t('links.institutional.privateLabel')}</Link></li>
+                <li><Link href={`/${effectiveLocale}/contact`}>{t('links.institutional.contact')}</Link></li>
               </ul>
             </div>
             <div className={styles.navColumn}>

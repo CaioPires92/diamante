@@ -1,0 +1,130 @@
+.section {
+  position: relative;
+  width: 100%;
+  min-height: clamp(620px, 82vh, 780px);
+  padding: clamp(7rem, 10vw, 9rem) 0 clamp(4rem, 8vw, 6rem);
+  background-color: #2D2A26; /* Marrom Carbono */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.backgroundImage {
+  object-fit: cover;
+  opacity: 0.32;
+  filter: saturate(0.86) contrast(1.08);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 75% 45%, rgba(197, 148, 65, 0.22) 0%, transparent 34%),
+    linear-gradient(90deg, rgba(45, 42, 38, 0.96) 0%, rgba(45, 42, 38, 0.78) 48%, rgba(45, 42, 38, 0.5) 100%);
+  pointer-events: none;
+}
+
+.layout {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(320px, 0.74fr);
+  gap: clamp(3rem, 6vw, 7rem);
+  align-items: center;
+}
+
+.content {
+  max-width: 720px;
+}
+
+.tagline {
+  display: block;
+  font-family: var(--font-inter);
+  font-size: var(--text-label);
+  font-weight: 700;
+  color: var(--color-gold);
+  letter-spacing: var(--tracking-extreme);
+  margin-bottom: var(--space-4);
+  text-transform: uppercase;
+}
+
+.title {
+  font-family: var(--font-playfair);
+  font-size: clamp(3rem, 6vw, 5rem);
+  color: #FFFFFF;
+  margin-bottom: var(--space-8);
+  font-weight: 500;
+  line-height: var(--leading-tight);
+  letter-spacing: 0;
+}
+
+.subtitle {
+  font-family: var(--font-inter);
+  font-size: var(--text-lg);
+  color: #D5D0CB;
+  line-height: var(--leading-relaxed);
+  max-width: 600px;
+}
+
+.formulaPanel {
+  position: relative;
+  min-height: clamp(340px, 42vw, 520px);
+}
+
+.formulaPanel::before,
+.formulaPanel::after {
+  content: "";
+  position: absolute;
+  border: 1px solid rgba(197, 148, 65, 0.34);
+  border-radius: 8px;
+}
+
+.formulaPanel::before {
+  inset: 10% 12% 7% 4%;
+}
+
+.formulaPanel::after {
+  inset: 21% 4% 18% 22%;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.panelLine {
+  position: absolute;
+  left: 20%;
+  right: 8%;
+  top: 50%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(197, 148, 65, 0.86), transparent);
+}
+
+.panelCircle {
+  position: absolute;
+  width: clamp(160px, 21vw, 260px);
+  aspect-ratio: 1;
+  right: 13%;
+  top: 22%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(197, 148, 65, 0.2), rgba(197, 148, 65, 0) 68%);
+  border: 1px solid rgba(197, 148, 65, 0.22);
+}
+
+@media (max-width: 768px) {
+  .section {
+    min-height: auto;
+    padding: clamp(6rem, 18vw, 8rem) 0 clamp(4rem, 10vw, 5rem);
+  }
+
+  .layout {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .content,
+  .subtitle {
+    margin: 0 auto;
+  }
+
+  .formulaPanel {
+    display: none;
+  }
+}

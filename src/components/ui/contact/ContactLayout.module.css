@@ -1,0 +1,25 @@
+.section {
+  padding: clamp(6rem, 10vw, 10rem) 0;
+  background-color: #FFFFFF;
+  position: relative;
+  z-index: 1;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-12);
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr 1.5fr;
+    gap: var(--space-20);
+    align-items: start;
+  }
+}
+
+.infoColumn {
+  position: sticky;
+  top: 120px;
+}

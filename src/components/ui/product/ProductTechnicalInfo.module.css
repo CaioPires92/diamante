@@ -1,0 +1,74 @@
+.section {
+  padding: 4rem 0 clamp(6rem, 10vw, 10rem);
+  background-color: #FFFFFF;
+}
+
+.tabsWrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.tabList {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-8);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  margin-bottom: var(--space-10);
+}
+
+@media (max-width: 640px) {
+  .tabList {
+    gap: var(--space-4);
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding-bottom: var(--space-2);
+  }
+}
+
+.tabButton {
+  padding: var(--space-4) 0;
+  font-family: var(--font-inter);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: #8A8A8A;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  position: relative;
+  transition: color var(--duration-fast) var(--ease-out);
+  white-space: nowrap;
+}
+
+.tabButton:hover {
+  color: #2D2A26;
+}
+
+.activeTab {
+  color: #2D2A26;
+}
+
+.activeTab::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-gold);
+}
+
+.contentArea {
+  min-height: 200px;
+}
+
+.content {
+  font-family: var(--font-inter);
+  font-size: var(--text-base);
+  color: #6B625A;
+  line-height: var(--leading-relaxed);
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

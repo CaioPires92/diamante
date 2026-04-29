@@ -1,0 +1,65 @@
+.filterContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--space-16);
+  padding: 0 var(--space-4);
+  width: 100%;
+}
+
+.filterList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-6);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .filterList {
+    gap: var(--space-10);
+  }
+}
+
+.filterItem {
+  margin: 0;
+}
+
+.filterButton {
+  background: none;
+  border: none;
+  padding: var(--space-2) 0;
+  font-family: var(--font-inter);
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: #6B625A;
+  cursor: pointer;
+  position: relative;
+  transition: color var(--duration-normal) var(--ease-default);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+}
+
+.filterButton::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-gold);
+  transition: width var(--duration-normal) var(--ease-out);
+}
+
+.filterButton:hover {
+  color: #2D2A26;
+}
+
+.filterButton.active {
+  color: #2D2A26;
+}
+
+.filterButton.active::after {
+  width: 100%;
+}

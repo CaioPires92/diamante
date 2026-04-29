@@ -6,6 +6,7 @@ import { Header } from '@/components/ui/Header';
 import { Footer } from '@/components/ui/Footer';
 import { SmoothScroll } from '@/components/ui/SmoothScroll';
 import { FluidBackground } from '@/components/ui/FluidBackground';
+import { WhatsAppButton } from '@/components/ui/WhatsAppButton';
 import '../globals.css';
 
 const playfair = Playfair_Display({
@@ -42,14 +43,15 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html lang={locale} data-scroll-behavior="smooth" suppressHydrationWarning>
       <body className={`${playfair.variable} ${inter.variable}`}>
         <NextIntlClientProvider messages={messages}>
           <SmoothScroll>
             <FluidBackground />
             <Header locale={locale} />
             {children}
-            <Footer />
+            <Footer locale={locale} />
+            <WhatsAppButton />
           </SmoothScroll>
         </NextIntlClientProvider>
       </body>

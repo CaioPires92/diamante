@@ -1,7 +1,8 @@
 import createMiddleware from 'next-intl/middleware';
+import { locales } from './i18n/request';
 
 export default createMiddleware({
-  locales: ['pt-BR', 'en', 'es'],
+  locales,
   defaultLocale: 'pt-BR'
 });
 

@@ -17,9 +17,6 @@ export function FluidBackground() {
           className={styles.bgImage}
         />
       </div>
-      
-      {/* Overlay sutil para garantir legibilidade */}
-      <div className={styles.overlay} />
     </div>
   );
 }

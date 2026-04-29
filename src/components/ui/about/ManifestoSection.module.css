@@ -1,0 +1,50 @@
+.section {
+  padding: clamp(6rem, 10vw, 10rem) 0;
+  background-color: #FFFFFF;
+  position: relative;
+  z-index: 1;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .content {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--space-16);
+  }
+}
+
+.title {
+  font-family: var(--font-playfair);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  color: #2D2A26;
+  flex: 1;
+  line-height: var(--leading-tight);
+  white-space: pre-line;
+}
+
+.textContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.paragraph {
+  font-family: var(--font-inter);
+  font-size: var(--text-lg);
+  color: #6B625A;
+  line-height: var(--leading-relaxed);
+}
+
+.paragraph:first-child {
+  font-size: var(--text-xl);
+  color: #2D2A26; /* Slightly darker for the first paragraph to anchor the text block */
+}
