@@ -76,7 +76,7 @@
 .description {
   font-size: var(--text-lg);
   color: var(--color-gray-300);
-  margin-bottom: var(--space-10);
+  margin-bottom: var(--space-12); /* Aumentado para dar mais respiro abaixo do texto */
   line-height: var(--leading-relaxed);
   max-width: 540px;
 }
@@ -84,8 +84,15 @@
 .featuresGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-7);
-  margin-bottom: var(--space-10);
+  gap: var(--space-10) var(--space-6); /* Maior espaçamento vertical entre as linhas */
+  margin-bottom: var(--space-12);
+}
+
+@media (max-width: 640px) {
+  .featuresGrid {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
 }
 
 .feature {
@@ -125,6 +132,23 @@
   color: #2D2A26; /* Marrom Carbono Premium */
   transform: translateY(-3px);
   box-shadow: 0 10px 30px rgba(197, 148, 65, 0.3);
+}
+
+@media (max-width: 968px) {
+  .content {
+    align-items: center;
+    text-align: center;
+  }
+  .description {
+    text-align: center;
+  }
+  .feature {
+    align-items: center;
+    text-align: center;
+  }
+  .cta {
+    align-self: center;
+  }
 }
 
 .visual {

@@ -147,6 +147,27 @@
   transition: box-shadow var(--duration-normal) var(--ease-default), border-color var(--duration-normal) var(--ease-default), color var(--duration-normal) var(--ease-default), background-color var(--duration-normal) var(--ease-default);
 }
 
+@media (max-width: 968px) {
+  .content {
+    align-items: center;
+    text-align: center;
+  }
+  .step {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-left: none;
+    border-bottom: 2px solid rgba(197, 148, 65, 0.2);
+    padding-bottom: var(--space-6);
+  }
+  .step:hover {
+    padding-left: var(--space-4); /* Reset hover padding */
+  }
+  .cta {
+    align-self: center;
+  }
+}
+
 .cta:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 25px rgba(197, 148, 65, 0.4);

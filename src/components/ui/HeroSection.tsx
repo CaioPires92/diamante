@@ -137,11 +137,10 @@ export function HeroSection() {
             <div className={styles.badgeDivider} />
             <div className={styles.badgeItem}>
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" className={styles.badgeIcon}>
-                <path d="M6 3h12l4 6-10 12L2 9Z" />
-                <path d="M11 3 8 9l3 12" />
-                <path d="M13 3l3 6-3 12" />
-                <path d="M5 9h14" />
-                <path d="M2 9l9-6 2 0 9 6" />
+                <path d="M6 3h12l4 6-10 13L2 9Z"/>
+                <path d="M11 3 8 9l4 13"/>
+                <path d="M13 3l3 6-4 13"/>
+                <path d="M2 9h20"/>
               </svg>
               <span>{t('badges.quality')}</span>
             </div>

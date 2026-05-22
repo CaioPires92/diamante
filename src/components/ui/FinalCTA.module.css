@@ -5,6 +5,12 @@
   background-color: #2D2A26; /* Marrom Carbono Premium */
 }
 
+@media (max-width: 768px) {
+  .section {
+    padding: var(--space-20) 0;
+  }
+}
+
 .parallaxBg {
   position: absolute;
   top: -20%;

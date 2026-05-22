@@ -20,6 +20,12 @@
   gap: var(--space-8);
 }
 
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (min-width: 768px) {
   .grid {
     grid-template-columns: repeat(4, 1fr);

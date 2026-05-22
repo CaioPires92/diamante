@@ -46,6 +46,29 @@
   padding: 0 var(--space-8);
 }
 
+@media (max-width: 968px) {
+  .hero {
+    padding-bottom: 0;
+  }
+  
+  .content {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    height: auto;
+    padding: 0 var(--space-6);
+    margin-top: -120px; /* Reduzido de -180px para dar mais respiro ao texto */
+    z-index: 10;
+  }
+  
+  .backgroundImage {
+    min-height: 500px;
+    object-fit: cover;
+    object-position: 70% 100%; /* Foca nos produtos no canto inferior direito */
+  }
+}
+
 .textContent {
   max-width: 650px;
   text-align: left;
@@ -53,6 +76,17 @@
   flex-direction: column;
   align-items: flex-start;
   padding: 2rem 0;
+}
+
+@media (max-width: 968px) {
+  .textContent {
+    max-width: 100%;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(to top, rgba(248,244,239, 1) 50%, rgba(248,244,239, 0) 100%);
+    padding-top: 150px; /* Área do gradiente para transição suave */
+    padding-bottom: 3rem;
+  }
 }
 
 .tagline {
@@ -94,11 +128,24 @@
   flex-direction: column; /* Stack buttons to look better with same width */
   gap: var(--space-4);
   justify-content: flex-start;
+  width: 100%;
+}
+
+@media (max-width: 968px) {
+  .actions {
+    align-items: center;
+    margin: 0 auto;
+    justify-content: center;
+  }
+  .actions button {
+    margin: 0 auto;
+  }
 }
 
 .actions button {
   width: 100% !important;
   max-width: 400px !important;
+  margin: 0;
 }
 
 .buyButton {
@@ -177,6 +224,20 @@
   max-width: 650px;
 }
 
+@media (max-width: 968px) {
+  .trustBadges {
+    margin-top: var(--space-8);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6);
+    width: 100%;
+  }
+
+  .badgeDivider {
+    display: none;
+  }
+}
+
 .badgeItem {
   flex: 1;
   display: flex;
@@ -206,19 +267,9 @@
   align-self: center;
 }
 
-@media (max-width: 768px) {
-  .trustBadges {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: var(--space-8);
-  }
-  
-  .badgeDivider {
-    display: none;
-  }
-  
+@media (max-width: 480px) {
   .badgeItem {
-    flex: 0 0 40%;
+    flex: 1 1 100%;
   }
 }
 

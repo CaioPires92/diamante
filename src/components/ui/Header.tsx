@@ -7,6 +7,7 @@ import { useTranslations } from 'next-intl';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { Container } from './Container';
+import { Menu, X } from 'lucide-react'; // I'll use divs instead since lucide is not installed
 import styles from './Header.module.css';
 
 gsap.registerPlugin(useGSAP);
@@ -17,6 +18,9 @@ export function Header({ locale }: { locale: string }) {
   const router = useRouter();
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const navLinksRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,7 +45,20 @@ export function Header({ locale }: { locale: string }) {
     }
     
     router.push(newPath);
+    if (isMenuOpen) setIsMenuOpen(false);
   };
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  }, [isMenuOpen]);
 
   useGSAP(() => {
     // Entrance Animation
@@ -56,6 +73,26 @@ export function Header({ locale }: { locale: string }) {
       );
     }
   }, { scope: headerRef, dependencies: [] });
+
+  useGSAP(() => {
+    if (isMenuOpen) {
+      gsap.to(menuRef.current, {
+        clipPath: 'circle(150% at 100% 0%)',
+        duration: 0.8,
+        ease: 'power3.inOut',
+      });
+      gsap.fromTo(navLinksRef.current?.children || [], 
+        { y: 30, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.6, stagger: 0.1, ease: 'power2.out', delay: 0.3 }
+      );
+    } else {
+      gsap.to(menuRef.current, {
+        clipPath: 'circle(0% at 100% 0%)',
+        duration: 0.6,
+        ease: 'power3.inOut',
+      });
+    }
+  }, { dependencies: [isMenuOpen] });
 
   return (
     <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`} ref={headerRef}>
@@ -128,8 +165,45 @@ export function Header({ locale }: { locale: string }) {
               <option value="es">ES</option>
             </select>
           </div>
+
+          <button 
+            className={`${styles.hamburger} ${isMenuOpen ? styles.menuActive : ''}`}
+            onClick={toggleMenu}
+            aria-label="Toggle Menu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
       </Container>
+      
+      {/* Mobile Menu Overlay */}
+      <div className={`${styles.mobileMenu} ${isMenuOpen ? styles.mobileMenuOpen : ''}`} ref={menuRef}>
+        <Container className={styles.mobileMenuContainer}>
+          <div className={styles.mobileNav} ref={navLinksRef}>
+            <Link href={`/${locale}/products`} className={styles.mobileNavLink} onClick={() => setIsMenuOpen(false)}>
+              {t('products')}
+            </Link>
+            <Link href={`/${locale}/about`} className={styles.mobileNavLink} onClick={() => setIsMenuOpen(false)}>
+              {t('about')}
+            </Link>
+            <Link href={`/${locale}/private-label`} className={styles.mobileNavLink} onClick={() => setIsMenuOpen(false)}>
+              {t('privateLabel')}
+            </Link>
+            <Link href={`/${locale}/contact`} className={styles.mobileNavLink} onClick={() => setIsMenuOpen(false)}>
+              {t('contact')}
+            </Link>
+            
+            <div className={styles.mobileActions}>
+              <button className={styles.mobileCta}>
+                Compre Agora
+              </button>
+            </div>
+          </div>
+        </Container>
+      </div>
+      
       <div className={styles.borderShimmer} />
     </header>
   );
