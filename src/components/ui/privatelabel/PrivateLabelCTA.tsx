@@ -46,7 +46,7 @@ export function PrivateLabelCTA() {
           <p className={`${styles.subtitle} cta-anim`}>{t('subtitle')}</p>
           <div className="cta-anim">
             <a 
-              href="https://wa.me/5511999999999" 
+              href="https://wa.me/551938176156" 
               target="_blank" 
               rel="noopener noreferrer"
               className={styles.button}

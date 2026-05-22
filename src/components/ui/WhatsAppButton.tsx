@@ -6,7 +6,7 @@ export function WhatsAppButton() {
   const common = useTranslations('Common');
   
   // Substitua pelo número real e mensagem desejada
-  const phoneNumber = "5511999999999";
+  const phoneNumber = "551938176156";
   const message = "Olá! Gostaria de saber mais sobre os produtos da Diamante Profissional.";
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 

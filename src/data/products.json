@@ -1,0 +1,353 @@
+{
+  "caviar": [
+    {
+      "id": "caviar-0",
+      "title": "Leave-in Caviar spray 120ml",
+      "price": "R$ 35,20",
+      "image": "/images/products/caviar/prod_0.png"
+    },
+    {
+      "id": "caviar-1",
+      "title": "Kit Hidratação Caviar com Shampoo, Condicionador, Leave-In e Máscara",
+      "price": "R$ 155,00",
+      "image": "/images/products/caviar/prod_1.png"
+    },
+    {
+      "id": "caviar-2",
+      "title": "Shampoo Caviar 300ml",
+      "price": "R$ 35,20",
+      "image": "/images/products/caviar/prod_2.png"
+    },
+    {
+      "id": "caviar-3",
+      "title": "Máscara Caviar 250g",
+      "price": "R$ 49,90",
+      "image": "/images/products/caviar/prod_3.png"
+    },
+    {
+      "id": "caviar-4",
+      "title": "Leave-in Caviar 250ml",
+      "price": "R$ 35,20",
+      "image": "/images/products/caviar/prod_4.png"
+    },
+    {
+      "id": "caviar-5",
+      "title": "Condicionador Caviar 250ml",
+      "price": "R$ 35,20",
+      "image": "/images/products/caviar/prod_5.png"
+    }
+  ],
+  "matizadores": [
+    {
+      "id": "matizadores-0",
+      "title": "Máscara Efeito Champagne 250g",
+      "price": "R$ 49,90",
+      "image": "/images/products/matizadores/prod_0.png"
+    },
+    {
+      "id": "matizadores-1",
+      "title": "Máscara Super Morango Efeito Cinza 250g",
+      "price": "R$ 49,90",
+      "image": "/images/products/matizadores/prod_1.png"
+    },
+    {
+      "id": "matizadores-2",
+      "title": "Máscara Efeito Pérola 250g",
+      "price": "R$ 49,90",
+      "image": "/images/products/matizadores/prod_2.png"
+    },
+    {
+      "id": "matizadores-3",
+      "title": "Máscara Ultra Violeta Efeito ICE 250g",
+      "price": "R$ 49,90",
+      "image": "/images/products/matizadores/prod_3.png"
+    },
+    {
+      "id": "matizadores-4",
+      "title": "Shampoo Efeito Champagne 300ml",
+      "price": "R$ 35,20",
+      "image": "/images/products/matizadores/prod_4.png"
+    },
+    {
+      "id": "matizadores-5",
+      "title": "Shampoo Super Efeito Cinza 300ml",
+      "price": "R$ 35,20",
+      "image": "/images/products/matizadores/prod_5.png"
+    },
+    {
+      "id": "matizadores-6",
+      "title": "Shampoo Super efeito cinza Morango 1L",
+      "price": "R$ 121,90",
+      "image": "/images/products/matizadores/prod_6.png"
+    },
+    {
+      "id": "matizadores-7",
+      "title": "Máscara Super efeito Cinza Morango 900g",
+      "price": "R$ 121,90",
+      "image": "/images/products/matizadores/prod_7.png"
+    },
+    {
+      "id": "matizadores-8",
+      "title": "Leave-in Super Efeito Cinza 250ml",
+      "price": "R$ 35,20",
+      "image": "/images/products/matizadores/prod_8.png"
+    },
+    {
+      "id": "matizadores-9",
+      "title": "Condicionador Super Morango 250ml",
+      "price": "R$ 35,20",
+      "image": "/images/products/matizadores/prod_9.png"
+    },
+    {
+      "id": "matizadores-10",
+      "title": "Shampoo Pérola 250ml",
+      "price": "R$ 35,20",
+      "image": "/images/products/matizadores/prod_10.png"
+    },
+    {
+      "id": "matizadores-11",
+      "title": "Leave-in Pérola 250ml",
+      "price": "R$ 35,20",
+      "image": "/images/products/matizadores/prod_11.png"
+    },
+    {
+      "id": "matizadores-12",
+      "title": "Shampoo Efeito Champagne 1l",
+      "price": "R$ 121,90",
+      "image": "/images/products/matizadores/prod_12.png"
+    },
+    {
+      "id": "matizadores-13",
+      "title": "Máscara Efeito Champagne 900g",
+      "price": "R$ 121,90",
+      "image": "/images/products/matizadores/prod_13.png"
+    },
+    {
+      "id": "matizadores-14",
+      "title": "Leave-in Efeito Champagne 250ml",
+      "price": "R$ 35,20",
+      "image": "/images/products/matizadores/prod_14.png"
+    },
+    {
+      "id": "matizadores-15",
+      "title": "Shampoo Pérola 1L",
+      "price": "R$ 121,90",
+      "image": "/images/products/matizadores/prod_15.png"
+    },
+    {
+      "id": "matizadores-16",
+      "title": "Condicionador Pérola 250ml",
+      "price": "R$ 35,20",
+      "image": "/images/products/matizadores/prod_16.png"
+    },
+    {
+      "id": "matizadores-17",
+      "title": "Kit Super Efeito Cinza",
+      "price": "R$ 155,50",
+      "image": "/images/products/matizadores/prod_17.png"
+    }
+  ],
+  "home-care": [],
+  "profissional": [
+    {
+      "id": "profissional-0",
+      "title": "Pó Descolorante WHITE 500g abre 10 tons",
+      "price": "R$ 105,90",
+      "image": "/images/products/profissional/prod_0.png"
+    },
+    {
+      "id": "profissional-1",
+      "title": "Liso Perfeito Spray 200ml",
+      "price": "R$ 82,50",
+      "image": "/images/products/profissional/prod_1.png"
+    },
+    {
+      "id": "profissional-2",
+      "title": "Shampoo Super efeito cinza Morango 1L",
+      "price": "R$ 121,90",
+      "image": "/images/products/profissional/prod_2.png"
+    },
+    {
+      "id": "profissional-3",
+      "title": "Máscara Super efeito Cinza Morango 900g",
+      "price": "R$ 121,90",
+      "image": "/images/products/profissional/prod_3.png"
+    },
+    {
+      "id": "profissional-4",
+      "title": "Shampoo Anti Resíduo 1L",
+      "price": "R$ 82,90",
+      "image": "/images/products/profissional/prod_4.png"
+    },
+    {
+      "id": "profissional-5",
+      "title": "Regulador de PH Orgânico 300ml",
+      "price": "R$ 110,00",
+      "image": "/images/products/profissional/prod_5.png"
+    },
+    {
+      "id": "profissional-6",
+      "title": "Regulador de PH Orgânico 1l",
+      "price": "R$ 187,00",
+      "image": "/images/products/profissional/prod_6.png"
+    },
+    {
+      "id": "profissional-7",
+      "title": "Pó Descolorante BLUE 500g",
+      "price": "R$ 105,90",
+      "image": "/images/products/profissional/prod_7.png"
+    },
+    {
+      "id": "profissional-8",
+      "title": "OX 40 Volumes 900ml",
+      "price": "R$ 38,90",
+      "image": "/images/products/profissional/prod_8.png"
+    },
+    {
+      "id": "profissional-9",
+      "title": "OX 30 Volumes 900ml",
+      "price": "R$ 38,90",
+      "image": "/images/products/profissional/prod_9.png"
+    },
+    {
+      "id": "profissional-10",
+      "title": "OX 20 Volumes 900ml",
+      "price": "R$ 38,90",
+      "image": "/images/products/profissional/prod_10.png"
+    },
+    {
+      "id": "profissional-11",
+      "title": "Hidratação Lapidação 1l - Step 4",
+      "price": "R$ 121,00",
+      "image": "/images/products/profissional/prod_11.png"
+    },
+    {
+      "id": "profissional-12",
+      "title": "Shampoo Lapidação 1l - Step 1",
+      "price": "R$ 121,00",
+      "image": "/images/products/profissional/prod_12.png"
+    },
+    {
+      "id": "profissional-13",
+      "title": "Máscara Desmaia Cabelo 900g",
+      "price": "R$ 121,90",
+      "image": "/images/products/profissional/prod_13.png"
+    },
+    {
+      "id": "profissional-14",
+      "title": "Shampoo Desmaia Cabelo 1L",
+      "price": "R$ 121,90",
+      "image": "/images/products/profissional/prod_14.png"
+    },
+    {
+      "id": "profissional-15",
+      "title": "Shampoo Caviar 1L",
+      "price": "R$ 121,90",
+      "image": "/images/products/profissional/prod_15.png"
+    },
+    {
+      "id": "profissional-16",
+      "title": "Máscara Caviar 900g",
+      "price": "R$ 121,90",
+      "image": "/images/products/profissional/prod_16.png"
+    },
+    {
+      "id": "profissional-17",
+      "title": "Shampoo Efeito Champagne 1l",
+      "price": "R$ 121,90",
+      "image": "/images/products/profissional/prod_17.png"
+    },
+    {
+      "id": "profissional-18",
+      "title": "Máscara Efeito Champagne 900g",
+      "price": "R$ 121,90",
+      "image": "/images/products/profissional/prod_18.png"
+    },
+    {
+      "id": "profissional-19",
+      "title": "Shampoo Pérola 1L",
+      "price": "R$ 121,90",
+      "image": "/images/products/profissional/prod_19.png"
+    },
+    {
+      "id": "profissional-20",
+      "title": "Shampoo Bomba 1L - Fortalecimento Capilar",
+      "price": "R$ 121,90",
+      "image": "/images/products/profissional/prod_20.png"
+    },
+    {
+      "id": "profissional-21",
+      "title": "Máscara Bomba 900g",
+      "price": "R$ 121,90",
+      "image": "/images/products/profissional/prod_21.png"
+    },
+    {
+      "id": "profissional-22",
+      "title": "Máscara Tonalizante BLACK 1000g",
+      "price": "R$ 121,90",
+      "image": "/images/products/profissional/prod_22.png"
+    },
+    {
+      "id": "profissional-23",
+      "title": "Máscara Babosa 2kg",
+      "price": "R$ 121,90",
+      "image": "/images/products/profissional/prod_23.png"
+    },
+    {
+      "id": "profissional-24",
+      "title": "Máscara Reparo Absoluto 250g - Reconstrução Capilar",
+      "price": "R$ 49,90",
+      "image": "/images/products/profissional/prod_24.png"
+    }
+  ],
+  "masculina": [
+    {
+      "id": "masculina-0",
+      "title": "Linha Barber Gel Fixador - 120g",
+      "price": "R$ 38,90",
+      "image": "/images/products/masculina/prod_0.png"
+    },
+    {
+      "id": "masculina-1",
+      "title": "Linha Barber - Shampoo 300ml",
+      "price": "R$ 38,90",
+      "image": "/images/products/masculina/prod_1.png"
+    },
+    {
+      "id": "masculina-2",
+      "title": "Linha Barber - Condicionador 300ml",
+      "price": "R$ 38,90",
+      "image": "/images/products/masculina/prod_2.png"
+    },
+    {
+      "id": "masculina-3",
+      "title": "Kit Barber completo",
+      "price": "R$ 192,50",
+      "image": "/images/products/masculina/prod_3.png"
+    },
+    {
+      "id": "masculina-4",
+      "title": "Shaving Masculino para barba 300ml",
+      "price": "R$ 38,90",
+      "image": "/images/products/masculina/prod_4.png"
+    },
+    {
+      "id": "masculina-5",
+      "title": "Condicionador Masculino Barber 300ml",
+      "price": "R$ 38,50",
+      "image": "/images/products/masculina/prod_5.png"
+    },
+    {
+      "id": "masculina-6",
+      "title": "Shampoo Barber Masculino 300ml",
+      "price": "R$ 38,50",
+      "image": "/images/products/masculina/prod_6.png"
+    }
+  ],
+  "liso": [],
+  "cachos": [],
+  "babosa": [],
+  "sequestrante": [],
+  "coloracao": [],
+  "lapidacao": []
+}

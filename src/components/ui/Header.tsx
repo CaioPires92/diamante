@@ -106,9 +106,24 @@ export function Header({ locale }: { locale: string }) {
 
         {/* Centro: Menu */}
         <nav className={styles.nav}>
-          <Link href={`/${locale}/products`} className={styles.navLink}>
-            {t('products')}
-          </Link>
+          <div className={styles.dropdownContainer}>
+            <button className={`${styles.navLink} ${styles.dropdownToggle}`}>
+              LINHAS
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: '4px' }}>
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div className={styles.dropdownMenu}>
+              {['Caviar', 'Liso', 'Cachos', 'Matizadores', 'Home Care', 'Babosa', 'Lapidação', 'Profissional', 'Sequestrante', 'Coloração', 'Masculina'].map(line => {
+                const cleanSlug = line.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(' ', '-');
+                return (
+                  <Link key={line} href={`/${locale}/lines/${cleanSlug}`} className={styles.dropdownItem}>
+                    {line}
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
           <Link href={`/${locale}/about`} className={styles.navLink}>
             {t('about')}
           </Link>

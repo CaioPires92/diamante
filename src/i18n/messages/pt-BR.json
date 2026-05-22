@@ -158,9 +158,8 @@
       "subtitle": "Desde a fundação, a Diamante Profissional tem um único propósito: entregar resultados excepcionais através de cosmética avançada e fabricação própria."
     },
     "Manifesto": {
-      "title": "Mais que um Cosmético,\num Tratamento Profundo.",
-      "paragraph1": "Nascemos da necessidade de salões de beleza de alto padrão por produtos que entregassem performance real, sem comprometer a saúde a longo prazo dos fios. Cada fórmula que criamos é o resultado de anos de pesquisa e testes rigorosos.",
-      "paragraph2": "Não acreditamos em soluções mágicas ou superficiais. Acreditamos na química precisa, em ingredientes da mais alta pureza e no domínio absoluto do processo de fabricação."
+      "paragraph1": "A Diamante Profissional foi fundada no ano de 2010 na cidade de Amparo, interior de São Paulo, por Mário Juliano Scavroni, com o intuito de produzir e comercializar cosméticos de qualidade a um preço justo. Hoje contamos com uma linha de mais de 200 produtos.",
+      "paragraph2": "Nossa expansão já nos tornou referência no mercado nacional e nos levou além-fronteiras, exportando a qualidade Diamante para países como França, Marrocos, Turquia e Suécia. Nosso compromisso é entregar altíssima qualidade tanto para o salão quanto para o cliente final."
     },
     "Laboratory": {
       "tagline": "ESTRUTURA",
@@ -201,7 +200,7 @@
       "title": "Nossos Canais",
       "sac": {
         "label": "SAC Comercial",
-        "value": "(11) 99999-9999"
+        "value": "(19) 3817-6156"
       },
       "email": {
         "label": "E-mail",
@@ -209,7 +208,7 @@
       },
       "address": {
         "label": "Matriz",
-        "value": "Av. Exemplo, 123 - São Paulo, SP"
+        "value": "Rua Treze de Maio, 17 Centro – Amparo/SP"
       },
       "hours": {
         "label": "Horário de Atendimento",
@@ -298,7 +297,7 @@
     }
   },
   "Footer": {
-    "description": "Cosméticos capilares de alta performance para quem exige o melhor tratamento todos os dias.",
+    "description": "Fundada em 2010 em Amparo-SP, a Diamante Profissional desenvolve cosméticos de alta performance com fabricação própria, padrão profissional e identidade premium.",
     "links": {
       "institutional": {
         "title": "Institucional",
@@ -310,16 +309,27 @@
       "support": {
         "title": "Suporte",
         "faq": "Dúvidas Frequentes",
+        "payment": "Formas de Pagamento",
         "shipping": "Políticas de Envio",
         "returns": "Trocas e Devoluções"
       }
     },
     "contact": {
       "title": "Fale Conosco",
-      "address": "Av. Exemplo, 123 - São Paulo, SP",
+      "address": "Rua Treze de Maio, 17 Centro – Amparo/SP",
       "email": "contato@diamanteprofissional.com.br",
-      "phone": "(11) 99999-9999"
+      "phone": "(19) 3817-6156"
     },
     "rights": "© {year} Diamante Profissional. Todos os direitos reservados."
+  },
+  "Policies": {
+    "Payment": {
+      "title": "Formas de Pagamento",
+      "content": "Aceitamos as principais bandeiras de cartão de crédito: MASTERCARD – VISA – ELO – CABAL – HIPERCARD – HIPER – ALELO – SODEXO – TICKET – VRBENEFÍCIOS – AMERICAN EXPRESS – DINERS CLUB.\nO parcelamento máximo oferecido pelo site é de até 6x (3x sem juros, 4-5-6 parcelas com juros) ou à vista.\nValor mínimo por parcela é de R$ 10,00. Para sua segurança, toda a questão de pagamento é feita via gateway transparente dentro do nosso site.\nA liberação para montagem e envio do seu pedido somente acontecerá após a aprovação do pagamento. Nos reservamos o direito de só enviar a mercadoria após aprovação."
+    },
+    "Returns": {
+      "title": "Trocas e Devoluções",
+      "content": "Para realizar trocas por defeito, seguimos as orientações do Art. 26 do Código de Defesa do Consumidor. O direito de reclamar caduca em: 30 dias para produtos não duráveis e 90 dias para duráveis.\nA contagem do prazo se inicia a partir do recebimento do produto. Caso deseje realizar troca por defeito, entre em contato através da nossa página de Contato. O prazo para a resolução é de até 30 dias.\nCaso o defeito seja confirmado, o cliente pode optar pela troca por outro produto idêntico (sujeito à disponibilidade), vale compras ou a devolução do dinheiro."
+    }
   }
 }

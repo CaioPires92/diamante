@@ -15,7 +15,7 @@ export default function DistributorPage() {
             Seja um Distribuidor Oficial
           </h1>
           <p style={{ color: '#D1D1D1', fontSize: '1.125rem', maxWidth: '600px', margin: '0 auto', lineHeight: '1.6' }}>
-            Junte-se à marca que está redefinindo o padrão de qualidade no mercado de cosméticos profissionais. Oferecemos margens atrativas e suporte completo.
+            A Diamante Profissional está cadastrando distribuidores para nossa marca em todo o Brasil. Se você tem um salão e deseja vender na sua região, ou já é distribuidor e quer agregar uma nova marca consolidada no mercado brasileiro com alta lucratividade na revenda, junte-se a nós!
           </p>
         </Container>
       </section>
