@@ -19,6 +19,7 @@
   "Header": {
     "products": "Products",
     "about": "About Us",
+    "privateLabel": "Private Label",
     "contact": "Contact"
   },
   "Products": {
@@ -160,5 +161,175 @@
     "description": "Whether you are a professional seeking peak performance or an entrepreneur starting your own brand, Diamante is your next step.",
     "ctaShop": "Go to Online Shop",
     "ctaBusiness": "Become a Partner"
+  },
+  "About": {
+    "Hero": {
+      "tagline": "OUR STORY",
+      "title": "The Science Behind\nTrue Beauty",
+      "subtitle": "Since our founding, Diamante Profissional has had a single purpose: to deliver exceptional results through advanced cosmetics and in-house manufacturing."
+    },
+    "Manifesto": {
+      "paragraph1": "Diamante Profissional was founded in 2010 in the city of Amparo, in the state of São Paulo, by Mário Juliano Scavroni, with the aim of producing and selling high-quality cosmetics at a fair price. Today we have a line of more than 200 products.",
+      "paragraph2": "Our expansion has already made us a reference in the national market and has taken us beyond borders, exporting Diamante quality to countries such as France, Morocco, Turkey, and Sweden. Our commitment is to deliver the highest quality both to the salon and the final client."
+    },
+    "Laboratory": {
+      "tagline": "STRUCTURE",
+      "title": "From the Laboratory to Your Salon",
+      "description": "Our in-house factory is the heart of Diamante. Having total control over the production line allows us to guarantee that each batch has exactly the same excellence as our initial gold standard.",
+      "stats": {
+        "production": "High Monthly Production Capacity",
+        "quality": "Rigorous Quality Control",
+        "tech": "Nanotechnology in Our Actives"
+      }
+    },
+    "Values": {
+      "tagline": "OUR PILLARS",
+      "title": "The Diamond Standard",
+      "items": {
+        "performance": {
+          "title": "Proven Performance",
+          "desc": "Products developed first for the workstations of the best professionals, and then for the world."
+        },
+        "ethics": {
+          "title": "Ethics and Transparency",
+          "desc": "Formulas free from false promises. We deliver exactly what is on the label."
+        },
+        "innovation": {
+          "title": "Continuous Innovation",
+          "desc": "R&D laboratory focused on anticipating the needs of the global beauty market."
+        }
+      }
+    }
+  },
+  "ContactPage": {
+    "Hero": {
+      "tagline": "SUPPORT",
+      "title": "How Can We Help?",
+      "subtitle": "Get in touch with our specialized team to clear up questions, make partnerships, or request quotes."
+    },
+    "Info": {
+      "title": "Our Channels",
+      "sac": {
+        "label": "Commercial Support",
+        "value": "(19) 3817-6156"
+      },
+      "email": {
+        "label": "E-mail",
+        "value": "contato@diamanteprofissional.com.br"
+      },
+      "address": {
+        "label": "Headquarters",
+        "value": "Rua Treze de Maio, 17 Centro – Amparo/SP"
+      },
+      "hours": {
+        "label": "Business Hours",
+        "value": "Monday to Friday, 8am to 6pm"
+      }
+    },
+    "Form": {
+      "title": "Send a Message",
+      "fields": {
+        "name": "Full Name",
+        "email": "Corporate E-mail",
+        "phone": "Phone / WhatsApp",
+        "subject": "Subject",
+        "message": "Your Message"
+      },
+      "subjects": {
+        "general": "General Inquiry",
+        "distributor": "Become a Distributor",
+        "privateLabel": "Private Label"
+      },
+      "submit": "Send Message",
+      "sending": "Sending...",
+      "successTitle": "Message Sent!",
+      "successMessage": "Thank you for getting in touch. Our team will get back to you as soon as possible."
+    }
+  },
+  "PrivateLabelPage": {
+    "Hero": {
+      "tagline": "PRIVATE LABEL",
+      "title": "Your Own Cosmetics Brand",
+      "subtitle": "We develop high-performance products with your signature. From formulation to delivery, we take care of everything."
+    },
+    "Benefits": {
+      "title": "Why outsource with Diamante?",
+      "items": {
+        "profit": {
+          "title": "High Profitability",
+          "desc": "Increase the profit margins of your salon or distributor by selling products under your own brand."
+        },
+        "quality": {
+          "title": "Validated Formulas",
+          "desc": "Access to our premium laboratory and formulas that are already successful in the professional market."
+        },
+        "support": {
+          "title": "Regulatory Support",
+          "desc": "We handle all the technical bureaucracy, including ANVISA registrations and legal compliances."
+        }
+      }
+    },
+    "Process": {
+      "title": "How It Works",
+      "steps": {
+        "1": {
+          "title": "Diagnosis & Choice",
+          "desc": "Definition of the product mix and formula testing in our laboratory."
+        },
+        "2": {
+          "title": "Design & Label",
+          "desc": "Our team helps customize the packaging with your brand identity."
+        },
+        "3": {
+          "title": "Production & ANVISA",
+          "desc": "Large-scale manufacturing following strict quality standards and registrations."
+        },
+        "4": {
+          "title": "Ready for Sale",
+          "desc": "You receive the finished products, ready to delight your customers."
+        }
+      }
+    },
+    "CTA": {
+      "title": "Ready to Take the Next Step?",
+      "subtitle": "Speak to a business consultant and discover how easy it is to launch your brand.",
+      "button": "Speak to a Consultant via WhatsApp"
+    }
+  },
+  "Footer": {
+    "description": "Founded in 2010 in Amparo-SP, Diamante Profissional develops high-performance cosmetics with in-house manufacturing, professional standards, and premium identity.",
+    "links": {
+      "institutional": {
+        "title": "Institutional",
+        "about": "About Us",
+        "privateLabel": "Private Label",
+        "contact": "Contact Us",
+        "distributor": "Become a Distributor"
+      },
+      "support": {
+        "title": "Support",
+        "faq": "FAQ",
+        "payment": "Payment Methods",
+        "shipping": "Shipping Policies",
+        "returns": "Returns & Exchanges"
+      }
+    },
+    "contact": {
+      "title": "Contact Us",
+      "address": "Rua Treze de Maio, 17 Centro – Amparo/SP",
+      "email": "contato@diamanteprofissional.com.br",
+      "phone": "(19) 3817-6156"
+    },
+    "rights": "© {year} Diamante Profissional. All rights reserved."
+  },
+  "Policies": {
+    "Payment": {
+      "title": "Payment Methods",
+      "content": "We accept major credit card brands: MASTERCARD – VISA – ELO – CABAL – HIPERCARD – HIPER – ALELO – SODEXO – TICKET – VRBENEFÍCIOS – AMERICAN EXPRESS – DINERS CLUB.\nThe maximum installment plan offered by the website is up to 6x (3x interest-free, 4-5-6 installments with interest) or in a single payment.\nMinimum value per installment is R$ 10.00. For your security, all payment processing is done via a transparent gateway within our website.\nThe release for assembling and shipping your order will only happen after payment approval. We reserve the right to only ship the merchandise after approval."
+    },
+    "Returns": {
+      "title": "Returns & Exchanges",
+      "content": "To perform exchanges due to defects, we follow the guidelines of Art. 26 of the Consumer Defense Code. The right to complain expires in: 30 days for non-durable products and 90 days for durable ones.\nThe period starts from the receipt of the product. If you wish to exchange due to a defect, please get in touch through our Contact page. The resolution period is up to 30 days.\nIf the defect is confirmed, the customer can choose to exchange for an identical product (subject to availability), a shopping voucher, or a money refund."
+    }
   }
 }

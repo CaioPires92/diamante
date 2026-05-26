@@ -4,8 +4,11 @@ import { Container } from '@/components/ui/Container';
 import fs from 'fs';
 import path from 'path';
 
-// Função para ler os produtos locais
-function getProducts(slug: string) {
+import { client } from '@/sanity/lib/client';
+import { groq } from 'next-sanity';
+
+// Função para ler os produtos locais (Fallback)
+function getLocalProducts(slug: string) {
   try {
     const filePath = path.join(process.cwd(), 'src', 'data', 'products.json');
     const fileContents = fs.readFileSync(filePath, 'utf8');
@@ -15,6 +18,37 @@ function getProducts(slug: string) {
     return [];
   }
 }
+
+// Função para buscar produtos do Sanity
+async function getSanityProducts(slug: string) {
+  if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) {
+    return null; // Retorna null para sinalizar que o Sanity não está configurado
+  }
+  
+  try {
+    const query = groq`*[_type == "product" && line->slug.current == $slug]{
+      _id,
+      title,
+      price,
+      description,
+      "image": image.asset->url
+    }`;
+    const products = await client.fetch(query, { slug }, { cache: 'no-store' });
+    return products.map((p: any) => ({
+      id: p._id,
+      title: p.title,
+      price: p.price,
+      description: p.description,
+      image: p.image
+    }));
+  } catch (e) {
+    console.error("Erro ao buscar no Sanity:", e);
+    return null;
+  }
+}
+
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 export default async function LinePage({ params }: { params: Promise<{ locale: string; slug: string }> }) {
   // No Next.js 15+, os params são uma Promise e precisam de 'await'
@@ -33,7 +67,12 @@ export default async function LinePage({ params }: { params: Promise<{ locale: s
   const cleanSlug = decodedSlug.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(' ', '-');
   const rawName = decodedSlug.replace('-', ' ');
   const lineName = lineNamesMap[cleanSlug] || rawName;
-  const products = getProducts(cleanSlug);
+  
+  // Tenta buscar do Sanity primeiro. Se não configurado, cai para o JSON local.
+  let products = await getSanityProducts(cleanSlug);
+  if (!products) {
+    products = getLocalProducts(cleanSlug);
+  }
 
   return (
     <main style={{ paddingTop: '120px', paddingBottom: '80px', minHeight: '100vh', backgroundColor: '#FAFAF8' }}>
@@ -86,9 +125,24 @@ export default async function LinePage({ params }: { params: Promise<{ locale: s
                     style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }} 
                   />
                 </div>
-                <h3 style={{ fontFamily: 'var(--font-playfair)', fontSize: '1.125rem', color: '#2D2A26', marginBottom: '0.5rem', flexGrow: 1 }}>
+                <h3 style={{ fontFamily: 'var(--font-playfair)', fontSize: '1.125rem', color: '#2D2A26', marginBottom: '0.5rem' }}>
                   {product.title}
                 </h3>
+                {product.description && (
+                  <p style={{ 
+                    color: '#6B625A', 
+                    fontSize: '0.875rem', 
+                    marginBottom: '1rem', 
+                    display: '-webkit-box', 
+                    WebkitLineClamp: 3, 
+                    WebkitBoxOrient: 'vertical', 
+                    overflow: 'hidden', 
+                    textOverflow: 'ellipsis',
+                    lineHeight: '1.4'
+                  }}>
+                    {product.description}
+                  </p>
+                )}
                 <p style={{ color: '#c99d4a', fontSize: '1.25rem', fontWeight: 600, marginTop: 'auto' }}>
                   {product.price}
                 </p>

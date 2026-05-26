@@ -38,6 +38,30 @@ export const viewport: Viewport = {
   maximumScale: 1,
 };
 
+import { client } from '@/sanity/lib/client';
+import { groq } from 'next-sanity';
+
+async function getLines() {
+  if (process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) {
+    try {
+      const query = groq`*[_type == "line"]{ title, "slug": slug.current } | order(title asc)`;
+      const sanityLines = await client.fetch(query, {}, { cache: 'no-store' });
+      if (sanityLines && sanityLines.length > 0) {
+        return sanityLines.map((l: any) => ({ name: l.title, slug: l.slug }));
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  }
+  
+  // Fallback
+  const defaultLines = ['Caviar', 'Liso', 'Cachos', 'Matizadores', 'Home Care', 'Babosa', 'Lapidação', 'Profissional', 'Sequestrante', 'Coloração', 'Masculina'];
+  return defaultLines.map(name => ({
+    name,
+    slug: name.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(' ', '-')
+  }));
+}
+
 export default async function LocaleLayout({
   children,
   params
@@ -47,6 +71,7 @@ export default async function LocaleLayout({
 }) {
   const { locale } = await params;
   const messages = await getMessages();
+  const lines = await getLines();
 
   return (
     <html lang={locale} data-scroll-behavior="smooth" suppressHydrationWarning>
@@ -54,7 +79,7 @@ export default async function LocaleLayout({
         <NextIntlClientProvider messages={messages}>
           <SmoothScroll>
             <FluidBackground />
-            <Header locale={locale} />
+            <Header locale={locale} lines={lines} />
             {children}
             <Footer locale={locale} />
             <WhatsAppButton />

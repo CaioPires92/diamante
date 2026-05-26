@@ -12,7 +12,7 @@ import styles from './Header.module.css';
 
 gsap.registerPlugin(useGSAP);
 
-export function Header({ locale }: { locale: string }) {
+export function Header({ locale, lines = [] }: { locale: string; lines?: { name: string; slug: string }[] }) {
   const headerRef = useRef<HTMLDivElement>(null);
   const t = useTranslations('Header');
   const router = useRouter();
@@ -114,14 +114,11 @@ export function Header({ locale }: { locale: string }) {
               </svg>
             </button>
             <div className={styles.dropdownMenu}>
-              {['Caviar', 'Liso', 'Cachos', 'Matizadores', 'Home Care', 'Babosa', 'Lapidação', 'Profissional', 'Sequestrante', 'Coloração', 'Masculina'].map(line => {
-                const cleanSlug = line.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(' ', '-');
-                return (
-                  <Link key={line} href={`/${locale}/lines/${cleanSlug}`} className={styles.dropdownItem}>
-                    {line}
-                  </Link>
-                );
-              })}
+              {lines.map((line) => (
+                <Link key={line.slug} href={`/${locale}/lines/${line.slug}`} className={styles.dropdownItem}>
+                  {line.name}
+                </Link>
+              ))}
             </div>
           </div>
           <Link href={`/${locale}/about`} className={styles.navLink}>

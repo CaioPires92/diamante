@@ -19,6 +19,7 @@
   "Header": {
     "products": "Productos",
     "about": "Sobre Nosotros",
+    "privateLabel": "Private Label",
     "contact": "Contacto"
   },
   "Products": {
@@ -160,5 +161,175 @@
     "description": "Ya seas un profesional que busca el mejor rendimiento o un emprendedor que desea su propia marca, Diamante es tu próximo paso.",
     "ctaShop": "Ir a la Tienda Online",
     "ctaBusiness": "Hazte Socio"
+  },
+  "About": {
+    "Hero": {
+      "tagline": "NUESTRA HISTORIA",
+      "title": "La Ciencia Detrás\nde la Verdadera Belleza",
+      "subtitle": "Desde nuestra fundación, Diamante Profissional tiene un único propósito: ofrecer resultados excepcionales a través de cosméticos avanzados y fabricación propia."
+    },
+    "Manifesto": {
+      "paragraph1": "Diamante Profissional fue fundada en el año 2010 en la ciudad de Amparo, en el interior de São Paulo, por Mário Juliano Scavroni, con el objetivo de producir y comercializar cosméticos de calidad a un precio justo. Hoy contamos con una línea de más de 200 productos.",
+      "paragraph2": "Nuestra expansión ya nos ha convertido en un referente en el mercado nacional y nos ha llevado más allá de las fronteras, exportando la calidad Diamante a países como Francia, Marruecos, Turquía y Suecia. Nuestro compromiso es entregar la más alta calidad tanto para el salón como para el cliente final."
+    },
+    "Laboratory": {
+      "tagline": "ESTRUCTURA",
+      "title": "Del Laboratorio a tu Salón",
+      "description": "Nuestra fábrica propia es el corazón de Diamante. Tener el control total sobre la línea de producción nos permite garantizar que cada lote tenga exactamente la misma excelencia que nuestro estándar de oro inicial.",
+      "stats": {
+        "production": "Alta Capacidad de Producción Mensal",
+        "quality": "Estricto Control de Calidad",
+        "tech": "Nanotecnología en Nuestros Activos"
+      }
+    },
+    "Values": {
+      "tagline": "NUESTROS PILARES",
+      "title": "El Estándar Diamante",
+      "items": {
+        "performance": {
+          "title": "Rendimiento Comprobado",
+          "desc": "Productos desarrollados primero para las mesas de trabajo de los mejores profesionales, luego para el mundo."
+        },
+        "ethics": {
+          "title": "Ética y Transparencia",
+          "desc": "Fórmulas libres de falsas promesas. Entregamos exactamente lo que está en la etiqueta."
+        },
+        "innovation": {
+          "title": "Innovación Continua",
+          "desc": "Laboratorio de I+D enfocado en anticipar las necesidades del mercado global de la belleza."
+        }
+      }
+    }
+  },
+  "ContactPage": {
+    "Hero": {
+      "tagline": "ATENCIÓN",
+      "title": "¿Cómo Podemos Ayudar?",
+      "subtitle": "Ponte en contacto con nuestro equipo especializado para resolver dudas, realizar alianzas o solicitar presupuestos."
+    },
+    "Info": {
+      "title": "Nuestros Canales",
+      "sac": {
+        "label": "Atención Comercial",
+        "value": "(19) 3817-6156"
+      },
+      "email": {
+        "label": "Correo electrónico",
+        "value": "contato@diamanteprofissional.com.br"
+      },
+      "address": {
+        "label": "Sede",
+        "value": "Rua Treze de Maio, 17 Centro – Amparo/SP"
+      },
+      "hours": {
+        "label": "Horario de Atención",
+        "value": "Lunes a Viernes, 08h a 18h"
+      }
+    },
+    "Form": {
+      "title": "Envía un Mensaje",
+      "fields": {
+        "name": "Nombre Completo",
+        "email": "Correo Corporativo",
+        "phone": "Teléfono / WhatsApp",
+        "subject": "Asunto",
+        "message": "Tu Mensaje"
+      },
+      "subjects": {
+        "general": "Duda General",
+        "distributor": "Quero ser Distribuidor",
+        "privateLabel": "Private Label"
+      },
+      "submit": "Enviar Mensaje",
+      "sending": "Enviando...",
+      "successTitle": "¡Mensaje Enviado!",
+      "successMessage": "Gracias por contactarnos. Nuestro equipo responderá lo antes posible."
+    }
+  },
+  "PrivateLabelPage": {
+    "Hero": {
+      "tagline": "PRIVATE LABEL",
+      "title": "Tu Propia Marca de Cosméticos",
+      "subtitle": "Desarrollamos productos de alto rendimiento con tu firma. Desde la formulación hasta la entrega, nosotros nos encargamos de todo."
+    },
+    "Benefits": {
+      "title": "¿Por qué tercerizar con Diamante?",
+      "items": {
+        "profit": {
+          "title": "Alta Rentabilidad",
+          "desc": "Aumenta los márgenes de ganancia de tu salón o distribuidora vendiendo productos con tu propia marca."
+        },
+        "quality": {
+          "title": "Fórmulas Validadas",
+          "desc": "Acceso a nuestro laboratorio premium y fórmulas que ya son un éxito en el mercado profesional."
+        },
+        "support": {
+          "title": "Soporte Regulatorio",
+          "desc": "Nos encargamos de toda la burocracia técnica, incluyendo registros en ANVISA y adecuaciones legales."
+        }
+      }
+    },
+    "Process": {
+      "title": "Cómo Funciona",
+      "steps": {
+        "1": {
+          "title": "Diagnóstico y Elección",
+          "desc": "Definición del mix de productos y pruebas de las fórmulas en nuestro laboratorio."
+        },
+        "2": {
+          "title": "Diseño y Etiqueta",
+          "desc": "Nuestro equipo te ayuda a personalizar los envases con la identidad de tu marca."
+        },
+        "3": {
+          "title": "Producción y ANVISA",
+          "desc": "Fabricación a gran escala siguiendo estrictos estándares de calidad y registros."
+        },
+        "4": {
+          "title": "Listo para la Venta",
+          "desc": "Recibes los productos terminados, listos para deleitar a tus clientes."
+        }
+      }
+    },
+    "CTA": {
+      "title": "¿Listo para dar el siguiente paso?",
+      "subtitle": "Habla con un asesor comercial y descubre lo fácil que es lanzar tu marca.",
+      "button": "Hablar con Asesor por WhatsApp"
+    }
+  },
+  "Footer": {
+    "description": "Fundada en 2010 en Amparo-SP, Diamante Profissional desarrolla cosméticos de alto rendimiento con fabricación propia, estándar profesional e identidad premium.",
+    "links": {
+      "institutional": {
+        "title": "Institucional",
+        "about": "Sobre Nosotros",
+        "privateLabel": "Private Label",
+        "contact": "Contáctanos",
+        "distributor": "Hazte Distribuidor"
+      },
+      "support": {
+        "title": "Soporte",
+        "faq": "Preguntas Frecuentes",
+        "payment": "Formas de Pago",
+        "shipping": "Políticas de Envío",
+        "returns": "Cambios y Devoluciones"
+      }
+    },
+    "contact": {
+      "title": "Contáctanos",
+      "address": "Rua Treze de Maio, 17 Centro – Amparo/SP",
+      "email": "contato@diamanteprofissional.com.br",
+      "phone": "(19) 3817-6156"
+    },
+    "rights": "© {year} Diamante Profissional. Todos los derechos reservados."
+  },
+  "Policies": {
+    "Payment": {
+      "title": "Formas de Pago",
+      "content": "Aceptamos las principales tarjetas de crédito: MASTERCARD – VISA – ELO – CABAL – HIPERCARD – HIPER – ALELO – SODEXO – TICKET – VRBENEFÍCIOS – AMERICAN EXPRESS – DINERS CLUB.\nEl pago fraccionado máximo ofrecido por el sitio web es de hasta 6 cuotas (3 cuotas sin intereses, 4-5-6 cuotas con intereses) o en un solo pago.\nEl valor mínimo por cuota es de R$ 10,00. Para tu seguridad, todo el procesamiento de pago se realiza a través de una pasarela transparente dentro de nuestro sitio web.\nEl despacho para el montaje y envío de tu pedido solo se realizará tras la aprobación del pago. Nos reservamos el derecho de enviar la mercancía únicamente después de dicha aprobación."
+    },
+    "Returns": {
+      "title": "Cambios y Devoluciones",
+      "content": "Para realizar cambios por defectos, seguimos las directrices del Art. 26 del Código de Defensa del Consumidor. El derecho a reclamar vence en: 30 dias para productos no duraderos y 90 dias para los duraderos.\nEl plazo comienza a partir de la recepción del producto. Si deseas realizar un cambio por defecto, ponte en contacto a través de nuestra página de Contacto. El plazo de resolución es de hasta 30 días.\nSi se confirma el defecto, el cliente puede optar por el cambio por otro producto idéntico (sujeto a disponibilidad), un vale de compra o el reembolso de su dinero."
+    }
   }
 }
