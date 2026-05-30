@@ -158,7 +158,7 @@ export default async function LinePage({ params }: { params: Promise<{ locale: s
                 <div className={styles.imageWrapper}>
                   <div style={{
                     width: '100%',
-                    height: '220px',
+                    height: '260px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
