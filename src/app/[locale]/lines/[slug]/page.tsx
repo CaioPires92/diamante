@@ -140,7 +140,7 @@ export default async function LinePage({ params }: { params: Promise<{ locale: s
             {products.map((product: any) => (
               <div key={product.id} className={styles.productCard}>
                 
-                {/* Left Side: Product Image & Gold Stand Pedestal */}
+                {/* Left Side: Product Image with Subtle Shadow */}
                 <div className={styles.imageWrapper}>
                   <div style={{
                     width: '100%',
@@ -154,33 +154,14 @@ export default async function LinePage({ params }: { params: Promise<{ locale: s
                       src={product.image} 
                       alt={product.title} 
                       style={{ 
-                        maxWidth: '90%', 
-                        maxHeight: '90%', 
+                        maxWidth: '100%', 
+                        maxHeight: '100%', 
                         objectFit: 'contain',
-                        filter: 'drop-shadow(0 15px 25px rgba(0,0,0,0.12))' 
+                        filter: 'drop-shadow(0 6px 12px rgba(0, 0, 0, 0.06))',
+                        borderRadius: '8px'
                       }} 
                     />
                   </div>
-                  
-                  {/* Luxury 3D Gold Stand Pedestal */}
-                  <div style={{ 
-                    width: '120px', 
-                    height: '14px', 
-                    borderRadius: '50%', 
-                    background: 'linear-gradient(180deg, #BF953F 0%, #FCF6BA 50%, #B38728 100%)', 
-                    boxShadow: '0 6px 12px rgba(45, 42, 38, 0.25)',
-                    marginTop: '-5px',
-                    zIndex: 1,
-                    position: 'relative'
-                  }} />
-                  <div style={{ 
-                    width: '112px', 
-                    height: '6px', 
-                    borderRadius: '50%', 
-                    background: 'rgba(0, 0, 0, 0.08)', 
-                    marginTop: '2px',
-                    filter: 'blur(2px)'
-                  }} />
                 </div>
 
                 {/* Right Side: Product Details */}
