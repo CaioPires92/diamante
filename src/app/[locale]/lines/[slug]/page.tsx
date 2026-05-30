@@ -115,11 +115,25 @@ export default async function LinePage({ params }: { params: Promise<{ locale: s
             {lineName}
           </h1>
           
-          {/* Gold separator with diamond */}
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '1.5rem 0' }}>
-            <div style={{ width: '80px', height: '1px', background: 'rgba(201, 157, 74, 0.4)' }} />
-            <span style={{ color: '#c99d4a', margin: '0 15px', fontSize: '0.75rem' }}>♦</span>
-            <div style={{ width: '80px', height: '1px', background: 'rgba(201, 157, 74, 0.4)' }} />
+          {/* Glowing luxury gold divider line */}
+          <div className={styles.glowDivider}>
+            <div className={styles.dividerLineLeft} />
+            <div className={styles.dividerStarWrapper}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="6" fill="#c99d4a" opacity="0.3" style={{ filter: 'blur(3px)' }} />
+                <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" fill="url(#goldGlow)" />
+                <path d="M12 6L13.2 10.8L18 12L13.2 13.2L12 18L10.8 13.2L6 12L10.8 10.8L12 6Z" fill="#FFFFFF" />
+                <defs>
+                  <linearGradient id="goldGlow" x1="2" y1="2" x2="22" y2="22" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stopColor="#FCF6BA" />
+                    <stop offset="50%" stopColor="#BF953F" />
+                    <stop offset="100%" stopColor="#B38728" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <div className={styles.dividerLineRight} />
+            <div className={styles.dividerDot} />
           </div>
 
           <p style={{ 
@@ -194,8 +208,19 @@ export default async function LinePage({ params }: { params: Promise<{ locale: s
                     </span>
                   )}
                   
-                  {/* Luxury divider line */}
-                  <div style={{ width: '100%', height: '1px', background: 'rgba(201, 157, 74, 0.3)', marginBottom: '1rem' }} />
+                  {/* Glowing luxury gold divider line */}
+                  <div className={styles.cardGlowDivider}>
+                    <div className={styles.dividerLineLeft} />
+                    <div className={styles.dividerStarWrapper} style={{ margin: '0 6px' }}>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="6" fill="#c99d4a" opacity="0.3" style={{ filter: 'blur(3px)' }} />
+                        <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" fill="url(#goldGlow)" />
+                        <path d="M12 6L13.2 10.8L18 12L13.2 13.2L12 18L10.8 13.2L6 12L10.8 10.8L12 6Z" fill="#FFFFFF" />
+                      </svg>
+                    </div>
+                    <div className={styles.dividerLineRight} />
+                    <div className={styles.dividerDot} />
+                  </div>
 
                   {product.description && (
                     <p style={{ 

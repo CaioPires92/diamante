@@ -66,3 +66,48 @@
     justify-content: center;
   }
 }
+
+.glowDivider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1.5rem auto;
+  width: 100%;
+  max-width: 320px;
+}
+
+.dividerLineLeft {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent 0%, rgba(201, 157, 74, 0.8) 100%);
+}
+
+.dividerLineRight {
+  flex: 1;
+  height: 1px;
+  background: rgba(201, 157, 74, 0.8);
+}
+
+.dividerDot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(201, 157, 74, 0.8);
+  margin-left: 2px;
+}
+
+.dividerStarWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+  position: relative;
+}
+
+.cardGlowDivider {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 0.75rem 0 1rem 0;
+}
+
