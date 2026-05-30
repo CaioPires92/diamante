@@ -351,3 +351,32 @@
   box-shadow: 0 10px 20px rgba(201, 157, 74, 0.3);
 }
 
+/* Dark Header Overrides for pages with dark backgrounds at the top */
+.darkHeader .logo {
+  color: #FAFAF8 !important;
+}
+
+.darkHeader .navLink {
+  color: #FAFAF8 !important;
+}
+
+.darkHeader .lang {
+  color: #FAFAF8 !important;
+}
+
+.darkHeader .langWrapper {
+  border-color: rgba(255, 255, 255, 0.18) !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+
+.darkHeader .cta {
+  color: #FAFAF8 !important;
+  border-color: rgba(201, 157, 74, 0.6) !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+
+.darkHeader .hamburger span {
+  background-color: #FAFAF8 !important;
+}
+
+

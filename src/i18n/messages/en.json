@@ -27,16 +27,16 @@
     "subtitle": "Discover the premium hair care line",
     "items": {
       "shampoo-supreme": {
-        "name": "Supreme Shampoo",
-        "desc": "Gentle and purifying cleanse with nanotech active ingredients."
+        "name": "Caviar Shampoo",
+        "desc": "Cleanses and hydrates, recovering the hair's natural shine. Contains ojon oil and d-panthenol."
       },
       "mask-supreme": {
-        "name": "Supreme Mask",
-        "desc": "Deep nutrition and hair fiber reconstruction with caviar extract."
+        "name": "Caviar Mask",
+        "desc": "Provides deep hydration, softness and immediate silkiness with caviar extract."
       },
       "serum-supreme": {
-        "name": "Supreme Serum",
-        "desc": "Luxurious finishing, mirrored shine and frizz protection."
+        "name": "Caviar Leave-in",
+        "desc": "Anti-frizz action, detangling combing cream and leave-in heat protectant."
       }
     }
   },

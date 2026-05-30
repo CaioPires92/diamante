@@ -7,7 +7,6 @@ import { useTranslations } from 'next-intl';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { Container } from './Container';
-import { Menu, X } from 'lucide-react'; // I'll use divs instead since lucide is not installed
 import styles from './Header.module.css';
 
 gsap.registerPlugin(useGSAP);
@@ -94,8 +93,10 @@ export function Header({ locale, lines = [] }: { locale: string; lines?: { name:
     }
   }, { dependencies: [isMenuOpen] });
 
+  const isDarkPage = pathname?.includes('/distributor') || pathname?.includes('/private-label');
+
   return (
-    <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`} ref={headerRef}>
+    <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''} ${isDarkPage && !isScrolled ? styles.darkHeader : ''}`} ref={headerRef}>
       <Container size="wide" className={styles.headerContainer}>
         {/* Lado Esquerdo: Logo */}
         <div className={styles.logoWrapper}>

@@ -17,36 +17,36 @@ export const productsData: ProductDetail[] = [
     slug: 'shampoo-supreme-caviar',
     line: 'Caviar & Aminoácidos',
     category: 'wash',
-    image: '/imgs/product1.png',
-    gallery: ['/imgs/product1.png', '/imgs/product2.png'],
+    image: '/images/products/caviar/prod_2.png',
+    gallery: ['/images/products/caviar/prod_2.png', '/images/products/caviar/prod_1.png'],
     features: ['Livre de Parabenos', 'Cruelty Free', 'Proteção Térmica'],
-    howToUse: 'Aplique o Shampoo Supreme nos cabelos molhados, massageando suavemente o couro cabeludo até formar espuma. Enxágue abundantemente e repita a operação se necessário.',
+    howToUse: 'Aplique o Shampoo Caviar nos cabelos molhados, massageando suavemente o couro cabeludo até formar espuma. Enxágue abundantemente e repita a operação se necessário.',
     benefits: 'Limpeza profunda sem agredir os fios, hidratação imediata e brilho intenso. Ideal para cabelos que passaram por processos químicos.',
-    ingredients: 'Extrato de Caviar, Aminoácidos Essenciais, Queratina Hidrolisada, Pantenol.'
+    ingredients: 'Extrato de Caviar, Óleo de Ojon, D-Pantenol.'
   },
   {
     id: 'mask-supreme',
     slug: 'mascara-supreme-tratamento',
     line: 'Caviar & Aminoácidos',
     category: 'treatment',
-    image: '/imgs/product2.png',
-    gallery: ['/imgs/product2.png', '/imgs/product1.png'],
+    image: '/images/products/caviar/prod_3.png',
+    gallery: ['/images/products/caviar/prod_3.png', '/images/products/caviar/prod_1.png'],
     features: ['Alta Concentração', 'Efeito Teia', 'Nutrição Profunda'],
-    howToUse: 'Após lavar os cabelos, aplique a Máscara Supreme mecha a mecha. Deixe agir por 10 a 15 minutos e enxágue totalmente.',
+    howToUse: 'Após lavar os cabelos, aplique a Máscara Caviar mecha a mecha. Deixe agir por 10 a 15 minutos e enxágue totalmente.',
     benefits: 'Reconstrução da fibra capilar, selamento de cutículas e maciez extrema.',
-    ingredients: 'Complexo de Vitaminas, Óleo de Argan, Nano-proteínas.'
+    ingredients: 'Extrato de Caviar, Óleo de Ojon, Queratina Hidrolisada.'
   },
   {
     id: 'serum-supreme',
     slug: 'serum-supreme-finish',
-    line: 'Linha Finish',
+    line: 'Caviar & Aminoácidos',
     category: 'finishing',
-    image: '/imgs/product3.png',
-    gallery: ['/imgs/product3.png'],
+    image: '/images/products/caviar/prod_4.png',
+    gallery: ['/images/products/caviar/prod_4.png', '/images/products/caviar/prod_0.png'],
     features: ['Anti-frizz', 'Brilho Espelhado', 'Filtro UV'],
-    howToUse: 'Aplique algumas gotas na palma das mãos e espalhe pelo comprimento e pontas dos cabelos secos ou úmidos.',
-    benefits: 'Elimina o frizz, protege contra a umidade e confere um perfume luxuoso aos fios.',
-    ingredients: 'Silicones Nobres, Vitamina E, Óleo de Macadâmia.'
+    howToUse: 'Aplique o Leave-in Caviar nos cabelos limpos e úmidos. Distribua uniformemente ao longo dos fios. Não enxágue.',
+    benefits: 'Ação anti-frizz, creme de pentear desembaraçante e protetor térmico sem enxágue.',
+    ingredients: 'Extrato de Caviar, Óleo de Ojon, Silicones Nobres, Filtro Solar.'
   }
 ];
 

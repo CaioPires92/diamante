@@ -5,7 +5,8 @@ import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
+import Link from 'next/link';
 import { Container } from './Container';
 import styles from './FinalCTA.module.css';
 
@@ -15,6 +16,7 @@ if (typeof window !== 'undefined') {
 
 export function FinalCTA() {
   const t = useTranslations('FinalCTA');
+  const locale = useLocale();
   const sectionRef = useRef<HTMLElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
 
@@ -73,12 +75,12 @@ export function FinalCTA() {
           <p className={`${styles.description} cta-animate`}>{t('description')}</p>
           
           <div className={`${styles.buttonGroup} cta-animate`}>
-            <button className={styles.btnPrimary}>
+            <Link href={`/${locale}/shop`} className={styles.btnPrimary}>
               {t('ctaShop')}
-            </button>
-            <button className={styles.btnSecondary}>
+            </Link>
+            <Link href={`/${locale}/distributor`} className={styles.btnSecondary}>
               {t('ctaBusiness')}
-            </button>
+            </Link>
           </div>
         </div>
       </Container>

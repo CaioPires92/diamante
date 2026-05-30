@@ -16,17 +16,17 @@ const productsData = [
   {
     id: 'shampoo-supreme',
     slug: 'shampoo-supreme-caviar',
-    image: '/imgs/product1.png',
+    image: '/images/products/caviar/prod_2.png',
   },
   {
     id: 'mask-supreme',
     slug: 'mascara-supreme-tratamento',
-    image: '/imgs/product2.png',
+    image: '/images/products/caviar/prod_3.png',
   },
   {
     id: 'serum-supreme',
     slug: 'serum-supreme-finish',
-    image: '/imgs/product3.png',
+    image: '/images/products/caviar/prod_4.png',
   }
 ];
 

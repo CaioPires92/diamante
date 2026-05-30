@@ -94,7 +94,7 @@ export function LapidacaoSection() {
           <div className={`${styles.imageContainer} lap-image`}>
             <div style={{ position: 'relative', width: '100%', height: '100%' }}>
               <Image 
-                src="/imgs/lapidacao_4steps.png" 
+                src="/imgs/lapidacao_4steps.webp" 
                 alt={t('title')}
                 fill
                 className={styles.image}

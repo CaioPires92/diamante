@@ -27,16 +27,16 @@
     "subtitle": "Descubre la línea premium de cuidado capilar",
     "items": {
       "shampoo-supreme": {
-        "name": "Shampoo Supreme",
-        "desc": "Limpieza suave y purificadora con activos nanotecnológicos."
+        "name": "Shampoo Caviar",
+        "desc": "Limpia e hidrata recuperando el brillo de las hebras. Contiene aceite de ojon y d-panthenol."
       },
       "mask-supreme": {
-        "name": "Mascarilla Reconstructora",
-        "desc": "Hidratación profunda y reparación de daños extremos."
+        "name": "Mascarilla Caviar",
+        "desc": "Proporciona hidratación profunda, suavidad y sedosidad inmediata con extracto de caviar."
       },
       "serum-supreme": {
-        "name": "Sérum Finalizador",
-        "desc": "Brillo intenso, protección térmica y sellado de cutículas."
+        "name": "Leave-in Caviar",
+        "desc": "Acción anti-frizz, crema de peinar desenredante y protector térmico sin aclarado."
       }
     }
   },
