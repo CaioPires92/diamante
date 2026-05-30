@@ -93,7 +93,7 @@ export default async function LinePage({ params }: { params: Promise<{ locale: s
   }
 
   return (
-    <main style={{ paddingTop: '150px', paddingBottom: '100px', minHeight: '100vh', backgroundColor: '#FAF6F0', position: 'relative' }}>
+    <main style={{ paddingTop: '150px', paddingBottom: '100px', minHeight: '100vh', backgroundColor: 'transparent', position: 'relative' }}>
       {/* Background elegant gold details */}
       <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '400px', background: 'radial-gradient(circle at 50% 0%, rgba(201, 157, 74, 0.08) 0%, transparent 70%)', pointerEvents: 'none' }} />
       
@@ -167,13 +167,7 @@ export default async function LinePage({ params }: { params: Promise<{ locale: s
                     <img 
                       src={product.image} 
                       alt={product.title} 
-                      style={{ 
-                        maxWidth: '100%', 
-                        maxHeight: '100%', 
-                        objectFit: 'contain',
-                        filter: 'drop-shadow(0 6px 12px rgba(0, 0, 0, 0.06))',
-                        borderRadius: '8px'
-                      }} 
+                      className={styles.productImage}
                     />
                   </div>
                 </div>
