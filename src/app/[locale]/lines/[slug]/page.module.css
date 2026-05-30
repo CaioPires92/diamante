@@ -13,8 +13,8 @@
   border: 1px solid rgba(201, 157, 74, 0.22);
   box-shadow: 0 12px 40px rgba(45, 42, 38, 0.04);
   display: grid;
-  grid-template-columns: 240px 1fr;
-  gap: 2.5rem;
+  grid-template-columns: 280px 1fr;
+  gap: 3rem;
   align-items: center;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
 }
@@ -45,7 +45,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  height: 280px;
+  height: 320px;
 }
 
 .detailsWrapper {
@@ -74,8 +74,8 @@
   }
 
   .imageWrapper {
-    height: 240px;
-    margin-bottom: 1.5rem;
+    height: 300px;
+    margin-bottom: 2rem;
   }
 
   .detailsWrapper {
