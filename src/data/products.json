@@ -7,8 +7,8 @@
       "size": "300 ml",
       "price": "R$ 45,65",
       "image": "/images/products/caviar/prod_0.png",
-      "description": "Limpa e hidrata, recuperando o brilho dos fios.",
-      "howToUse": "Aplicar nos cabelos úmidos, massagear até formar espuma e enxaguar. Repetir se necessário.",
+      "description": "Limpa e hidrata recuperando o brilho dos fios. Indicado para cabelos úmidos, massageando até formar espuma. Enxaguar em seguida. Repita o processo se necessário.",
+      "howToUse": "Shampoo disponível também em 1 litro.",
       "lineDescription": "Promove hidratação e regeneração capilar; óleo de ojon e pantenol para nutrição, hidratação e proteção dos fios."
     },
     {
@@ -18,8 +18,8 @@
       "size": "250 ml",
       "price": "R$ 49,95",
       "image": "/images/products/caviar/prod_1.png",
-      "description": "Condiciona e hidrata os cabelos, deixando-os macios e com brilho intenso.",
-      "howToUse": "Após a máscara, aplicar nos cabelos limpos e úmidos, espalhar, deixar agir 3 min e enxaguar.",
+      "description": "Hidrata os cabelos, deixando-os macios e com brilho intenso.",
+      "howToUse": "Após o uso da máscara, aplique nos cabelos limpos e úmidos por todo o cabelo; deixe agir por 3 minutos e enxágue.",
       "lineDescription": "Promove hidratação e regeneração capilar; óleo de ojon e pantenol para nutrição, hidratação e proteção dos fios."
     },
     {
@@ -29,8 +29,8 @@
       "size": "250 g",
       "price": "R$ 68,97",
       "image": "/images/products/caviar/prod_2.png",
-      "description": "Hidratação profunda, maciez e sedosidade imediata.",
-      "howToUse": "Após shampoo, retirar excesso de água, aplicar do comprimento às pontas, enluvar, agir 5 a 20 min e enxaguar.",
+      "description": "Proporciona hidratação profunda, maciez e sedosidade imediata.",
+      "howToUse": "Após o uso do shampoo, tire o excesso de água dos cabelos com uma toalha. Aplique a máscara no comprimento e pontas, enluvando mecha a mecha. Deixe agir de 5 a 20 minutos e enxágue em seguida.",
       "lineDescription": "Promove hidratação e regeneração capilar; óleo de ojon e pantenol para nutrição, hidratação e proteção dos fios."
     },
     {
@@ -40,19 +40,19 @@
       "size": "250 ml",
       "price": "R$ 49,95",
       "image": "/images/products/caviar/prod_3.png",
-      "description": "Creme sem enxágue que condiciona, protege do calor do secador e elimina o frizz.",
-      "howToUse": "Aplicar pequena quantidade na palma da mão e espalhar nos cabelos úmidos. Não enxaguar.",
+      "description": "Creme sem enxágue que condiciona, protege os cabelos do calor do secador e elimina o frizz.",
+      "howToUse": "Aplicar na palma da mão uma pequena quantidade do leave-in e espalhar por todo o cabelo úmido. Não enxaguar; deixar secar naturalmente ou finalizar com secador e prancha.",
       "lineDescription": "Promove hidratação e regeneração capilar; óleo de ojon e pantenol para nutrição, hidratação e proteção dos fios."
     },
     {
       "id": "caviar-4",
       "title": "Leave-in Spray Caviar",
-      "code": "03032",
+      "code": "00032",
       "size": "120 ml",
       "price": "R$ 49,95",
       "image": "/images/products/caviar/prod_4.png",
-      "description": "Ácido hialurônico; previne ressecamento, alinha fios, toque sedoso, brilho intenso e proteção térmica.",
-      "howToUse": "Borrifar nos cabelos limpos e úmidos; secar com secador ou como de costume.",
+      "description": "Com ácido hialurônico que previne o ressecamento e alinha os fios. Toque super sedoso e brilho intenso; protege de térmica.",
+      "howToUse": "Borrife nos cabelos limpos e úmidos; seque como de costume. Lançamento.",
       "lineDescription": "Promove hidratação e regeneração capilar; óleo de ojon e pantenol para nutrição, hidratação e proteção dos fios."
     }
   ],
@@ -65,7 +65,7 @@
       "price": "R$ 45,65",
       "image": "/images/products/liso/prod_1.png",
       "description": "Limpa e hidrata recuperando o brilho dos fios.",
-      "howToUse": "Aplicar nos cabelos úmidos, massagear até formar espuma e enxaguar. Repetir se necessário.",
+      "howToUse": "Indicado para cabelos úmidos, massageando até formar espuma. Enxaguar em seguida. Repita o processo se necessário. Shampoo disponível também em 1 litro; máscara disponível também em 900 g.",
       "lineDescription": "Controle de frizz e volume; hidrata profundamente e pode ser usado em todos os tipos de cabelo."
     },
     {
@@ -75,8 +75,8 @@
       "size": "250 ml",
       "price": "R$ 49,95",
       "image": "/images/products/liso/prod_1.png",
-      "description": "Hidrata profundamente e ajuda a desembaraçar, deixando os cabelos sedosos e macios.",
-      "howToUse": "Após máscara, aplicar nos cabelos limpos e úmidos, espalhar, agir 3 min e enxaguar.",
+      "description": "Hidrata os fios profundamente e ajuda a desembaraçar os cabelos, deixando-os sedosos e macios.",
+      "howToUse": "Após o uso da máscara, aplique nos cabelos limpos e úmidos, espalhando por todo o cabelo; deixe agir por 3 minutos e enxágue.",
       "lineDescription": "Controle de frizz e volume; hidrata profundamente e pode ser usado em todos os tipos de cabelo."
     },
     {
@@ -86,8 +86,8 @@
       "size": "250 g",
       "price": "R$ 68,97",
       "image": "/images/products/liso/prod_1.png",
-      "description": "Hidratação profunda, maciez e sedosidade imediata.",
-      "howToUse": "Após shampoo, retirar excesso de água, aplicar do comprimento às pontas, enluvar, agir 5 a 20 min e enxaguar.",
+      "description": "Proporciona hidratação profunda, maciez e sedosidade imediata.",
+      "howToUse": "Após o uso do shampoo, tire o excesso de água dos cabelos com uma toalha. Aplique no comprimento e pontas, enluvando mecha a mecha. Deixe agir de 5 a 20 minutos e enxágue.",
       "lineDescription": "Controle de frizz e volume; hidrata profundamente e pode ser usado em todos os tipos de cabelo."
     },
     {
@@ -97,8 +97,8 @@
       "size": "250 ml",
       "price": "R$ 49,95",
       "image": "/images/products/liso/prod_1.png",
-      "description": "Creme sem enxágue que condiciona, protege do calor do secador e elimina o frizz.",
-      "howToUse": "Aplicar pequena quantidade na palma da mão e espalhar nos cabelos úmidos. Não enxaguar.",
+      "description": "Creme sem enxágue que condiciona, protege os cabelos do calor do secador e elimina o frizz.",
+      "howToUse": "Aplicar uma pequena quantidade na palma da mão e espalhar por todo o cabelo úmido. Não enxaguar; deixar secar naturalmente ou finalizar com secador e prancha.",
       "lineDescription": "Controle de frizz e volume; hidrata profundamente e pode ser usado em todos os tipos de cabelo."
     },
     {
@@ -108,8 +108,8 @@
       "size": "120 ml",
       "price": "R$ 49,95",
       "image": "/images/products/liso/prod_1.png",
-      "description": "Protetor térmico sem enxágue; proteção completa aos fios, reduz volume e elimina frizz.",
-      "howToUse": "Aplicar nos cabelos úmidos. Não enxaguar; deixar secar naturalmente ou finalizar.",
+      "description": "Protetor térmico sem enxágue que proporciona proteção completa aos fios, reduz o volume e elimina o frizz.",
+      "howToUse": "",
       "lineDescription": "Controle de frizz e volume; hidrata profundamente e pode ser usado em todos os tipos de cabelo."
     },
     {
@@ -119,9 +119,9 @@
       "size": "300 ml",
       "price": "R$ 45,65",
       "image": "/images/products/liso/prod_1.png",
-      "description": "Para todos os tipos de cabelos naturais ou quimicamente tratados.",
-      "howToUse": "Aplicar sobre os cabelos úmidos, massagear até formar espuma, deixar agir 5 minutos e enxaguar.",
-      "lineDescription": "Proporciona leveza, efeito anti-frizz e liso imediato; fórmula com silicones especiais para hidratar, maciez e efeito liso."
+      "description": "Desenvolvido para todos os tipos de cabelos rebeldes ou quimicamente tratados.",
+      "howToUse": "Aplique sobre os cabelos úmidos, massageando até formar espuma. Deixe agir por 5 minutos e enxágue em seguida.",
+      "lineDescription": "Controle de frizz e volume; hidrata profundamente e pode ser usado em todos os tipos de cabelo."
     },
     {
       "id": "liso-6",
@@ -131,8 +131,8 @@
       "price": "R$ 49,95",
       "image": "/images/products/liso/prod_1.png",
       "description": "Proporciona hidratação e brilho intenso.",
-      "howToUse": "Após a máscara, aplicar nos cabelos limpos e úmidos, espalhar, agir 3 min e enxaguar.",
-      "lineDescription": "Proporciona leveza, efeito anti-frizz e liso imediato; fórmula com silicones especiais para hidratar, maciez e efeito liso."
+      "howToUse": "Após o uso da máscara, aplique nos cabelos limpos e úmidos, espalhando por todo o cabelo. Deixe agir por 3 minutos e enxágue.",
+      "lineDescription": "Controle de frizz e volume; hidrata profundamente e pode ser usado em todos os tipos de cabelo."
     },
     {
       "id": "liso-7",
@@ -141,9 +141,9 @@
       "size": "250 g",
       "price": "R$ 68,97",
       "image": "/images/products/liso/prod_1.png",
-      "description": "Para cabelos com aspecto liso, impecável e naturalmente brilhantes e hidratados.",
-      "howToUse": "Após shampoo, retirar excesso de água, aplicar, enluvar, agir 5 a 20 min e enxaguar.",
-      "lineDescription": "Proporciona leveza, efeito anti-frizz e liso imediato; fórmula com silicones especiais para hidratar, maciez e efeito liso."
+      "description": "Desenvolvida para alinhar os cabelos com aspecto liso, impecável e naturalmente sedoso e hidratado.",
+      "howToUse": "Após o uso do shampoo, tire o excesso de água com uma toalha e aplique a máscara no comprimento e pontas, enluvando mecha a mecha. Deixe agir de 5 a 20 minutos e enxágue.",
+      "lineDescription": "Controle de frizz e volume; hidrata profundamente e pode ser usado em todos os tipos de cabelo."
     },
     {
       "id": "liso-8",
@@ -152,20 +152,20 @@
       "size": "250 ml",
       "price": "R$ 49,95",
       "image": "/images/products/liso/prod_1.png",
-      "description": "Creme sem enxágue para escovar e eliminar frizz; maciez, brilho e proteção térmica.",
-      "howToUse": "Aplicar nos cabelos limpos e úmidos. Sem enxágue. Finalizar como costume.",
-      "lineDescription": "Proporciona leveza, efeito anti-frizz e liso imediato; fórmula com silicones especiais para hidratar, maciez e efeito liso."
+      "description": "Creme sem enxágue para escovar e alinhar os fios dos cabelos, deixando-os macios e com brilho.",
+      "howToUse": "Aplicar nos cabelos limpos e úmidos. Sem enxágue. Finalize como desejar.",
+      "lineDescription": "Controle de frizz e volume; hidrata profundamente e pode ser usado em todos os tipos de cabelo."
     },
     {
       "id": "liso-9",
       "title": "Liso Perfeito 15 em 1",
-      "code": "00050",
+      "code": "00058",
       "size": "200 ml",
       "price": "R$ 79,98",
       "image": "/images/products/liso/prod_1.png",
-      "description": "Sérum termoativado: proteção térmica, brilho intenso, efeito liso, repele umidade, secagem rápida, alinhamento, restauração, pontas duplas, toque aveludado, desembaraço, sem resíduo oleoso, perfume, selagem e antioxidante.",
-      "howToUse": "Borrifar sobre os cabelos úmidos; tratamento térmico e, se desejar, usar chapinha.",
-      "lineDescription": "Proporciona leveza, efeito anti-frizz e liso imediato; fórmula com silicones especiais para hidratar, maciez e efeito liso."
+      "description": "Leave-in multifuncional: protetor térmico; elimina intenso; efeito liso por mais tempo; repele umidade; secagem rápida; alinhamento dos fios; restauração imediata; reparação de pontas duplas; toque aveludado; desembaraço; sem resíduo oleoso; perfuma o cabelo; selagem das cutículas; antioxidante.",
+      "howToUse": "Borrife sobre os cabelos úmidos, racheie/finalize termicamente e finalize como desejar. Precauções: uso externo; em caso de contato com os olhos enxaguar com água corrente; manter fora do alcance de crianças, ao abrigo da luz e calor.",
+      "lineDescription": "Controle de frizz e volume; hidrata profundamente e pode ser usado em todos os tipos de cabelo."
     }
   ],
   "babosa": [
@@ -176,8 +176,8 @@
       "size": "300 ml",
       "price": "R$ 45,65",
       "image": "/images/products/babosa/prod_1.png",
-      "description": "Indicado para cabelos que precisam de hidratação, com dificuldade de crescimento e quebradiços.",
-      "howToUse": "Aplicar nos cabelos úmidos, massagear até formar espuma e enxaguar. Repetir se necessário.",
+      "description": "É indicado para cabelos que necessitam de hidratação, com dificuldades de crescimento e quebradiços.",
+      "howToUse": "Aplique sobre os cabelos úmidos, massageando até formar espuma. Enxágue e, em seguida, repita o processo se necessário. Shampoo disponível também em 1 litro.",
       "lineDescription": "Reestabelece vitalidade dos fios, reduz queda capilar, estimula crescimento, fortalece e restaura; controla oleosidade e hidrata sem pesar."
     },
     {
@@ -187,8 +187,8 @@
       "size": "250 ml",
       "price": "R$ 45,65",
       "image": "/images/products/babosa/prod_2.png",
-      "description": "Rico em vitaminas; ajuda a deixar os cabelos mais fortes, reduz queda e estimula produção de colágeno.",
-      "howToUse": "Após máscara, aplicar nos cabelos limpos e úmidos, espalhar, agir 3 min e enxaguar.",
+      "description": "É rico em vitaminas que deixam os cabelos mais fortes e reduzem a queda, ajuda no crescimento dos cabelos pois estimula a produção de colágeno.",
+      "howToUse": "Após o uso da máscara, aplique nos cabelos limpos e úmidos, espalhando por todo o cabelo; deixe agir por 3 minutos e enxágue.",
       "lineDescription": "Reestabelece vitalidade dos fios, reduz queda capilar, estimula crescimento, fortalece e restaura; controla oleosidade e hidrata sem pesar."
     },
     {
@@ -198,19 +198,19 @@
       "size": "250 g",
       "price": "R$ 68,97",
       "image": "/images/products/babosa/prod_3.png",
-      "description": "Proporciona brilho intenso e regeneração dos fios.",
-      "howToUse": "Após shampoo, retirar excesso de água, aplicar do comprimento às pontas, enluvar, agir 5 a 20 min e enxaguar.",
+      "description": "Promove hidratação profunda dos fios.",
+      "howToUse": "Após o uso do shampoo, tire o excesso de água dos cabelos, aplique a máscara no comprimento e pontas. Deixe agir de 5 a 20 minutos e enxágue.",
       "lineDescription": "Reestabelece vitalidade dos fios, reduz queda capilar, estimula crescimento, fortalece e restaura; controla oleosidade e hidrata sem pesar."
     },
     {
       "id": "babosa-3",
       "title": "Leave-in Babosa",
-      "code": "00672",
+      "code": "00072",
       "size": "120 ml",
       "price": "R$ 49,95",
       "image": "/images/products/babosa/prod_4.png",
-      "description": "Leave-in creme sem enxágue; condiciona, reduz volume, anti-frizz, nutre e dá brilho.",
-      "howToUse": "Aplicar pequena quantidade na palma da mão e espalhar nos cabelos úmidos. Não enxaguar.",
+      "description": "Leave-in creme sem enxágue que condiciona, reduz o volume, é antifrizz, nutre e dá brilho.",
+      "howToUse": "Aplicar na palma da mão uma pequena quantidade e espalhar por todo o cabelo úmido. Não enxaguar; deixar secar naturalmente ou finalizar com secador e prancha.",
       "lineDescription": "Reestabelece vitalidade dos fios, reduz queda capilar, estimula crescimento, fortalece e restaura; controla oleosidade e hidrata sem pesar."
     }
   ],
@@ -222,8 +222,8 @@
       "size": "300 ml",
       "price": "R$ 45,65",
       "image": "/images/products/cachos/prod_1.png",
-      "description": "Limpa delicadamente os fios, protege contra ressecamento, nutre a fibra capilar, disciplina e controla frizz.",
-      "howToUse": "Aplicar nos cabelos úmidos, massagear até formar espuma e enxaguar. Repetir se necessário.",
+      "description": "Limpa delicadamente os fios, protegendo-os contra o ressecamento e nutrindo profundamente a fibra capilar; disciplina e controla o frizz, proporcionando brilho.",
+      "howToUse": "Aplique sobre os cabelos úmidos, massageando até formar espuma. Enxaguar em seguida. Repita o processo se necessário.",
       "lineDescription": "Linha para cachos e afro; limpa, hidrata e disciplina os fios, controla frizz e define cachos."
     },
     {
@@ -234,7 +234,7 @@
       "price": "R$ 49,95",
       "image": "/images/products/cachos/prod_2.png",
       "description": "Hidrata profundamente e condiciona os cabelos, deixando-os macios e fáceis de pentear.",
-      "howToUse": "Após máscara, aplicar nos cabelos úmidos, espalhar, agir 5 min e enxaguar.",
+      "howToUse": "Após o uso da máscara, aplique nos cabelos úmidos, espalhando por todo o cabelo, deixe agir por 5 minutos e enxágue. Finalize como de costume.",
       "lineDescription": "Linha para cachos e afro; limpa, hidrata e disciplina os fios, controla frizz e define cachos."
     },
     {
@@ -244,8 +244,8 @@
       "size": "250 g",
       "price": "R$ 68,97",
       "image": "/images/products/cachos/prod_3.png",
-      "description": "Hidrata profundamente, recupera a fibra capilar e deixa cachos mais definidos.",
-      "howToUse": "Após shampoo, retirar excesso de água, aplicar, enluvar, agir 5 a 20 min e enxaguar.",
+      "description": "Hidrata profundamente os cabelos e recupera a fibra capilar, deixando os cachos mais definidos.",
+      "howToUse": "Após o uso do shampoo, tire o excesso de água e aplique a máscara no comprimento e pontas, enluvando mecha a mecha. Deixe agir de 5 a 20 minutos e enxágue.",
       "lineDescription": "Linha para cachos e afro; limpa, hidrata e disciplina os fios, controla frizz e define cachos."
     },
     {
@@ -255,8 +255,8 @@
       "size": "250 ml",
       "price": "R$ 49,95",
       "image": "/images/products/cachos/prod_4.png",
-      "description": "Protege do calor do sol, prancha e secador; controla frizz e volume; anti-frizz e antivolume.",
-      "howToUse": "Aplicar pequena quantidade na palma da mão e espalhar no cabelo úmido. Não enxaguar.",
+      "description": "Protege os fios do calor do sol, prancha e secador; controla o frizz do cabelo, além dos ativos que auxiliam a fixação.",
+      "howToUse": "Aplicar na palma da mão pequena quantidade e espalhar por todo o cabelo úmido. Não enxaguar; deixar secar naturalmente ou finalizar com secador e prancha.",
       "lineDescription": "Linha para cachos e afro; limpa, hidrata e disciplina os fios, controla frizz e define cachos."
     },
     {
@@ -266,8 +266,8 @@
       "size": "250 ml",
       "price": "R$ 49,95",
       "image": "/images/products/cachos/prod_5.png",
-      "description": "Protege do calor do sol, prancha e secador; controla frizz e volume; anti-frizz e antivolume.",
-      "howToUse": "Aplicar pequena quantidade na palma da mão e espalhar no cabelo úmido. Não enxaguar.",
+      "description": "Protege os fios do calor do sol, prancha e secador; controla o frizz do cabelo, além dos ativos que auxiliam a fixação.",
+      "howToUse": "Aplicar na palma da mão pequena quantidade e espalhar por todo o cabelo úmido. Não enxaguar; deixar secar naturalmente ou finalizar com secador e prancha.",
       "lineDescription": "Linha para cachos e afro; limpa, hidrata e disciplina os fios, controla frizz e define cachos."
     }
   ],
@@ -279,8 +279,8 @@
       "size": "300 ml",
       "price": "R$ 45,65",
       "image": "/images/products/matizadores/prod_0.png",
-      "description": "Matização/hidratação para neutralizar tons amarelados; ver linha para efeito específico.",
-      "howToUse": "Shampoo: aplicar nos úmidos e enxaguar. Condicionador: aplicar e enxaguar. Máscara: agir 1 a 3 min conforme tom. Leave-in: aplicar pequena quantidade e não enxaguar.",
+      "description": "Limpa e matiza os tons amarelados indesejáveis, sem agredir a fibra capilar ou causar ressecamento no couro cabeludo.",
+      "howToUse": "Aplicar sobre os cabelos úmidos, massageando até formar espuma. Enxaguar em seguida. Repetir se necessário.",
       "lineDescription": "Linha matizadora para cabelos loiros ou grisalhos; neutraliza tons amarelados e promove efeito tonalizante."
     },
     {
@@ -290,8 +290,8 @@
       "size": "250 ml",
       "price": "R$ 49,95",
       "image": "/images/products/matizadores/prod_1.png",
-      "description": "Matização/hidratação para neutralizar tons amarelados; ver linha para efeito específico.",
-      "howToUse": "Shampoo: aplicar nos úmidos e enxaguar. Condicionador: aplicar e enxaguar. Máscara: agir 1 a 3 min conforme tom. Leave-in: aplicar pequena quantidade e não enxaguar.",
+      "description": "Hidratação intensa e matização para cabelos loiros e grisalhos, deixando os fios com cor mais neutralizada.",
+      "howToUse": "Nos cabelos limpos e úmidos, espalhe em todo o cabelo. Enxágue em seguida.",
       "lineDescription": "Linha matizadora para cabelos loiros ou grisalhos; neutraliza tons amarelados e promove efeito tonalizante."
     },
     {
@@ -301,8 +301,8 @@
       "size": "250 g",
       "price": "R$ 68,97",
       "image": "/images/products/matizadores/prod_2.png",
-      "description": "Matização/hidratação para neutralizar tons amarelados; ver linha para efeito específico.",
-      "howToUse": "Shampoo: aplicar nos úmidos e enxaguar. Condicionador: aplicar e enxaguar. Máscara: agir 1 a 3 min conforme tom. Leave-in: aplicar pequena quantidade e não enxaguar.",
+      "description": "Matização intensa com hidratação profunda, deixando o cabelo com cor mais neutralizada.",
+      "howToUse": "Recomendamos uso com base na tonalidade do cabelo. Para louros, em média 10 a 11 do cabelo, deixar apenas por 1 minuto.",
       "lineDescription": "Linha matizadora para cabelos loiros ou grisalhos; neutraliza tons amarelados e promove efeito tonalizante."
     },
     {
@@ -312,8 +312,8 @@
       "size": "250 ml",
       "price": "R$ 49,95",
       "image": "/images/products/matizadores/prod_3.png",
-      "description": "Matização/hidratação para neutralizar tons amarelados; ver linha para efeito específico.",
-      "howToUse": "Shampoo: aplicar nos úmidos e enxaguar. Condicionador: aplicar e enxaguar. Máscara: agir 1 a 3 min conforme tom. Leave-in: aplicar pequena quantidade e não enxaguar.",
+      "description": "Protege os cabelos das agressões térmicas e oferece proteção contra o calor.",
+      "howToUse": "Aplicar pequena quantidade do leave-in e espalhar por todo o cabelo úmido. Não enxaguar.",
       "lineDescription": "Linha matizadora para cabelos loiros ou grisalhos; neutraliza tons amarelados e promove efeito tonalizante."
     },
     {
@@ -323,8 +323,8 @@
       "size": "250 ml",
       "price": "R$ 45,65",
       "image": "/images/products/matizadores/prod_4.png",
-      "description": "Matização/hidratação para neutralizar tons amarelados; ver linha para efeito específico.",
-      "howToUse": "Shampoo: aplicar nos úmidos e enxaguar. Condicionador: aplicar e enxaguar. Máscara: agir 1 a 3 min conforme tom. Leave-in: aplicar pequena quantidade e não enxaguar.",
+      "description": "Limpa delicadamente os fios e conta com efeito matizador em tom pérola, que neutraliza o amarelado dos fios loiros ou grisalhos.",
+      "howToUse": "Aplicar sobre os cabelos úmidos, massageando até formar espuma. Enxaguar em seguida. Repetir o processo se necessário.",
       "lineDescription": "Linha matizadora para cabelos loiros ou grisalhos; neutraliza tons amarelados e promove efeito tonalizante."
     },
     {
@@ -334,8 +334,8 @@
       "size": "250 ml",
       "price": "R$ 49,95",
       "image": "/images/products/matizadores/prod_5.png",
-      "description": "Matização/hidratação para neutralizar tons amarelados; ver linha para efeito específico.",
-      "howToUse": "Shampoo: aplicar nos úmidos e enxaguar. Condicionador: aplicar e enxaguar. Máscara: agir 1 a 3 min conforme tom. Leave-in: aplicar pequena quantidade e não enxaguar.",
+      "description": "Desenvolvido para gerar uma hidratação profunda aos fios e tonalidade para uma neutralização dos tons amarelados dos cabelos loiros e grisalhos.",
+      "howToUse": "Após o uso da máscara, aplique nos cabelos limpos e úmidos, espalhando por todo o cabelo. Enxágue.",
       "lineDescription": "Linha matizadora para cabelos loiros ou grisalhos; neutraliza tons amarelados e promove efeito tonalizante."
     },
     {
@@ -345,8 +345,8 @@
       "size": "250 g",
       "price": "R$ 68,97",
       "image": "/images/products/matizadores/prod_6.png",
-      "description": "Matização/hidratação para neutralizar tons amarelados; ver linha para efeito específico.",
-      "howToUse": "Shampoo: aplicar nos úmidos e enxaguar. Condicionador: aplicar e enxaguar. Máscara: agir 1 a 3 min conforme tom. Leave-in: aplicar pequena quantidade e não enxaguar.",
+      "description": "Proporciona hidratação de longa duração aos cabelos e elimina os tons amarelados dos cabelos loiros e grisalhos, deixando-os com cor mais vivaz e revitalizada.",
+      "howToUse": "Usar conforme a tonalidade do cabelo. O tempo de pausa varia de 1 a 3 minutos; observar o tom do cabelo e enxaguar por completo.",
       "lineDescription": "Linha matizadora para cabelos loiros ou grisalhos; neutraliza tons amarelados e promove efeito tonalizante."
     },
     {
@@ -356,8 +356,8 @@
       "size": "250 ml",
       "price": "R$ 49,95",
       "image": "/images/products/matizadores/prod_7.png",
-      "description": "Matização/hidratação para neutralizar tons amarelados; ver linha para efeito específico.",
-      "howToUse": "Shampoo: aplicar nos úmidos e enxaguar. Condicionador: aplicar e enxaguar. Máscara: agir 1 a 3 min conforme tom. Leave-in: aplicar pequena quantidade e não enxaguar.",
+      "description": "Protege os cabelos das agressões térmicas do secador e prancha. Tem efeito antifrizz.",
+      "howToUse": "Aplicar na palma da mão uma pequena quantidade do leave-in e espalhar por todo o cabelo úmido. Não enxaguar.",
       "lineDescription": "Linha matizadora para cabelos loiros ou grisalhos; neutraliza tons amarelados e promove efeito tonalizante."
     },
     {
@@ -367,8 +367,8 @@
       "size": "250 ml",
       "price": "R$ 45,65",
       "image": "/images/products/matizadores/prod_8.png",
-      "description": "Matização/hidratação para neutralizar tons amarelados; ver linha para efeito específico.",
-      "howToUse": "Shampoo: aplicar nos úmidos e enxaguar. Condicionador: aplicar e enxaguar. Máscara: agir 1 a 3 min conforme tom. Leave-in: aplicar pequena quantidade e não enxaguar.",
+      "description": "Limpa e matiza os tons amarelados indesejáveis, sem agredir a fibra capilar ou causar ressecamento no couro cabeludo.",
+      "howToUse": "Aplicar sobre os cabelos úmidos, massageando até formar espuma. Enxaguar em seguida. Repita se necessário.",
       "lineDescription": "Linha matizadora para cabelos loiros ou grisalhos; neutraliza tons amarelados e promove efeito tonalizante."
     },
     {
@@ -378,8 +378,8 @@
       "size": "250 ml",
       "price": "R$ 49,95",
       "image": "/images/products/matizadores/prod_9.png",
-      "description": "Matização/hidratação para neutralizar tons amarelados; ver linha para efeito específico.",
-      "howToUse": "Shampoo: aplicar nos úmidos e enxaguar. Condicionador: aplicar e enxaguar. Máscara: agir 1 a 3 min conforme tom. Leave-in: aplicar pequena quantidade e não enxaguar.",
+      "description": "Hidratação intensa e matização para cabelos loiros e grisalhos.",
+      "howToUse": "Nos cabelos limpos e úmidos, espalhe por todo o cabelo. Enxágue em seguida.",
       "lineDescription": "Linha matizadora para cabelos loiros ou grisalhos; neutraliza tons amarelados e promove efeito tonalizante."
     },
     {
@@ -389,63 +389,63 @@
       "size": "250 g",
       "price": "R$ 68,97",
       "image": "/images/products/matizadores/prod_10.png",
-      "description": "Matização/hidratação para neutralizar tons amarelados; ver linha para efeito específico.",
-      "howToUse": "Shampoo: aplicar nos úmidos e enxaguar. Condicionador: aplicar e enxaguar. Máscara: agir 1 a 3 min conforme tom. Leave-in: aplicar pequena quantidade e não enxaguar.",
+      "description": "Matização intensa com hidratação profunda, deixando os cabelos platinados e hidratados.",
+      "howToUse": "Recomendamos o uso de 1 a 3 minutos, dependendo da tonalidade do seu cabelo. Composição rica, aproveitando os produtos.",
       "lineDescription": "Linha matizadora para cabelos loiros ou grisalhos; neutraliza tons amarelados e promove efeito tonalizante."
     },
     {
       "id": "matizadores-11",
       "title": "Leave-in Champagne",
       "code": "00015",
-      "size": "250 ml",
+      "size": "250 g",
       "price": "R$ 49,95",
       "image": "/images/products/matizadores/prod_11.png",
-      "description": "Matização/hidratação para neutralizar tons amarelados; ver linha para efeito específico.",
-      "howToUse": "Shampoo: aplicar nos úmidos e enxaguar. Condicionador: aplicar e enxaguar. Máscara: agir 1 a 3 min conforme tom. Leave-in: aplicar pequena quantidade e não enxaguar.",
+      "description": "Protege os cabelos das agressões térmicas da escova e prancha. Tem efeito antifrizz.",
+      "howToUse": "Aplicar pequena quantidade do leave-in e espalhar por todo o cabelo úmido. Não enxaguar.",
       "lineDescription": "Linha matizadora para cabelos loiros ou grisalhos; neutraliza tons amarelados e promove efeito tonalizante."
     },
     {
       "id": "matizadores-12",
-      "title": "Shampoo Super Prata",
+      "title": "Shampoo Prata",
       "code": "00019",
       "size": "300 ml",
       "price": "R$ 45,65",
       "image": "/images/products/matizadores/prod_12.png",
-      "description": "Matização/hidratação para neutralizar tons amarelados; ver linha para efeito específico.",
-      "howToUse": "Shampoo: aplicar nos úmidos e enxaguar. Condicionador: aplicar e enxaguar. Máscara: agir 1 a 3 min conforme tom. Leave-in: aplicar pequena quantidade e não enxaguar.",
+      "description": "Limpa os tons amarelados indesejáveis, sem agredir a fibra capilar ou causar ressecamento no couro cabeludo.",
+      "howToUse": "Aplicar sobre os cabelos úmidos, massageando até formar espuma. Enxaguar em seguida. Repita o processo se necessário. Shampoo disponível também em 1 litro.",
       "lineDescription": "Linha matizadora para cabelos loiros ou grisalhos; neutraliza tons amarelados e promove efeito tonalizante."
     },
     {
       "id": "matizadores-13",
-      "title": "Condicionador Super Prata",
+      "title": "Condicionador Prata",
       "code": "00020",
       "size": "300 ml",
       "price": "R$ 49,95",
       "image": "/images/products/matizadores/prod_13.png",
-      "description": "Matização/hidratação para neutralizar tons amarelados; ver linha para efeito específico.",
-      "howToUse": "Shampoo: aplicar nos úmidos e enxaguar. Condicionador: aplicar e enxaguar. Máscara: agir 1 a 3 min conforme tom. Leave-in: aplicar pequena quantidade e não enxaguar.",
+      "description": "Hidratação intensa e matização para cabelos loiros e grisalhos.",
+      "howToUse": "Nos cabelos limpos e úmidos, espalhe em todo o cabelo. Deixe agir por 3 minutos e enxágue.",
       "lineDescription": "Linha matizadora para cabelos loiros ou grisalhos; neutraliza tons amarelados e promove efeito tonalizante."
     },
     {
       "id": "matizadores-14",
-      "title": "Máscara Super Prata",
+      "title": "Máscara Prata",
       "code": "00022",
       "size": "250 g",
       "price": "R$ 68,97",
       "image": "/images/products/matizadores/prod_14.png",
-      "description": "Matização/hidratação para neutralizar tons amarelados; ver linha para efeito específico.",
-      "howToUse": "Shampoo: aplicar nos úmidos e enxaguar. Condicionador: aplicar e enxaguar. Máscara: agir 1 a 3 min conforme tom. Leave-in: aplicar pequena quantidade e não enxaguar.",
+      "description": "Matização intensa com hidratação profunda, deixando os cabelos platinados e hidratados.",
+      "howToUse": "Recomendamos o tempo de 1 a 3 minutos, dependendo da tonalidade do seu cabelo. Começando pela cor; deixe apenas por 1 minuto. Máscara disponível também em 900 g.",
       "lineDescription": "Linha matizadora para cabelos loiros ou grisalhos; neutraliza tons amarelados e promove efeito tonalizante."
     },
     {
       "id": "matizadores-15",
-      "title": "Leave-in Super Prata",
+      "title": "Leave-in Prata",
       "code": "00021",
       "size": "250 ml",
       "price": "R$ 49,95",
       "image": "/images/products/matizadores/prod_15.png",
-      "description": "Matização/hidratação para neutralizar tons amarelados; ver linha para efeito específico.",
-      "howToUse": "Shampoo: aplicar nos úmidos e enxaguar. Condicionador: aplicar e enxaguar. Máscara: agir 1 a 3 min conforme tom. Leave-in: aplicar pequena quantidade e não enxaguar.",
+      "description": "Protege os cabelos das agressões térmicas derivadas de prancha. Tem efeito antifrizz.",
+      "howToUse": "Aplicar pequena quantidade na palma da mão e espalhar por todo o cabelo úmido. Não enxaguar.",
       "lineDescription": "Linha matizadora para cabelos loiros ou grisalhos; neutraliza tons amarelados e promove efeito tonalizante."
     },
     {
@@ -455,9 +455,9 @@
       "size": "300 ml",
       "price": "R$ 45,65",
       "image": "/images/products/matizadores/prod_16.png",
-      "description": "Limpa e neutraliza tons amarelados indesejáveis; hidratação profunda e brilho intenso.",
-      "howToUse": "Aplicar nos cabelos úmidos, massagear até formar espuma e enxaguar. Repetir se necessário.",
-      "lineDescription": "Matização e hidratação profunda para cabelos loiros e descoloridos."
+      "description": "Limpa e neutraliza os tons amarelados indesejáveis, sem agredir a fibra capilar ou causar ressecamento no couro cabeludo.",
+      "howToUse": "Aplicar sobre os cabelos úmidos, massageando até formar espuma. Enxaguar em seguida. Repetir o processo se necessário.",
+      "lineDescription": "Linha matizadora para cabelos loiros ou grisalhos; neutraliza tons amarelados e promove efeito tonalizante."
     },
     {
       "id": "matizadores-17",
@@ -467,8 +467,8 @@
       "price": "R$ 49,95",
       "image": "/images/products/matizadores/prod_17.png",
       "description": "Hidratação leve que elimina o frizz.",
-      "howToUse": "Aplicar nos cabelos limpos do comprimento às pontas, deixar agir 5 min e enxaguar.",
-      "lineDescription": "Matização e hidratação profunda para cabelos loiros e descoloridos."
+      "howToUse": "Aplique nos cabelos limpos do comprimento às pontas. Deixe agir por 5 minutos e enxágue.",
+      "lineDescription": "Linha matizadora para cabelos loiros ou grisalhos; neutraliza tons amarelados e promove efeito tonalizante."
     },
     {
       "id": "matizadores-18",
@@ -477,9 +477,9 @@
       "size": "250 g",
       "price": "R$ 68,97",
       "image": "/images/products/matizadores/prod_0.png",
-      "description": "Matização intensa com hidratação profunda, efeito manteiga.",
-      "howToUse": "Recomenda-se pausa de 1 a 3 min, dependendo da tonalidade do cabelo.",
-      "lineDescription": "Matização e hidratação profunda para cabelos loiros e descoloridos."
+      "description": "Matização intensa com hidratação profunda e efeito matizador.",
+      "howToUse": "Recomendamos o tempo de pausa de 1 a 3 minutos, dependendo da tonalidade do seu cabelo.",
+      "lineDescription": "Linha matizadora para cabelos loiros ou grisalhos; neutraliza tons amarelados e promove efeito tonalizante."
     },
     {
       "id": "matizadores-19",
@@ -488,9 +488,9 @@
       "size": "120 ml",
       "price": "R$ 49,95",
       "image": "/images/products/matizadores/prod_1.png",
-      "description": "Proteção térmica sem enxágue; condiciona e protege do calor do secador e frizz.",
-      "howToUse": "Aplicar pequena quantidade e espalhar no cabelo úmido. Não enxaguar; finalizar.",
-      "lineDescription": "Matização e hidratação profunda para cabelos loiros e descoloridos."
+      "description": "Proteção térmica sem enxágue que condiciona, protege os cabelos do calor do secador e frizz.",
+      "howToUse": "Aplicar na palma da mão pequena quantidade do leave-in e espalhar por todo o cabelo úmido. Não enxaguar; deixar secar naturalmente ou finalizar com secador e prancha.",
+      "lineDescription": "Linha matizadora para cabelos loiros ou grisalhos; neutraliza tons amarelados e promove efeito tonalizante."
     },
     {
       "id": "matizadores-20",
@@ -499,9 +499,9 @@
       "size": "300 ml",
       "price": "R$ 45,65",
       "image": "/images/products/matizadores/prod_2.png",
-      "description": "Limpa e matiza tons amarelados indesejáveis sem agredir a fibra capilar.",
-      "howToUse": "Aplicar nos cabelos úmidos, massagear até formar espuma, enxaguar e repetir se necessário.",
-      "lineDescription": "Matizadora para cabelos loiros ou grisalhos, retirando tons amarelados e deixando cor mais natural e bonita."
+      "description": "Limpa e matiza os tons amarelados indesejáveis, sem agredir a fibra capilar ou causar ressecamento no couro cabeludo.",
+      "howToUse": "Aplicar sobre os cabelos úmidos, massageando até formar espuma. Enxaguar em seguida. Repita o processo se necessário.",
+      "lineDescription": "Linha matizadora para cabelos loiros ou grisalhos; neutraliza tons amarelados e promove efeito tonalizante."
     },
     {
       "id": "matizadores-21",
@@ -510,9 +510,9 @@
       "size": "250 g",
       "price": "R$ 68,97",
       "image": "/images/products/matizadores/prod_3.png",
-      "description": "Matização intensa com hidratação profunda para cabelos platinados e hidratados.",
-      "howToUse": "Recomenda-se pausa de 1 a 3 min conforme tonalidade; tom 10/11 deixar apenas 1 min.",
-      "lineDescription": "Matizadora para cabelos loiros ou grisalhos, retirando tons amarelados e deixando cor mais natural e bonita."
+      "description": "Matização intensa com hidratação profunda, deixando seus cabelos platinados e hidratados.",
+      "howToUse": "Recomendamos o tempo de 1 a 3 minutos, dependendo da tonalidade do seu cabelo. Começando pelo comprimento até as pontas.",
+      "lineDescription": "Linha matizadora para cabelos loiros ou grisalhos; neutraliza tons amarelados e promove efeito tonalizante."
     },
     {
       "id": "matizadores-22",
@@ -522,8 +522,8 @@
       "price": "R$ 45,65",
       "image": "/images/products/matizadores/prod_4.png",
       "description": "Tonalizante para cabelos pretos naturais ou coloridos.",
-      "howToUse": "Aplicar nos cabelos úmidos, massagear até formar espuma, deixar agir até 5 min e enxaguar.",
-      "lineDescription": "Para cabelos pretos naturais ou coloridos; ajuda a manter brilho, maleabilidade e exuberância."
+      "howToUse": "Aplicar sobre os cabelos úmidos, massageando até formar espuma. Deixe agir de 5 minutos e enxágue em seguida, retirando todo o produto.",
+      "lineDescription": "Linha matizadora para cabelos loiros ou grisalhos; neutraliza tons amarelados e promove efeito tonalizante."
     },
     {
       "id": "matizadores-23",
@@ -532,211 +532,519 @@
       "size": "250 g",
       "price": "R$ 68,97",
       "image": "/images/products/matizadores/prod_5.png",
-      "description": "Hidratação profunda com efeito prolongado e ativos tonalizantes para cabelos pretos.",
-      "howToUse": "Após shampoo, retirar excesso de água, aplicar, enluvar, agir 2 a 5 min e enxaguar.",
-      "lineDescription": "Para cabelos pretos naturais ou coloridos; ajuda a manter brilho, maleabilidade e exuberância."
+      "description": "Proporciona hidratação profunda com efeito prolongado e contém ativos tonalizantes para cabelos pretos.",
+      "howToUse": "Após o uso do shampoo, tire o excesso de água. Aplique a máscara no comprimento às pontas, enluvando mecha a mecha. Deixe agir de 2 a 5 minutos e enxágue.",
+      "lineDescription": "Linha matizadora para cabelos loiros ou grisalhos; neutraliza tons amarelados e promove efeito tonalizante."
     }
   ],
   "lapidacao": [
     {
       "id": "lapidacao-0",
-      "title": "Passo 01 - Shampoo/Limpar",
-      "code": "revisar",
+      "title": "Passo 01 - Shampoo",
+      "code": "",
       "size": "300 ml",
       "price": "R$ 58,96",
       "image": "/images/products/lapidacao/prod_1.png",
-      "description": "Tratamento profissional de lapidação capilar.",
-      "howToUse": "Seguir cronogramas da página 22: hidratação, nutrição, reconstrução ou cauterização.",
+      "description": "Tratamento profissional para transformar os resultados no salão. Indicado para cabelos danificados, secos, coloridos, cacheados e pós-químicos.",
+      "howToUse": "Usado dentro dos cronogramas de hidratação, nutrição, reconstrução e cauterização.",
       "lineDescription": "Kit profissional 4 passos para todos os tipos de cabelo; indicado para danificados, secos, coloridos, cacheados e pós-químicos."
     },
     {
       "id": "lapidacao-1",
       "title": "Passo 02 - Selante de Cutícula",
-      "code": "revisar",
+      "code": "",
       "size": "300 ml",
       "price": "R$ 58,96",
       "image": "/images/products/lapidacao/prod_2.png",
-      "description": "Tratamento profissional de lapidação capilar.",
-      "howToUse": "Seguir cronogramas da página 22: hidratação, nutrição, reconstrução ou cauterização.",
+      "description": "Tratamento profissional 4 passos para restauração, brilho e disciplina dos fios.",
+      "howToUse": "Usado após o passo 01, conforme cronograma indicado no catálogo.",
       "lineDescription": "Kit profissional 4 passos para todos os tipos de cabelo; indicado para danificados, secos, coloridos, cacheados e pós-químicos."
     },
     {
       "id": "lapidacao-2",
-      "title": "Passo 03 - Reconstrutor Intensivo",
-      "code": "revisar",
+      "title": "Passo 03 - Reconstrutor Interno",
+      "code": "",
       "size": "300 ml",
       "price": "R$ 58,96",
       "image": "/images/products/lapidacao/prod_3.png",
-      "description": "Tratamento profissional de lapidação capilar.",
-      "howToUse": "Seguir cronogramas da página 22: hidratação, nutrição, reconstrução ou cauterização.",
+      "description": "Reconstrutor intensivo para compor tratamento de salão em quatro etapas.",
+      "howToUse": "Usado no cronograma de nutrição/reconstrução conforme orientação do catálogo.",
       "lineDescription": "Kit profissional 4 passos para todos os tipos de cabelo; indicado para danificados, secos, coloridos, cacheados e pós-químicos."
     },
     {
       "id": "lapidacao-3",
       "title": "Passo 04 - Hidratação Profissional",
-      "code": "revisar",
+      "code": "",
       "size": "300 ml",
       "price": "R$ 58,96",
       "image": "/images/products/lapidacao/prod_4.png",
-      "description": "Tratamento profissional de lapidação capilar.",
-      "howToUse": "Seguir cronogramas da página 22: hidratação, nutrição, reconstrução ou cauterização.",
+      "description": "Hidratação profissional para finalizar o tratamento de salão em quatro etapas.",
+      "howToUse": "Usado no cronograma de hidratação, nutrição, reconstrução ou cauterização conforme orientação do catálogo.",
       "lineDescription": "Kit profissional 4 passos para todos os tipos de cabelo; indicado para danificados, secos, coloridos, cacheados e pós-químicos."
-    },
-    {
-      "id": "lapidacao-4",
-      "title": "Instruções de uso Lapidação",
-      "code": "—",
-      "size": "—",
-      "price": "",
-      "image": "/images/products/lapidacao/prod_1.png",
-      "description": "Página explicativa de sequência de aplicação dos passos.",
-      "howToUse": "Hidratação: 01 > 04 > 02. Nutrição: 01 > 02 > 03 > 04. Reconstrução: 01 > 03 > 02 > 04. Cauterização: 01 > 02 > 04.",
-      "lineDescription": "Cronograma capilar em 4 etapas: hidratação, nutrição, reconstrução e cauterização."
     }
   ],
   "coloracao": [
     {
       "id": "coloracao-0",
-      "title": "OX 90 ml 10 volumes",
-      "code": "01082",
+      "title": "Ox 90 ml",
+      "code": "01082 / 01083 / 01084 / 01085",
       "size": "90 ml",
       "price": "R$ 15,40",
       "image": "/images/products/coloracao/prod_1.png",
-      "description": "Água oxigenada cremosa perfumada com silicones especiais.",
-      "howToUse": "Misturar em recipiente não metálico conforme dosagem da coloração ou pó descolorante.",
+      "description": "Emulsão reveladora cremosa. A água oxigenada cremosa, siliconada especial e perfumada deve ser utilizada na preparação de colorações e descolorações na quantidade indicada no modo de preparo do produto a ser utilizado.",
+      "howToUse": "Volumagens: 10, 20, 30 e 40 volumes. Seguir a dosagem recomendada na embalagem da coloração ou pó descolorante.",
       "lineDescription": "Emulsão reveladora cremosa para coloração/descoloração."
     },
     {
       "id": "coloracao-1",
-      "title": "OX 90 ml 20 volumes",
-      "code": "01083",
-      "size": "90 ml",
-      "price": "R$ 15,40",
+      "title": "Ox 900 ml",
+      "code": "00083 / 00084 / 00085 / 00086",
+      "size": "900 ml",
+      "price": "R$ 38,90",
       "image": "/images/products/coloracao/prod_2.png",
-      "description": "Água oxigenada cremosa perfumada com silicones especiais.",
-      "howToUse": "Misturar em recipiente não metálico conforme dosagem da coloração ou pó descolorante.",
+      "description": "Emulsão reveladora cremosa. Produto para preparação de colorações e descolorações, conforme dosagem indicada.",
+      "howToUse": "Volumagens: 10, 20, 30 e 40 volumes.",
       "lineDescription": "Emulsão reveladora cremosa para coloração/descoloração."
     },
     {
       "id": "coloracao-2",
-      "title": "OX 90 ml 30 volumes",
-      "code": "01084",
-      "size": "90 ml",
-      "price": "R$ 15,40",
-      "image": "/images/products/coloracao/prod_3.png",
-      "description": "Água oxigenada cremosa perfumada com silicones especiais.",
-      "howToUse": "Misturar em recipiente não metálico conforme dosagem da coloração ou pó descolorante.",
-      "lineDescription": "Emulsão reveladora cremosa para coloração/descoloração."
-    },
-    {
-      "id": "coloracao-3",
-      "title": "OX 90 ml 40 volumes",
-      "code": "01085",
-      "size": "90 ml",
-      "price": "R$ 15,40",
-      "image": "/images/products/coloracao/prod_4.png",
-      "description": "Água oxigenada cremosa perfumada com silicones especiais.",
-      "howToUse": "Misturar em recipiente não metálico conforme dosagem da coloração ou pó descolorante.",
-      "lineDescription": "Emulsão reveladora cremosa para coloração/descoloração."
-    },
-    {
-      "id": "coloracao-4",
-      "title": "OX 900 ml 10 volumes",
-      "code": "00083",
-      "size": "900 ml",
-      "price": "R$ 38,90",
-      "image": "/images/products/coloracao/prod_5.png",
-      "description": "Água oxigenada cremosa perfumada com silicones especiais.",
-      "howToUse": "Misturar em recipiente não metálico conforme dosagem da coloração ou pó descolorante.",
-      "lineDescription": "Emulsão reveladora cremosa para coloração/descoloração."
-    },
-    {
-      "id": "coloracao-5",
-      "title": "OX 900 ml 20 volumes",
-      "code": "01849",
-      "size": "900 ml",
-      "price": "R$ 38,90",
-      "image": "/images/products/coloracao/prod_6.png",
-      "description": "Água oxigenada cremosa perfumada com silicones especiais.",
-      "howToUse": "Misturar em recipiente não metálico conforme dosagem da coloração ou pó descolorante.",
-      "lineDescription": "Emulsão reveladora cremosa para coloração/descoloração."
-    },
-    {
-      "id": "coloracao-6",
-      "title": "OX 900 ml 30 volumes",
-      "code": "00085",
-      "size": "900 ml",
-      "price": "R$ 38,90",
-      "image": "/images/products/coloracao/prod_7.png",
-      "description": "Água oxigenada cremosa perfumada com silicones especiais.",
-      "howToUse": "Misturar em recipiente não metálico conforme dosagem da coloração ou pó descolorante.",
-      "lineDescription": "Emulsão reveladora cremosa para coloração/descoloração."
-    },
-    {
-      "id": "coloracao-7",
-      "title": "OX 900 ml 40 volumes",
-      "code": "00086",
-      "size": "900 ml",
-      "price": "R$ 38,90",
-      "image": "/images/products/coloracao/prod_8.png",
-      "description": "Água oxigenada cremosa perfumada com silicones especiais.",
-      "howToUse": "Misturar em recipiente não metálico conforme dosagem da coloração ou pó descolorante.",
-      "lineDescription": "Emulsão reveladora cremosa para coloração/descoloração."
-    },
-    {
-      "id": "coloracao-8",
-      "title": "Pó Descolorante Branco",
-      "code": "00087",
-      "size": "500 g",
-      "price": "R$ 109,00",
-      "image": "/images/products/coloracao/prod_9.png",
-      "description": "Para descoloração rápida e clareamento forte, cabelos naturais ou coloridos.",
-      "howToUse": "Aplicar mistura com pincel e luvas; controlar tempo pelo profissional; enxaguar com água morna e shampoo.",
-      "lineDescription": "Abre até 10 tons; pó uniforme e progressivo para técnicas de clareamento."
-    },
-    {
-      "id": "coloracao-9",
       "title": "Pó Descolorante Azul",
       "code": "00088",
       "size": "500 g",
       "price": "R$ 109,00",
+      "image": "/images/products/coloracao/prod_3.png",
+      "description": "Pó descolorante capilar uniforme para ser usado em todas as técnicas de clareamento. Descoloração rápida e clareamento mais forte para cabelos naturais ou coloridos.",
+      "howToUse": "Aplicar a mistura com um pincel e usar luvas específicas. Faça uma prova de toque antes de aplicar o produto. O tempo de ação deverá ser controlado pelo profissional, em função do grau de clareamento desejado. Após o tempo de pausa, enxaguar com água morna e shampoo.",
+      "lineDescription": "Emulsão reveladora cremosa para coloração/descoloração."
+    },
+    {
+      "id": "coloracao-3",
+      "title": "Pó Descolorante Branco",
+      "code": "00087",
+      "size": "500 g",
+      "price": "R$ 109,00",
+      "image": "/images/products/coloracao/prod_4.png",
+      "description": "Pó descolorante capilar uniforme para clareamento. Ideal para técnicas de descoloração em cabelos naturais ou coloridos.",
+      "howToUse": "Aplicar com pincel e luvas. Controlar o tempo de ação pelo profissional. Enxaguar com água morna e shampoo.",
+      "lineDescription": "Emulsão reveladora cremosa para coloração/descoloração."
+    },
+    {
+      "id": "coloracao-4",
+      "title": "Coloração Creme 60g",
+      "code": "",
+      "size": "60 g",
+      "price": "R$ 36,94",
+      "image": "/images/products/coloracao/prod_5.png",
+      "description": "Coloração Creme Diamante Profissional oferece cobertura completa dos fios brancos, proporcionando cor intensa, brilho radiante e maciez incomparável. Fórmula cremosa que garante fácil aplicação e resultado uniforme da raiz até as pontas.",
+      "howToUse": "Proporção 1 + 1,5. Com proteína do trigo, manteiga de cupuaçu e óleo de coco. 100% de cobertura dos fios brancos.",
+      "lineDescription": "Emulsão reveladora cremosa para coloração/descoloração."
+    },
+    {
+      "id": "coloracao-5",
+      "title": "1.0 Preto Intenso",
+      "code": "",
+      "size": "60 g",
+      "price": "R$ 36,94",
+      "image": "/images/products/coloracao/prod_6.png",
+      "description": "Tonalidade da tabela de coloração creme Diamante Profissional. Cores intensas, brilho radiante e cobertura completa dos fios brancos para resultados profissionais e duradouros.",
+      "howToUse": "Usar conforme instrução da coloração creme: proporção 1 + 1,5.",
+      "lineDescription": "Emulsão reveladora cremosa para coloração/descoloração."
+    },
+    {
+      "id": "coloracao-6",
+      "title": "2.0 Preto Clássico",
+      "code": "",
+      "size": "60 g",
+      "price": "R$ 36,94",
+      "image": "/images/products/coloracao/prod_7.png",
+      "description": "Tonalidade da tabela de coloração creme Diamante Profissional. Cores intensas, brilho radiante e cobertura completa dos fios brancos para resultados profissionais e duradouros.",
+      "howToUse": "Usar conforme instrução da coloração creme: proporção 1 + 1,5.",
+      "lineDescription": "Emulsão reveladora cremosa para coloração/descoloração."
+    },
+    {
+      "id": "coloracao-7",
+      "title": "3.0 Castanho Escuro",
+      "code": "",
+      "size": "60 g",
+      "price": "R$ 36,94",
+      "image": "/images/products/coloracao/prod_8.png",
+      "description": "Tonalidade da tabela de coloração creme Diamante Profissional. Cores intensas, brilho radiante e cobertura completa dos fios brancos para resultados profissionais e duradouros.",
+      "howToUse": "Usar conforme instrução da coloração creme: proporção 1 + 1,5.",
+      "lineDescription": "Emulsão reveladora cremosa para coloração/descoloração."
+    },
+    {
+      "id": "coloracao-8",
+      "title": "4.0 Castanho Natural",
+      "code": "",
+      "size": "60 g",
+      "price": "R$ 36,94",
+      "image": "/images/products/coloracao/prod_9.png",
+      "description": "Tonalidade da tabela de coloração creme Diamante Profissional. Cores intensas, brilho radiante e cobertura completa dos fios brancos para resultados profissionais e duradouros.",
+      "howToUse": "Usar conforme instrução da coloração creme: proporção 1 + 1,5.",
+      "lineDescription": "Emulsão reveladora cremosa para coloração/descoloração."
+    },
+    {
+      "id": "coloracao-9",
+      "title": "5.0 Castanho Claro",
+      "code": "",
+      "size": "60 g",
+      "price": "R$ 36,94",
       "image": "/images/products/coloracao/prod_10.png",
-      "description": "Para descoloração rápida e clareamento forte, cabelos naturais ou coloridos.",
-      "howToUse": "Aplicar mistura com pincel e luvas; controlar tempo pelo profissional; enxaguar com água morna e shampoo.",
-      "lineDescription": "Abre até 10 tons; pó uniforme e progressivo para técnicas de clareamento."
+      "description": "Tonalidade da tabela de coloração creme Diamante Profissional. Cores intensas, brilho radiante e cobertura completa dos fios brancos para resultados profissionais e duradouros.",
+      "howToUse": "Usar conforme instrução da coloração creme: proporção 1 + 1,5.",
+      "lineDescription": "Emulsão reveladora cremosa para coloração/descoloração."
     },
     {
       "id": "coloracao-10",
-      "title": "Coloração Creme",
-      "code": "—",
+      "title": "6.0 Louro Escuro",
+      "code": "",
       "size": "60 g",
       "price": "R$ 36,94",
       "image": "/images/products/coloracao/prod_11.png",
-      "description": "Fórmula cremosa com proteína do trigo, manteiga de cupuaçu e óleo de coco; 100% de cobertura dos fios brancos.",
-      "howToUse": "Preparar e aplicar conforme técnica profissional de coloração.",
-      "lineDescription": "Cobertura completa dos fios brancos; cor intensa, brilho radiante e maciez."
+      "description": "Tonalidade da tabela de coloração creme Diamante Profissional. Cores intensas, brilho radiante e cobertura completa dos fios brancos para resultados profissionais e duradouros.",
+      "howToUse": "Usar conforme instrução da coloração creme: proporção 1 + 1,5.",
+      "lineDescription": "Emulsão reveladora cremosa para coloração/descoloração."
     },
     {
       "id": "coloracao-11",
-      "title": "Tabela de cores - parte 1",
-      "code": "—",
-      "size": "—",
-      "price": "",
+      "title": "7.0 Louro Natural",
+      "code": "",
+      "size": "60 g",
+      "price": "R$ 36,94",
       "image": "/images/products/coloracao/prod_12.png",
-      "description": "Tons: 1.0, 2.0, 6.0, 7.0, 8.0, 9.0, 10.0, 11.0, 12.0 e cinzas/azulados.",
-      "howToUse": "Consulta de cor; não é produto individual.",
-      "lineDescription": "Cores naturais e acinzentadas."
+      "description": "Tonalidade da tabela de coloração creme Diamante Profissional. Cores intensas, brilho radiante e cobertura completa dos fios brancos para resultados profissionais e duradouros.",
+      "howToUse": "Usar conforme instrução da coloração creme: proporção 1 + 1,5.",
+      "lineDescription": "Emulsão reveladora cremosa para coloração/descoloração."
     },
     {
       "id": "coloracao-12",
-      "title": "Tabela de cores - parte 2",
-      "code": "—",
-      "size": "—",
-      "price": "",
+      "title": "8.0 Louro Claro",
+      "code": "",
+      "size": "60 g",
+      "price": "R$ 36,94",
       "image": "/images/products/coloracao/prod_13.png",
-      "description": "Tons dourados/chocolate/cinza/pérola/especiais; inclui preto extra profundo, castanho claro marrom cobre e louro dourado acaju.",
-      "howToUse": "Consulta de cor; não é produto individual.",
-      "lineDescription": "Cores douradas, chocolate, cinzas, pérolas e especiais."
+      "description": "Tonalidade da tabela de coloração creme Diamante Profissional. Cores intensas, brilho radiante e cobertura completa dos fios brancos para resultados profissionais e duradouros.",
+      "howToUse": "Usar conforme instrução da coloração creme: proporção 1 + 1,5.",
+      "lineDescription": "Emulsão reveladora cremosa para coloração/descoloração."
+    },
+    {
+      "id": "coloracao-13",
+      "title": "9.0 Louro Muito Claro",
+      "code": "",
+      "size": "60 g",
+      "price": "R$ 36,94",
+      "image": "/images/products/coloracao/prod_14.png",
+      "description": "Tonalidade da tabela de coloração creme Diamante Profissional. Cores intensas, brilho radiante e cobertura completa dos fios brancos para resultados profissionais e duradouros.",
+      "howToUse": "Usar conforme instrução da coloração creme: proporção 1 + 1,5.",
+      "lineDescription": "Emulsão reveladora cremosa para coloração/descoloração."
+    },
+    {
+      "id": "coloracao-14",
+      "title": "10.0 Louro Claríssimo",
+      "code": "",
+      "size": "60 g",
+      "price": "R$ 36,94",
+      "image": "/images/products/coloracao/prod_15.png",
+      "description": "Tonalidade da tabela de coloração creme Diamante Profissional. Cores intensas, brilho radiante e cobertura completa dos fios brancos para resultados profissionais e duradouros.",
+      "howToUse": "Usar conforme instrução da coloração creme: proporção 1 + 1,5.",
+      "lineDescription": "Emulsão reveladora cremosa para coloração/descoloração."
+    },
+    {
+      "id": "coloracao-15",
+      "title": "11.0 Louro Super Claro Natural",
+      "code": "",
+      "size": "60 g",
+      "price": "R$ 36,94",
+      "image": "/images/products/coloracao/prod_16.png",
+      "description": "Tonalidade da tabela de coloração creme Diamante Profissional. Cores intensas, brilho radiante e cobertura completa dos fios brancos para resultados profissionais e duradouros.",
+      "howToUse": "Usar conforme instrução da coloração creme: proporção 1 + 1,5.",
+      "lineDescription": "Emulsão reveladora cremosa para coloração/descoloração."
+    },
+    {
+      "id": "coloracao-16",
+      "title": "12.0 Louro Super Claro Champagne",
+      "code": "",
+      "size": "60 g",
+      "price": "R$ 36,94",
+      "image": "/images/products/coloracao/prod_17.png",
+      "description": "Tonalidade da tabela de coloração creme Diamante Profissional. Cores intensas, brilho radiante e cobertura completa dos fios brancos para resultados profissionais e duradouros.",
+      "howToUse": "Usar conforme instrução da coloração creme: proporção 1 + 1,5.",
+      "lineDescription": "Emulsão reveladora cremosa para coloração/descoloração."
+    },
+    {
+      "id": "coloracao-17",
+      "title": "1.11 Preto Azulado",
+      "code": "",
+      "size": "60 g",
+      "price": "R$ 36,94",
+      "image": "/images/products/coloracao/prod_18.png",
+      "description": "Tonalidade da tabela de coloração creme Diamante Profissional. Cores intensas, brilho radiante e cobertura completa dos fios brancos para resultados profissionais e duradouros.",
+      "howToUse": "Usar conforme instrução da coloração creme: proporção 1 + 1,5.",
+      "lineDescription": "Emulsão reveladora cremosa para coloração/descoloração."
+    },
+    {
+      "id": "coloracao-18",
+      "title": "2.1 Preto Especial",
+      "code": "",
+      "size": "60 g",
+      "price": "R$ 36,94",
+      "image": "/images/products/coloracao/prod_19.png",
+      "description": "Tonalidade da tabela de coloração creme Diamante Profissional. Cores intensas, brilho radiante e cobertura completa dos fios brancos para resultados profissionais e duradouros.",
+      "howToUse": "Usar conforme instrução da coloração creme: proporção 1 + 1,5.",
+      "lineDescription": "Emulsão reveladora cremosa para coloração/descoloração."
+    },
+    {
+      "id": "coloracao-19",
+      "title": "6.1 Louro Escuro Cinza",
+      "code": "",
+      "size": "60 g",
+      "price": "R$ 36,94",
+      "image": "/images/products/coloracao/prod_20.png",
+      "description": "Tonalidade da tabela de coloração creme Diamante Profissional. Cores intensas, brilho radiante e cobertura completa dos fios brancos para resultados profissionais e duradouros.",
+      "howToUse": "Usar conforme instrução da coloração creme: proporção 1 + 1,5.",
+      "lineDescription": "Emulsão reveladora cremosa para coloração/descoloração."
+    },
+    {
+      "id": "coloracao-20",
+      "title": "7.1 Louro Cinza",
+      "code": "",
+      "size": "60 g",
+      "price": "R$ 36,94",
+      "image": "/images/products/coloracao/prod_21.png",
+      "description": "Tonalidade da tabela de coloração creme Diamante Profissional. Cores intensas, brilho radiante e cobertura completa dos fios brancos para resultados profissionais e duradouros.",
+      "howToUse": "Usar conforme instrução da coloração creme: proporção 1 + 1,5.",
+      "lineDescription": "Emulsão reveladora cremosa para coloração/descoloração."
+    },
+    {
+      "id": "coloracao-21",
+      "title": "4.3 Castanho Médio Dourado",
+      "code": "",
+      "size": "60 g",
+      "price": "R$ 36,94",
+      "image": "/images/products/coloracao/prod_22.png",
+      "description": "Tonalidade da tabela de coloração creme Diamante Profissional. Cores intensas, brilho radiante e cobertura completa dos fios brancos para resultados profissionais e duradouros.",
+      "howToUse": "Usar conforme instrução da coloração creme: proporção 1 + 1,5.",
+      "lineDescription": "Emulsão reveladora cremosa para coloração/descoloração."
+    },
+    {
+      "id": "coloracao-22",
+      "title": "5.3 Castanho Claro Dourado",
+      "code": "",
+      "size": "60 g",
+      "price": "R$ 36,94",
+      "image": "/images/products/coloracao/prod_23.png",
+      "description": "Tonalidade da tabela de coloração creme Diamante Profissional. Cores intensas, brilho radiante e cobertura completa dos fios brancos para resultados profissionais e duradouros.",
+      "howToUse": "Usar conforme instrução da coloração creme: proporção 1 + 1,5.",
+      "lineDescription": "Emulsão reveladora cremosa para coloração/descoloração."
+    },
+    {
+      "id": "coloracao-23",
+      "title": "6.3 Louro Escuro Dourado",
+      "code": "",
+      "size": "60 g",
+      "price": "R$ 36,94",
+      "image": "/images/products/coloracao/prod_24.png",
+      "description": "Tonalidade da tabela de coloração creme Diamante Profissional. Cores intensas, brilho radiante e cobertura completa dos fios brancos para resultados profissionais e duradouros.",
+      "howToUse": "Usar conforme instrução da coloração creme: proporção 1 + 1,5.",
+      "lineDescription": "Emulsão reveladora cremosa para coloração/descoloração."
+    },
+    {
+      "id": "coloracao-24",
+      "title": "7.3 Louro Dourado",
+      "code": "",
+      "size": "60 g",
+      "price": "R$ 36,94",
+      "image": "/images/products/coloracao/prod_25.png",
+      "description": "Tonalidade da tabela de coloração creme Diamante Profissional. Cores intensas, brilho radiante e cobertura completa dos fios brancos para resultados profissionais e duradouros.",
+      "howToUse": "Usar conforme instrução da coloração creme: proporção 1 + 1,5.",
+      "lineDescription": "Emulsão reveladora cremosa para coloração/descoloração."
+    },
+    {
+      "id": "coloracao-25",
+      "title": "8.3 Louro Claro Dourado",
+      "code": "",
+      "size": "60 g",
+      "price": "R$ 36,94",
+      "image": "/images/products/coloracao/prod_26.png",
+      "description": "Tonalidade da tabela de coloração creme Diamante Profissional. Cores intensas, brilho radiante e cobertura completa dos fios brancos para resultados profissionais e duradouros.",
+      "howToUse": "Usar conforme instrução da coloração creme: proporção 1 + 1,5.",
+      "lineDescription": "Emulsão reveladora cremosa para coloração/descoloração."
+    },
+    {
+      "id": "coloracao-26",
+      "title": "5.7 Castanho Claro Marrom Intenso",
+      "code": "",
+      "size": "60 g",
+      "price": "R$ 36,94",
+      "image": "/images/products/coloracao/prod_27.png",
+      "description": "Tonalidade da tabela de coloração creme Diamante Profissional. Cores intensas, brilho radiante e cobertura completa dos fios brancos para resultados profissionais e duradouros.",
+      "howToUse": "Usar conforme instrução da coloração creme: proporção 1 + 1,5.",
+      "lineDescription": "Emulsão reveladora cremosa para coloração/descoloração."
+    },
+    {
+      "id": "coloracao-27",
+      "title": "6.7 Chocolate Puro",
+      "code": "",
+      "size": "60 g",
+      "price": "R$ 36,94",
+      "image": "/images/products/coloracao/prod_28.png",
+      "description": "Tonalidade da tabela de coloração creme Diamante Profissional. Cores intensas, brilho radiante e cobertura completa dos fios brancos para resultados profissionais e duradouros.",
+      "howToUse": "Usar conforme instrução da coloração creme: proporção 1 + 1,5.",
+      "lineDescription": "Emulsão reveladora cremosa para coloração/descoloração."
+    },
+    {
+      "id": "coloracao-28",
+      "title": "7.7 Chocolate Dourado",
+      "code": "",
+      "size": "60 g",
+      "price": "R$ 36,94",
+      "image": "/images/products/coloracao/prod_29.png",
+      "description": "Tonalidade da tabela de coloração creme Diamante Profissional. Cores intensas, brilho radiante e cobertura completa dos fios brancos para resultados profissionais e duradouros.",
+      "howToUse": "Usar conforme instrução da coloração creme: proporção 1 + 1,5.",
+      "lineDescription": "Emulsão reveladora cremosa para coloração/descoloração."
+    },
+    {
+      "id": "coloracao-29",
+      "title": "8.1 Louro Claro Cinza",
+      "code": "",
+      "size": "60 g",
+      "price": "R$ 36,94",
+      "image": "/images/products/coloracao/prod_30.png",
+      "description": "Tonalidade da tabela de coloração creme Diamante Profissional. Cores intensas, brilho radiante e cobertura completa dos fios brancos para resultados profissionais e duradouros.",
+      "howToUse": "Usar conforme instrução da coloração creme: proporção 1 + 1,5.",
+      "lineDescription": "Emulsão reveladora cremosa para coloração/descoloração."
+    },
+    {
+      "id": "coloracao-30",
+      "title": "9.1 Louro Claríssimo Cinza",
+      "code": "",
+      "size": "60 g",
+      "price": "R$ 36,94",
+      "image": "/images/products/coloracao/prod_31.png",
+      "description": "Tonalidade da tabela de coloração creme Diamante Profissional. Cores intensas, brilho radiante e cobertura completa dos fios brancos para resultados profissionais e duradouros.",
+      "howToUse": "Usar conforme instrução da coloração creme: proporção 1 + 1,5.",
+      "lineDescription": "Emulsão reveladora cremosa para coloração/descoloração."
+    },
+    {
+      "id": "coloracao-31",
+      "title": "10.1 Louro Claríssimo Írisê Cinza",
+      "code": "",
+      "size": "60 g",
+      "price": "R$ 36,94",
+      "image": "/images/products/coloracao/prod_32.png",
+      "description": "Tonalidade da tabela de coloração creme Diamante Profissional. Cores intensas, brilho radiante e cobertura completa dos fios brancos para resultados profissionais e duradouros.",
+      "howToUse": "Usar conforme instrução da coloração creme: proporção 1 + 1,5.",
+      "lineDescription": "Emulsão reveladora cremosa para coloração/descoloração."
+    },
+    {
+      "id": "coloracao-32",
+      "title": "11.11 Louro Platinado Cinza Intenso",
+      "code": "",
+      "size": "60 g",
+      "price": "R$ 36,94",
+      "image": "/images/products/coloracao/prod_33.png",
+      "description": "Tonalidade da tabela de coloração creme Diamante Profissional. Cores intensas, brilho radiante e cobertura completa dos fios brancos para resultados profissionais e duradouros.",
+      "howToUse": "Usar conforme instrução da coloração creme: proporção 1 + 1,5.",
+      "lineDescription": "Emulsão reveladora cremosa para coloração/descoloração."
+    },
+    {
+      "id": "coloracao-33",
+      "title": "12.1 Louro Extra Claro Cinza",
+      "code": "",
+      "size": "60 g",
+      "price": "R$ 36,94",
+      "image": "/images/products/coloracao/prod_34.png",
+      "description": "Tonalidade da tabela de coloração creme Diamante Profissional. Cores intensas, brilho radiante e cobertura completa dos fios brancos para resultados profissionais e duradouros.",
+      "howToUse": "Usar conforme instrução da coloração creme: proporção 1 + 1,5.",
+      "lineDescription": "Emulsão reveladora cremosa para coloração/descoloração."
+    },
+    {
+      "id": "coloracao-34",
+      "title": "12.11 Louro Extra Claro Platino Cinza Intenso",
+      "code": "",
+      "size": "60 g",
+      "price": "R$ 36,94",
+      "image": "/images/products/coloracao/prod_35.png",
+      "description": "Tonalidade da tabela de coloração creme Diamante Profissional. Cores intensas, brilho radiante e cobertura completa dos fios brancos para resultados profissionais e duradouros.",
+      "howToUse": "Usar conforme instrução da coloração creme: proporção 1 + 1,5.",
+      "lineDescription": "Emulsão reveladora cremosa para coloração/descoloração."
+    },
+    {
+      "id": "coloracao-35",
+      "title": "9.12 Louro Muito Claro Pérola",
+      "code": "",
+      "size": "60 g",
+      "price": "R$ 36,94",
+      "image": "/images/products/coloracao/prod_36.png",
+      "description": "Tonalidade da tabela de coloração creme Diamante Profissional. Cores intensas, brilho radiante e cobertura completa dos fios brancos para resultados profissionais e duradouros.",
+      "howToUse": "Usar conforme instrução da coloração creme: proporção 1 + 1,5.",
+      "lineDescription": "Emulsão reveladora cremosa para coloração/descoloração."
+    },
+    {
+      "id": "coloracao-36",
+      "title": "10.89 Louro Claríssimo Pérola",
+      "code": "",
+      "size": "60 g",
+      "price": "R$ 36,94",
+      "image": "/images/products/coloracao/prod_37.png",
+      "description": "Tonalidade da tabela de coloração creme Diamante Profissional. Cores intensas, brilho radiante e cobertura completa dos fios brancos para resultados profissionais e duradouros.",
+      "howToUse": "Usar conforme instrução da coloração creme: proporção 1 + 1,5.",
+      "lineDescription": "Emulsão reveladora cremosa para coloração/descoloração."
+    },
+    {
+      "id": "coloracao-37",
+      "title": "11.89 Louro Platino Pérola",
+      "code": "",
+      "size": "60 g",
+      "price": "R$ 36,94",
+      "image": "/images/products/coloracao/prod_38.png",
+      "description": "Tonalidade da tabela de coloração creme Diamante Profissional. Cores intensas, brilho radiante e cobertura completa dos fios brancos para resultados profissionais e duradouros.",
+      "howToUse": "Usar conforme instrução da coloração creme: proporção 1 + 1,5.",
+      "lineDescription": "Emulsão reveladora cremosa para coloração/descoloração."
+    },
+    {
+      "id": "coloracao-38",
+      "title": "12.89 Louro Claríssimo Pérola",
+      "code": "",
+      "size": "60 g",
+      "price": "R$ 36,94",
+      "image": "/images/products/coloracao/prod_39.png",
+      "description": "Tonalidade da tabela de coloração creme Diamante Profissional. Cores intensas, brilho radiante e cobertura completa dos fios brancos para resultados profissionais e duradouros.",
+      "howToUse": "Usar conforme instrução da coloração creme: proporção 1 + 1,5.",
+      "lineDescription": "Emulsão reveladora cremosa para coloração/descoloração."
+    },
+    {
+      "id": "coloracao-39",
+      "title": "2.8 Preto Extra Profundo",
+      "code": "",
+      "size": "60 g",
+      "price": "R$ 36,94",
+      "image": "/images/products/coloracao/prod_40.png",
+      "description": "Tonalidade da tabela de coloração creme Diamante Profissional. Cores intensas, brilho radiante e cobertura completa dos fios brancos para resultados profissionais e duradouros.",
+      "howToUse": "Usar conforme instrução da coloração creme: proporção 1 + 1,5.",
+      "lineDescription": "Emulsão reveladora cremosa para coloração/descoloração."
+    },
+    {
+      "id": "coloracao-40",
+      "title": "5.74 Castanho Claro Marrom Cobre",
+      "code": "",
+      "size": "60 g",
+      "price": "R$ 36,94",
+      "image": "/images/products/coloracao/prod_1.png",
+      "description": "Tonalidade da tabela de coloração creme Diamante Profissional. Cores intensas, brilho radiante e cobertura completa dos fios brancos para resultados profissionais e duradouros.",
+      "howToUse": "Usar conforme instrução da coloração creme: proporção 1 + 1,5.",
+      "lineDescription": "Emulsão reveladora cremosa para coloração/descoloração."
+    },
+    {
+      "id": "coloracao-41",
+      "title": "7.35 Louro Dourado Acaju",
+      "code": "",
+      "size": "60 g",
+      "price": "R$ 36,94",
+      "image": "/images/products/coloracao/prod_2.png",
+      "description": "Tonalidade da tabela de coloração creme Diamante Profissional. Cores intensas, brilho radiante e cobertura completa dos fios brancos para resultados profissionais e duradouros.",
+      "howToUse": "Usar conforme instrução da coloração creme: proporção 1 + 1,5.",
+      "lineDescription": "Emulsão reveladora cremosa para coloração/descoloração."
     }
   ],
   "home-care": [
@@ -748,7 +1056,7 @@
       "price": "R$ 45,65",
       "image": "/images/products/home-care/prod_1.png",
       "description": "Limpa e hidrata recuperando o brilho dos fios.",
-      "howToUse": "Aplicar sobre cabelos úmidos, massagear até formar espuma e enxaguar. Repetir se necessário.",
+      "howToUse": "Aplique sobre os cabelos úmidos, massageando até formar espuma. Enxágue e repita o processo se necessário. Shampoo disponível também em 1 litro.",
       "lineDescription": "Tratamento para fortalecimento capilar, nutrição dos fios, estímulo ao crescimento, hidratação, brilho e maciez."
     },
     {
@@ -758,8 +1066,8 @@
       "size": "300 ml",
       "price": "R$ 49,95",
       "image": "/images/products/home-care/prod_2.png",
-      "description": "Condiciona e hidrata, deixando os cabelos macios e com brilho intenso.",
-      "howToUse": "Após máscara, aplicar nos cabelos limpos e úmidos, espalhar, agir 3 min e enxaguar.",
+      "description": "Condiciona e hidrata os cabelos, deixando os macios e com brilho intenso.",
+      "howToUse": "Após o uso da máscara, aplique nos cabelos limpos e úmidos, espalhando por todo o cabelo; deixe agir por 3 minutos e enxágue.",
       "lineDescription": "Tratamento para fortalecimento capilar, nutrição dos fios, estímulo ao crescimento, hidratação, brilho e maciez."
     },
     {
@@ -769,8 +1077,8 @@
       "size": "250 g",
       "price": "R$ 68,97",
       "image": "/images/products/home-care/prod_3.png",
-      "description": "Hidratação profunda, maciez e sedosidade imediata.",
-      "howToUse": "Após shampoo, retirar excesso de água, aplicar, enluvar, agir 5 a 20 min e enxaguar.",
+      "description": "Proporciona hidratação profunda, maciez e sedosidade imediata.",
+      "howToUse": "Após o uso do shampoo, tire o excesso de água dos cabelos e aplique a máscara no comprimento e pontas, enluvando mecha a mecha. Deixe agir de 5 a 20 minutos e enxágue.",
       "lineDescription": "Tratamento para fortalecimento capilar, nutrição dos fios, estímulo ao crescimento, hidratação, brilho e maciez."
     },
     {
@@ -780,8 +1088,8 @@
       "size": "250 ml",
       "price": "R$ 49,95",
       "image": "/images/products/home-care/prod_4.png",
-      "description": "Creme sem enxágue que condiciona, protege do calor do secador e elimina frizz.",
-      "howToUse": "Aplicar pequena quantidade na palma da mão e espalhar nos cabelos úmidos. Não enxaguar.",
+      "description": "Creme sem enxágue que condiciona, protege os cabelos do calor do secador e elimina o frizz.",
+      "howToUse": "Aplicar pequena quantidade na palma da mão e espalhar por todo o cabelo úmido. Não enxaguar; deixar secar naturalmente ou finalizar com secador e prancha.",
       "lineDescription": "Tratamento para fortalecimento capilar, nutrição dos fios, estímulo ao crescimento, hidratação, brilho e maciez."
     },
     {
@@ -791,9 +1099,9 @@
       "size": "500 ml",
       "price": "R$ 58,96",
       "image": "/images/products/home-care/prod_5.png",
-      "description": "Limpeza sem deixar exclusão nos fios; suave, ideal para uso diário com progressiva.",
-      "howToUse": "Aplicar nos cabelos úmidos, massagear suavemente até formar espuma, enxaguar bem e repetir se necessário.",
-      "lineDescription": "Linha de uso diário para cabelos com progressiva/coloração/mechas ou normais a secos."
+      "description": "Shampoo com excelente fator de limpeza sem deixar exclusão/resíduos nos fios. Suave, ideal para uso diário em progressiva.",
+      "howToUse": "Aplique sobre os cabelos úmidos. Massageie suavemente até formar espuma. Enxágue bem; repita se necessário.",
+      "lineDescription": "Tratamento para fortalecimento capilar, nutrição dos fios, estímulo ao crescimento, hidratação, brilho e maciez."
     },
     {
       "id": "home-care-5",
@@ -802,20 +1110,20 @@
       "size": "500 ml",
       "price": "R$ 62,06",
       "image": "/images/products/home-care/prod_6.png",
-      "description": "Condiciona e hidrata cabelos com progressiva, coloração ou mechas; cria barreira protetora e mantém hidratação.",
-      "howToUse": "Aplicar nos cabelos limpos, comprimento e pontas; massagear, deixar agir alguns minutos e enxaguar.",
-      "lineDescription": "Linha de uso diário para cabelos com progressiva/coloração/mechas ou normais a secos."
+      "description": "Condiciona e hidrata os cabelos que estão com progressiva, coloração ou mechas. As propriedades hidratantes não são ideais de forma que criam uma barreira de proteção e selamento, mantendo-os macios por mais tempo.",
+      "howToUse": "Aplique o condicionador sobre os cabelos limpos no comprimento e pontas. Massageie suavemente. Deixe agir por alguns minutos e enxágue bem.",
+      "lineDescription": "Tratamento para fortalecimento capilar, nutrição dos fios, estímulo ao crescimento, hidratação, brilho e maciez."
     },
     {
       "id": "home-care-6",
       "title": "Shampoo N",
-      "code": "01089",
+      "code": "01069",
       "size": "500 ml",
       "price": "R$ 58,96",
       "image": "/images/products/home-care/prod_7.png",
-      "description": "Repõe umidade, protege do ressecamento e limpa suavemente; ideal para fios desidratados, ressecados, quebradiços, grossos, ondulados ou normais porosos.",
-      "howToUse": "Aplicar nos cabelos úmidos, massagear suavemente até formar espuma, enxaguar bem e repetir se necessário.",
-      "lineDescription": "Linha de uso diário para cabelos com progressiva/coloração/mechas ou normais a secos."
+      "description": "Shampoo repele a umidade e protege do ressecamento, enquanto limpa suavemente os fios. É ideal para todos que sofrem com desidratação; seu cabelo ressecado, quebradiço, grosso, ondulado ou normal de um pouco poroso.",
+      "howToUse": "Aplicar sobre os cabelos úmidos, massageie suavemente até formar espuma. Enxágue bem; repita se necessário.",
+      "lineDescription": "Tratamento para fortalecimento capilar, nutrição dos fios, estímulo ao crescimento, hidratação, brilho e maciez."
     },
     {
       "id": "home-care-7",
@@ -824,9 +1132,9 @@
       "size": "500 ml",
       "price": "R$ 62,06",
       "image": "/images/products/home-care/prod_8.png",
-      "description": "Hidratação, maciez e brilho; desembaraça e controla frizz; sela a cutícula e prolonga hidratação.",
-      "howToUse": "Aplicar nos cabelos limpos, comprimento e pontas; massagear, deixar agir alguns minutos e enxaguar.",
-      "lineDescription": "Linha de uso diário para cabelos com progressiva/coloração/mechas ou normais a secos."
+      "description": "Condicionador proporciona hidratação, maciez e brilho; além de desembaraçar e controlar o frizz. Mantém os fios soltos, sem a cutícula e protege o resultado de hidratação nos fios.",
+      "howToUse": "Aplique o condicionador sobre os cabelos limpos, no comprimento e nas pontas. Massageie suavemente. Deixe agir por alguns minutos e enxágue bem.",
+      "lineDescription": "Tratamento para fortalecimento capilar, nutrição dos fios, estímulo ao crescimento, hidratação, brilho e maciez."
     },
     {
       "id": "home-care-8",
@@ -835,9 +1143,9 @@
       "size": "500 ml",
       "price": "R$ 58,96",
       "image": "/images/products/home-care/prod_9.png",
-      "description": "Para cabelos fragilizados/quebradiços; ajuda a diminuir queda, fortalecer fios e melhorar crescimento.",
-      "howToUse": "Aplicar nos cabelos úmidos, massagear até formar espuma, enxaguar e repetir se necessário.",
-      "lineDescription": "Fortalecimento para cabelos mais fortes e saudáveis; auxilia crescimento e reduz queda."
+      "description": "Shampoo indicado para cabelos fragilizados e quebradiços; ajuda a diminuir a queda, fortalece os fios e melhora o crescimento. Shampoo energizante que revitaliza os fios, graças ao extrato de jaborandi reduz a queda nos cabelos fracos.",
+      "howToUse": "Aplique sobre os cabelos úmidos. Massageie suavemente até formar espuma. Enxágue bem; repita se necessário.",
+      "lineDescription": "Tratamento para fortalecimento capilar, nutrição dos fios, estímulo ao crescimento, hidratação, brilho e maciez."
     },
     {
       "id": "home-care-9",
@@ -846,9 +1154,9 @@
       "size": "500 ml",
       "price": "R$ 62,06",
       "image": "/images/products/home-care/prod_10.png",
-      "description": "Condicionador leve e cremoso que hidrata sem pesar; para cabelos com queda, promove hidratação, brilho e maciez.",
-      "howToUse": "Aplicar nos cabelos limpos, comprimento e pontas; massagear, deixar agir alguns minutos e enxaguar.",
-      "lineDescription": "Fortalecimento para cabelos mais fortes e saudáveis; auxilia crescimento e reduz queda."
+      "description": "Condicionador leve e cremoso que hidrata sem pesar, desenvolvido para cabelos com queda. Promove hidratação, brilho e maciez.",
+      "howToUse": "Aplique no comprimento e nas pontas. Massageie suavemente. Deixe agir por alguns minutos e enxágue bem.",
+      "lineDescription": "Tratamento para fortalecimento capilar, nutrição dos fios, estímulo ao crescimento, hidratação, brilho e maciez."
     },
     {
       "id": "home-care-10",
@@ -857,9 +1165,9 @@
       "size": "300 ml",
       "price": "R$ 45,65",
       "image": "/images/products/home-care/prod_1.png",
-      "description": "Matização/reparo conforme produto; hidratação e reconstrução dos fios.",
-      "howToUse": "Aplicar conforme categoria: shampoo nos úmidos; condicionador/máscara após lavagem; máscara com pausa de 1 a 3 min.",
-      "lineDescription": "Reconstrução profunda para cabelos mais fortes, saudáveis e cheios de vida."
+      "description": "Limpa e matiza os tons amarelados indesejáveis, sem agredir a fibra capilar ou causar ressecamento no couro cabeludo.",
+      "howToUse": "Aplicar sobre os cabelos úmidos, massageando até formar espuma. Enxaguar em seguida. Repetir se necessário.",
+      "lineDescription": "Tratamento para fortalecimento capilar, nutrição dos fios, estímulo ao crescimento, hidratação, brilho e maciez."
     },
     {
       "id": "home-care-11",
@@ -868,9 +1176,9 @@
       "size": "300 ml",
       "price": "R$ 49,95",
       "image": "/images/products/home-care/prod_2.png",
-      "description": "Matização/reparo conforme produto; hidratação e reconstrução dos fios.",
-      "howToUse": "Aplicar conforme categoria: shampoo nos úmidos; condicionador/máscara após lavagem; máscara com pausa de 1 a 3 min.",
-      "lineDescription": "Reconstrução profunda para cabelos mais fortes, saudáveis e cheios de vida."
+      "description": "Hidratação intensa e matização para os cabelos loiros e grisalhos.",
+      "howToUse": "Nos cabelos limpos e úmidos, espalhe em todo o cabelo. Deixe agir por 3 minutos e enxágue em seguida.",
+      "lineDescription": "Tratamento para fortalecimento capilar, nutrição dos fios, estímulo ao crescimento, hidratação, brilho e maciez."
     },
     {
       "id": "home-care-12",
@@ -879,9 +1187,9 @@
       "size": "250 g",
       "price": "R$ 68,97",
       "image": "/images/products/home-care/prod_3.png",
-      "description": "Matização/reparo conforme produto; hidratação e reconstrução dos fios.",
-      "howToUse": "Aplicar conforme categoria: shampoo nos úmidos; condicionador/máscara após lavagem; máscara com pausa de 1 a 3 min.",
-      "lineDescription": "Reconstrução profunda para cabelos mais fortes, saudáveis e cheios de vida."
+      "description": "Matização intensa com hidratação profunda, deixando seus cabelos platinados e hidratados.",
+      "howToUse": "Recomendamos o tempo de 1 a 3 minutos, dependendo da tonalidade do seu cabelo. Máscara disponível também em 900 g.",
+      "lineDescription": "Tratamento para fortalecimento capilar, nutrição dos fios, estímulo ao crescimento, hidratação, brilho e maciez."
     },
     {
       "id": "home-care-13",
@@ -890,9 +1198,9 @@
       "size": "250 ml",
       "price": "R$ 45,65",
       "image": "/images/products/home-care/prod_4.png",
-      "description": "Fortalecimento, regeneração e reestruturação dos fios.",
-      "howToUse": "Usar conforme categoria; Keratina: após lavar, aplicar do comprimento às pontas junto com máscara de hidratação.",
-      "lineDescription": "Reconstrução intensa; cabelos mais fortes, restaurados e cheios de vida."
+      "description": "Limpa delicadamente os fios, protegendo-os contra o ressecamento, nutrindo profundamente a fibra capilar; disciplina e controla o frizz e proporciona brilho.",
+      "howToUse": "Aplicar sobre os cabelos úmidos e massagear até formar espuma. Enxaguar.",
+      "lineDescription": "Tratamento para fortalecimento capilar, nutrição dos fios, estímulo ao crescimento, hidratação, brilho e maciez."
     },
     {
       "id": "home-care-14",
@@ -901,141 +1209,141 @@
       "size": "250 ml",
       "price": "R$ 49,95",
       "image": "/images/products/home-care/prod_5.png",
-      "description": "Fortalecimento, regeneração e reestruturação dos fios.",
-      "howToUse": "Usar conforme categoria; Keratina: após lavar, aplicar do comprimento às pontas junto com máscara de hidratação.",
-      "lineDescription": "Reconstrução intensa; cabelos mais fortes, restaurados e cheios de vida."
+      "description": "Hidrata profundamente e condiciona os cabelos, deixando-os macios e fáceis de pentear.",
+      "howToUse": "Após o uso da máscara, aplique nos cabelos limpos e úmidos, espalhando por todo o cabelo; deixe agir por 5 minutos e enxágue.",
+      "lineDescription": "Tratamento para fortalecimento capilar, nutrição dos fios, estímulo ao crescimento, hidratação, brilho e maciez."
     },
     {
       "id": "home-care-15",
-      "title": "Máscara Recarga Keratina",
-      "code": "00043",
-      "size": "250 g",
-      "price": "R$ 68,97",
-      "image": "/images/products/home-care/prod_6.png",
-      "description": "Fortalecimento, regeneração e reestruturação dos fios.",
-      "howToUse": "Usar conforme categoria; Keratina: após lavar, aplicar do comprimento às pontas junto com máscara de hidratação.",
-      "lineDescription": "Reconstrução intensa; cabelos mais fortes, restaurados e cheios de vida."
-    },
-    {
-      "id": "home-care-16",
       "title": "Leave-in Recarga Keratina",
       "code": "00044",
       "size": "250 ml",
       "price": "R$ 49,95",
+      "image": "/images/products/home-care/prod_6.png",
+      "description": "Protege os fios do calor do sol, prancha e do secador; controla o frizz do cabelo.",
+      "howToUse": "Aplicar pequena quantidade e espalhar por todo o cabelo úmido. Não enxaguar; deixar secar naturalmente ou finalizar.",
+      "lineDescription": "Tratamento para fortalecimento capilar, nutrição dos fios, estímulo ao crescimento, hidratação, brilho e maciez."
+    },
+    {
+      "id": "home-care-16",
+      "title": "Máscara Recarga Keratina",
+      "code": "00043",
+      "size": "250 g",
+      "price": "R$ 68,97",
       "image": "/images/products/home-care/prod_7.png",
-      "description": "Fortalecimento, regeneração e reestruturação dos fios.",
-      "howToUse": "Usar conforme categoria; Keratina: após lavar, aplicar do comprimento às pontas junto com máscara de hidratação.",
-      "lineDescription": "Reconstrução intensa; cabelos mais fortes, restaurados e cheios de vida."
+      "description": "Hidrata profundamente os cabelos e recupera a fibra capilar, deixando os cachos mais definidos.",
+      "howToUse": "Após o shampoo, tire o excesso de água e aplique no comprimento e pontas. Deixe agir de 5 a 20 minutos e enxágue.",
+      "lineDescription": "Tratamento para fortalecimento capilar, nutrição dos fios, estímulo ao crescimento, hidratação, brilho e maciez."
     },
     {
       "id": "home-care-17",
-      "title": "Keratina Hidrolisada",
+      "title": "Keratina Hidrolisada Pura",
       "code": "00075",
       "size": "120 ml",
       "price": "R$ 49,90",
       "image": "/images/products/home-care/prod_8.png",
-      "description": "Fortalecimento, regeneração e reestruturação dos fios.",
-      "howToUse": "Usar conforme categoria; Keratina: após lavar, aplicar do comprimento às pontas junto com máscara de hidratação.",
-      "lineDescription": "Reconstrução intensa; cabelos mais fortes, restaurados e cheios de vida."
+      "description": "Proporciona fortalecimento, regeneração e revitalização instantâneas da fibra capilar.",
+      "howToUse": "Borrife por todo o cabelo com cabelos úmidos; escove em seguida. É indicado para cauterização, queratinização, amaciamento, alisamento com escova, tintura, relaxamento e hidratação Diamante.",
+      "lineDescription": "Tratamento para fortalecimento capilar, nutrição dos fios, estímulo ao crescimento, hidratação, brilho e maciez."
     },
     {
       "id": "home-care-18",
-      "title": "Serum Gloss Ojon",
+      "title": "Sérum Gloss Ojon",
       "code": "00080",
       "size": "30 ml",
       "price": "R$ 54,95",
       "image": "/images/products/home-care/prod_9.png",
-      "description": "Protege do calor do secador, prancha e sol; produto extraído da palma típica de Honduras.",
-      "howToUse": "Aplicar pequena quantidade na palma da mão e nos cabelos do comprimento às pontas.",
-      "lineDescription": "Séruns com silicones de última geração e perfumaria fina; brilho, nutrição, hidratação e proteção sem resíduo oleoso."
+      "description": "Com óleo de Ojon, protege os cabelos do calor do secador, prancha e do sol. Além de agir com produto de proteção.",
+      "howToUse": "Aplicar pequena quantidade na palma da mão, esfregando as palmas e aplicar nas pontas.",
+      "lineDescription": "Tratamento para fortalecimento capilar, nutrição dos fios, estímulo ao crescimento, hidratação, brilho e maciez."
     },
     {
       "id": "home-care-19",
-      "title": "Serum Gloss Argan",
+      "title": "Iluminador Argan",
       "code": "00079",
       "size": "30 ml",
       "price": "R$ 54,95",
       "image": "/images/products/home-care/prod_10.png",
-      "description": "Hidratação e brilho intenso sem resíduo oleoso; protege do calor.",
-      "howToUse": "Aplicar pequena quantidade na palma da mão e nos cabelos do comprimento às pontas.",
-      "lineDescription": "Séruns com silicones de última geração e perfumaria fina; brilho, nutrição, hidratação e proteção sem resíduo oleoso."
+      "description": "Proporciona hidratação e nutrição intensa aos cabelos opacos. Pode ser usado em todos os tipos de cabelos, protegendo os fios do calor do secador e prancha.",
+      "howToUse": "",
+      "lineDescription": "Tratamento para fortalecimento capilar, nutrição dos fios, estímulo ao crescimento, hidratação, brilho e maciez."
     },
     {
       "id": "home-care-20",
-      "title": "Serum Gloss Iluminador Lilly",
+      "title": "Lilly Iluminador",
       "code": "00078",
       "size": "30 ml",
       "price": "R$ 54,95",
       "image": "/images/products/home-care/prod_1.png",
-      "description": "Brilho instantâneo, nutrição e hidratação sem resíduo oleoso.",
-      "howToUse": "Aplicar pequena quantidade na palma da mão e nos cabelos do comprimento às pontas.",
-      "lineDescription": "Séruns com silicones de última geração e perfumaria fina; brilho, nutrição, hidratação e proteção sem resíduo oleoso."
+      "description": "Proporciona brilho instantâneo, nutrição e hidratação aos fios. Reduz o frizz e protege o cabelo do secador.",
+      "howToUse": "",
+      "lineDescription": "Tratamento para fortalecimento capilar, nutrição dos fios, estímulo ao crescimento, hidratação, brilho e maciez."
     },
     {
       "id": "home-care-21",
-      "title": "Argan Oil Semi di Lino",
+      "title": "Semi Di Lino",
       "code": "00081",
       "size": "30 ml",
       "price": "R$ 54,95",
       "image": "/images/products/home-care/prod_2.png",
-      "description": "Antioxidante natural; hidratação, brilho intenso e proteção térmica.",
-      "howToUse": "Aplicar pequena quantidade na palma da mão e espalhar do comprimento às pontas.",
-      "lineDescription": "Proteção, nutrição e brilho para cabelos mais saudáveis e radiantes."
+      "description": "Óleo de semente de linho, reparador de pontas. Proporciona hidratação e brilho intenso sem resíduo oleoso. Pode ser usado em todos os tipos de cabelos. Protege os cabelos do calor do secador, prancha e sol.",
+      "howToUse": "Aplicar pequena quantidade na palma da mão, esfregando as palmas e aplicar nas pontas.",
+      "lineDescription": "Tratamento para fortalecimento capilar, nutrição dos fios, estímulo ao crescimento, hidratação, brilho e maciez."
     },
     {
       "id": "home-care-22",
-      "title": "Serum Light Blue",
-      "code": "revisar",
+      "title": "Light Blue",
+      "code": "00078",
       "size": "30 ml",
       "price": "R$ 54,95",
       "image": "/images/products/home-care/prod_3.png",
-      "description": "Fecha pontas duplas, protege contra raios solares e calor do secador; brilho e condicionamento.",
-      "howToUse": "Aplicar pequena quantidade na palma da mão e espalhar do comprimento às pontas.",
-      "lineDescription": "Proteção, nutrição e brilho para cabelos mais saudáveis e radiantes."
+      "description": "Com óleos e vitaminas especiais, proporciona o fechamento das pontas duplas, proteção dos fios contra os raios solares e danos causados com um brilho inigualável; além de controlar, nutrir, flexibilizar e condicionar os fios deixando-os sedosos.",
+      "howToUse": "Aplicar pequena quantidade na palma da mão e distribuir nos cabelos úmidos ou secos.",
+      "lineDescription": "Tratamento para fortalecimento capilar, nutrição dos fios, estímulo ao crescimento, hidratação, brilho e maciez."
     },
     {
       "id": "home-care-23",
       "title": "Óleo de Rícino",
-      "code": "02920",
+      "code": "02930",
       "size": "30 ml",
       "price": "R$ 54,95",
       "image": "/images/products/home-care/prod_4.png",
-      "description": "Estimula crescimento, previne queda, nutre e hidrata; óleo concentrado.",
-      "howToUse": "Aplicar pequena quantidade na palma da mão e espalhar do comprimento às pontas.",
-      "lineDescription": "Proteção, nutrição e brilho para cabelos mais saudáveis e radiantes."
+      "description": "Óleo de rícino estimula o crescimento do cabelo e previne queda, nutre, hidrata e fortalece cabelos ressecados. Com fórmula natural, o produto se espalha a partir dos bulbos capilares. Sendo rico em ácidos graxos, o óleo concentrado cria uma camada protetora em volta do cabelo.",
+      "howToUse": "Aplicar pequena quantidade nas palmas e espalhar nos cabelos úmidos ou secos.",
+      "lineDescription": "Tratamento para fortalecimento capilar, nutrição dos fios, estímulo ao crescimento, hidratação, brilho e maciez."
     },
     {
       "id": "home-care-24",
-      "title": "Serum Óleo de Coco",
+      "title": "Óleo de Coco",
       "code": "01973",
       "size": "30 ml",
       "price": "R$ 54,95",
       "image": "/images/products/home-care/prod_5.png",
-      "description": "Brilho, toque sedoso, hidratação, selamento de cutículas e proteção contra umidade.",
-      "howToUse": "Aplicar pequena quantidade na palma da mão e espalhar do comprimento às pontas.",
-      "lineDescription": "Proteção, nutrição e brilho para cabelos mais saudáveis e radiantes."
+      "description": "O Sérum Óleo de Coco garante brilho, proporciona toque sedoso, leve, hidratação e selamento das cutículas. Protege contra a umidade, controlando o volume e disciplinando os fios.",
+      "howToUse": "Aplicar pequena quantidade na palma da mão e distribuir nos cabelos úmidos ou secos.",
+      "lineDescription": "Tratamento para fortalecimento capilar, nutrição dos fios, estímulo ao crescimento, hidratação, brilho e maciez."
     },
     {
       "id": "home-care-25",
-      "title": "Shampoo Nutritivo",
+      "title": "Shampoo Nutritivo 5 litros",
       "code": "01892",
-      "size": "5 L",
+      "size": "5 litros",
       "price": "R$ 104,50",
       "image": "/images/products/home-care/prod_6.png",
-      "description": "Uso profissional em galão.",
-      "howToUse": "Aplicar sobre cabelo úmido até formar espuma; enxaguar bem e repetir se necessário.",
-      "lineDescription": "Cuidado profundo para cabelos saudáveis e fortes."
+      "description": "Linha nutritiva para cuidado profundo para cabelos saudáveis e fortes.",
+      "howToUse": "Aplicar sobre cabelo úmido até formar espuma. É bom, se necessário.",
+      "lineDescription": "Tratamento para fortalecimento capilar, nutrição dos fios, estímulo ao crescimento, hidratação, brilho e maciez."
     },
     {
       "id": "home-care-26",
-      "title": "Condicionador Nutritivo",
+      "title": "Condicionador Nutritivo 5 litros",
       "code": "01892",
-      "size": "5 L",
+      "size": "5 litros",
       "price": "R$ 104,50",
       "image": "/images/products/home-care/prod_7.png",
-      "description": "Uso profissional em galão.",
-      "howToUse": "Aplicar sobre cabelo úmido até formar espuma; enxaguar bem e repetir se necessário.",
-      "lineDescription": "Cuidado profundo para cabelos saudáveis e fortes."
+      "description": "Linha nutritiva para cuidado profundo para cabelos saudáveis e fortes.",
+      "howToUse": "Aplicar sobre cabelo úmido até formar espuma. Deixe bem; enxágue bem, repita se necessário.",
+      "lineDescription": "Tratamento para fortalecimento capilar, nutrição dos fios, estímulo ao crescimento, hidratação, brilho e maciez."
     }
   ],
   "profissional": [
@@ -1046,230 +1354,230 @@
       "size": "300 ml",
       "price": "R$ 45,65",
       "image": "/images/products/profissional/prod_0.png",
-      "description": "Limpeza profunda sem ressecar/danificar os fios; pH 5.",
-      "howToUse": "Aplicar em todo cabelo, massagear até espumar, usar conforme necessidade e enxaguar até remover o produto.",
+      "description": "Shampoo anti resíduo desenvolvido para limpar profundamente e dilatar as cutículas dos cabelos, proporcionando-os de forma eficaz para receber tratamentos químicos com melhor absorção.",
+      "howToUse": "Aplique o produto em todo cabelo, massageie até espumar. Aplique conforme a necessidade. Enxágue até remover todo o produto.",
       "lineDescription": "Tratamento limpeza; shampoo para limpar profundamente e dilatar cutículas antes de tratamentos químicos."
     },
     {
       "id": "profissional-1",
-      "title": "Shampoo Anti Resíduo 1L",
+      "title": "Shampoo Anti Resíduo",
       "code": "01810",
       "size": "1 litro",
       "price": "R$ 98,78",
       "image": "/images/products/profissional/prod_1.png",
-      "description": "Versão 1 litro.",
-      "howToUse": "Mesmo modo de uso.",
+      "description": "Shampoo anti resíduo desenvolvido para limpar profundamente e dilatar as cutículas dos cabelos, proporcionando-os de forma eficaz para receber tratamentos químicos com melhor absorção.",
+      "howToUse": "Uso profissional. Todos os tipos de cabelo.",
       "lineDescription": "Tratamento limpeza; shampoo para limpar profundamente e dilatar cutículas antes de tratamentos químicos."
     },
     {
       "id": "profissional-2",
-      "title": "Regulador de PH",
-      "code": "00076",
-      "size": "1000 ml",
-      "price": "R$ 176,90",
-      "image": "/images/products/profissional/prod_2.png",
-      "description": "Com proteína da seda e óleo de coco; para cabelos quimicamente tratados.",
-      "howToUse": "Após processo químico e antes do shampoo, aplicar, agir 5 min, enxaguar e seguir lavagem.",
-      "lineDescription": "Tratamento de limpeza pós-química; hidrata, fortalece e restabelece o pH do cabelo."
-    },
-    {
-      "id": "profissional-3",
-      "title": "Regulador de PH",
+      "title": "Regulador de pH",
       "code": "00077",
       "size": "300 ml",
       "price": "R$ 54,60",
+      "image": "/images/products/profissional/prod_2.png",
+      "description": "O Regulador de pH Orgânico hidrata profundamente os fios, deixando-os mais fortes. Restabelecendo o pH do cabelo, promovendo brilho e maciez.",
+      "howToUse": "Após o processo químico, antes de utilizar o shampoo, aplicar o regulador de pH e deixar agir por 5 minutos. Enxaguar até retirar totalmente o produto.",
+      "lineDescription": "Tratamento limpeza; shampoo para limpar profundamente e dilatar cutículas antes de tratamentos químicos."
+    },
+    {
+      "id": "profissional-3",
+      "title": "Regulador de pH",
+      "code": "00076",
+      "size": "1000 ml",
+      "price": "R$ 176,90",
       "image": "/images/products/profissional/prod_3.png",
-      "description": "Com proteína da seda e óleo de coco; para cabelos quimicamente tratados.",
-      "howToUse": "Após processo químico e antes do shampoo, aplicar, agir 5 min, enxaguar e seguir lavagem.",
-      "lineDescription": "Tratamento de limpeza pós-química; hidrata, fortalece e restabelece o pH do cabelo."
+      "description": "Tratamento pós-química com proteína da seda e óleo de coco. Hidrata profundamente, limpa e ajuda no regulador de pH.",
+      "howToUse": "Após o processo químico, antes de utilizar o shampoo, aplicar e deixar agir por 5 minutos. Enxaguar até retirar totalmente.",
+      "lineDescription": "Tratamento limpeza; shampoo para limpar profundamente e dilatar cutículas antes de tratamentos químicos."
     },
     {
       "id": "profissional-4",
-      "title": "Caviar Shampoo 1L",
+      "title": "Shampoo 1L",
       "code": "00034",
-      "size": "1 L",
+      "size": "1 litro",
       "price": "R$ 121,90",
       "image": "/images/products/profissional/prod_4.png",
-      "description": "Versão profissional salão.",
-      "howToUse": "Uso profissional conforme categoria.",
-      "lineDescription": "Caviar"
+      "description": "Versão profissional salão da linha, indicada para uso profissional em lavatório e tratamento capilar.",
+      "howToUse": "Produto de uso profissional.",
+      "lineDescription": "Tratamento limpeza; shampoo para limpar profundamente e dilatar cutículas antes de tratamentos químicos."
     },
     {
       "id": "profissional-5",
-      "title": "Caviar Máscara 900g",
+      "title": "Máscara 900g",
       "code": "00033",
       "size": "900 g",
       "price": "R$ 121,90",
       "image": "/images/products/profissional/prod_5.png",
-      "description": "Versão profissional salão.",
-      "howToUse": "Uso profissional conforme categoria.",
-      "lineDescription": "Caviar"
+      "description": "Versão profissional salão da linha, indicada para tratamento capilar em maior rendimento.",
+      "howToUse": "Produto de uso profissional.",
+      "lineDescription": "Tratamento limpeza; shampoo para limpar profundamente e dilatar cutículas antes de tratamentos químicos."
     },
     {
       "id": "profissional-6",
-      "title": "Bomba Shampoo 1L",
+      "title": "Shampoo 1L",
       "code": "00040",
-      "size": "1 L",
+      "size": "1 litro",
       "price": "R$ 121,90",
       "image": "/images/products/profissional/prod_6.png",
-      "description": "Versão profissional salão.",
-      "howToUse": "Uso profissional conforme categoria.",
-      "lineDescription": "Bomba"
+      "description": "Versão profissional salão da linha, indicada para uso profissional em lavatório e tratamento capilar.",
+      "howToUse": "Produto de uso profissional.",
+      "lineDescription": "Tratamento limpeza; shampoo para limpar profundamente e dilatar cutículas antes de tratamentos químicos."
     },
     {
       "id": "profissional-7",
-      "title": "Bomba Máscara 900g",
+      "title": "Máscara 900g",
       "code": "00039",
       "size": "900 g",
       "price": "R$ 121,90",
       "image": "/images/products/profissional/prod_7.png",
-      "description": "Versão profissional salão.",
-      "howToUse": "Uso profissional conforme categoria.",
-      "lineDescription": "Bomba"
+      "description": "Versão profissional salão da linha, indicada para tratamento capilar em maior rendimento.",
+      "howToUse": "Produto de uso profissional.",
+      "lineDescription": "Tratamento limpeza; shampoo para limpar profundamente e dilatar cutículas antes de tratamentos químicos."
     },
     {
       "id": "profissional-8",
-      "title": "Champagne Shampoo 1L",
+      "title": "Shampoo 1L",
       "code": "00018",
-      "size": "1 L",
+      "size": "1 litro",
       "price": "R$ 121,90",
       "image": "/images/products/profissional/prod_8.png",
-      "description": "Versão profissional salão.",
-      "howToUse": "Uso profissional conforme categoria.",
-      "lineDescription": "Champagne"
+      "description": "Versão profissional salão da linha, indicada para uso profissional em lavatório e tratamento capilar.",
+      "howToUse": "Produto de uso profissional.",
+      "lineDescription": "Tratamento limpeza; shampoo para limpar profundamente e dilatar cutículas antes de tratamentos químicos."
     },
     {
       "id": "profissional-9",
-      "title": "Champagne Máscara 900g",
+      "title": "Máscara 900g",
       "code": "00017",
       "size": "900 g",
       "price": "R$ 121,90",
       "image": "/images/products/profissional/prod_9.png",
-      "description": "Versão profissional salão.",
-      "howToUse": "Uso profissional conforme categoria.",
-      "lineDescription": "Champagne"
+      "description": "Versão profissional salão da linha, indicada para tratamento capilar em maior rendimento.",
+      "howToUse": "Produto de uso profissional.",
+      "lineDescription": "Tratamento limpeza; shampoo para limpar profundamente e dilatar cutículas antes de tratamentos químicos."
     },
     {
       "id": "profissional-10",
-      "title": "Pérola Shampoo 1L",
+      "title": "Shampoo 1L",
       "code": "00012",
-      "size": "1 L",
+      "size": "1 litro",
       "price": "R$ 121,90",
       "image": "/images/products/profissional/prod_10.png",
-      "description": "Versão profissional salão.",
-      "howToUse": "Uso profissional conforme categoria.",
-      "lineDescription": "Pérola"
+      "description": "Versão profissional salão da linha, indicada para uso profissional em lavatório e tratamento capilar.",
+      "howToUse": "Produto de uso profissional.",
+      "lineDescription": "Tratamento limpeza; shampoo para limpar profundamente e dilatar cutículas antes de tratamentos químicos."
     },
     {
       "id": "profissional-11",
-      "title": "Pérola Máscara 900g",
+      "title": "Máscara 900g",
       "code": "00011",
       "size": "900 g",
       "price": "R$ 121,90",
       "image": "/images/products/profissional/prod_11.png",
-      "description": "Versão profissional salão.",
-      "howToUse": "Uso profissional conforme categoria.",
-      "lineDescription": "Pérola"
+      "description": "Versão profissional salão da linha, indicada para tratamento capilar em maior rendimento.",
+      "howToUse": "Produto de uso profissional.",
+      "lineDescription": "Tratamento limpeza; shampoo para limpar profundamente e dilatar cutículas antes de tratamentos químicos."
     },
     {
       "id": "profissional-12",
-      "title": "Desmaia Shampoo 1L",
+      "title": "Shampoo 1L",
       "code": "00034",
-      "size": "1 L",
+      "size": "1 litro",
       "price": "R$ 121,90",
       "image": "/images/products/profissional/prod_12.png",
-      "description": "Versão profissional salão.",
-      "howToUse": "Uso profissional conforme categoria.",
-      "lineDescription": "Desmaia"
+      "description": "Versão profissional salão da linha, indicada para uso profissional em lavatório e tratamento capilar.",
+      "howToUse": "Produto de uso profissional.",
+      "lineDescription": "Tratamento limpeza; shampoo para limpar profundamente e dilatar cutículas antes de tratamentos químicos."
     },
     {
       "id": "profissional-13",
-      "title": "Desmaia Máscara 900g",
+      "title": "Máscara 900g",
       "code": "00034",
       "size": "900 g",
       "price": "R$ 121,90",
       "image": "/images/products/profissional/prod_13.png",
-      "description": "Versão profissional salão.",
-      "howToUse": "Uso profissional conforme categoria.",
-      "lineDescription": "Desmaia"
+      "description": "Versão profissional salão da linha, indicada para tratamento capilar em maior rendimento.",
+      "howToUse": "Produto de uso profissional.",
+      "lineDescription": "Tratamento limpeza; shampoo para limpar profundamente e dilatar cutículas antes de tratamentos químicos."
     },
     {
       "id": "profissional-14",
-      "title": "Babosa Shampoo 1L",
+      "title": "Shampoo 1L",
       "code": "00056",
-      "size": "1 L",
+      "size": "1 litro",
       "price": "R$ 121,90",
       "image": "/images/products/profissional/prod_14.png",
-      "description": "Versão profissional salão.",
-      "howToUse": "Uso profissional conforme categoria.",
-      "lineDescription": "Babosa"
+      "description": "Versão profissional salão da linha, indicada para uso profissional em lavatório e tratamento capilar.",
+      "howToUse": "Produto de uso profissional.",
+      "lineDescription": "Tratamento limpeza; shampoo para limpar profundamente e dilatar cutículas antes de tratamentos químicos."
     },
     {
       "id": "profissional-15",
-      "title": "Babosa Máscara 900g",
+      "title": "Máscara 900g",
       "code": "00055",
       "size": "900 g",
       "price": "R$ 121,90",
       "image": "/images/products/profissional/prod_15.png",
-      "description": "Versão profissional salão.",
-      "howToUse": "Uso profissional conforme categoria.",
-      "lineDescription": "Babosa"
+      "description": "Versão profissional salão da linha, indicada para tratamento capilar em maior rendimento.",
+      "howToUse": "Produto de uso profissional.",
+      "lineDescription": "Tratamento limpeza; shampoo para limpar profundamente e dilatar cutículas antes de tratamentos químicos."
     }
   ],
   "barber-for-men": [
     {
       "id": "barber-for-men-0",
       "title": "Shampoo Barber For Men",
-      "code": "revisar",
-      "size": "revisar",
+      "code": "",
+      "size": "300 ml",
       "price": "R$ 45,65",
-      "image": "/images/products/home-care/prod_1.png",
-      "description": "Linha masculina para limpeza, hidratação, barba, finalização e estilo.",
-      "howToUse": "Usar conforme categoria do produto.",
+      "image": "/images/products/masculina/prod_0.png",
+      "description": "Limpa profundamente, removendo impurezas sem ressecar. Proporciona mais brilho, maciez e aparência saudável aos fios.",
+      "howToUse": "Benefícios: limpa profundamente, mais brilho e maciez.",
       "lineDescription": "Cuidado completo para o homem moderno."
     },
     {
       "id": "barber-for-men-1",
       "title": "Condicionador Barber For Men",
-      "code": "revisar",
-      "size": "revisar",
+      "code": "",
+      "size": "300 ml",
       "price": "R$ 49,95",
-      "image": "/images/products/home-care/prod_2.png",
-      "description": "Linha masculina para limpeza, hidratação, barba, finalização e estilo.",
-      "howToUse": "Usar conforme categoria do produto.",
+      "image": "/images/products/masculina/prod_1.png",
+      "description": "Hidrata e desembaraça os fios, deixando-os mais macios, alinhados e com aspecto saudável.",
+      "howToUse": "Benefícios: hidratação, mais brilho e maciez.",
       "lineDescription": "Cuidado completo para o homem moderno."
     },
     {
       "id": "barber-for-men-2",
       "title": "Shaving Barber For Men",
-      "code": "revisar",
-      "size": "revisar",
+      "code": "",
+      "size": "300 ml",
       "price": "R$ 49,95",
-      "image": "/images/products/home-care/prod_3.png",
-      "description": "Linha masculina para limpeza, hidratação, barba, finalização e estilo.",
-      "howToUse": "Usar conforme categoria do produto.",
+      "image": "/images/products/masculina/prod_2.png",
+      "description": "Fórmula refrescante que proporciona um barbear confortável, reduzindo a pele e deixando uma sensação de frescor.",
+      "howToUse": "Benefícios: hidratação, frescor e proteção.",
       "lineDescription": "Cuidado completo para o homem moderno."
     },
     {
       "id": "barber-for-men-3",
-      "title": "Serum Barber For Men",
-      "code": "revisar",
-      "size": "revisar",
+      "title": "Sérum Barber For Men",
+      "code": "",
+      "size": "30 ml",
       "price": "R$ 54,95",
-      "image": "/images/products/home-care/prod_4.png",
-      "description": "Linha masculina para limpeza, hidratação, barba, finalização e estilo.",
-      "howToUse": "Usar conforme categoria do produto.",
+      "image": "/images/products/masculina/prod_3.png",
+      "description": "Fórmula concentrada que alinha os fios, hidrata profundamente a barba, deixando-a mais saudável e protegida.",
+      "howToUse": "Benefícios: alinha os fios, hidrata e fortalece.",
       "lineDescription": "Cuidado completo para o homem moderno."
     },
     {
       "id": "barber-for-men-4",
-      "title": "Gel Fixador Reativável Barber",
-      "code": "revisar",
+      "title": "Gel Fixador Reativável",
+      "code": "",
       "size": "200 g",
       "price": "R$ 32,43",
-      "image": "/images/products/home-care/prod_5.png",
-      "description": "Linha masculina para limpeza, hidratação, barba, finalização e estilo.",
-      "howToUse": "Usar conforme categoria do produto.",
+      "image": "/images/products/masculina/prod_4.png",
+      "description": "Fixação prolongada com efeito natural. Modela, fixa e define o penteado, podendo ser reativado com água.",
+      "howToUse": "Benefícios: fixação prolongada, modela, fixa e define.",
       "lineDescription": "Cuidado completo para o homem moderno."
     }
   ],
@@ -1277,12 +1585,12 @@
     {
       "id": "sequestrante-0",
       "title": "Shampoo Sequestrante",
-      "code": "01810",
+      "code": "01610",
       "size": "300 ml",
       "price": "R$ 58,96",
       "image": "/images/products/profissional/prod_0.png",
-      "description": "Recupera tom natural dos fios, remove impurezas/metais pesados e restaura cabelos sensibilizados.",
-      "howToUse": "Aplicar pequena quantidade, espalhar com enluvamento, agir 5 a 10 min e enxaguar com água em abundância.",
+      "description": "O Shampoo Sequestrante Diamante Profissional recupera o tom natural dos fios, removendo o aspecto esverdeado do cabelo causado pelo cloro da água, além de minerais pesados que se acumulam nos fios. Age ainda como restaurador para cabelos sensibilizados.",
+      "howToUse": "Aplique uma pequena quantidade na palma da mão e espalhe sobre o cabelo, fazendo movimento de enluvamento em toda a extensão dos fios. Deixe agir de 3 a 10 minutos e enxágue em seguida.",
       "lineDescription": "Quelação capilar: remove aspecto esverdeado causado por cloro e neutraliza metais pesados acumulados nos fios."
     }
   ]

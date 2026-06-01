@@ -8,13 +8,70 @@ import { client } from '@/sanity/lib/client';
 import { groq } from 'next-sanity';
 import styles from './page.module.css';
 
+type Product = {
+  id: string;
+  title: string;
+  code?: string;
+  size?: string;
+  price?: string;
+  image?: string;
+  description?: string;
+  howToUse?: string;
+  lineDescription?: string;
+};
+
+const sublineProductFilters: Record<string, { source: string; include: string[]; exclude?: string[] }> = {
+  'acai': { source: 'matizadores', include: ['acai'] },
+  'anti-residuo': { source: 'profissional', include: ['anti residuo'] },
+  'black': { source: 'matizadores', include: ['black'] },
+  'bomba': { source: 'home-care', include: ['bomba'] },
+  'champagne': { source: 'matizadores', include: ['champagne'] },
+  'desmaia-cabelo': { source: 'liso', include: ['desmaia'] },
+  'jaborandi-alecrim': { source: 'home-care', include: ['jaborandi'] },
+  'linha-n': { source: 'home-care', include: ['shampoo n', 'condicionador n'] },
+  'linha-p': { source: 'home-care', include: ['shampoo p', 'condicionador p'] },
+  'liso-perfeito': { source: 'liso', include: ['liso perfeito'] },
+  'mega-carga-de-keratina': { source: 'home-care', include: ['recarga keratina', 'keratina hidrolisada'] },
+  'mega-carga-keratina': { source: 'home-care', include: ['recarga keratina', 'keratina hidrolisada'] },
+  'perola': { source: 'matizadores', include: ['perola'] },
+  'po-descolorante': { source: 'coloracao', include: ['po descolorante'] },
+  'regulador-de-ph': { source: 'profissional', include: ['regulador de ph'] },
+  'reparo-absoluto': { source: 'home-care', include: ['reparo absoluto'] },
+  'serum-gloss': { source: 'home-care', include: ['serum gloss', 'iluminador argan', 'lilly iluminador'] },
+  'super-efeito-cinza': { source: 'matizadores', include: ['super'], exclude: ['prata'] },
+  'super-prata': { source: 'matizadores', include: ['prata'] },
+  'ultra-violeta-ice': { source: 'matizadores', include: ['violeta ice'] },
+};
+
+function normalizeText(value: string) {
+  return value
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase();
+}
+
 // Função para ler os produtos locais (Fallback)
 function getLocalProducts(slug: string) {
   try {
     const filePath = path.join(process.cwd(), 'src', 'data', 'products.json');
     const fileContents = fs.readFileSync(filePath, 'utf8');
     const data = JSON.parse(fileContents);
-    return data[slug] || [];
+    if (data[slug]) {
+      return data[slug];
+    }
+
+    const sublineFilter = sublineProductFilters[slug];
+    if (!sublineFilter || !data[sublineFilter.source]) {
+      return [];
+    }
+
+    return data[sublineFilter.source].filter((product: Product) => {
+      const normalizedTitle = normalizeText(product.title);
+      const hasIncludedTerm = sublineFilter.include.some((term) => normalizedTitle.includes(normalizeText(term)));
+      const hasExcludedTerm = sublineFilter.exclude?.some((term) => normalizedTitle.includes(normalizeText(term))) || false;
+
+      return hasIncludedTerm && !hasExcludedTerm;
+    });
   } catch (e) {
     return [];
   }
@@ -55,6 +112,20 @@ export default async function LinePage({ params }: { params: Promise<{ locale: s
   // No Next.js 15+, os params são uma Promise e precisam de 'await'
   const resolvedParams = await params;
   const decodedSlug = decodeURIComponent(resolvedParams.slug);
+  const cleanSlugFromUrl = decodedSlug.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/\s+/g, '-');
+  const lineSlugAliases: Record<string, string> = {
+    'cachos-and-afro': 'cachos',
+    'cachos-afro': 'cachos',
+    'caviar-aminoacidos': 'caviar',
+    'coloracao-creme': 'coloracao',
+    'jaborandi-and-alecrim': 'jaborandi-alecrim',
+    'linha-profissional': 'profissional',
+    'masculina': 'barber-for-men',
+    'barber': 'barber-for-men',
+    'barber-for-men': 'barber-for-men',
+    'barbosa': 'babosa',
+  };
+  const cleanSlug = lineSlugAliases[cleanSlugFromUrl] || cleanSlugFromUrl;
   
   // Mapa para restaurar os nomes corretos com acentuação a partir do slug limpo da URL
   const lineNamesMap: Record<string, string> = {
@@ -65,10 +136,30 @@ export default async function LinePage({ params }: { params: Promise<{ locale: s
     'profissional': 'Linha Profissional',
     'cachos': 'Cachos & Afro',
     'liso': 'Liso Perfeito',
+    'desmaia-cabelo': 'Desmaia Cabelo',
+    'liso-perfeito': 'Liso Perfeito',
     'babosa': 'Babosa',
     'caviar': 'Caviar & Aminoácidos',
     'barber-for-men': 'Barber For Men',
-    'sequestrante': 'Sequestrante'
+    'masculina': 'Barber For Men',
+    'sequestrante': 'Sequestrante',
+    'anti-residuo': 'Anti Resíduo',
+    'black': 'Black',
+    'bomba': 'Bomba',
+    'champagne': 'Champagne',
+    'jaborandi-alecrim': 'Jaborandi & Alecrim',
+    'linha-n': 'Linha N',
+    'linha-p': 'Linha P',
+    'mega-carga-de-keratina': 'Mega Carga de Keratina',
+    'perola': 'Pérola',
+    'po-descolorante': 'Pó Descolorante',
+    'regulador-de-ph': 'Regulador de pH',
+    'reparo-absoluto': 'Reparo Absoluto',
+    'serum-gloss': 'Sérum Gloss',
+    'super-efeito-cinza': 'Super Efeito Cinza',
+    'super-prata': 'Super Prata',
+    'ultra-violeta-ice': 'Ultra Violeta Ice',
+    'acai': 'Açaí'
   };
 
   const lineDescriptions: Record<string, string> = {
@@ -80,20 +171,23 @@ export default async function LinePage({ params }: { params: Promise<{ locale: s
     'cachos': 'Especialmente desenvolvida para cabelos cacheados, crespos e afro. Limpa delicadamente os fios do frizz, os protegendo e restaurando a fibra capilar, disciplinando o brilho e promovendo definição de longa duração.',
     'liso': 'Alinhamento impecável, disciplina e brilho espelhado absoluto para fios lisos naturais ou quimicamente tratados. Controle intensivo do frizz com hidratação selante e maciez incomparável.',
     'babosa': 'Tratamento fortificante e regenerador enriquecido com o puro extrato de babosa (aloe vera). Estimula o crescimento saudável, fortalece a fibra capilar e combate a quebra dos cabelos fragilizados.',
-    'caviar': 'A linha CAVIAR da Diamante Profissional foi desenvolvida para promover máxima hidratação e regeneração capilar, deixando os cabelos mais sedosos e com brilho intenso. A sua composição conta com Óleo de Ojon e Pantenol que são ingredientes importantes na nutrição, hidratação e proteção dos fios. Preservando o cabelo dos danos causados no dia-a-dia.'
+    'caviar': 'A linha CAVIAR da Diamante Profissional foi desenvolvida para promover máxima hidratação e regeneração capilar, deixando os cabelos mais sedosos e com brilho intenso. A sua composição conta com Óleo de Ojon e Pantenol que são ingredientes importantes na nutrição, hidratação e proteção dos fios. Preservando o cabelo dos danos causados no dia-a-dia.',
+    'barber-for-men': 'Cuidado completo para o homem moderno: limpeza, hidratação, barba, finalização e estilo com acabamento profissional.',
+    'sequestrante': 'Quelação capilar para remover impurezas, neutralizar metais pesados e recuperar o tom natural dos fios sensibilizados.',
+    'champagne': 'Linha matizadora para cabelos loiros ou grisalhos; neutraliza tons amarelados e promove efeito tonalizante.'
   };
 
-  const cleanSlug = decodedSlug.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(' ', '-');
-  const rawName = decodedSlug.replace('-', ' ');
+  const rawName = decodedSlug.replace(/-/g, ' ');
   const lineName = lineNamesMap[cleanSlug] || rawName;
   
   // Carrega os dados locais (database Excel completa)
   const localProducts = getLocalProducts(cleanSlug);
   
-  // Tenta buscar do Sanity primeiro. Se não configurado ou vazio, cai para o JSON local.
-  let products = await getSanityProducts(cleanSlug);
+  // Usa a base local completa gerada a partir das planilhas/PDF como fonte principal.
+  // Sanity fica apenas como fallback para linhas que ainda não existirem localmente.
+  let products = localProducts.length > 0 ? localProducts : await getSanityProducts(cleanSlug);
   
-  if (products && products.length > 0) {
+  if (products && products.length > 0 && localProducts.length === 0) {
     // Filtra produtos que não possuem imagem válida vinda do Sanity (evitando duplicados ou rascunhos sem foto)
     products = products.filter((p: any) => p.image && p.image.trim() !== '');
 
@@ -138,8 +232,6 @@ export default async function LinePage({ params }: { params: Promise<{ locale: s
       }
       return sanityProduct;
     });
-  } else {
-    products = localProducts;
   }
 
   // Tenta extrair a descrição da linha a partir de algum produto enriquecido ou local

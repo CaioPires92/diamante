@@ -41,13 +41,45 @@ export const viewport: Viewport = {
 import { client } from '@/sanity/lib/client';
 import { groq } from 'next-sanity';
 
+function normalizeLineKey(value: string) {
+  return value
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
+}
+
+function dedupeLines(lines: { name: string; slug: string }[]) {
+  const slugAliases: Record<string, string> = {
+    'barbosa': 'babosa',
+    'barber': 'barber-for-men',
+    'masculina': 'barber-for-men',
+    'caviar-aminoacidos': 'caviar',
+    'coloracao-creme': 'coloracao',
+  };
+  const seen = new Set<string>();
+
+  return lines.filter((line) => {
+    const normalizedSlug = normalizeLineKey(line.slug || line.name);
+    const canonicalSlug = slugAliases[normalizedSlug] || normalizedSlug;
+
+    if (seen.has(canonicalSlug)) {
+      return false;
+    }
+
+    seen.add(canonicalSlug);
+    return true;
+  });
+}
+
 async function getLines() {
   if (process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) {
     try {
       const query = groq`*[_type == "line"]{ title, "slug": slug.current } | order(title asc)`;
       const sanityLines = await client.fetch(query, {}, { cache: 'no-store' });
       if (sanityLines && sanityLines.length > 0) {
-        return sanityLines.map((l: any) => ({ name: l.title, slug: l.slug }));
+        return dedupeLines(sanityLines.map((l: any) => ({ name: l.title, slug: l.slug })));
       }
     } catch (e) {
       console.error(e);
@@ -56,10 +88,10 @@ async function getLines() {
   
   // Fallback
   const defaultLines = ['Caviar', 'Liso', 'Cachos', 'Matizadores', 'Home Care', 'Babosa', 'Lapidação', 'Profissional', 'Sequestrante', 'Coloração', 'Masculina'];
-  return defaultLines.map(name => ({
+  return dedupeLines(defaultLines.map(name => ({
     name,
     slug: name.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(' ', '-')
-  }));
+  })));
 }
 
 export default async function LocaleLayout({
