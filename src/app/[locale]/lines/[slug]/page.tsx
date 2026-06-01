@@ -78,7 +78,7 @@ export default async function LinePage({ params }: { params: Promise<{ locale: s
     'cachos': 'Especialmente desenvolvida para cabelos cacheados, crespos e afro. Limpa delicadamente os fios do frizz, os protegendo e restaurando a fibra capilar, disciplinando o brilho e promovendo definição de longa duração.',
     'liso': 'Alinhamento impecável, disciplina e brilho espelhado absoluto para fios lisos naturais ou quimicamente tratados. Controle intensivo do frizz com hidratação selante e maciez incomparável.',
     'babosa': 'Tratamento fortificante e regenerador enriquecido com o puro extrato de babosa (aloe vera). Estimula o crescimento saudável, fortalece a fibra capilar e combate a quebra dos cabelos fragilizados.',
-    'caviar': 'A sofisticação do caviar associada a aminoácidos nobres para um resgate imediato do brilho e da maciez. Nutrição profunda que reconstrói a elasticidade natural dos cabelos desidratados.'
+    'caviar': 'A linha CAVIAR da Diamante Profissional foi desenvolvida para promover máxima hidratação e regeneração capilar, deixando os cabelos mais sedosos e com brilho intenso. A sua composição conta com Óleo de Ojon e Pantenol que são ingredientes importantes na nutrição, hidratação e proteção dos fios. Preservando o cabelo dos danos causados no dia-a-dia.'
   };
 
   const cleanSlug = decodedSlug.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(' ', '-');
@@ -86,10 +86,33 @@ export default async function LinePage({ params }: { params: Promise<{ locale: s
   const lineName = lineNamesMap[cleanSlug] || rawName;
   const lineDesc = lineDescriptions[cleanSlug] || `Descubra os produtos incríveis da nossa linha ${lineName}.`;
   
-  // Tenta buscar do Sanity primeiro. Se não configurado, cai para o JSON local.
+  // Carrega os dados locais (database Excel completa)
+  const localProducts = getLocalProducts(cleanSlug);
+  
+  // Tenta buscar do Sanity primeiro. Se não configurado ou vazio, cai para o JSON local.
   let products = await getSanityProducts(cleanSlug);
-  if (!products) {
-    products = getLocalProducts(cleanSlug);
+  
+  if (products && products.length > 0) {
+    // Enriquece os produtos carregados do Sanity com os campos descritivos e comerciais locais caso estejam ausentes
+    products = products.map((sanityProduct: any) => {
+      const matchingLocal = localProducts.find((local: any) => 
+        local.title.toLowerCase().replace(/\s+/g, '') === sanityProduct.title.toLowerCase().replace(/\s+/g, '')
+      );
+      
+      if (matchingLocal) {
+        return {
+          ...sanityProduct,
+          code: (sanityProduct.code && sanityProduct.code.trim()) ? sanityProduct.code : matchingLocal.code,
+          size: (sanityProduct.size && sanityProduct.size.trim()) ? sanityProduct.size : matchingLocal.size,
+          price: (sanityProduct.price && sanityProduct.price.trim()) ? sanityProduct.price : matchingLocal.price,
+          description: (sanityProduct.description && sanityProduct.description.trim()) ? sanityProduct.description : matchingLocal.description,
+          howToUse: (sanityProduct.howToUse && sanityProduct.howToUse.trim()) ? sanityProduct.howToUse : matchingLocal.howToUse
+        };
+      }
+      return sanityProduct;
+    });
+  } else {
+    products = localProducts;
   }
 
   return (
