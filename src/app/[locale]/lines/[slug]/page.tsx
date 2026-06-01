@@ -84,7 +84,6 @@ export default async function LinePage({ params }: { params: Promise<{ locale: s
   const cleanSlug = decodedSlug.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(' ', '-');
   const rawName = decodedSlug.replace('-', ' ');
   const lineName = lineNamesMap[cleanSlug] || rawName;
-  const lineDesc = lineDescriptions[cleanSlug] || `Descubra os produtos incríveis da nossa linha ${lineName}.`;
   
   // Carrega os dados locais (database Excel completa)
   const localProducts = getLocalProducts(cleanSlug);
@@ -131,7 +130,8 @@ export default async function LinePage({ params }: { params: Promise<{ locale: s
           size: (sanityProduct.size && sanityProduct.size.trim()) ? sanityProduct.size : matchingLocal.size,
           price: (sanityProduct.price && sanityProduct.price.trim()) ? sanityProduct.price : matchingLocal.price,
           description: (sanityProduct.description && sanityProduct.description.trim()) ? sanityProduct.description : matchingLocal.description,
-          howToUse: (sanityProduct.howToUse && sanityProduct.howToUse.trim()) ? sanityProduct.howToUse : matchingLocal.howToUse
+          howToUse: (sanityProduct.howToUse && sanityProduct.howToUse.trim()) ? sanityProduct.howToUse : matchingLocal.howToUse,
+          lineDescription: matchingLocal.lineDescription
         };
       }
       return sanityProduct;
@@ -139,6 +139,10 @@ export default async function LinePage({ params }: { params: Promise<{ locale: s
   } else {
     products = localProducts;
   }
+
+  // Tenta extrair a descrição da linha a partir de algum produto enriquecido ou local
+  const lineDescFromProduct = products.find((p: any) => p.lineDescription && p.lineDescription.trim() !== '')?.lineDescription;
+  const lineDesc = lineDescFromProduct || lineDescriptions[cleanSlug] || `Descubra os produtos incríveis da nossa linha ${lineName}.`;
 
   return (
     <main style={{ paddingTop: '150px', paddingBottom: '100px', minHeight: '100vh', backgroundColor: 'transparent', position: 'relative' }}>
