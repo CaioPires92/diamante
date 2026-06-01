@@ -66,7 +66,9 @@ export default async function LinePage({ params }: { params: Promise<{ locale: s
     'cachos': 'Cachos & Afro',
     'liso': 'Liso Perfeito',
     'babosa': 'Babosa',
-    'caviar': 'Caviar & Aminoácidos'
+    'caviar': 'Caviar & Aminoácidos',
+    'barber-for-men': 'Barber For Men',
+    'sequestrante': 'Sequestrante'
   };
 
   const lineDescriptions: Record<string, string> = {
