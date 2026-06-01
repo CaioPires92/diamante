@@ -27,10 +27,6 @@
   -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
 }
 
-.overlay {
-  display: none;
-}
-
 .content {
   position: absolute;
   top: 0;
@@ -87,16 +83,6 @@
     padding-top: 150px; /* Área do gradiente para transição suave */
     padding-bottom: 3rem;
   }
-}
-
-.tagline {
-  font-size: var(--text-tagline);
-  text-transform: uppercase;
-  letter-spacing: var(--tracking-extreme);
-  color: var(--color-gold);
-  font-weight: 600;
-  display: block;
-  margin-bottom: var(--space-6);
 }
 
 .title {

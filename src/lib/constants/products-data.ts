@@ -11,7 +11,7 @@ export interface ProductDetail {
   ingredients: string;
 }
 
-export const productsData: ProductDetail[] = [
+const productsData: ProductDetail[] = [
   {
     id: 'shampoo-supreme',
     slug: 'shampoo-supreme-caviar',

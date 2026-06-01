@@ -17,10 +17,26 @@ export const productType = defineType({
       type: 'string',
     }),
     defineField({
+      name: 'code',
+      title: 'Código',
+      type: 'string',
+    }),
+    defineField({
+      name: 'size',
+      title: 'Tamanho',
+      type: 'string',
+    }),
+    defineField({
       name: 'line',
       title: 'Linha a qual pertence',
       type: 'reference',
       to: [{ type: 'line' }],
+    }),
+    defineField({
+      name: 'catalogSlug',
+      title: 'Slug do grupo no catálogo',
+      type: 'string',
+      description: 'Agrupa sublinhas em páginas maiores, como matizadores e home-care.',
     }),
     defineField({
       name: 'image',
@@ -34,6 +50,27 @@ export const productType = defineType({
       name: 'description',
       title: 'Descrição Curta',
       type: 'text',
+    }),
+    defineField({
+      name: 'howToUse',
+      title: 'Modo de usar',
+      type: 'text',
+    }),
+    defineField({
+      name: 'lineDescription',
+      title: 'Descrição da linha',
+      type: 'text',
+    }),
+    defineField({
+      name: 'sortOrder',
+      title: 'Ordem',
+      type: 'number',
+    }),
+    defineField({
+      name: 'source',
+      title: 'Fonte da migração',
+      type: 'string',
+      readOnly: true,
     }),
   ],
   preview: {

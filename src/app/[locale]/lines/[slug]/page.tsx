@@ -84,19 +84,49 @@ async function getSanityProducts(slug: string) {
   }
   
   try {
-    const query = groq`*[_type == "product" && line->slug.current == $slug]{
+    const migratedQuery = groq`*[
+      _type == "product" &&
+      source == "products-json" &&
+      (line->slug.current == $slug or catalogSlug == $slug)
+    ] | order(sortOrder asc) {
       _id,
       title,
+      code,
+      size,
       price,
       description,
+      howToUse,
+      lineDescription,
       "image": image.asset->url
     }`;
-    const products = await client.fetch(query, { slug }, { cache: 'no-store' });
+
+    const fallbackQuery = groq`*[_type == "product" && line->slug.current == $slug]{
+      _id,
+      title,
+      code,
+      size,
+      price,
+      description,
+      howToUse,
+      lineDescription,
+      "image": image.asset->url
+    }`;
+
+    let products = await client.fetch(migratedQuery, { slug }, { cache: 'no-store' });
+
+    if (!products || products.length === 0) {
+      products = await client.fetch(fallbackQuery, { slug }, { cache: 'no-store' });
+    }
+
     return products.map((p: any) => ({
       id: p._id,
       title: p.title,
+      code: p.code,
+      size: p.size,
       price: p.price,
       description: p.description,
+      howToUse: p.howToUse,
+      lineDescription: p.lineDescription,
       image: p.image
     }));
   } catch (e) {
@@ -180,14 +210,13 @@ export default async function LinePage({ params }: { params: Promise<{ locale: s
   const rawName = decodedSlug.replace(/-/g, ' ');
   const lineName = lineNamesMap[cleanSlug] || rawName;
   
-  // Carrega os dados locais (database Excel completa)
+  // Carrega os dados locais (database Excel completa), para fallback e enriquecimento.
   const localProducts = getLocalProducts(cleanSlug);
   
-  // Usa a base local completa gerada a partir das planilhas/PDF como fonte principal.
-  // Sanity fica apenas como fallback para linhas que ainda não existirem localmente.
-  let products = localProducts.length > 0 ? localProducts : await getSanityProducts(cleanSlug);
+  // Usa Sanity como fonte principal após a migração. O JSON local fica como fallback.
+  let products = await getSanityProducts(cleanSlug);
   
-  if (products && products.length > 0 && localProducts.length === 0) {
+  if (products && products.length > 0) {
     // Filtra produtos que não possuem imagem válida vinda do Sanity (evitando duplicados ou rascunhos sem foto)
     products = products.filter((p: any) => p.image && p.image.trim() !== '');
 
@@ -232,6 +261,8 @@ export default async function LinePage({ params }: { params: Promise<{ locale: s
       }
       return sanityProduct;
     });
+  } else {
+    products = localProducts;
   }
 
   // Tenta extrair a descrição da linha a partir de algum produto enriquecido ou local
