@@ -93,6 +93,9 @@ export default async function LinePage({ params }: { params: Promise<{ locale: s
   let products = await getSanityProducts(cleanSlug);
   
   if (products && products.length > 0) {
+    // Filtra produtos que não possuem imagem válida vinda do Sanity (evitando duplicados ou rascunhos sem foto)
+    products = products.filter((p: any) => p.image && p.image.trim() !== '');
+
     // Enriquece os produtos carregados do Sanity com os campos descritivos e comerciais locais caso estejam ausentes
     products = products.map((sanityProduct: any) => {
       // 1. Tenta correspondência exata de título (ignorando caixa e espaços)
