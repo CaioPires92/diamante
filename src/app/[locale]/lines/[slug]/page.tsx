@@ -95,9 +95,31 @@ export default async function LinePage({ params }: { params: Promise<{ locale: s
   if (products && products.length > 0) {
     // Enriquece os produtos carregados do Sanity com os campos descritivos e comerciais locais caso estejam ausentes
     products = products.map((sanityProduct: any) => {
-      const matchingLocal = localProducts.find((local: any) => 
+      // 1. Tenta correspondência exata de título (ignorando caixa e espaços)
+      let matchingLocal = localProducts.find((local: any) => 
         local.title.toLowerCase().replace(/\s+/g, '') === sanityProduct.title.toLowerCase().replace(/\s+/g, '')
       );
+      
+      // 2. Se falhar, tenta correspondência inteligente por preço + palavra-chave do título
+      if (!matchingLocal && sanityProduct.price) {
+        matchingLocal = localProducts.find((local: any) => {
+          const samePrice = local.price && local.price.replace(/\s+/g, '') === sanityProduct.price.replace(/\s+/g, '');
+          if (!samePrice) return false;
+          
+          const sTitle = sanityProduct.title.toLowerCase();
+          const lTitle = local.title.toLowerCase();
+          const keywords = ['shampoo', 'condicionador', 'mascara', 'máscara', 'leave', 'regulador', 'oleo', 'óleo', 'serum', 'sérum', 'po', 'pó', 'coloracao', 'coloração'];
+          
+          return keywords.some(kw => sTitle.includes(kw) && lTitle.includes(kw));
+        });
+        
+        // 3. Como última alternativa, tenta correspondência apenas por preço na mesma linha
+        if (!matchingLocal) {
+          matchingLocal = localProducts.find((local: any) => 
+            local.price && local.price.replace(/\s+/g, '') === sanityProduct.price.replace(/\s+/g, '')
+          );
+        }
+      }
       
       if (matchingLocal) {
         return {
