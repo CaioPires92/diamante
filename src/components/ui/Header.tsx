@@ -135,17 +135,17 @@ export function Header({ locale, lines = [] }: { locale: string; lines?: { name:
 
         {/* Lado Direito: Ações */}
         <div className={styles.actions}>
-          <button 
+          <Link 
+            href={`/${locale}/shop`}
             className={styles.cta}
             onMouseEnter={(e) => {
-              const target = e.currentTarget;
-              gsap.to(target, { 
+              gsap.to(e.currentTarget, { 
                 scale: 1.05, 
-                backgroundColor: 'rgba(201, 157, 74, 0.1)',
+                backgroundColor: 'rgba(197, 148, 65, 0.15)',
                 duration: 0.4, 
                 ease: "power2.out" 
               });
-              const shimmer = target.querySelector(`.${styles.ctaShimmer}`);
+              const shimmer = e.currentTarget.querySelector(`.${styles.ctaShimmer}`);
               if (shimmer) {
                 gsap.fromTo(shimmer, 
                   { left: '-100%' }, 
@@ -164,7 +164,7 @@ export function Header({ locale, lines = [] }: { locale: string; lines?: { name:
           >
             <div className={styles.ctaShimmer} />
             Compre Agora
-          </button>
+          </Link>
           
           <div className={styles.langWrapper}>
             <select 
@@ -209,9 +209,13 @@ export function Header({ locale, lines = [] }: { locale: string; lines?: { name:
             </Link>
             
             <div className={styles.mobileActions}>
-              <button className={styles.mobileCta}>
+              <Link 
+                href={`/${locale}/shop`}
+                className={styles.mobileCta}
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Compre Agora
-              </button>
+              </Link>
             </div>
           </div>
         </Container>

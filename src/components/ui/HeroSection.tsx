@@ -6,14 +6,16 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { Container } from './Container';
 import styles from './HeroSection.module.css';
+import Link from 'next/link';
 import { Button } from './Button';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 
 gsap.registerPlugin(useGSAP);
 
 export function HeroSection() {
   const t = useTranslations('Home');
   const common = useTranslations('Common');
+  const locale = useLocale();
   const sectionRef = useRef<HTMLElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
 
@@ -77,45 +79,49 @@ export function HeroSection() {
           </p>
 
           <div className={`${styles.actions} anim-item`}>
-            <Button 
-              variant="primary" 
-              className={styles.buyButton}
-              onMouseEnter={(e) => {
-                const target = e.currentTarget;
-                gsap.to(target, { scale: 1.05, duration: 0.4, ease: "power2.out" });
-                const shimmer = target.querySelector(`.${styles.shimmer}`);
-                if (shimmer) {
-                  gsap.fromTo(shimmer, { left: '-100%' }, { left: '150%', duration: 1, ease: "power1.inOut" });
-                }
-              }}
-              onMouseLeave={(e) => {
-                gsap.to(e.currentTarget, { scale: 1, duration: 0.4, ease: "power2.out" });
-              }}
-            >
-              <div className={styles.shimmer} />
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={styles.bagIcon}>
-                <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>
-              </svg>
-              <span>{common('buyNow')}</span>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={styles.arrowIcon}>
-                <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
-              </svg>
-            </Button>
-            <Button 
-              variant="secondary" 
-              className={styles.secondaryButton}
-              onMouseEnter={(e) => {
-                gsap.to(e.currentTarget, { scale: 1.05, duration: 0.4, ease: "power2.out" });
-              }}
-              onMouseLeave={(e) => {
-                gsap.to(e.currentTarget, { scale: 1, duration: 0.4, ease: "power2.out" });
-              }}
-            >
-              <span>{t('viewCollection')}</span>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={styles.goldArrow}>
-                <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
-              </svg>
-            </Button>
+            <Link href={`/${locale}/shop`} style={{ textDecoration: 'none' }}>
+              <Button 
+                variant="primary" 
+                className={styles.buyButton}
+                onMouseEnter={(e) => {
+                  const target = e.currentTarget;
+                  gsap.to(target, { scale: 1.05, duration: 0.4, ease: "power2.out" });
+                  const shimmer = target.querySelector(`.${styles.shimmer}`);
+                  if (shimmer) {
+                    gsap.fromTo(shimmer, { left: '-100%' }, { left: '150%', duration: 1, ease: "power1.inOut" });
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  gsap.to(e.currentTarget, { scale: 1, duration: 0.4, ease: "power2.out" });
+                }}
+              >
+                <div className={styles.shimmer} />
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={styles.bagIcon}>
+                  <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>
+                </svg>
+                <span>{common('buyNow')}</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={styles.arrowIcon}>
+                  <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+                </svg>
+              </Button>
+            </Link>
+            <Link href={`/${locale}/products`} style={{ textDecoration: 'none' }}>
+              <Button 
+                variant="secondary" 
+                className={styles.secondaryButton}
+                onMouseEnter={(e) => {
+                  gsap.to(e.currentTarget, { scale: 1.05, duration: 0.4, ease: "power2.out" });
+                }}
+                onMouseLeave={(e) => {
+                  gsap.to(e.currentTarget, { scale: 1, duration: 0.4, ease: "power2.out" });
+                }}
+              >
+                <span>{t('viewCollection')}</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={styles.goldArrow}>
+                  <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+                </svg>
+              </Button>
+            </Link>
           </div>
 
           <div className={`${styles.trustBadges} anim-item`}>

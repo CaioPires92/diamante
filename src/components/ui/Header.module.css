@@ -157,6 +157,10 @@
 
 .cta {
   position: relative; /* For shimmer positioning */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
   height: 44px;
   padding: 0 24px;
   border-radius: 40px; /* Fully rounded pill */
@@ -371,6 +375,11 @@
   text-transform: uppercase;
   letter-spacing: 0.1em;
   box-shadow: 0 10px 20px rgba(201, 157, 74, 0.3);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border: none;
 }
 
 /* Dark Header Overrides for pages with dark backgrounds at the top */
