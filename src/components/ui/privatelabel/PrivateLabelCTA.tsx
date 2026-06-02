@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useRef } from 'react';
+import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
@@ -15,8 +16,23 @@ if (typeof window !== 'undefined') {
 export function PrivateLabelCTA() {
   const t = useTranslations('PrivateLabelPage.CTA');
   const sectionRef = useRef<HTMLElement>(null);
+  const bgRef = useRef<HTMLDivElement>(null);
 
   useGSAP((context) => {
+    // Parallax Effect
+    if (bgRef.current) {
+      gsap.to(bgRef.current, {
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: true,
+        },
+        y: '15%',
+        ease: 'none',
+      });
+    }
+
     const elements = context.selector?.('.cta-anim');
     
     if (elements) {
@@ -35,10 +51,22 @@ export function PrivateLabelCTA() {
         ease: 'power3.out'
       });
     }
-  }, { scope: sectionRef });
+  }, { scope: sectionRef, dependencies: [] });
 
   return (
     <section className={styles.section} ref={sectionRef}>
+      {/* Parallax Background */}
+      <div className={styles.parallaxBg} ref={bgRef}>
+        <Image 
+          src="/imgs/private_label_parallax_bg.png"
+          alt=""
+          fill
+          className={styles.parallaxImage}
+          priority
+        />
+        <div className={styles.overlay} />
+      </div>
+
       <div className={styles.glow} />
       <Container>
         <div className={styles.content}>

@@ -57,20 +57,30 @@ function dedupeLines(lines: { name: string; slug: string }[]) {
     'masculina': 'barber-for-men',
     'caviar-aminoacidos': 'caviar',
     'coloracao-creme': 'coloracao',
+    'cachos-and-afro': 'cachos',
+    'cachos-afro': 'cachos',
+    'jaborandi-and-alecrim': 'jaborandi-alecrim',
+    'linha-profissional': 'profissional',
+    'liso-perfeito': 'liso',
   };
   const seen = new Set<string>();
 
-  return lines.filter((line) => {
-    const normalizedSlug = normalizeLineKey(line.slug || line.name);
-    const canonicalSlug = slugAliases[normalizedSlug] || normalizedSlug;
-
-    if (seen.has(canonicalSlug)) {
-      return false;
-    }
-
-    seen.add(canonicalSlug);
-    return true;
-  });
+  return lines
+    .map((line) => {
+      const normalizedSlug = normalizeLineKey(line.slug || line.name);
+      const canonicalSlug = slugAliases[normalizedSlug] || normalizedSlug;
+      return {
+        ...line,
+        slug: canonicalSlug,
+      };
+    })
+    .filter((line) => {
+      if (seen.has(line.slug)) {
+        return false;
+      }
+      seen.add(line.slug);
+      return true;
+    });
 }
 
 async function getLines() {
@@ -107,7 +117,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} data-scroll-behavior="smooth" suppressHydrationWarning>
-      <body className={`${playfair.variable} ${inter.variable}`}>
+      <body className={`${playfair.variable} ${inter.variable}`} suppressHydrationWarning>
         <NextIntlClientProvider messages={messages}>
           <SmoothScroll>
             <FluidBackground />

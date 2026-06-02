@@ -102,6 +102,28 @@
   visibility: hidden;
   transition: all 0.3s ease;
   z-index: 100;
+  max-height: 420px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(201, 157, 74, 0.3) rgba(255, 255, 255, 0.5);
+}
+
+.dropdownMenu::-webkit-scrollbar {
+  width: 5px;
+}
+
+.dropdownMenu::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 12px;
+}
+
+.dropdownMenu::-webkit-scrollbar-thumb {
+  background: rgba(201, 157, 74, 0.3);
+  border-radius: 12px;
+}
+
+.dropdownMenu::-webkit-scrollbar-thumb:hover {
+  background: rgba(201, 157, 74, 0.6);
 }
 
 .dropdownContainer:hover .dropdownMenu {

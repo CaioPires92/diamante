@@ -176,12 +176,13 @@ export function PrivateLabelTeaser() {
 
           <div className={`${styles.visual} pl-visual`}>
             <div className={styles.imageContainer}>
-              <svg className={styles.luxuryIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M6 3h12l4 6-10 13L2 9Z"/>
-                <path d="M11 3 8 9l4 13"/>
-                <path d="M13 3l3 6-4 13"/>
-                <path d="M2 9h20"/>
-              </svg>
+              <Image 
+                src="/imgs/private_label_mockup.png"
+                alt={t('title')}
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className={styles.image}
+              />
             </div>
           </div>
         </div>

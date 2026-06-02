@@ -114,7 +114,7 @@ export function Header({ locale, lines = [] }: { locale: string; lines?: { name:
                 <polyline points="6 9 12 15 18 9"></polyline>
               </svg>
             </button>
-            <div className={styles.dropdownMenu}>
+            <div className={styles.dropdownMenu} data-lenis-prevent>
               {lines.map((line) => (
                 <Link key={line.slug} href={`/${locale}/lines/${line.slug}`} className={styles.dropdownItem}>
                   {line.name}

@@ -114,6 +114,65 @@ const sublineRules = [
   { catalogSlug: 'profissional', slug: 'regulador-de-ph', include: ['regulador de ph'] },
 ];
 
+const imageOverrides = {
+  'caviar-3': '/images/products/caviar/prod_4.png',
+  'caviar-4': '/images/products/caviar/prod_0.png',
+  'babosa-0': '/images/products/babosa/shampoo-babosa.png',
+  'babosa-1': '/images/products/babosa/condicionador-babosa.png',
+  'babosa-2': '/images/products/babosa/prod_3.png',
+  'babosa-3': '/images/products/babosa/prod_5.png',
+  'barber-for-men-0': '/images/products/masculina/prod_1.png',
+  'barber-for-men-1': '/images/products/masculina/prod_2.png',
+  'barber-for-men-2': '/images/products/masculina/prod_4.png',
+  'barber-for-men-3': '/images/products/masculina/prod_5.png',
+  'barber-for-men-4': '/images/products/masculina/prod_0.png',
+  'coloracao-0': '/images/products/coloracao/prod_33.png',
+  'coloracao-1': '/images/products/coloracao/prod_31.png',
+  'coloracao-14': '/images/products/coloracao/9-0-louro-muito-claro.png',
+  'coloracao-26': '/images/products/coloracao/6-7-chocolate-puro.png',
+  'coloracao-31': '/images/products/coloracao/9-1-louro-clar-ssimo-cinza.png',
+  'coloracao-33': '/images/products/coloracao/12-0-louro-super-claro-champagne.png',
+  'coloracao-34': '/images/products/coloracao/11-11-louro-platinado-cinza-intenso.png',
+  'coloracao-35': '/images/products/coloracao/11-89-louro-platino-p-rola.png',
+  'coloracao-36': '/images/products/coloracao/12-89-louro-clar-ssimo-p-rola.png',
+  'coloracao-40': '/images/products/coloracao/5-3-castanho-claro-dourado.png',
+  'coloracao-41': '/images/products/coloracao/7-3-louro-dourado.png',
+  'matizadores-12': '/images/products/matizadores/shampoo-prata.jpg',
+  'matizadores-13': '/images/products/matizadores/condicionador-prata.jpg',
+  'matizadores-14': '/images/products/matizadores/mascara-prata.jpg',
+  'matizadores-15': '/images/products/matizadores/leave-in-prata.jpg',
+  'home-care-13': '/images/products/home-care/prod_9.png',
+  'home-care-14': '/images/products/home-care/prod_10.png',
+  'home-care-15': '/images/products/home-care/prod_6.png',
+  'home-care-16': '/images/products/home-care/prod_7.png',
+  'home-care-25': '/images/products/home-care/shampoo-bomba.png',
+  'home-care-26': '/images/products/home-care/condicionador-bomba.png',
+};
+
+const imageRemovals = new Set([
+  'liso-2',
+  'liso-3',
+  'liso-4',
+  'home-care-8',
+  'home-care-9',
+  'matizadores-16',
+  'matizadores-17',
+  'matizadores-18',
+  'matizadores-19',
+  'home-care-4',
+  'home-care-5',
+  'home-care-6',
+  'home-care-7',
+  'home-care-10',
+  'home-care-11',
+  'home-care-12',
+  'matizadores-20',
+  'liso-5',
+  'liso-6',
+  'liso-7',
+  'liso-8',
+]);
+
 function matchesRule(product, rule) {
   const title = normalizeText(product.title);
   const includes = rule.include.some((term) => title.includes(normalizeText(term)));
@@ -220,8 +279,9 @@ async function migrate() {
 
     for (const [index, product] of products.entries()) {
       const lineSlug = getLineSlug(catalogSlug, product);
-      const imagePath = path.join(rootDir, 'public', product.image.replace(/^\//, ''));
-      const imageAssetId = product.image ? await uploadImageOnce(imagePath) : null;
+      const image = imageRemovals.has(product.id) ? '' : (imageOverrides[product.id] || product.image);
+      const imagePath = image ? path.join(rootDir, 'public', image.replace(/^\//, '')) : '';
+      const imageAssetId = image ? await uploadImageOnce(imagePath) : null;
 
       if (imageAssetId) {
         imageCount += 1;
@@ -254,6 +314,10 @@ async function migrate() {
             _ref: imageAssetId,
           },
         };
+      }
+
+      if (!imageAssetId) {
+        delete productDoc.image;
       }
 
       if (!dryRun) {

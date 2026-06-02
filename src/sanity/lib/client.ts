@@ -7,4 +7,5 @@ export const client = createClient({
   dataset,
   apiVersion,
   useCdn: false, // Alterado para false para garantir dados em tempo real após a migração
+  token: process.env.SANITY_API_TOKEN, // Adicionado para permitir leitura autenticada no servidor (Server Components)
 })

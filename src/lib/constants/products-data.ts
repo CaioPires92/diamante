@@ -15,7 +15,7 @@ const productsData: ProductDetail[] = [
   {
     id: 'shampoo-supreme',
     slug: 'shampoo-supreme-caviar',
-    line: 'Caviar & Aminoácidos',
+    line: 'Caviar',
     category: 'wash',
     image: '/images/products/caviar/prod_2.png',
     gallery: ['/images/products/caviar/prod_2.png', '/images/products/caviar/prod_1.png'],
@@ -27,7 +27,7 @@ const productsData: ProductDetail[] = [
   {
     id: 'mask-supreme',
     slug: 'mascara-supreme-tratamento',
-    line: 'Caviar & Aminoácidos',
+    line: 'Caviar',
     category: 'treatment',
     image: '/images/products/caviar/prod_3.png',
     gallery: ['/images/products/caviar/prod_3.png', '/images/products/caviar/prod_1.png'],
@@ -39,7 +39,7 @@ const productsData: ProductDetail[] = [
   {
     id: 'serum-supreme',
     slug: 'serum-supreme-finish',
-    line: 'Caviar & Aminoácidos',
+    line: 'Caviar',
     category: 'finishing',
     image: '/images/products/caviar/prod_4.png',
     gallery: ['/images/products/caviar/prod_4.png', '/images/products/caviar/prod_0.png'],
