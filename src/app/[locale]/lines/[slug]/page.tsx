@@ -301,7 +301,7 @@ export default async function LinePage({ params }: { params: Promise<{ locale: s
   const imagedProducts = products.filter((p: any) => p.image);
 
   return (
-    <main style={{ minHeight: '100vh', backgroundColor: 'transparent', position: 'relative' }}>
+    <main style={{ minHeight: '100vh', backgroundColor: 'transparent', position: 'relative', paddingBottom: '120px' }}>
       
       {/* Dynamic Hero Section */}
       <section className={styles.heroSection}>
