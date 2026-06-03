@@ -7,6 +7,7 @@ import { Footer } from '@/components/ui/Footer';
 import { SmoothScroll } from '@/components/ui/SmoothScroll';
 import { FluidBackground } from '@/components/ui/FluidBackground';
 import { WhatsAppButton } from '@/components/ui/WhatsAppButton';
+import { getLines } from '@/lib/lines';
 import '../globals.css';
 
 const playfair = Playfair_Display({
@@ -37,72 +38,6 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 1,
 };
-
-import { client } from '@/sanity/lib/client';
-import { groq } from 'next-sanity';
-
-function normalizeLineKey(value: string) {
-  return value
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-|-$/g, '');
-}
-
-function dedupeLines(lines: { name: string; slug: string }[]) {
-  const slugAliases: Record<string, string> = {
-    'barbosa': 'babosa',
-    'barber': 'barber-for-men',
-    'masculina': 'barber-for-men',
-    'caviar-aminoacidos': 'caviar',
-    'coloracao-creme': 'coloracao',
-    'cachos-and-afro': 'cachos',
-    'cachos-afro': 'cachos',
-    'jaborandi-and-alecrim': 'jaborandi-alecrim',
-    'linha-profissional': 'profissional',
-    'liso-perfeito': 'liso',
-  };
-  const seen = new Set<string>();
-
-  return lines
-    .map((line) => {
-      const normalizedSlug = normalizeLineKey(line.slug || line.name);
-      const canonicalSlug = slugAliases[normalizedSlug] || normalizedSlug;
-      return {
-        ...line,
-        slug: canonicalSlug,
-      };
-    })
-    .filter((line) => {
-      if (seen.has(line.slug)) {
-        return false;
-      }
-      seen.add(line.slug);
-      return true;
-    });
-}
-
-async function getLines() {
-  if (process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) {
-    try {
-      const query = groq`*[_type == "line"]{ title, "slug": slug.current } | order(title asc)`;
-      const sanityLines = await client.fetch(query, {}, { cache: 'no-store' });
-      if (sanityLines && sanityLines.length > 0) {
-        return dedupeLines(sanityLines.map((l: any) => ({ name: l.title, slug: l.slug })));
-      }
-    } catch (e) {
-      console.error(e);
-    }
-  }
-  
-  // Fallback
-  const defaultLines = ['Caviar', 'Liso', 'Cachos', 'Matizadores', 'Home Care', 'Babosa', 'Lapidação', 'Profissional', 'Sequestrante', 'Coloração', 'Masculina'];
-  return dedupeLines(defaultLines.map(name => ({
-    name,
-    slug: name.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(' ', '-')
-  })));
-}
 
 export default async function LocaleLayout({
   children,

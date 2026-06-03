@@ -20,6 +20,8 @@ type Product = {
   lineDescription?: string;
 };
 
+type ProductsMap = Record<string, Product[]>;
+
 const sublineProductFilters: Record<string, { source: string; include: string[]; exclude?: string[] }> = {
   'acai': { source: 'matizadores', include: ['acai'] },
   'anti-residuo': { source: 'profissional', include: ['anti residuo'] },
@@ -55,7 +57,7 @@ function getLocalProducts(slug: string) {
   try {
     const filePath = path.join(process.cwd(), 'src', 'data', 'products.json');
     const fileContents = fs.readFileSync(filePath, 'utf8');
-    const data = JSON.parse(fileContents);
+    const data = JSON.parse(fileContents) as ProductsMap;
     if (data[slug]) {
       return data[slug];
     }
@@ -75,6 +77,156 @@ function getLocalProducts(slug: string) {
   } catch (e) {
     return [];
   }
+}
+
+function getAllLocalProducts() {
+  try {
+    const filePath = path.join(process.cwd(), 'src', 'data', 'products.json');
+    const fileContents = fs.readFileSync(filePath, 'utf8');
+    return JSON.parse(fileContents) as ProductsMap;
+  } catch (e) {
+    return {};
+  }
+}
+
+function getProfessionalProducts() {
+  const data = getAllLocalProducts();
+
+  const findProduct = (source: string, title: string, size?: string) => {
+    const sourceProducts = data[source] || [];
+    return sourceProducts.find((product) => {
+      const sameTitle = normalizeText(product.title) === normalizeText(title);
+      const sameSize = !size || normalizeText(product.size || '') === normalizeText(size);
+      return sameTitle && sameSize;
+    });
+  };
+
+  const curatedProducts = [
+    {
+      source: 'profissional',
+      matchTitle: 'Shampoo Anti Resíduo',
+      size: '1 litro',
+      title: 'Shampoo Anti Resíduo 1L',
+    },
+    {
+      source: 'profissional',
+      matchTitle: 'Regulador de pH',
+      size: '300 ml',
+      title: 'Regulador de pH Orgânico 300ml',
+    },
+    {
+      source: 'profissional',
+      matchTitle: 'Regulador de pH',
+      size: '1000 ml',
+      title: 'Regulador de pH Orgânico 1L',
+    },
+    {
+      source: 'coloracao',
+      matchTitle: 'Ox 900 ml',
+      title: 'OX Cremosa 900ml',
+      description: 'Emulsão oxidante para rotinas profissionais de coloração e clareamento, com performance estável em procedimentos técnicos.',
+    },
+    {
+      source: 'coloracao',
+      matchTitle: 'Pó Descolorante Azul',
+      title: 'Pó Descolorante BLUE 500g',
+    },
+    {
+      source: 'coloracao',
+      matchTitle: 'Pó Descolorante Branco',
+      title: 'Pó Descolorante WHITE 500g',
+    },
+    {
+      source: 'lapidacao',
+      matchTitle: 'Passo 01 - Shampoo',
+      title: 'Shampoo Lapidação 1L - Step 1',
+    },
+    {
+      source: 'lapidacao',
+      matchTitle: 'Passo 04 - Hidratação Profissional',
+      title: 'Hidratação Lapidação 1L - Step 4',
+    },
+    {
+      source: 'liso',
+      matchTitle: 'Shampoo Desmaia',
+      title: 'Shampoo Desmaia Cabelo 1L',
+    },
+    {
+      source: 'liso',
+      matchTitle: 'Máscara Desmaia',
+      title: 'Máscara Desmaia Cabelo 900g',
+      image: '/images/products/liso/m-scara-desmaia.png',
+    },
+    {
+      source: 'caviar',
+      matchTitle: 'Shampoo Caviar',
+      title: 'Shampoo Caviar 1L',
+    },
+    {
+      source: 'caviar',
+      matchTitle: 'Máscara Caviar',
+      title: 'Máscara Caviar 900g',
+    },
+    {
+      source: 'matizadores',
+      matchTitle: 'Shampoo Champagne',
+      title: 'Shampoo Efeito Champagne 1L',
+    },
+    {
+      source: 'matizadores',
+      matchTitle: 'Máscara Champagne',
+      title: 'Máscara Efeito Champagne 900g',
+    },
+    {
+      source: 'matizadores',
+      matchTitle: 'Shampoo Pérola',
+      title: 'Shampoo Pérola 1L',
+    },
+    {
+      source: 'home-care',
+      matchTitle: 'Shampoo Bomba',
+      title: 'Shampoo Bomba 1L - Fortalecimento Capilar',
+    },
+    {
+      source: 'home-care',
+      matchTitle: 'Máscara Bomba',
+      title: 'Máscara Bomba 900g',
+    },
+    {
+      source: 'matizadores',
+      matchTitle: 'Máscara Black',
+      title: 'Máscara Tonalizante BLACK 1000g',
+    },
+    {
+      source: 'babosa',
+      matchTitle: 'Máscara Babosa',
+      title: 'Máscara Babosa 2kg',
+    },
+    {
+      source: 'home-care',
+      matchTitle: 'Máscara Reparo Absoluto',
+      title: 'Máscara Reparo Absoluto 250g - Reconstrução Capilar',
+    },
+  ];
+
+  return curatedProducts
+    .map((item, index) => {
+      const baseProduct = findProduct(item.source, item.matchTitle, item.size);
+
+      if (!baseProduct) {
+        return null;
+      }
+
+      return {
+        ...baseProduct,
+        id: `profissional-curated-${index}`,
+        title: item.title,
+        description: item.description || baseProduct.description,
+        image: item.image || baseProduct.image,
+        lineDescription: 'Produtos profissionais com rendimento de salão, preço de fábrica e eficiência para rotinas técnicas em todo o Brasil.',
+      };
+    })
+    .filter(Boolean) as Product[];
 }
 
 function getAlternativeSlugs(slug: string): string[] {
@@ -196,7 +348,7 @@ export default async function LinePage({ params }: { params: Promise<{ locale: s
     'coloracao': 'Colorações creme permanentes de alta performance desenvolvidas com ativos de proteção à fibra capilar. Cobertura perfeita dos fios brancos, cores intensas e duradouras com brilho extraordinário.',
     'matizadores': 'Tons perfeitos e duradouros para cabelos loiros, descoloridos, brancos e grisalhos. Elimina completamente os tons amarelados indesejados, promovendo hidratação profunda e brilho platinado profissional.',
     'home-care': 'Cuidados diários de alto desempenho para manter os resultados do salão em casa. Fórmulas ricas em nutrientes nobres, óleos essenciais e queratina para reconstrução, hidratação e força contínua dos fios.',
-    'profissional': 'Produtos de alta capacidade e máxima performance desenvolvidos especificamente para as bancadas e lavatórios dos melhores profissionais de beleza. Resultados imediatos com alto rendimento.',
+    'profissional': 'Produtos profissionais com rendimento de salão, preço de fábrica e performance técnica para lavatórios, coloração, matização e tratamentos de alta demanda.',
     'cachos': 'Especialmente desenvolvida para cabelos cacheados, crespos e afro. Limpa delicadamente os fios do frizz, os protegendo e restaurando a fibra capilar, disciplinando o brilho e promovendo definição de longa duração.',
     'liso': 'Alinhamento impecável, disciplina e brilho espelhado absoluto para fios lisos naturais ou quimicamente tratados. Controle intensivo do frizz com hidratação selante e maciez incomparável.',
     'babosa': 'Tratamento fortificante e regenerador enriquecido com o puro extrato de babosa (aloe vera). Estimula o crescimento saudável, fortalece a fibra capilar e combate a quebra dos cabelos fragilizados.',
@@ -210,10 +362,10 @@ export default async function LinePage({ params }: { params: Promise<{ locale: s
   const lineName = lineNamesMap[cleanSlug] || rawName;
   
   // Carrega os dados locais (database Excel completa), para fallback e enriquecimento.
-  const localProducts = getLocalProducts(cleanSlug);
+  const localProducts = cleanSlug === 'profissional' ? getProfessionalProducts() : getLocalProducts(cleanSlug);
   
   // Usa Sanity como fonte principal após a migração. O JSON local fica como fallback.
-  let products = await getSanityProducts(cleanSlug);
+  let products = cleanSlug === 'profissional' ? null : await getSanityProducts(cleanSlug);
   
   if (products && products.length > 0) {
     // Enriquece os produtos carregados do Sanity com os campos descritivos e comerciais locais caso estejam ausentes

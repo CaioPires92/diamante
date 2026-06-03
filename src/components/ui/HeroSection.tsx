@@ -105,7 +105,7 @@ export function HeroSection() {
                 </svg>
               </Button>
             </Link>
-            <Link href={`/${locale}/products`} style={{ textDecoration: 'none' }}>
+            <Link href={`/${locale}/lines/profissional`} style={{ textDecoration: 'none' }}>
               <Button 
                 variant="secondary" 
                 className={styles.secondaryButton}
