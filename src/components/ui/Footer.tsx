@@ -55,10 +55,10 @@ export function Footer({ locale }: { locale?: string }) {
             <div className={styles.navColumn}>
               <h4 className={styles.navTitle}>{t('links.support.title')}</h4>
               <ul className={styles.navList}>
-                <li><Link href="/faq">{t('links.support.faq')}</Link></li>
-                <li><Link href={`/${effectiveLocale}/policies/payment`}>{t('links.support.payment')}</Link></li>
-                <li><Link href="/shipping">{t('links.support.shipping')}</Link></li>
-                <li><Link href={`/${effectiveLocale}/policies/returns`}>{t('links.support.returns')}</Link></li>
+                <li><Link href={`/${effectiveLocale}/politica-de-privacidade`}>{t('links.support.privacy')}</Link></li>
+                <li><Link href={`/${effectiveLocale}/formas-de-pagamento`}>{t('links.support.payment')}</Link></li>
+                <li><Link href={`/${effectiveLocale}/fretes-e-prazo`}>{t('links.support.shipping')}</Link></li>
+                <li><Link href={`/${effectiveLocale}/trocas-e-devolucoes`}>{t('links.support.returns')}</Link></li>
               </ul>
             </div>
           </div>
@@ -79,8 +79,8 @@ export function Footer({ locale }: { locale?: string }) {
             {t('rights', { year: currentYear })}
           </p>
           <div className={styles.legal}>
-            <Link href="/privacy">Privacidade</Link>
-            <Link href="/terms">Termos</Link>
+            <Link href={`/${effectiveLocale}/politica-de-privacidade`}>{t('links.support.privacy')}</Link>
+            <Link href={`/${effectiveLocale}/fretes-e-prazo`}>{t('links.support.shipping')}</Link>
           </div>
         </div>
       </Container>

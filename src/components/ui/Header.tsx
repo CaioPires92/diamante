@@ -93,7 +93,14 @@ export function Header({ locale, lines = [] }: { locale: string; lines?: { name:
     }
   }, { dependencies: [isMenuOpen] });
 
-  const isDarkPage = pathname?.includes('/distributor') || pathname?.includes('/private-label');
+  const darkPageSegments = [
+    '/distributor',
+    '/distribuidor',
+    '/private-label',
+    '/terceirizacao-de-comesticos-private-label',
+    '/terceirizacao-de-cosmeticos-private-label'
+  ];
+  const isDarkPage = darkPageSegments.some((segment) => pathname?.includes(segment));
 
   return (
     <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''} ${isDarkPage && !isScrolled ? styles.darkHeader : ''}`} ref={headerRef}>

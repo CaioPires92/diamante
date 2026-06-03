@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -13,17 +13,18 @@ const distributorSchema = z.object({
   cityState: z.string().min(3, { message: "Informe sua cidade e estado (ex: Amparo/SP)." }),
   cnpj: z.string().optional(),
   alreadyDistributes: z.enum(['sim', 'nao']),
-  estimatedVolume: z.string().min(1, { message: "Selecione o volume mensal estimado." }),
+  estimatedVolume: z.string().optional(),
   message: z.string().min(10, { message: "A mensagem deve ter no mínimo 10 caracteres." }),
 });
 
 type DistributorFormData = z.infer<typeof distributorSchema>;
 
 export function DistributorForm() {
+  const [submitState, setSubmitState] = useState<'idle' | 'opened' | 'blocked'>('idle');
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting, isSubmitSuccessful },
+    formState: { errors, isSubmitting },
     reset,
   } = useForm<DistributorFormData>({
     resolver: zodResolver(distributorSchema),
@@ -34,6 +35,8 @@ export function DistributorForm() {
   });
 
   const onSubmit = async (data: DistributorFormData) => {
+    setSubmitState('idle');
+
     // Active commercial B2B lead redirection
     await new Promise((resolve) => setTimeout(resolve, 800));
 
@@ -41,13 +44,9 @@ export function DistributorForm() {
       ? 'Sim, já atuo no mercado' 
       : 'Não, pretendo iniciar agora';
 
-    const volumeLabels: Record<string, string> = {
-      'ate-5k': 'Até R$ 5.000,00',
-      '5k-15k': 'De R$ 5.000,00 a R$ 15.000,00',
-      '15k-50k': 'De R$ 15.000,00 a R$ 50.000,00',
-      'acima-50k': 'Acima de R$ 50.000,00',
-    };
-    const volumeText = volumeLabels[data.estimatedVolume] || data.estimatedVolume;
+    const volumeText = data.estimatedVolume && data.estimatedVolume.trim() !== ''
+      ? data.estimatedVolume
+      : 'Não informado';
 
     const formattedText = `Olá, Diamante Profissional! Gostaria de me candidatar como distribuidor oficial.\n\n` +
       `• *Nome completo*: ${data.name}\n` +
@@ -62,18 +61,24 @@ export function DistributorForm() {
     const whatsappUrl = `https://wa.me/551938176156?text=${encodeURIComponent(formattedText)}`;
 
     if (typeof window !== 'undefined') {
-      window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+      const popup = window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+
+      if (popup) {
+        setSubmitState('opened');
+        reset();
+        return;
+      }
     }
 
-    reset();
+    setSubmitState('blocked');
   };
 
   return (
     <div className={styles.formContainer}>
-      {isSubmitSuccessful ? (
+      {submitState === 'opened' ? (
         <div className={styles.successMessage}>
-          <h3>Candidatura Enviada com Sucesso!</h3>
-          <p>Agradecemos o seu interesse na Diamante Profissional. Nossa equipe comercial analisará o seu perfil e entrará em contato em breve.</p>
+          <h3>WhatsApp Aberto com Sucesso</h3>
+          <p>Preenchemos a mensagem com seus dados. Agora é só concluir o envio no WhatsApp para falar com o comercial da Diamante Profissional.</p>
         </div>
       ) : (
         <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
@@ -157,18 +162,14 @@ export function DistributorForm() {
           </div>
 
           <div className={styles.field}>
-            <label htmlFor="estimatedVolume">Volume de Compra Mensal Estimado</label>
-            <select 
+            <label htmlFor="estimatedVolume">Volume de Compra Mensal Estimado (Opcional)</label>
+            <input 
               id="estimatedVolume"
+              type="text"
+              placeholder="Ex: R$ 10.000,00"
               {...register('estimatedVolume')}
               className={errors.estimatedVolume ? styles.inputError : ''}
-            >
-              <option value="">Selecione uma faixa de valores</option>
-              <option value="ate-5k">Até R$ 5.000,00</option>
-              <option value="5k-15k">De R$ 5.000,00 a R$ 15.000,00</option>
-              <option value="15k-50k">De R$ 15.000,00 a R$ 50.000,00</option>
-              <option value="acima-50k">Acima de R$ 50.000,00</option>
-            </select>
+            />
             {errors.estimatedVolume && <span className={styles.errorText}>{errors.estimatedVolume.message}</span>}
           </div>
 
@@ -191,6 +192,13 @@ export function DistributorForm() {
           >
             {isSubmitting ? 'Enviando Candidatura...' : 'Quero ser um Distribuidor'}
           </button>
+
+          {submitState === 'blocked' && (
+            <div className={styles.warningMessage}>
+              <h3>Não foi possível abrir o WhatsApp automaticamente</h3>
+              <p>Verifique se o navegador bloqueou a nova aba ou se o WhatsApp Web está disponível e tente novamente.</p>
+            </div>
+          )}
         </form>
       )}
     </div>

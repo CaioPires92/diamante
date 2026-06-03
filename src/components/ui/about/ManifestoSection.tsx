@@ -15,6 +15,7 @@ if (typeof window !== 'undefined') {
 export function ManifestoSection() {
   const t = useTranslations('About.Manifesto');
   const sectionRef = useRef<HTMLElement>(null);
+  const paragraphs = ['paragraph1', 'paragraph2', 'paragraph3', 'paragraph4'].map((key) => t(key));
 
   useGSAP((context) => {
     const textBlocks = context.selector?.('.manif-anim');
@@ -41,10 +42,17 @@ export function ManifestoSection() {
     <section className={styles.section} ref={sectionRef}>
       <Container>
         <div className={styles.content}>
+          <span className={`${styles.kicker} manif-anim`}>ESSÊNCIA DA MARCA</span>
           <h2 className={`${styles.title} manif-anim`}>{t('title')}</h2>
-          <div className={styles.textContainer}>
-            <p className={`${styles.paragraph} manif-anim`}>{t('paragraph1')}</p>
-            <p className={`${styles.paragraph} manif-anim`}>{t('paragraph2')}</p>
+          <div className={styles.textBlock}>
+            {paragraphs.map((paragraph, index) => (
+              <p
+                key={paragraph}
+                className={`${styles.paragraph} ${index === 0 ? styles.leadParagraph : ''} manif-anim`}
+              >
+                {paragraph}
+              </p>
+            ))}
           </div>
         </div>
       </Container>

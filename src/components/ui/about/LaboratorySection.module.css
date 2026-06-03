@@ -1,7 +1,31 @@
 .section {
   padding: clamp(6rem, 10vw, 10rem) 0;
   background-color: #2D2A26;
+  background-image:
+    linear-gradient(90deg, rgba(31, 27, 24, 0.92) 0%, rgba(31, 27, 24, 0.82) 42%, rgba(31, 27, 24, 0.74) 100%),
+    linear-gradient(180deg, rgba(20, 17, 15, 0.32), rgba(20, 17, 15, 0.5)),
+    url('/imgs/about-hero-generated-v2.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: #FFFFFF;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 78% 24%, rgba(214, 171, 92, 0.16), transparent 24%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 26%);
+  pointer-events: none;
+}
+
+.section :global(.container) {
   position: relative;
   z-index: 1;
 }
@@ -45,9 +69,10 @@
 .description {
   font-family: var(--font-inter);
   font-size: var(--text-lg);
-  color: #D5D0CB; /* Lighter beige/gray for readability on dark background */
+  color: #e3ddd7;
   line-height: var(--leading-relaxed);
   max-width: 540px;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.18);
 }
 
 .statsContainer {
@@ -84,4 +109,63 @@
   color: #FFFFFF;
   letter-spacing: var(--tracking-wide);
   text-transform: uppercase;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.24);
+}
+
+@media (max-width: 1023px) {
+  .section {
+    background-attachment: scroll;
+    background-position: 64% center;
+  }
+
+  .grid {
+    gap: var(--space-10);
+  }
+
+  .title {
+    font-size: clamp(2rem, 8vw, 2.9rem);
+  }
+
+  .description {
+    font-size: 1rem;
+    max-width: 36ch;
+  }
+
+  .statsContainer {
+    gap: var(--space-6);
+  }
+
+  .stat {
+    align-items: flex-start;
+    gap: var(--space-4);
+  }
+
+  .statLine {
+    width: 28px;
+    margin-top: 0.9rem;
+    flex-shrink: 0;
+  }
+
+  .statNumber {
+    font-size: clamp(1.8rem, 6vw, 2.3rem);
+  }
+
+  .statText {
+    font-size: 0.92rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: clamp(4.5rem, 12vw, 6rem) 0;
+    background-position: 70% center;
+  }
+
+  .content {
+    align-items: flex-start;
+  }
+
+  .description {
+    max-width: none;
+  }
 }

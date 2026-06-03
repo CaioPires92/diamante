@@ -43,13 +43,14 @@ export function AboutHeroSection() {
 
           <div className={`${styles.imagePanel} hero-anim`} aria-hidden="true">
             <Image
-              src="/imgs/hero_silk.png"
+              src="/imgs/about-hero-generated-v2.png"
               alt=""
               fill
               priority
               sizes="(max-width: 900px) 90vw, 42vw"
               className={styles.image}
             />
+            <div className={styles.imageGlow} />
             <div className={styles.imageOverlay} />
           </div>
         </div>

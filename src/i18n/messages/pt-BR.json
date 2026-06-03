@@ -154,38 +154,45 @@
   "About": {
     "Hero": {
       "tagline": "NOSSA HISTÓRIA",
-      "title": "A Ciência por Trás\nda Verdadeira Beleza",
-      "subtitle": "Desde a fundação, a Diamante Profissional tem um único propósito: entregar resultados excepcionais através de cosmética avançada e fabricação própria."
+      "title": "Uma História Construída com\nQualidade, Ciência e Propósito",
+      "subtitle": "Da fábrica própria em Amparo/SP para salões, distribuidores e clientes finais em todo o Brasil, a Diamante Profissional cresce com alta performance, preço justo e padrão profissional."
     },
     "Manifesto": {
-      "paragraph1": "A Diamante Profissional foi fundada no ano de 2010 na cidade de Amparo, interior de São Paulo, por Mário Juliano Scavroni, com o intuito de produzir e comercializar cosméticos de qualidade a um preço justo. Hoje contamos com uma linha de mais de 200 produtos.",
-      "paragraph2": "Nossa expansão já nos tornou referência no mercado nacional e nos levou além-fronteiras, exportando a qualidade Diamante para países como França, Marrocos, Turquia e Suécia. Nosso compromisso é entregar altíssima qualidade tanto para o salão quanto para o cliente final."
+      "title": "Quem Somos",
+      "paragraph1": "A Diamante Profissional foi fundada em 2010, na cidade de Amparo, interior de São Paulo, por Mário Juliano Scavroni com o propósito de produzir e comercializar cosméticos de qualidade a preço justo. Hoje, a marca reúne mais de 200 produtos para cabelos, entre linhas profissionais e home care, além de perfumaria fina, maquiagem e hidratação corporal.",
+      "paragraph2": "Somos líderes de mercado no estado de São Paulo e seguimos expandindo a marca por todo o Brasil com salões parceiros que confiam na nossa performance. Essa trajetória também já levou a Diamante para fora do país, com exportações para França, Marrocos, Turquia e Suécia.",
+      "paragraph3": "Toda a linha produzida e comercializada pela Diamante Profissional é autorizada e regulamentada pela ANVISA, reforçando nosso compromisso com segurança, legalidade e qualidade original em cada produto.",
+      "paragraph4": "Além da marca própria, também atuamos com terceirização e desenvolvimento para marcas de salão e distribuição, apoiando profissionais e empreendedores que desejam criar uma linha com identidade própria e estrutura confiável."
     },
     "Laboratory": {
       "tagline": "ESTRUTURA",
-      "title": "Do Laboratório para o Seu Salão",
-      "description": "Nossa fábrica própria é o coração da Diamante. Ter controle total sobre a linha de produção nos permite garantir que cada lote tenha exatamente a mesma excelência do nosso padrão ouro inicial.",
+      "title": "Fábrica Própria, Loja Modelo e Operação Nacional",
+      "description": "A sede da Diamante Profissional, nossa fábrica e a loja modelo estão localizadas em Amparo/SP. Essa estrutura própria nos permite controlar produção, padrão de qualidade e logística com mais consistência, atendendo clientes em todo o Brasil.",
       "stats": {
-        "production": "Alta Capacidade Produtiva Mensal",
-        "quality": "Rigoroso Controle de Qualidade",
-        "tech": "Nanotecnologia em Nossos Ativos"
+        "production": "+200 produtos em portfólio",
+        "quality": "empresa ativa desde 05/2010",
+        "tech": "entregas para todo o Brasil"
       }
     },
     "Values": {
       "tagline": "NOSSOS PILARES",
-      "title": "O Padrão Diamante",
+      "title": "O Que Sustenta a Diamante",
       "items": {
-        "performance": {
-          "title": "Performance Comprovada",
-          "desc": "Produtos desenvolvidos primeiro para as bancadas dos melhores profissionais, depois para o mundo."
+        "quality": {
+          "title": "Qualidade de Verdade",
+          "desc": "Fabricação própria, ingredientes selecionados e desenvolvimento voltado para resultado real no salão e em casa."
         },
-        "ethics": {
-          "title": "Ética e Transparência",
-          "desc": "Fórmulas livres de promessas falsas. Entregamos exatamente o que está no rótulo."
+        "fairPrice": {
+          "title": "Preço Justo",
+          "desc": "Alta performance acessível para profissionais e consumidores que não abrem mão de custo-benefício."
         },
-        "innovation": {
-          "title": "Inovação Contínua",
-          "desc": "Laboratório de P&D focado em antecipar as necessidades do mercado global da beleza."
+        "compliance": {
+          "title": "Segurança e Regularização",
+          "desc": "Toda a linha é autorizada e regulamentada pela ANVISA, garantindo originalidade, procedência e confiança."
+        },
+        "partnership": {
+          "title": "Parceria para Crescer",
+          "desc": "Atendemos salões, distribuidores e empreendedores com soluções de marca própria e terceirização."
         }
       }
     }
@@ -308,7 +315,7 @@
       },
       "support": {
         "title": "Suporte",
-        "faq": "Dúvidas Frequentes",
+        "privacy": "Política de Privacidade",
         "payment": "Formas de Pagamento",
         "shipping": "Políticas de Envio",
         "returns": "Trocas e Devoluções"
@@ -330,6 +337,14 @@
     "Returns": {
       "title": "Trocas e Devoluções",
       "content": "Para realizar trocas por defeito, seguimos as orientações do Art. 26 do Código de Defesa do Consumidor. O direito de reclamar caduca em: 30 dias para produtos não duráveis e 90 dias para duráveis.\nA contagem do prazo se inicia a partir do recebimento do produto. Caso deseje realizar troca por defeito, entre em contato através da nossa página de Contato. O prazo para a resolução é de até 30 dias.\nCaso o defeito seja confirmado, o cliente pode optar pela troca por outro produto idêntico (sujeito à disponibilidade), vale compras ou a devolução do dinheiro."
+    },
+    "Shipping": {
+      "title": "Fretes e Prazo",
+      "content": "FRETE GRÁTIS\n\nCompra acima de R$199,00 para as Regiões Sul e Sudeste.\nCompras acima de R$299,00 para as Regiões Centro-Oeste, Norte e Nordeste.\n\nEntregamos em todo o Brasil. Os envios são feitos via Correios ou transportadora, e o cliente escolhe a opção de entrega disponível no momento de finalizar a compra.\n\nTrabalhamos com Correios, Jadlog, Braspress, Jamef e TNT, buscando mais agilidade e segurança nas entregas.\n\nATRASO NA ENTREGA — CORREIOS\n\nSe houver atraso, a Diamante Profissional deve ser acionada pelo Fale Conosco com o número do pedido e o motivo do contato. Nossa equipe abre o protocolo junto aos Correios e encaminha as informações ao cliente por e-mail.\n\nO prazo inicial informado pelos Correios pode chegar a 5 dias úteis, com possibilidade de extensão. Ao final dos prazos ou após confirmação de extravio, roubo ou não localização, a Diamante Profissional poderá reenviar o pedido sem custo adicional.\n\nSe, após o reenvio, a primeira mercadoria for entregue, o cliente deve recusar o recebimento para devolução ao depósito.\n\nATRASO NA ENTREGA — TRANSPORTADORAS\n\nEm pedidos enviados por transportadora, também é necessário entrar em contato pelo Fale Conosco com o número do pedido e o motivo da solicitação. Nossa equipe consulta a transportadora e responde com a posição do caso.\n\nSe o rastreio indicar número ou endereço não localizado, o cliente deve confirmar os dados de entrega e referências. O preenchimento correto do endereço é responsabilidade do cliente no momento da compra.\n\nEm caso de dúvidas sobre rastreio, o cliente também pode solicitar apoio da equipe."
+    },
+    "Privacy": {
+      "title": "Política de Privacidade",
+      "content": "A sua privacidade é importante para nós. É política da Diamante Profissional respeitar a sua privacidade em relação a qualquer informação sua que possamos coletar no site e em outros canais que operamos.\n\nSolicitamos informações pessoais apenas quando realmente precisamos delas para fornecer um serviço. Isso é feito por meios justos e legais, com conhecimento e consentimento do usuário. Também informamos por que estamos coletando os dados e como eles serão utilizados.\n\nRetemos as informações coletadas apenas pelo tempo necessário para fornecer o serviço solicitado. Quando armazenamos dados, protegemos essas informações dentro de meios comercialmente aceitáveis para evitar perdas, roubos, acesso, divulgação, cópia, uso ou modificação não autorizados.\n\nNão compartilhamos informações de identificação pessoal publicamente ou com terceiros, exceto quando exigido por lei.\n\nNosso site pode ter links para sites externos que não são operados por nós. Não temos controle sobre o conteúdo e as práticas desses sites e não podemos aceitar responsabilidade por suas respectivas políticas de privacidade.\n\nO usuário é livre para recusar a solicitação de informações pessoais, entendendo que talvez não possamos fornecer alguns dos serviços desejados.\n\nO uso continuado do site será considerado como aceitação de nossas práticas em torno de privacidade e informações pessoais. Se houver dúvidas sobre como lidamos com dados do usuário e informações pessoais, o contato pode ser feito diretamente com a Diamante Profissional.\n\nCOMPROMISSO DO USUÁRIO\n\nO usuário se compromete a fazer uso adequado dos conteúdos e das informações oferecidas no site, incluindo não se envolver em atividades ilegais, não difundir conteúdo ilícito e não causar danos aos sistemas da empresa, fornecedores ou terceiros.\n\nEsta política de privacidade é apresentada como referência institucional de como tratamos dados, navegação e relacionamento digital no ambiente da marca."
     }
   }
 }

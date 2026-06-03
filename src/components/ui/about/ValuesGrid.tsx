@@ -12,7 +12,7 @@ if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-const valueKeys = ['performance', 'ethics', 'innovation'] as const;
+const valueKeys = ['quality', 'fairPrice', 'compliance', 'partnership'] as const;
 
 export function ValuesGrid() {
   const t = useTranslations('About.Values');

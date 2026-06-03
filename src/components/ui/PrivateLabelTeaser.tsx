@@ -2,10 +2,11 @@
 
 import React, { useRef } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { Container } from './Container';
 import styles from './PrivateLabelTeaser.module.css';
 
@@ -16,6 +17,7 @@ if (typeof window !== 'undefined') {
 
 export function PrivateLabelTeaser() {
   const t = useTranslations('PrivateLabel');
+  const locale = useLocale();
   const sectionRef = useRef<HTMLElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
 
@@ -166,12 +168,12 @@ export function PrivateLabelTeaser() {
               </div>
             </div>
 
-            <button className={styles.cta}>
+            <Link href={`/${locale}/private-label`} className={styles.cta}>
               {t('cta')}
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
               </svg>
-            </button>
+            </Link>
           </div>
 
           <div className={`${styles.visual} pl-visual`}>

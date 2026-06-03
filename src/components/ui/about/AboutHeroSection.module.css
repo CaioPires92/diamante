@@ -69,40 +69,59 @@
 .imagePanel {
   position: relative;
   min-height: clamp(360px, 48vw, 560px);
-  border-radius: 8px;
+  border-radius: 22px;
   overflow: hidden;
-  box-shadow: 0 28px 70px rgba(45, 42, 38, 0.16);
+  box-shadow: 0 32px 80px rgba(45, 42, 38, 0.18);
+  background:
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.6), transparent 30%),
+    linear-gradient(145deg, #f6f1e8, #d9c2a0);
 }
 
 .imagePanel::before {
   content: "";
   position: absolute;
-  inset: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.55);
-  border-radius: 6px;
+  inset: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.58);
+  border-radius: 16px;
   z-index: 2;
   pointer-events: none;
 }
 
 .image {
   object-fit: cover;
+  object-position: 74% center;
+  transform: scale(1.04);
+}
+
+.imageGlow {
+  position: absolute;
+  inset: auto -10% -18% 28%;
+  height: 44%;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(214, 171, 92, 0.26) 0%, rgba(214, 171, 92, 0) 72%);
+  filter: blur(24px);
+  z-index: 1;
+  pointer-events: none;
 }
 
 .imageOverlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(45, 42, 38, 0.46), rgba(197, 148, 65, 0.08) 48%, rgba(248, 244, 239, 0.16));
-  z-index: 1;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(45, 42, 38, 0.1)),
+    linear-gradient(135deg, rgba(45, 42, 38, 0.08), rgba(197, 148, 65, 0.04) 45%, rgba(248, 244, 239, 0));
+  z-index: 2;
 }
 
 @media (max-width: 900px) {
   .section {
     min-height: auto;
-    padding-top: clamp(6rem, 18vw, 8rem);
+    padding: clamp(5.75rem, 18vw, 7rem) 0 clamp(3.25rem, 10vw, 4.5rem);
   }
 
   .layout {
     grid-template-columns: 1fr;
+    gap: clamp(2rem, 6vw, 3rem);
     text-align: center;
   }
 
@@ -111,7 +130,46 @@
     margin: 0 auto;
   }
 
+  .tagline {
+    margin-bottom: var(--space-5);
+  }
+
+  .title {
+    font-size: clamp(2.35rem, 12vw, 3.6rem);
+    margin-bottom: var(--space-6);
+    line-height: 1.04;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    max-width: 34ch;
+  }
+
   .imagePanel {
-    min-height: clamp(300px, 64vw, 420px);
+    min-height: clamp(260px, 72vw, 360px);
+    border-radius: 18px;
+  }
+
+  .image {
+    object-position: 68% center;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding-top: 5.5rem;
+  }
+
+  .title {
+    font-size: clamp(2.1rem, 11vw, 2.9rem);
+  }
+
+  .subtitle {
+    font-size: 0.98rem;
+  }
+
+  .imagePanel::before {
+    inset: 10px;
+    border-radius: 12px;
   }
 }

@@ -165,38 +165,45 @@
   "About": {
     "Hero": {
       "tagline": "NUESTRA HISTORIA",
-      "title": "La Ciencia Detrás\nde la Verdadera Belleza",
-      "subtitle": "Desde nuestra fundación, Diamante Profissional tiene un único propósito: ofrecer resultados excepcionales a través de cosméticos avanzados y fabricación propia."
+      "title": "Una Historia Construida con\nCalidad, Ciencia y Propósito",
+      "subtitle": "Desde nuestra fábrica propia en Amparo, São Paulo, hasta salones, distribuidores y clientes finales en todo Brasil, Diamante Profissional crece con alto rendimiento, precio justo y estándar profesional."
     },
     "Manifesto": {
-      "paragraph1": "Diamante Profissional fue fundada en el año 2010 en la ciudad de Amparo, en el interior de São Paulo, por Mário Juliano Scavroni, con el objetivo de producir y comercializar cosméticos de calidad a un precio justo. Hoy contamos con una línea de más de 200 productos.",
-      "paragraph2": "Nuestra expansión ya nos ha convertido en un referente en el mercado nacional y nos ha llevado más allá de las fronteras, exportando la calidad Diamante a países como Francia, Marruecos, Turquía y Suecia. Nuestro compromiso es entregar la más alta calidad tanto para el salón como para el cliente final."
+      "title": "Quiénes Somos",
+      "paragraph1": "Diamante Profissional fue fundada en 2010 en la ciudad de Amparo, en el interior de São Paulo, por Mario Juliano Scavroni con el propósito de producir y comercializar cosméticos de calidad a un precio justo. Hoy la marca reúne más de 200 productos para el cabello, entre líneas profesionales y home care, además de perfumería fina, maquillaje e hidratación corporal.",
+      "paragraph2": "Somos líderes de mercado en el estado de São Paulo y seguimos expandiendo la marca por todo Brasil junto a salones asociados que confían en nuestro rendimiento. Esta trayectoria también llevó a Diamante al exterior, con exportaciones a Francia, Marruecos, Turquía y Suecia.",
+      "paragraph3": "Toda la línea producida y comercializada por Diamante Profissional está autorizada y regulada por ANVISA, reforzando nuestro compromiso con la seguridad, la legalidad y la calidad original en cada producto.",
+      "paragraph4": "Además de nuestra propia marca, también trabajamos con fabricación tercerizada y desarrollo para marcas de salón y distribución, apoyando a profesionales y emprendedores que desean crear una línea con identidad propia y una estructura confiable."
     },
     "Laboratory": {
       "tagline": "ESTRUCTURA",
-      "title": "Del Laboratorio a tu Salón",
-      "description": "Nuestra fábrica propia es el corazón de Diamante. Tener el control total sobre la línea de producción nos permite garantizar que cada lote tenga exactamente la misma excelencia que nuestro estándar de oro inicial.",
+      "title": "Fábrica Propia, Tienda Modelo y Operación Nacional",
+      "description": "La sede de Diamante Profissional, nuestra fábrica y la tienda modelo están ubicadas en Amparo, São Paulo. Esta estructura propia nos permite controlar la producción, el estándar de calidad y la logística con mayor consistencia, atendiendo a clientes en todo Brasil.",
       "stats": {
-        "production": "Alta Capacidad de Producción Mensal",
-        "quality": "Estricto Control de Calidad",
-        "tech": "Nanotecnología en Nuestros Activos"
+        "production": "más de 200 productos en portafolio",
+        "quality": "activa desde 05/2010",
+        "tech": "entregas a todo Brasil"
       }
     },
     "Values": {
       "tagline": "NUESTROS PILARES",
-      "title": "El Estándar Diamante",
+      "title": "Lo Que Sostiene a Diamante",
       "items": {
-        "performance": {
-          "title": "Rendimiento Comprobado",
-          "desc": "Productos desarrollados primero para las mesas de trabajo de los mejores profesionales, luego para el mundo."
+        "quality": {
+          "title": "Calidad Real",
+          "desc": "Fabricación propia, ingredientes seleccionados y desarrollo orientado a resultados reales en el salón y en casa."
         },
-        "ethics": {
-          "title": "Ética y Transparencia",
-          "desc": "Fórmulas libres de falsas promesas. Entregamos exactamente lo que está en la etiqueta."
+        "fairPrice": {
+          "title": "Precio Justo",
+          "desc": "Alto rendimiento accesible para profesionales y consumidores que valoran una gran relación calidad-precio."
         },
-        "innovation": {
-          "title": "Innovación Continua",
-          "desc": "Laboratorio de I+D enfocado en anticipar las necesidades del mercado global de la belleza."
+        "compliance": {
+          "title": "Seguridad y Regulación",
+          "desc": "Toda la línea está autorizada y regulada por ANVISA, garantizando autenticidad, procedencia y confianza."
+        },
+        "partnership": {
+          "title": "Socios para Crecer",
+          "desc": "Atendemos a salones, distribuidores y emprendedores con soluciones de private label y tercerización."
         }
       }
     }
@@ -308,7 +315,7 @@
       },
       "support": {
         "title": "Soporte",
-        "faq": "Preguntas Frecuentes",
+        "privacy": "Política de Privacidad",
         "payment": "Formas de Pago",
         "shipping": "Políticas de Envío",
         "returns": "Cambios y Devoluciones"
@@ -330,6 +337,14 @@
     "Returns": {
       "title": "Cambios y Devoluciones",
       "content": "Para realizar cambios por defectos, seguimos las directrices del Art. 26 del Código de Defensa del Consumidor. El derecho a reclamar vence en: 30 dias para productos no duraderos y 90 dias para los duraderos.\nEl plazo comienza a partir de la recepción del producto. Si deseas realizar un cambio por defecto, ponte en contacto a través de nuestra página de Contacto. El plazo de resolución es de hasta 30 días.\nSi se confirma el defecto, el cliente puede optar por el cambio por otro producto idéntico (sujeto a disponibilidad), un vale de compra o el reembolso de su dinero."
+    },
+    "Shipping": {
+      "title": "Envíos y Plazos",
+      "content": "Ofrecemos envío gratis en compras superiores a R$199,00 para las regiones Sur y Sudeste de Brasil, y superiores a R$299,00 para Centro-Oeste, Norte y Nordeste.\n\nRealizamos entregas en todo Brasil a través de Correios y transportistas asociados. En el checkout, el cliente elige la modalidad disponible para el código postal informado. Trabajamos con Correios, Jadlog, Braspress, Jamef y TNT para garantizar alcance, agilidad y seguridad.\n\nSi un envío por Correios se retrasa, nuestro equipo abre un protocolo de atención y acompaña el caso directamente con el transportista. En casos de extravío, robo o no localización confirmada, organizamos un nuevo envío sin costo adicional.\n\nPara entregas por transportadora, también ofrecemos soporte activo en situaciones de retraso, dirección no localizada o dudas sobre el seguimiento. El llenado correcto de los datos de entrega es responsabilidad del cliente al momento de la compra."
+    },
+    "Privacy": {
+      "title": "Política de Privacidad",
+      "content": "Diamante Profissional respeta la privacidad de los usuarios y recopila únicamente la información necesaria para prestar sus servicios de forma segura y transparente.\n\nLos datos enviados en formularios, compras y canales de contacto se utilizan para atención, procesamiento de pedidos, comunicación y mejora de la experiencia en el sitio web. La información se almacena con medidas comercialmente razonables de protección contra acceso, alteración, copia o divulgación no autorizada.\n\nNo compartimos información personal públicamente ni con terceros, salvo cuando sea necesario para operar el servicio o por obligación legal. Nuestro sitio puede contener enlaces a páginas externas, y no nos responsabilizamos por las prácticas de privacidad de esos entornos.\n\nAl continuar navegando y utilizando el sitio, el usuario acepta estas prácticas. Si existen dudas sobre el tratamiento de datos personales, el contacto puede hacerse directamente con el equipo de Diamante Profissional."
     }
   }
 }

@@ -165,38 +165,45 @@
   "About": {
     "Hero": {
       "tagline": "OUR STORY",
-      "title": "The Science Behind\nTrue Beauty",
-      "subtitle": "Since our founding, Diamante Profissional has had a single purpose: to deliver exceptional results through advanced cosmetics and in-house manufacturing."
+      "title": "A Story Built on\nQuality, Science and Purpose",
+      "subtitle": "From our in-house factory in Amparo, Sao Paulo, to salons, distributors and end customers across Brazil, Diamante Profissional grows with high performance, fair pricing and professional standards."
     },
     "Manifesto": {
-      "paragraph1": "Diamante Profissional was founded in 2010 in the city of Amparo, in the state of São Paulo, by Mário Juliano Scavroni, with the aim of producing and selling high-quality cosmetics at a fair price. Today we have a line of more than 200 products.",
-      "paragraph2": "Our expansion has already made us a reference in the national market and has taken us beyond borders, exporting Diamante quality to countries such as France, Morocco, Turkey, and Sweden. Our commitment is to deliver the highest quality both to the salon and the final client."
+      "title": "Who We Are",
+      "paragraph1": "Diamante Profissional was founded in 2010 in Amparo, in the countryside of Sao Paulo, by Mario Juliano Scavroni with the purpose of producing and marketing quality cosmetics at a fair price. Today, the brand offers more than 200 products for hair care, including professional and home care lines, as well as fine fragrances, makeup and body hydration.",
+      "paragraph2": "We are market leaders in the state of Sao Paulo and continue expanding across Brazil through partner salons that trust our performance. This journey has also taken Diamante abroad, with exports to France, Morocco, Turkey and Sweden.",
+      "paragraph3": "Every product line manufactured and sold by Diamante Profissional is authorized and regulated by ANVISA, reinforcing our commitment to safety, legality and original quality in every item.",
+      "paragraph4": "In addition to our own brand, we also work with private label manufacturing and product development for salons and distributors, supporting professionals and entrepreneurs who want to create a line with their own identity and reliable structure."
     },
     "Laboratory": {
       "tagline": "STRUCTURE",
-      "title": "From the Laboratory to Your Salon",
-      "description": "Our in-house factory is the heart of Diamante. Having total control over the production line allows us to guarantee that each batch has exactly the same excellence as our initial gold standard.",
+      "title": "In-House Factory, Model Store and Nationwide Operation",
+      "description": "Diamante Profissional's headquarters, factory and model store are all located in Amparo, Sao Paulo. This in-house structure gives us stronger control over production, quality standards and logistics while serving customers throughout Brazil.",
       "stats": {
-        "production": "High Monthly Production Capacity",
-        "quality": "Rigorous Quality Control",
-        "tech": "Nanotechnology in Our Actives"
+        "production": "200+ products in the portfolio",
+        "quality": "active since 05/2010",
+        "tech": "deliveries across Brazil"
       }
     },
     "Values": {
       "tagline": "OUR PILLARS",
-      "title": "The Diamond Standard",
+      "title": "What Sustains Diamante",
       "items": {
-        "performance": {
-          "title": "Proven Performance",
-          "desc": "Products developed first for the workstations of the best professionals, and then for the world."
+        "quality": {
+          "title": "Real Quality",
+          "desc": "In-house manufacturing, selected ingredients and product development focused on real results in salons and at home."
         },
-        "ethics": {
-          "title": "Ethics and Transparency",
-          "desc": "Formulas free from false promises. We deliver exactly what is on the label."
+        "fairPrice": {
+          "title": "Fair Pricing",
+          "desc": "High performance made accessible for professionals and consumers who expect strong value for money."
         },
-        "innovation": {
-          "title": "Continuous Innovation",
-          "desc": "R&D laboratory focused on anticipating the needs of the global beauty market."
+        "compliance": {
+          "title": "Safety and Compliance",
+          "desc": "The entire line is authorized and regulated by ANVISA, ensuring authenticity, traceability and trust."
+        },
+        "partnership": {
+          "title": "Growth Partnership",
+          "desc": "We support salons, distributors and entrepreneurs with private label and contract manufacturing solutions."
         }
       }
     }
@@ -308,7 +315,7 @@
       },
       "support": {
         "title": "Support",
-        "faq": "FAQ",
+        "privacy": "Privacy Policy",
         "payment": "Payment Methods",
         "shipping": "Shipping Policies",
         "returns": "Returns & Exchanges"
@@ -330,6 +337,14 @@
     "Returns": {
       "title": "Returns & Exchanges",
       "content": "To perform exchanges due to defects, we follow the guidelines of Art. 26 of the Consumer Defense Code. The right to complain expires in: 30 days for non-durable products and 90 days for durable ones.\nThe period starts from the receipt of the product. If you wish to exchange due to a defect, please get in touch through our Contact page. The resolution period is up to 30 days.\nIf the defect is confirmed, the customer can choose to exchange for an identical product (subject to availability), a shopping voucher, or a money refund."
+    },
+    "Shipping": {
+      "title": "Shipping & Delivery",
+      "content": "We offer free shipping on purchases above R$199.00 for the South and Southeast regions of Brazil, and above R$299.00 for the Midwest, North and Northeast.\n\nWe ship throughout Brazil via Correios and transport partners. At checkout, the customer selects the delivery option available for the informed ZIP code. We work with Correios, Jadlog, Braspress, Jamef and TNT to ensure reach, speed and safety.\n\nIf a Correios shipment is delayed, our team opens a support protocol and follows up the occurrence directly with the carrier. In cases of confirmed loss, theft or non-location, we arrange a replacement shipment at no additional cost.\n\nFor carrier deliveries, we also provide active support in situations involving delays, address issues or tracking questions. Correct delivery information is the customer's responsibility at the time of purchase."
+    },
+    "Privacy": {
+      "title": "Privacy Policy",
+      "content": "Diamante Profissional respects user privacy and collects only the information required to provide its services safely and transparently.\n\nData submitted through forms, purchases and contact channels is used for customer service, order processing, communication and website experience improvement. Information is stored with commercially reasonable safeguards against unauthorized access, alteration, copying or disclosure.\n\nWe do not publicly share personal information with third parties, except when required to operate the service or by law. Our website may contain links to external pages, and we are not responsible for the privacy practices of those environments.\n\nBy continuing to browse and use the website, the user agrees with these practices. If there are any questions about the handling of personal data, contact can be made directly with the Diamante Profissional team."
     }
   }
 }

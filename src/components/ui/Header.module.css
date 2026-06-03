@@ -266,6 +266,44 @@
   }
 }
 
+@media (max-width: 480px) {
+  .headerContainer {
+    height: 68px;
+    padding: 0 14px;
+  }
+
+  .logo {
+    font-size: 1rem;
+  }
+
+  .langWrapper {
+    min-width: 58px;
+    height: 40px;
+  }
+
+  .lang {
+    font-size: 12px;
+  }
+
+  .mobileMenuContainer {
+    padding: 88px 24px 40px;
+  }
+
+  .mobileNav {
+    gap: 24px;
+  }
+
+  .mobileNavLink {
+    font-size: 2rem;
+  }
+
+  .mobileCta {
+    height: 52px;
+    max-width: 100%;
+    font-size: 0.92rem;
+  }
+}
+
 /* Hamburger Button */
 .hamburger {
   display: none;
@@ -409,5 +447,4 @@
 .darkHeader .hamburger span {
   background-color: #FAFAF8 !important;
 }
-
 
