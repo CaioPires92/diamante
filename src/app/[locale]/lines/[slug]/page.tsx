@@ -4,7 +4,7 @@ import { Container } from '@/components/ui/Container';
 import fs from 'fs';
 import path from 'path';
 
-import { client } from '@/sanity/lib/client';
+import { client, hasSanityConfig } from '@/sanity/lib/client';
 import { groq } from 'next-sanity';
 import styles from './page.module.css';
 
@@ -244,7 +244,7 @@ function getAlternativeSlugs(slug: string): string[] {
 
 // Função para buscar produtos do Sanity
 async function getSanityProducts(slug: string) {
-  if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) {
+  if (!hasSanityConfig) {
     return null; // Retorna null para sinalizar que o Sanity não está configurado
   }
   

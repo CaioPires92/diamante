@@ -5,8 +5,8 @@ import { apiVersion, dataset, projectId } from './src/sanity/env'
 
 export default defineConfig({
   basePath: '/studio',
-  projectId,
-  dataset,
+  projectId: projectId || 'missing-project-id',
+  dataset: dataset || 'missing-dataset',
   schema,
   plugins: [
     structureTool(),

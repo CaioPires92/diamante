@@ -1,6 +1,6 @@
 import { groq } from 'next-sanity';
 
-import { client } from '@/sanity/lib/client';
+import { client, hasSanityConfig } from '@/sanity/lib/client';
 
 export type LineSummary = {
   name: string;
@@ -99,7 +99,7 @@ export function dedupeLines(lines: LineSummary[]) {
 }
 
 export async function getLines() {
-  if (process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) {
+  if (hasSanityConfig) {
     try {
       const query = groq`*[_type == "line"]{ title, "slug": slug.current } | order(title asc)`;
       const sanityLines = await client.fetch(query, {}, { cache: 'no-store' });
