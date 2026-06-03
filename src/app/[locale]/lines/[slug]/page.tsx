@@ -267,7 +267,7 @@ async function getSanityProducts(slug: string) {
       "image": image.asset->url
     }`;
 
-    const products = await client.fetch(query, { slugs }, { cache: 'no-store' });
+    const products = await client!.fetch(query, { slugs }, { cache: 'no-store' });
 
     return products.map((p: any) => ({
       id: p._id,

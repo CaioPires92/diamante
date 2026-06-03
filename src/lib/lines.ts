@@ -102,7 +102,7 @@ export async function getLines() {
   if (hasSanityConfig) {
     try {
       const query = groq`*[_type == "line"]{ title, "slug": slug.current } | order(title asc)`;
-      const sanityLines = await client.fetch(query, {}, { cache: 'no-store' });
+      const sanityLines = await client!.fetch(query, {}, { cache: 'no-store' });
 
       if (sanityLines && sanityLines.length > 0) {
         return dedupeLines(sanityLines.map((line: { title: string; slug: string }) => ({
