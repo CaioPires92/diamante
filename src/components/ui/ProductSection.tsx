@@ -17,16 +17,19 @@ const productsData = [
     id: 'shampoo-supreme',
     slug: 'shampoo-supreme-caviar',
     image: '/images/products/caviar/prod_2.png',
+    lojaIntegradaId: '91860541'
   },
   {
     id: 'mask-supreme',
     slug: 'mascara-supreme-tratamento',
     image: '/images/products/caviar/prod_3.png',
+    lojaIntegradaId: '184150772'
   },
   {
     id: 'serum-supreme',
     slug: 'serum-supreme-finish',
     image: '/images/products/caviar/prod_4.png',
+    lojaIntegradaId: '184150400'
   }
 ];
 
@@ -93,6 +96,7 @@ export function ProductSection() {
                 name={t(`items.${product.id}.name`)}
                 description={t(`items.${product.id}.desc`)}
                 isFeatured={index === 1}
+                lojaIntegradaId={product.lojaIntegradaId}
               />
             </div>
           ))}

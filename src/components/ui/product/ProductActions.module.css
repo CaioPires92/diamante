@@ -1,0 +1,223 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  font-family: var(--font-inter);
+}
+
+.priceContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2D2A26;
+  font-family: var(--font-playfair);
+}
+
+.installments {
+  font-size: 0.85rem;
+  color: #8F857D;
+  margin-top: -0.25rem;
+}
+
+.installments strong {
+  color: #5A524A;
+}
+
+.buySection {
+  display: flex;
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.quantitySelector {
+  display: flex;
+  align-items: center;
+  border: 1px solid #EBE9E4;
+  border-radius: 4px;
+  background: #FFF;
+  height: 48px;
+}
+
+.qtyBtn {
+  background: none;
+  border: none;
+  width: 40px;
+  height: 100%;
+  font-size: 1.25rem;
+  color: #5A524A;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.qtyBtn:hover {
+  background: #FDFBF7;
+  color: #c99d4a;
+}
+
+.qtyInput {
+  width: 40px;
+  text-align: center;
+  border: none;
+  background: transparent;
+  font-size: 0.95rem;
+  color: #2D2A26;
+  outline: none;
+}
+
+.buyBtn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: #211d1a;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.buyBtn:hover {
+  background: #c99d4a;
+}
+
+.stock {
+  font-size: 0.75rem;
+  color: #2D2A26;
+  text-align: center;
+  margin-top: -0.5rem;
+  font-weight: 500;
+}
+
+.secondaryActions {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #EBE9E4;
+  padding-bottom: 1.5rem;
+}
+
+.wishlistBtn, .paymentBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #5A524A;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.wishlistBtn:hover, .paymentBtn:hover {
+  color: #c99d4a;
+}
+
+.wishlistBtn {
+  background: #211d1a;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+}
+.wishlistBtn:hover {
+  background: #332d29;
+  color: #fff;
+}
+
+.paymentBtn {
+  color: #c99d4a;
+}
+
+.shippingSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.shippingLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #5A524A;
+  text-transform: uppercase;
+}
+
+.shippingInputGroup {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.shippingInput {
+  flex: 1;
+  border: 1px solid #EBE9E4;
+  background: #FFF;
+  padding: 0.85rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  color: #2D2A26;
+  outline: none;
+}
+
+.shippingInput:focus {
+  border-color: #c99d4a;
+}
+
+.shippingBtn {
+  background: #BDC3C7;
+  color: #fff;
+  border: none;
+  padding: 0 1.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background 0.2s ease;
+}
+
+.shippingBtn:hover:not(:disabled) {
+  background: #95a5a6;
+}
+
+.shippingBtn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.shippingResults {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  background: #FFF;
+  border: 1px solid #EBE9E4;
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+.shippingRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #5A524A;
+}
+
+.shippingType {
+  font-weight: 600;
+  color: #2D2A26;
+}
+
+.shippingPrice {
+  font-weight: 700;
+}

@@ -563,11 +563,24 @@
 }
 
 /* Dark Header Overrides for pages with dark backgrounds at the top */
-.darkHeader .logo {
+.darkHeader .logoTextMain {
   color: #FAFAF8 !important;
 }
 
 .darkHeader .navLink {
+  color: #FAFAF8 !important;
+}
+
+.darkHeader .navLink svg {
+  stroke: #FAFAF8 !important;
+}
+
+.darkHeader .iconActions {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+.darkHeader .iconButton {
   color: #FAFAF8 !important;
 }
 
@@ -577,13 +590,13 @@
 
 .darkHeader .langWrapper {
   border-color: rgba(255, 255, 255, 0.18) !important;
-  background: rgba(255, 255, 255, 0.08) !important;
+  background: transparent !important;
 }
 
 .darkHeader .cta {
+  background: #c99d4a !important;
   color: #FAFAF8 !important;
-  border-color: rgba(201, 157, 74, 0.6) !important;
-  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: #c99d4a !important;
 }
 
 .darkHeader .hamburger span {

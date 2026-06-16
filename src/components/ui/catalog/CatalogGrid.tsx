@@ -10,28 +10,48 @@ import styles from './CatalogGrid.module.css';
 
 // Mock data (will be replaced by CMS data later)
 const mockProducts = [
-  { id: 'shampoo-supreme', slug: 'shampoo-supreme-caviar', image: '/imgs/product1.png', category: 'wash' },
-  { id: 'mask-supreme', slug: 'mascara-supreme-tratamento', image: '/imgs/product2.png', category: 'treatment' },
-  { id: 'serum-supreme', slug: 'serum-supreme-finish', image: '/imgs/product3.png', category: 'finishing' },
-  { id: 'shampoo-supreme', slug: 'shampoo-supreme-caviar', image: '/imgs/product1.png', category: 'treatment' }, 
-  { id: 'mask-supreme', slug: 'mascara-supreme-tratamento', image: '/imgs/product2.png', category: 'wash' },
-  { id: 'serum-supreme', slug: 'serum-supreme-finish', image: '/imgs/product3.png', category: 'finishing' },
+  { id: 'shampoo-supreme', slug: 'shampoo-supreme-caviar', image: '/imgs/product1.png', category: 'wash', lojaIntegradaId: '91860541' },
+  { id: 'mask-supreme', slug: 'mascara-supreme-tratamento', image: '/imgs/product2.png', category: 'treatment', lojaIntegradaId: '184150772' },
+  { id: 'serum-supreme', slug: 'serum-supreme-finish', image: '/imgs/product3.png', category: 'finishing', lojaIntegradaId: '184150400' },
+  { id: 'shampoo-supreme', slug: 'shampoo-supreme-caviar', image: '/imgs/product1.png', category: 'treatment', lojaIntegradaId: '91860541' }, 
+  { id: 'mask-supreme', slug: 'mascara-supreme-tratamento', image: '/imgs/product2.png', category: 'wash', lojaIntegradaId: '184150772' },
+  { id: 'serum-supreme', slug: 'serum-supreme-finish', image: '/imgs/product3.png', category: 'finishing', lojaIntegradaId: '184150400' },
 ];
 
 export function CatalogGrid() {
   const t = useTranslations('Products');
   const tCatalog = useTranslations('Catalog');
   const [activeCategory, setActiveCategory] = useState<Category>('all');
+  const [products, setProducts] = useState<any[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
   const gridRef = useRef<HTMLDivElement>(null);
 
-  const filteredProducts = mockProducts.filter(
-    (product) => activeCategory === 'all' || product.category === activeCategory
-  );
+  useEffect(() => {
+    async function fetchProducts() {
+      try {
+        const res = await fetch('/api/loja-integrada/products');
+        if (res.ok) {
+          const data = await res.json();
+          // The API returns { objects: [...] }
+          if (data && data.objects) {
+            setProducts(data.objects);
+          }
+        }
+      } catch (error) {
+        console.error('Error fetching products from API:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    }
+    fetchProducts();
+  }, []);
+
+  const filteredProducts = products; // Filtering logic can be updated later based on real categories
 
   useEffect(() => {
     // Animate products when category changes
     const cards = gridRef.current?.querySelectorAll('.cat-card');
-    if (cards && cards.length > 0) {
+    if (cards && cards.length > 0 && !isLoading) {
       gsap.fromTo(cards, {
         y: 30,
         opacity: 0,
@@ -65,6 +85,7 @@ export function CatalogGrid() {
                     name={t(`items.${product.id}.name`)}
                     description={t(`items.${product.id}.desc`)}
                     isFeatured={false} // Only highlight in Home
+                    lojaIntegradaId={product.lojaIntegradaId}
                   />
                 </div>
               ))}

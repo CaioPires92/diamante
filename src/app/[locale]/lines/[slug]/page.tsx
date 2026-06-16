@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container } from '@/components/ui/Container';
+import { ProductActions } from '@/components/ui/product/ProductActions';
 
 import fs from 'fs';
 import path from 'path';
@@ -786,6 +787,14 @@ export default async function LinePage({ params }: { params: Promise<{ locale: s
                         {product.size}
                       </span>
                     )}
+                  </div>
+                  {/* Buy Button & Actions */}
+                  <div style={{ marginTop: '1.5rem' }}>
+                    <ProductActions 
+                      lojaIntegradaId={product.lojaIntegradaId} 
+                      productTitle={product.title} 
+                      price={product.price}
+                    />
                   </div>
                 </div>
 
