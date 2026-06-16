@@ -3,39 +3,113 @@
 import React, { useState } from 'react';
 import styles from './ProductActions.module.css';
 
+type ShippingOption = {
+  name?: string;
+  price?: number;
+  deliveryTime?: string;
+  msgErro?: string | null;
+};
+
 interface ProductActionsProps {
   lojaIntegradaId?: string;
   price?: string;
   productTitle: string;
+  available?: boolean;
+  quantityAvailable?: number;
 }
 
-export function ProductActions({ lojaIntegradaId, price, productTitle }: ProductActionsProps) {
+export function ProductActions({
+  lojaIntegradaId,
+  price,
+  productTitle,
+  available = true,
+  quantityAvailable,
+}: ProductActionsProps) {
   const [quantity, setQuantity] = useState(1);
   const [cep, setCep] = useState('');
-  const [shippingResult, setShippingResult] = useState<{ type: string; price: string; days: number }[] | null>(null);
-  const [isCalculating, setIsCalculating] = useState(false);
+  const [shippingOptions, setShippingOptions] = useState<ShippingOption[]>([]);
+  const [shippingError, setShippingError] = useState('');
+  const [isCalculatingShipping, setIsCalculatingShipping] = useState(false);
 
   const handleDecrease = () => setQuantity(q => Math.max(1, q - 1));
   const handleIncrease = () => setQuantity(q => q + 1);
 
   const displayPrice = price || 'R$ 0,00'; // Replace with real logic later if fetched
 
-  const cartUrl = lojaIntegradaId 
+  const cartUrl = lojaIntegradaId
     ? `https://www.diamanteprofissional.com.br/carrinho/produto/${lojaIntegradaId}/adicionar?quantidade=${quantity}`
     : `https://www.diamanteprofissional.com.br/buscar?q=${encodeURIComponent(productTitle)}`;
 
-  const handleCalculateShipping = async () => {
-    if (!cep || cep.length < 8) return;
-    setIsCalculating(true);
-    
-    // Simulate API call for now or call real endpoint
-    setTimeout(() => {
-      setShippingResult([
-        { type: 'PAC', price: 'R$ 15,30', days: 7 },
-        { type: 'SEDEX', price: 'R$ 28,50', days: 3 }
-      ]);
-      setIsCalculating(false);
-    }, 1500);
+  const handleCepChange = (value: string) => {
+    const digits = value.replace(/\D/g, '').slice(0, 8);
+
+    if (digits.length <= 5) {
+      setCep(digits);
+      return;
+    }
+
+    setCep(`${digits.slice(0, 5)}-${digits.slice(5)}`);
+  };
+
+  const formatShippingPrice = (shippingPrice?: number) => {
+    if (typeof shippingPrice !== 'number') {
+      return 'A consultar';
+    }
+
+    return shippingPrice.toLocaleString('pt-BR', {
+      style: 'currency',
+      currency: 'BRL',
+    });
+  };
+
+  const handleCalculateShipping = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    if (!lojaIntegradaId) {
+      setShippingError('Frete indisponivel para este produto.');
+      setShippingOptions([]);
+      return;
+    }
+
+    const normalizedCep = cep.replace(/\D/g, '');
+
+    if (normalizedCep.length !== 8) {
+      setShippingError('Informe um CEP valido com 8 digitos.');
+      setShippingOptions([]);
+      return;
+    }
+
+    setIsCalculatingShipping(true);
+    setShippingError('');
+
+    try {
+      const response = await fetch(
+        `/api/loja-integrada/shipping?cep=${normalizedCep}&productId=${lojaIntegradaId}&quantity=${quantity}`,
+      );
+      const data = (await response.json()) as ShippingOption[] | { error?: string };
+
+      if (!response.ok || !Array.isArray(data)) {
+        const message = 'error' in data && data.error ? data.error : 'Nao foi possivel calcular o frete.';
+        throw new Error(message);
+      }
+
+      const validOptions = data.filter(option => option.name || option.msgErro);
+
+      if (!validOptions.length) {
+        setShippingError('Nao foram encontradas formas de envio para o CEP informado.');
+        setShippingOptions([]);
+        return;
+      }
+
+      setShippingOptions(validOptions);
+    } catch (error) {
+      setShippingOptions([]);
+      setShippingError(
+        error instanceof Error ? error.message : 'Nao foi possivel calcular o frete.',
+      );
+    } finally {
+      setIsCalculatingShipping(false);
+    }
   };
 
   return (
@@ -46,22 +120,89 @@ export function ProductActions({ lojaIntegradaId, price, productTitle }: Product
       </div>
 
       <div className={styles.buySection}>
-        <div className={styles.quantitySelector}>
+        <div className={styles.quantityContainer}>
           <button onClick={handleDecrease} className={styles.qtyBtn}>-</button>
-          <input type="number" value={quantity} readOnly className={styles.qtyInput} />
+          <span className={styles.qtyValue}>{quantity}</span>
           <button onClick={handleIncrease} className={styles.qtyBtn}>+</button>
         </div>
-        <a href={cartUrl} target="_blank" rel="noopener noreferrer" className={styles.buyBtn}>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
-            <path d="M3 6h18"></path>
-            <path d="M16 10a4 4 0 0 1-8 0"></path>
-          </svg>
-          COMPRAR
-        </a>
+        
+        {lojaIntegradaId && available ? (
+          <a 
+            href={cartUrl} 
+            className={styles.buyBtn}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            COMPRAR
+          </a>
+        ) : (
+          <a
+            href={`https://wa.me/551938176156?text=${encodeURIComponent(`Olá! Quero consultar a disponibilidade do produto ${productTitle}.`)}`}
+            className={styles.buyBtn}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ background: '#8F857D', boxShadow: 'none' }}
+          >
+            CONSULTAR
+          </a>
+        )}
       </div>
 
-      <p className={styles.stock}>Estoque: Disponível</p>
+      <p className={styles.stock}>
+        {available
+          ? `Estoque: ${typeof quantityAvailable === 'number' ? quantityAvailable : 'Disponível'}`
+          : 'Estoque: indisponível no momento'}
+      </p>
+
+      <div className={styles.shippingSection}>
+        <span className={styles.shippingLabel}>Calcule o frete</span>
+        <form className={styles.shippingInputGroup} onSubmit={handleCalculateShipping}>
+          <input
+            type="tel"
+            inputMode="numeric"
+            autoComplete="postal-code"
+            placeholder="CEP"
+            className={styles.shippingInput}
+            value={cep}
+            onChange={event => handleCepChange(event.target.value)}
+          />
+          <button
+            type="submit"
+            className={styles.shippingBtn}
+            disabled={isCalculatingShipping || !lojaIntegradaId}
+          >
+            {isCalculatingShipping ? '...' : 'OK'}
+          </button>
+        </form>
+
+        {shippingError ? (
+          <div className={styles.shippingResults}>
+            <div className={styles.shippingRow}>{shippingError}</div>
+          </div>
+        ) : null}
+
+        {!shippingError && shippingOptions.length > 0 ? (
+          <div className={styles.shippingResults}>
+            {shippingOptions.map(option => (
+              <div
+                key={`${option.name || 'shipping'}-${option.deliveryTime || '0'}-${option.price || 0}`}
+                className={styles.shippingRow}
+              >
+                <div>
+                  <div className={styles.shippingType}>{option.name || 'Entrega'}</div>
+                  <div>
+                    {option.deliveryTime
+                      ? `${option.deliveryTime} dia${option.deliveryTime === '1' ? '' : 's'} uteis`
+                      : 'Prazo indisponivel'}
+                  </div>
+                  {option.msgErro ? <div>{option.msgErro}</div> : null}
+                </div>
+                <div className={styles.shippingPrice}>{formatShippingPrice(option.price)}</div>
+              </div>
+            ))}
+          </div>
+        ) : null}
+      </div>
 
       <div className={styles.secondaryActions}>
         <button className={styles.wishlistBtn}>
@@ -77,34 +218,6 @@ export function ProductActions({ lojaIntegradaId, price, productTitle }: Product
           </svg>
           Formas de pagamento
         </button>
-      </div>
-
-      <div className={styles.shippingSection}>
-        <label className={styles.shippingLabel}>CALCULE O FRETE</label>
-        <div className={styles.shippingInputGroup}>
-          <input 
-            type="text" 
-            placeholder="CEP" 
-            value={cep}
-            onChange={(e) => setCep(e.target.value.replace(/\D/g, '').substring(0, 8))}
-            className={styles.shippingInput}
-          />
-          <button onClick={handleCalculateShipping} disabled={isCalculating || cep.length < 8} className={styles.shippingBtn}>
-            {isCalculating ? 'Calculando...' : 'CALCULAR'}
-          </button>
-        </div>
-        
-        {shippingResult && (
-          <div className={styles.shippingResults}>
-            {shippingResult.map((res, i) => (
-              <div key={i} className={styles.shippingRow}>
-                <span className={styles.shippingType}>{res.type}</span>
-                <span className={styles.shippingDays}>{res.days} dias úteis</span>
-                <span className={styles.shippingPrice}>{res.price}</span>
-              </div>
-            ))}
-          </div>
-        )}
       </div>
     </div>
   );
