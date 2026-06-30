@@ -68,6 +68,7 @@
   "Features": {
     "title": "Why Diamante Profissional?",
     "tagline": "DIFFERENTIALS",
+    "description": "More than products, we deliver science, performance, and care in every detail of your professional routine.",
     "items": {
       "factory": {
         "title": "In-house Factory",
@@ -92,6 +93,24 @@
       "premium": {
         "title": "Affordable Premium",
         "desc": "High professional performance with the best cost-benefit in the market."
+      }
+    },
+    "highlights": {
+      "actives": {
+        "title": "High Performance Actives",
+        "desc": "Globally selected ingredients."
+      },
+      "safety": {
+        "title": "Safety & Efficacy",
+        "desc": "Rigorous testing and quality control."
+      },
+      "results": {
+        "title": "Beauty that Transforms",
+        "desc": "Visible results from the first application."
+      },
+      "innovation": {
+        "title": "Constant Innovation",
+        "desc": "Continuous research and development."
       }
     }
   },

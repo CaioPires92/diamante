@@ -57,6 +57,7 @@
   "Features": {
     "title": "Por que Diamante Profissional?",
     "tagline": "DIFERENCIAIS",
+    "description": "Mais do que produtos, entregamos ciência, performance e cuidado em cada detalhe da sua rotina profissional.",
     "items": {
       "factory": {
         "title": "Fábrica Própria",
@@ -80,7 +81,25 @@
       },
       "premium": {
         "title": "Premium Acessível",
-        "desc": "Alta performance profissional com o melhor custo-benefício do mercado."
+        "desc": "Alta performance profissional com excelente custo-benefício."
+      }
+    },
+    "highlights": {
+      "actives": {
+        "title": "Ativos de Alta Performance",
+        "desc": "Ingredientes selecionados globalmente."
+      },
+      "safety": {
+        "title": "Segurança e Eficácia",
+        "desc": "Testes rigorosos e controle de qualidade."
+      },
+      "results": {
+        "title": "Beleza que Transforma",
+        "desc": "Resultados visíveis desde a primeira aplicação."
+      },
+      "innovation": {
+        "title": "Inovação Constante",
+        "desc": "Pesquisa e desenvolvimento contínuos."
       }
     }
   },
