@@ -7,7 +7,13 @@ const withNextIntl = createNextIntlPlugin(
 
 const nextConfig: NextConfig = {
   images: {
-    qualities: [75, 100]
+    qualities: [75, 100],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn.awsli.com.br',
+      },
+    ],
   }
 };
 

@@ -27,6 +27,8 @@ export function Header({ locale, lines = [] }: { locale: string; lines?: { name:
       setIsScrolled(window.scrollY > 20);
     };
 
+    handleScroll();
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -233,17 +235,19 @@ export function Header({ locale, lines = [] }: { locale: string; lines?: { name:
               </svg>
             </button>
             <div className={styles.divider}></div>
-            <div className={styles.langWrapper}>
-              <select 
-                value={locale} 
-                onChange={handleLocaleChange}
-                className={styles.lang}
-                aria-label="Select Language"
-              >
-                <option value="pt-BR">PT</option>
-                <option value="en">EN</option>
-                <option value="es">ES</option>
-              </select>
+            <div className={styles.dropdownContainer}>
+              <button className={styles.langToggle}>
+                {locale === 'pt-BR' ? 'PT' : locale.toUpperCase()}
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: '2px' }}>
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+              <div className={styles.langMenu} data-lenis-prevent>
+                <button onClick={() => handleLocaleChange({ target: { value: 'pt-BR' } } as any)} className={styles.langItem}>Português (PT)</button>
+                <button onClick={() => handleLocaleChange({ target: { value: 'en' } } as any)} className={styles.langItem}>English (EN)</button>
+                <button onClick={() => handleLocaleChange({ target: { value: 'es' } } as any)} className={styles.langItem}>Español (ES)</button>
+                <button onClick={() => handleLocaleChange({ target: { value: 'ar' } } as any)} className={styles.langItem}>العربية (AR)</button>
+              </div>
             </div>
           </div>
 

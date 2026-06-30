@@ -15,18 +15,27 @@ export interface ProductCardProps {
   description: string;
   isFeatured?: boolean;
   lojaIntegradaId?: string;
+  externalUrl?: string;
 }
 
-export function ProductCard({ id, slug, image, name, description, isFeatured = false, lojaIntegradaId }: ProductCardProps) {
+export function ProductCard({
+  id,
+  slug,
+  image,
+  name,
+  description,
+  isFeatured = false,
+  lojaIntegradaId,
+  externalUrl,
+}: ProductCardProps) {
   const common = useTranslations('Common');
   const pathname = usePathname();
   const locale = pathname?.split('/')[1] || 'pt-BR';
-  
-  // Always link to our internal product details page so the customer sees the luxurious layout
-  const detailHref = slug ? `/${locale}/products/${slug}` : '#';
-
-  return (
-    <Link href={detailHref} className={`${styles.card} ${isFeatured ? styles.featured : ''}`}>
+  const detailHref = externalUrl || (slug ? `/${locale}/products/${slug}` : '#');
+  const isExternal = Boolean(externalUrl);
+  const cardClassName = `${styles.card} ${isFeatured ? styles.featured : ''}`;
+  const content = (
+    <>
       <div className={styles.imageWrapper}>
         <Image 
           src={image} 
@@ -54,6 +63,20 @@ export function ProductCard({ id, slug, image, name, description, isFeatured = f
           )}
         </span>
       </div>
+    </>
+  );
+
+  if (isExternal) {
+    return (
+      <a href={detailHref} className={cardClassName} target="_blank" rel="noopener noreferrer">
+        {content}
+      </a>
+    );
+  }
+
+  return (
+    <Link href={detailHref} className={cardClassName}>
+      {content}
     </Link>
   );
 }

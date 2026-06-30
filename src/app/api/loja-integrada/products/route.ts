@@ -1,16 +1,16 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-import {
-  lojaIntegradaFetch,
-  sanitizeLojaIntegradaSearchParams,
-} from '@/lib/loja-integrada';
+import { getCatalogProducts, getLineProducts } from '@/lib/loja-integrada-catalog';
 
 export async function GET(request: NextRequest) {
   try {
-    const searchParams = sanitizeLojaIntegradaSearchParams(request.nextUrl.searchParams);
-    const data = await lojaIntegradaFetch('/v1/produto', { searchParams });
+    const line = request.nextUrl.searchParams.get('line');
+    const products = line ? await getLineProducts(line) : await getCatalogProducts();
 
-    return NextResponse.json(data);
+    return NextResponse.json({
+      objects: products,
+      total: products.length,
+    });
   } catch (error) {
     const message =
       error instanceof Error ? error.message : 'Falha ao buscar produtos na Loja Integrada.';

@@ -8,21 +8,19 @@ import { ProductCard } from '../ProductCard';
 import { ProductFilter, Category } from './ProductFilter';
 import styles from './CatalogGrid.module.css';
 
-// Mock data (will be replaced by CMS data later)
-const mockProducts = [
-  { id: 'shampoo-supreme', slug: 'shampoo-supreme-caviar', image: '/imgs/product1.png', category: 'wash', lojaIntegradaId: '91860541' },
-  { id: 'mask-supreme', slug: 'mascara-supreme-tratamento', image: '/imgs/product2.png', category: 'treatment', lojaIntegradaId: '184150772' },
-  { id: 'serum-supreme', slug: 'serum-supreme-finish', image: '/imgs/product3.png', category: 'finishing', lojaIntegradaId: '184150400' },
-  { id: 'shampoo-supreme', slug: 'shampoo-supreme-caviar', image: '/imgs/product1.png', category: 'treatment', lojaIntegradaId: '91860541' }, 
-  { id: 'mask-supreme', slug: 'mascara-supreme-tratamento', image: '/imgs/product2.png', category: 'wash', lojaIntegradaId: '184150772' },
-  { id: 'serum-supreme', slug: 'serum-supreme-finish', image: '/imgs/product3.png', category: 'finishing', lojaIntegradaId: '184150400' },
-];
+type CatalogProduct = {
+  id: string;
+  slug: string;
+  image: string;
+  name: string;
+  description: string;
+  lojaIntegradaId?: string;
+};
 
 export function CatalogGrid() {
-  const t = useTranslations('Products');
   const tCatalog = useTranslations('Catalog');
   const [activeCategory, setActiveCategory] = useState<Category>('all');
-  const [products, setProducts] = useState<any[]>([]);
+  const [products, setProducts] = useState<CatalogProduct[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const gridRef = useRef<HTMLDivElement>(null);
 
@@ -32,7 +30,6 @@ export function CatalogGrid() {
         const res = await fetch('/api/loja-integrada/products');
         if (res.ok) {
           const data = await res.json();
-          // The API returns { objects: [...] }
           if (data && data.objects) {
             setProducts(data.objects);
           }
@@ -82,9 +79,9 @@ export function CatalogGrid() {
                     id={product.id}
                     slug={product.slug}
                     image={product.image}
-                    name={t(`items.${product.id}.name`)}
-                    description={t(`items.${product.id}.desc`)}
-                    isFeatured={false} // Only highlight in Home
+                    name={product.name}
+                    description={product.description}
+                    isFeatured={false}
                     lojaIntegradaId={product.lojaIntegradaId}
                   />
                 </div>

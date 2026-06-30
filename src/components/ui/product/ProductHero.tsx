@@ -10,19 +10,23 @@ import styles from './ProductHero.module.css';
 interface ProductHeroProps {
   product: {
     id: string;
+    name: string;
+    description: string;
     line: string;
     gallery: string[];
     features: string[];
+    lojaIntegradaId?: string;
+    price?: string;
+    available?: boolean;
+    quantityAvailable?: number;
   };
 }
 
 export function ProductHero({ product }: ProductHeroProps) {
   const t = useTranslations('ProductDetail.labels');
-  const tProduct = useTranslations('Products.items');
   const [activeImage, setActiveImage] = useState(0);
-
-  const productName = tProduct(`${product.id}.name`);
-  const productDesc = tProduct(`${product.id}.desc`);
+  const productName = product.name;
+  const productDesc = product.description;
 
   const handleWhatsAppClick = () => {
     const phone = '551938176156';
@@ -83,9 +87,11 @@ export function ProductHero({ product }: ProductHeroProps) {
             </div>
 
             <ProductActions 
-              lojaIntegradaId={product.id} 
+              lojaIntegradaId={product.lojaIntegradaId} 
               productTitle={productName} 
-              price="R$ 35,20" // We'll make this dynamic later
+              price={product.price || "R$ 0,00"}
+              available={product.available}
+              quantityAvailable={product.quantityAvailable}
             />
           </div>
         </div>

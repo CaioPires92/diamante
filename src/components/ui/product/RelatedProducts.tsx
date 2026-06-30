@@ -4,16 +4,21 @@ import React from 'react';
 import { useTranslations } from 'next-intl';
 import { Container } from '../Container';
 import { ProductCard } from '../ProductCard';
-import { ProductDetail } from '@/lib/constants/products-data';
 import styles from './RelatedProducts.module.css';
 
 interface RelatedProductsProps {
-  products: ProductDetail[];
+  products: Array<{
+    id: string;
+    slug: string;
+    image: string;
+    name: string;
+    description: string;
+    lojaIntegradaId?: string;
+  }>;
 }
 
 export function RelatedProducts({ products }: RelatedProductsProps) {
   const t = useTranslations('ProductDetail.labels');
-  const tProduct = useTranslations('Products');
 
   if (products.length === 0) return null;
 
@@ -29,8 +34,9 @@ export function RelatedProducts({ products }: RelatedProductsProps) {
               id={product.id}
               slug={product.slug}
               image={product.image}
-              name={tProduct(`items.${product.id}.name`)}
-              description={tProduct(`items.${product.id}.desc`)}
+              name={product.name}
+              description={product.description}
+              lojaIntegradaId={product.lojaIntegradaId}
             />
           ))}
         </div>

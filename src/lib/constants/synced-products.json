@@ -1,0 +1,102 @@
+[
+  {
+    "id": "leave-in-caviar-spray-120ml",
+    "slug": "leave-in-caviar-spray-120ml",
+    "lojaIntegradaId": "366996397",
+    "name": "Leave-in Caviar spray 120ml",
+    "description": "Produto Profissional Diamante",
+    "image": "1757/1757440/produto/366996397/design-sem-nome--25--o43h603isd.png",
+    "price": "R$ 35,20",
+    "category": "geral"
+  },
+  {
+    "id": "kit-barber-completo",
+    "slug": "kit-barber-completo",
+    "lojaIntegradaId": "316952299",
+    "name": "Kit Barber completo",
+    "description": "Produto Profissional Diamante",
+    "image": "1757/1757440/produto/316952299/claro-kit-barber-completo-gdc70s3lrc.png",
+    "price": "R$ 192,50",
+    "category": "geral"
+  },
+  {
+    "id": "kit-super-efeito-cinza",
+    "slug": "kit-super-efeito-cinza",
+    "lojaIntegradaId": "314978639",
+    "name": "Kit Super Efeito Cinza",
+    "description": "Produto Profissional Diamante",
+    "image": "1757/1757440/produto/314978639/claro-kit-super-efeito-cinza-zvpra2604b.png",
+    "price": "R$ 155,50",
+    "category": "geral"
+  },
+  {
+    "id": "condicionador-jaborandi-alecrim-500ml",
+    "slug": "condicionador-jaborandi-alecrim-500ml",
+    "lojaIntegradaId": "314355328",
+    "name": "Condicionador Jaborandi & Alecrim 500ml",
+    "description": "Produto Profissional Diamante",
+    "image": "1757/1757440/produto/314355328/claro-jaborandi-condicionador-gkmzug9qdl.png",
+    "price": "R$ 67,00",
+    "category": "geral"
+  },
+  {
+    "id": "shampoo-jaborandi-alecrim-500ml",
+    "slug": "shampoo-jaborandi-alecrim-500ml",
+    "lojaIntegradaId": "314353529",
+    "name": "Shampoo jaborandi & alecrim 500ml",
+    "description": "Produto Profissional Diamante",
+    "image": "1757/1757440/produto/314353529/shampoo-jaborandi-w8qix3unel.png",
+    "price": "R$ 67,00",
+    "category": "geral"
+  },
+  {
+    "id": "fluido-magico-rosa-5-em-1-200ml",
+    "slug": "fluido-magico-rosa-5-em-1-200ml",
+    "lojaIntegradaId": "231267077",
+    "name": "Fluido Mágico Rosa 5 em 1 - 200ml",
+    "description": "Produto Profissional Diamante",
+    "image": "1757/1757440/produto/231267077/fluido-m-gico-200-ml-rosa-fge7nvzo7z.jpg",
+    "price": "R$ 0,00",
+    "category": "geral"
+  },
+  {
+    "id": "shampoo-tonalizante-concentrado-45l-diluicao-101-pet",
+    "slug": "shampoo-tonalizante-concentrado-45l-diluicao-101-pet",
+    "lojaIntegradaId": "230534811",
+    "name": "Shampoo Tonalizante Concentrado 4,5L Diluição 10:1 - PET",
+    "description": "Produto Profissional Diamante",
+    "image": "1757/1757440/produto/230534811/shampoo-tonalizante-4-5l-va7pttjq28.jpg",
+    "price": "R$ 0,00",
+    "category": "geral"
+  },
+  {
+    "id": "shampoo-pre-lavagem-concentrado-45l-diluicao-101-pet",
+    "slug": "shampoo-pre-lavagem-concentrado-45l-diluicao-101-pet",
+    "lojaIntegradaId": "230534806",
+    "name": "Shampoo Pré-Lavagem Concentrado 4,5L Diluição 10:1 - PET",
+    "description": "Produto Profissional Diamante",
+    "image": "1757/1757440/produto/230534806/shampoo-pr--lavagem-4-5l-bxoocse07f.jpg",
+    "price": "R$ 0,00",
+    "category": "geral"
+  },
+  {
+    "id": "shampoo-de-coco-concentrado-45l-diluicao-101-pet",
+    "slug": "shampoo-de-coco-concentrado-45l-diluicao-101-pet",
+    "lojaIntegradaId": "230534801",
+    "name": "Shampoo de Coco Concentrado 4,5L Diluição 10:1 - PET",
+    "description": "Produto Profissional Diamante",
+    "image": "1757/1757440/produto/230534801/shampoo-coco-4-5l-4l8dfjxm4t.jpg",
+    "price": "R$ 0,00",
+    "category": "geral"
+  },
+  {
+    "id": "shampoo-clareador-concentrado-45l-diluicao-110-pet",
+    "slug": "shampoo-clareador-concentrado-45l-diluicao-110-pet",
+    "lojaIntegradaId": "230534798",
+    "name": "Shampoo Clareador Concentrado 4,5L Diluição 1:10 - PET",
+    "description": "Produto Profissional Diamante",
+    "image": "1757/1757440/produto/230534798/shampoo-clareador-4-5l-04ufqf0l8c.jpg",
+    "price": "R$ 0,00",
+    "category": "geral"
+  }
+]

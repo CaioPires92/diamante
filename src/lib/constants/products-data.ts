@@ -1,6 +1,9 @@
 export interface ProductDetail {
   id: string;
   slug: string;
+  lojaIntegradaId?: string;
+  price?: string;
+  name?: string;
   line: string;
   category: string;
   image: string;
@@ -15,6 +18,8 @@ const productsData: ProductDetail[] = [
   {
     id: 'shampoo-supreme',
     slug: 'shampoo-supreme-caviar',
+    lojaIntegradaId: '', // Nenhum ID real associado
+    price: 'R$ 89,90',
     line: 'Caviar',
     category: 'wash',
     image: '/images/products/caviar/prod_2.png',
@@ -27,6 +32,8 @@ const productsData: ProductDetail[] = [
   {
     id: 'mask-supreme',
     slug: 'mascara-supreme-tratamento',
+    lojaIntegradaId: '', // Nenhum ID real associado
+    price: 'R$ 119,90',
     line: 'Caviar',
     category: 'treatment',
     image: '/images/products/caviar/prod_3.png',
@@ -39,6 +46,8 @@ const productsData: ProductDetail[] = [
   {
     id: 'serum-supreme',
     slug: 'serum-supreme-finish',
+    lojaIntegradaId: '', // Nenhum ID real associado
+    price: 'R$ 69,90',
     line: 'Caviar',
     category: 'finishing',
     image: '/images/products/caviar/prod_4.png',

@@ -1,24 +1,23 @@
 import React from 'react';
 import { Container } from '@/components/ui/Container';
 import { ProductActions } from '@/components/ui/product/ProductActions';
-
 import fs from 'fs';
 import path from 'path';
-
-import { client, hasSanityConfig } from '@/sanity/lib/client';
-import { groq } from 'next-sanity';
+import { getLineProducts } from '@/lib/loja-integrada-catalog';
 import styles from './page.module.css';
 
 type Product = {
   id: string;
   title: string;
+  lojaIntegradaId?: string;
   code?: string;
   size?: string;
   price?: string;
   image?: string;
   description?: string;
   howToUse?: string;
-  lineDescription?: string;
+  available?: boolean;
+  quantityAvailable?: number;
 };
 
 type ProductsMap = Record<string, Product[]>;
@@ -243,50 +242,6 @@ function getAlternativeSlugs(slug: string): string[] {
   return aliases[slug] || [slug];
 }
 
-// Função para buscar produtos do Sanity
-async function getSanityProducts(slug: string) {
-  if (!hasSanityConfig) {
-    return null; // Retorna null para sinalizar que o Sanity não está configurado
-  }
-  
-  const slugs = getAlternativeSlugs(slug);
-  
-  try {
-    const query = groq`*[
-      _type == "product" &&
-      !(_id in path('drafts.**')) &&
-      (line->slug.current in $slugs || catalogSlug in $slugs)
-    ] | order(sortOrder asc) {
-      _id,
-      title,
-      code,
-      size,
-      price,
-      description,
-      howToUse,
-      lineDescription,
-      "image": image.asset->url
-    }`;
-
-    const products = await client!.fetch(query, { slugs }, { cache: 'no-store' });
-
-    return products.map((p: any) => ({
-      id: p._id,
-      title: p.title,
-      code: p.code,
-      size: p.size,
-      price: p.price,
-      description: p.description,
-      howToUse: p.howToUse,
-      lineDescription: p.lineDescription,
-      image: p.image
-    }));
-  } catch (e) {
-    console.error("Erro ao buscar no Sanity:", e);
-    return null;
-  }
-}
-
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
@@ -362,57 +317,7 @@ export default async function LinePage({ params }: { params: Promise<{ locale: s
   const rawName = decodedSlug.replace(/-/g, ' ');
   const lineName = lineNamesMap[cleanSlug] || rawName;
   
-  // Carrega os dados locais (database Excel completa), para fallback e enriquecimento.
-  const localProducts = cleanSlug === 'profissional' ? getProfessionalProducts() : getLocalProducts(cleanSlug);
-  
-  // Usa Sanity como fonte principal após a migração. O JSON local fica como fallback.
-  let products = cleanSlug === 'profissional' ? null : await getSanityProducts(cleanSlug);
-  
-  if (products && products.length > 0) {
-    // Enriquece os produtos carregados do Sanity com os campos descritivos e comerciais locais caso estejam ausentes
-    products = products.map((sanityProduct: any) => {
-      // 1. Tenta correspondência exata de título (ignorando caixa e espaços)
-      let matchingLocal = localProducts.find((local: any) => 
-        local.title.toLowerCase().replace(/\s+/g, '') === sanityProduct.title.toLowerCase().replace(/\s+/g, '')
-      );
-      
-      // 2. Se falhar, tenta correspondência inteligente por preço + palavra-chave do título
-      if (!matchingLocal && sanityProduct.price) {
-        matchingLocal = localProducts.find((local: any) => {
-          const samePrice = local.price && local.price.replace(/\s+/g, '') === sanityProduct.price.replace(/\s+/g, '');
-          if (!samePrice) return false;
-          
-          const sTitle = sanityProduct.title.toLowerCase();
-          const lTitle = local.title.toLowerCase();
-          const keywords = ['shampoo', 'condicionador', 'mascara', 'máscara', 'leave', 'regulador', 'oleo', 'óleo', 'serum', 'sérum', 'po', 'pó', 'coloracao', 'coloração'];
-          
-          return keywords.some(kw => sTitle.includes(kw) && lTitle.includes(kw));
-        });
-        
-        // 3. Como última alternativa, tenta correspondência apenas por preço na mesma linha
-        if (!matchingLocal) {
-          matchingLocal = localProducts.find((local: any) => 
-            local.price && local.price.replace(/\s+/g, '') === sanityProduct.price.replace(/\s+/g, '')
-          );
-        }
-      }
-      
-      if (matchingLocal) {
-        return {
-          ...sanityProduct,
-          code: (sanityProduct.code && sanityProduct.code.trim()) ? sanityProduct.code : matchingLocal.code,
-          size: (sanityProduct.size && sanityProduct.size.trim()) ? sanityProduct.size : matchingLocal.size,
-          price: (sanityProduct.price && sanityProduct.price.trim()) ? sanityProduct.price : matchingLocal.price,
-          description: (sanityProduct.description && sanityProduct.description.trim()) ? sanityProduct.description : matchingLocal.description,
-          howToUse: (sanityProduct.howToUse && sanityProduct.howToUse.trim()) ? sanityProduct.howToUse : matchingLocal.howToUse,
-          lineDescription: matchingLocal.lineDescription
-        };
-      }
-      return sanityProduct;
-    });
-  } else {
-    products = localProducts;
-  }
+  let products = await getLineProducts(cleanSlug);
 
   // Deduplicar produtos com base no código/título e tamanho, priorizando o que possui imagem
   if (products && products.length > 0) {
@@ -447,8 +352,7 @@ export default async function LinePage({ params }: { params: Promise<{ locale: s
   }
 
   // Tenta extrair a descrição da linha a partir de algum produto enriquecido ou local
-  const lineDescFromProduct = products.find((p: any) => p.lineDescription && p.lineDescription.trim() !== '')?.lineDescription;
-  const lineDesc = lineDescFromProduct || lineDescriptions[cleanSlug] || `Descubra os produtos incríveis da nossa linha ${lineName}.`;
+  const lineDesc = lineDescriptions[cleanSlug] || `Descubra os produtos incríveis da nossa linha ${lineName}.`;
 
   // Get products with valid images for the hero visual showcase
   const imagedProducts = products.filter((p: any) => p.image);
@@ -748,41 +652,28 @@ export default async function LinePage({ params }: { params: Promise<{ locale: s
                     if (isBenefits) return null;
                     
                     return (
-                      <p style={{ 
-                        color: '#6B625A', 
-                        fontSize: '0.8rem', 
-                        lineHeight: '1.4', 
-                        margin: '0 0 1.25rem 0',
-                        fontFamily: 'var(--font-inter)',
-                        background: 'rgba(201, 157, 74, 0.04)',
-                        padding: '0.5rem 0.75rem',
-                        borderRadius: '6px',
-                        borderLeft: '2px solid #c99d4a'
-                      }}>
-                        <strong style={{ color: '#c99d4a', textTransform: 'uppercase', fontSize: '0.75rem', letterSpacing: '0.05em', display: 'block', marginBottom: '0.15rem' }}>
+                      <details style={{ margin: '0 0 1.25rem 0', padding: '0.5rem 0.75rem', background: 'rgba(201, 157, 74, 0.04)', borderRadius: '6px', borderLeft: '2px solid #c99d4a' }}>
+                        <summary style={{ color: '#c99d4a', textTransform: 'uppercase', fontSize: '0.75rem', letterSpacing: '0.05em', cursor: 'pointer', fontWeight: 600, outline: 'none', userSelect: 'none' }}>
                           Modo de usar
-                        </strong>
-                        {product.howToUse}
-                      </p>
+                        </summary>
+                        <p style={{ color: '#6B625A', fontSize: '0.8rem', lineHeight: '1.4', marginTop: '0.5rem', fontFamily: 'var(--font-inter)' }}>
+                          {product.howToUse}
+                        </p>
+                      </details>
                     );
                   })()}
 
-                  {/* Price & Size details in B2B catalog standard */}
+                  {/* Size details in B2B catalog standard */}
                   <div className={styles.priceContainer}>
-                    <span style={{ 
-                      color: '#c99d4a', 
-                      fontSize: '1.65rem', 
-                      fontWeight: 700,
-                      fontFamily: 'var(--font-inter)'
-                    }}>
-                      {product.price || 'Consultar'}
-                    </span>
                     {product.size && (
                       <span style={{ 
                         color: '#8F857D', 
                         fontSize: '0.85rem',
                         fontWeight: 500,
-                        fontFamily: 'var(--font-inter)'
+                        fontFamily: 'var(--font-inter)',
+                        background: 'rgba(0,0,0,0.03)',
+                        padding: '4px 8px',
+                        borderRadius: '4px'
                       }}>
                         {product.size}
                       </span>
@@ -794,6 +685,9 @@ export default async function LinePage({ params }: { params: Promise<{ locale: s
                       lojaIntegradaId={product.lojaIntegradaId} 
                       productTitle={product.title} 
                       price={product.price}
+                      available={product.available}
+                      quantityAvailable={product.quantityAvailable}
+                      compact={true}
                     />
                   </div>
                 </div>

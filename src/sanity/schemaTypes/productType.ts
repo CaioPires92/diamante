@@ -22,6 +22,11 @@ export const productType = defineType({
       type: 'string',
     }),
     defineField({
+      name: 'lojaIntegradaId',
+      title: 'ID na Loja Integrada (Automático)',
+      type: 'string',
+    }),
+    defineField({
       name: 'size',
       title: 'Tamanho',
       type: 'string',

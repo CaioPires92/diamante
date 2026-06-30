@@ -15,21 +15,21 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 const productsData = [
   {
     id: 'shampoo-supreme',
-    slug: 'shampoo-supreme-caviar',
+    slug: 'shampoo-caviar-1l',
     image: '/images/products/caviar/prod_2.png',
-    lojaIntegradaId: '91860541'
+    lojaIntegradaId: '79169048',
   },
   {
     id: 'mask-supreme',
-    slug: 'mascara-supreme-tratamento',
+    slug: 'mascara-caviar-900g',
     image: '/images/products/caviar/prod_3.png',
-    lojaIntegradaId: '184150772'
+    lojaIntegradaId: '79168997',
   },
   {
     id: 'serum-supreme',
-    slug: 'serum-supreme-finish',
+    slug: 'leave-in-caviar-250ml',
     image: '/images/products/caviar/prod_4.png',
-    lojaIntegradaId: '184150400'
+    lojaIntegradaId: '79168990',
   }
 ];
 

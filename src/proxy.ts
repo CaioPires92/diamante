@@ -35,7 +35,7 @@ export function proxy(request: NextRequest) {
 export const config = {
   matcher: [
     '/',
-    '/(pt-BR|en|es)/:path*',
+    '/(pt-BR|en|es|ar)/:path*',
     '/quem-somos',
     '/distribuidor',
     '/fale-conosco',
