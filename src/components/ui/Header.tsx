@@ -185,41 +185,6 @@ export function Header({ locale, lines = [] }: { locale: string; lines?: { name:
 
         {/* Lado Direito: Ações */}
         <div className={styles.actions}>
-          <Link 
-            href={`/${locale}/shop`}
-            className={styles.cta}
-            onMouseEnter={(e) => {
-              gsap.to(e.currentTarget, { 
-                scale: 1.05, 
-                backgroundColor: 'rgba(197, 148, 65, 0.15)',
-                duration: 0.4, 
-                ease: "power2.out" 
-              });
-              const shimmer = e.currentTarget.querySelector(`.${styles.ctaShimmer}`);
-              if (shimmer) {
-                gsap.fromTo(shimmer, 
-                  { left: '-100%' }, 
-                  { left: '150%', duration: 1, ease: "power1.inOut" }
-                );
-              }
-            }}
-            onMouseLeave={(e) => {
-              gsap.to(e.currentTarget, { 
-                scale: 1, 
-                backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                duration: 0.4, 
-                ease: "power2.out" 
-              });
-            }}
-          >
-            <div className={styles.ctaShimmer} />
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '8px' }}>
-              <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
-              <path d="M3 6h18"></path>
-              <path d="M16 10a4 4 0 0 1-8 0"></path>
-            </svg>
-            COMPRE AGORA
-          </Link>
           
           <div className={styles.iconActions}>
             <button aria-label="Search" className={styles.iconButton} disabled title="Em breve">
@@ -311,13 +276,6 @@ export function Header({ locale, lines = [] }: { locale: string; lines?: { name:
             </div>
             
             <div className={styles.mobileActions}>
-              <Link 
-                href={`/${locale}/shop`}
-                className={styles.mobileCta}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Compre Agora
-              </Link>
             </div>
           </div>
         </Container>

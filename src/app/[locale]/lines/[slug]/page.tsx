@@ -384,10 +384,10 @@ export default async function LinePage({ params }: { params: Promise<{ locale: s
               <p className={styles.heroSubtitle}>{lineDesc}</p>
 
               <div className={styles.heroButtons}>
-                <button className={styles.btnPrimary}>
+                <a href="#produtos" className={styles.btnPrimary} style={{ textDecoration: 'none' }}>
                   Conhecer Produtos
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                </button>
+                </a>
               </div>
 
               <div className={styles.heroFeatures}>
@@ -473,7 +473,7 @@ export default async function LinePage({ params }: { params: Promise<{ locale: s
         </Container>
       </section>
 
-      <Container>
+      <Container id="produtos">
 
         {/* Manual Técnico e Instruções da Coloração Creme (Premium Collapsible Accordion) */}
         {cleanSlug === 'coloracao' && (
