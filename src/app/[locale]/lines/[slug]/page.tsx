@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container } from '@/components/ui/Container';
 import { ProductActions } from '@/components/ui/product/ProductActions';
+import { ExpandableText } from '@/components/ui/ExpandableText';
 import fs from 'fs';
 import path from 'path';
 import { getLineProducts } from '@/lib/loja-integrada-catalog';
@@ -369,7 +370,52 @@ export default async function LinePage({ params }: { params: Promise<{ locale: s
             <div className={styles.heroContent}>
               <span className={styles.heroTagline}>Diamante Profissional</span>
               <h1 className={styles.heroTitle}>{lineName}</h1>
+              
+              <div className={styles.heroDivider}>
+                <div className={styles.heroDividerLine}></div>
+                <svg className={styles.heroDividerIcon} width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <path d="M6 3h12l4 6-10 13L2 9Z"/>
+                </svg>
+                <svg className={styles.heroDividerIcon} width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <path d="M6 3h12l4 6-10 13L2 9Z"/>
+                </svg>
+              </div>
+
               <p className={styles.heroSubtitle}>{lineDesc}</p>
+
+              <div className={styles.heroButtons}>
+                <button className={styles.btnPrimary}>
+                  Conhecer Produtos
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                </button>
+              </div>
+
+              <div className={styles.heroFeatures}>
+                <div className={styles.featureItem}>
+                  <div className={styles.featureIcon}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.287 1.288L3 12l5.8 1.9a2 2 0 0 1 1.288 1.287L12 21l1.9-5.8a2 2 0 0 1 1.287-1.288L21 12l-5.8-1.9a2 2 0 0 1-1.288-1.287Z"></path></svg>
+                  </div>
+                  <span className={styles.featureText}>Fórmulas Profissionais</span>
+                </div>
+                <div className={styles.featureItem}>
+                  <div className={styles.featureIcon}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"></path></svg>
+                  </div>
+                  <span className={styles.featureText}>Resultados Comprovados</span>
+                </div>
+                <div className={styles.featureItem}>
+                  <div className={styles.featureIcon}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M6 3h12l4 6-10 13L2 9Z"></path></svg>
+                  </div>
+                  <span className={styles.featureText}>Qualidade Diamante</span>
+                </div>
+                <div className={styles.featureItem}>
+                  <div className={styles.featureIcon}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path></svg>
+                  </div>
+                  <span className={styles.featureText}>Cuidado Que Transforma</span>
+                </div>
+              </div>
             </div>
             
             <div className={styles.heroVisual} aria-hidden="true">
@@ -553,134 +599,75 @@ export default async function LinePage({ params }: { params: Promise<{ locale: s
             </div>
           </div>
         )}
-
         {/* Premium Catalog Products Grid */}
         {products.length > 0 ? (
           <div className={styles.productGrid}>
             {products.map((product: any) => (
               <div key={product.id} className={styles.productCard}>
                 
-                {/* Left Side: Product Image with Subtle Shadow */}
+                {/* Left Side: Product Image with Arch Background */}
                 <div className={styles.imageWrapper}>
-                  <div style={{
-                    width: '100%',
-                    height: '260px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    zIndex: 2
-                  }}>
-                    {product.image ? (
-                      <img 
-                        src={product.image} 
-                        alt={product.title} 
-                        className={styles.productImage}
-                      />
-                    ) : (
-                      <span style={{
-                        color: '#8F857D',
-                        fontFamily: 'var(--font-inter)',
-                        fontSize: '0.8rem',
-                        fontWeight: 600,
-                        letterSpacing: '0.08em',
-                        textTransform: 'uppercase'
-                      }}>
-                        Imagem em revisão
-                      </span>
-                    )}
-                  </div>
+                  {product.image ? (
+                    <img 
+                      src={product.image} 
+                      alt={product.title} 
+                      className={styles.productImage}
+                    />
+                  ) : (
+                    <span style={{
+                      color: '#8F857D',
+                      fontFamily: 'var(--font-inter)',
+                      fontSize: '0.8rem',
+                      fontWeight: 600,
+                      letterSpacing: '0.08em',
+                      textTransform: 'uppercase'
+                    }}>
+                      Imagem em revisão
+                    </span>
+                  )}
                 </div>
 
                 {/* Right Side: Product Details */}
                 <div className={styles.detailsWrapper}>
-                  <h3 style={{ 
-                    fontFamily: 'var(--font-playfair)', 
-                    fontSize: '1.45rem', 
-                    color: '#2D2A26', 
-                    margin: '0 0 0.25rem 0',
-                    fontWeight: 600,
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.01em',
-                    lineHeight: '1.2'
-                  }}>
+                  <h3 className={styles.title}>
                     {product.title}
                   </h3>
                   
-                  {product.code && (
-                    <span style={{ 
-                      fontFamily: 'var(--font-inter)', 
-                      fontSize: '0.75rem', 
-                      color: '#8F857D', 
-                      letterSpacing: '0.15em', 
-                      fontWeight: 700,
-                      display: 'block',
-                      marginBottom: '0.75rem',
-                      textTransform: 'uppercase'
-                    }}>
-                      CÓDIGO: {product.code}
-                    </span>
+                  {product.size && (
+                    <div className={styles.subtitleSize}>
+                      {product.size}
+                    </div>
                   )}
                   
-                  {/* Glowing luxury gold divider line */}
-                  <div className={styles.cardGlowDivider}>
-                    <div className={styles.dividerLineLeft} />
-                    <div className={styles.dividerStarWrapper} style={{ margin: '0 6px' }}>
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="12" cy="12" r="6" fill="#c99d4a" opacity="0.3" style={{ filter: 'blur(3px)' }} />
-                        <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" fill="url(#goldGlow)" />
-                        <path d="M12 6L13.2 10.8L18 12L13.2 13.2L12 18L10.8 13.2L6 12L10.8 10.8L12 6Z" fill="#FFFFFF" />
-                      </svg>
-                    </div>
-                    <div className={styles.dividerLineRight} />
-                    <div className={styles.dividerDot} />
-                  </div>
-
-                  {product.description && (
-                    <p style={{ 
-                      color: '#5A524A', 
-                      fontSize: '0.875rem', 
-                      lineHeight: '1.5',
-                      margin: '0 0 0.75rem 0',
-                      fontFamily: 'var(--font-inter)'
-                    }}>
-                      {product.description}
-                    </p>
-                  )}
-
-                  {product.howToUse && (() => {
-                    const isBenefits = product.howToUse.trim().toLowerCase().startsWith('beneficios') || product.howToUse.trim().toLowerCase().startsWith('benefícios');
-                    if (isBenefits) return null;
-                    
-                    return (
-                      <details style={{ margin: '0 0 1.25rem 0', padding: '0.5rem 0.75rem', background: 'rgba(201, 157, 74, 0.04)', borderRadius: '6px', borderLeft: '2px solid #c99d4a' }}>
-                        <summary style={{ color: '#c99d4a', textTransform: 'uppercase', fontSize: '0.75rem', letterSpacing: '0.05em', cursor: 'pointer', fontWeight: 600, outline: 'none', userSelect: 'none' }}>
-                          Modo de usar
-                        </summary>
-                        <p style={{ color: '#6B625A', fontSize: '0.8rem', lineHeight: '1.4', marginTop: '0.5rem', fontFamily: 'var(--font-inter)' }}>
-                          {product.howToUse}
-                        </p>
-                      </details>
-                    );
-                  })()}
-
-                  {/* Size details in B2B catalog standard */}
-                  <div className={styles.priceContainer}>
-                    {product.size && (
-                      <span style={{ 
-                        color: '#8F857D', 
-                        fontSize: '0.85rem',
-                        fontWeight: 500,
-                        fontFamily: 'var(--font-inter)',
-                        background: 'rgba(0,0,0,0.03)',
-                        padding: '4px 8px',
-                        borderRadius: '4px'
-                      }}>
-                        {product.size}
-                      </span>
+                  {/* Description Box - Simplified typography */}
+                  <div className={styles.descriptionBox}>
+                    {product.description && (
+                      <ExpandableText 
+                        text={product.description} 
+                        className={styles.descriptionText} 
+                        maxLength={130} 
+                      />
                     )}
+                    
+                    {product.howToUse && (() => {
+                      const isBenefits = product.howToUse.trim().toLowerCase().startsWith('beneficios') || product.howToUse.trim().toLowerCase().startsWith('benefícios');
+                      if (isBenefits) return null;
+                      
+                      return (
+                        <details style={{ margin: '0 0 1.25rem 0', padding: '0.5rem 0.75rem', background: 'rgba(201, 157, 74, 0.04)', borderRadius: '6px', borderLeft: '2px solid #c99d4a' }}>
+                          <summary style={{ color: '#c99d4a', textTransform: 'uppercase', fontSize: '0.75rem', letterSpacing: '0.05em', cursor: 'pointer', fontWeight: 600, outline: 'none', userSelect: 'none' }}>
+                            Uso recomendado
+                          </summary>
+                          <p style={{ color: '#6B625A', fontSize: '0.8rem', lineHeight: '1.4', marginTop: '0.5rem', fontFamily: 'var(--font-inter)' }}>
+                            {product.howToUse}
+                          </p>
+                        </details>
+                      );
+                    })()}
                   </div>
+
                   {/* Buy Button & Actions */}
-                  <div style={{ marginTop: '1.5rem' }}>
+                  <div style={{ marginTop: 'auto' }}>
                     <ProductActions 
                       lojaIntegradaId={product.lojaIntegradaId} 
                       productTitle={product.title} 

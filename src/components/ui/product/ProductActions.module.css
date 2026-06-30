@@ -34,13 +34,13 @@
   align-items: stretch;
 }
 
-.quantitySelector {
+.quantityContainer {
   display: flex;
   align-items: center;
   border: 1px solid #EBE9E4;
-  border-radius: 4px;
+  border-radius: 6px;
   background: #FFF;
-  height: 48px;
+  height: auto;
 }
 
 .qtyBtn {
@@ -74,21 +74,26 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  background: #211d1a;
+  gap: 0.4rem;
+  background: #2D2A26;
   color: #fff;
-  border: none;
-  border-radius: 4px;
-  font-weight: 600;
-  font-size: 0.85rem;
-  letter-spacing: 0.05em;
+  border: 1px solid #2D2A26;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  padding: 0.5rem 0.75rem;
   cursor: pointer;
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(45, 42, 38, 0.08);
 }
 
 .buyBtn:hover {
   background: #c99d4a;
+  border-color: #c99d4a;
+  box-shadow: 0 6px 16px rgba(201, 157, 74, 0.25);
+  transform: translateY(-2px);
 }
 
 .stock {

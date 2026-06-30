@@ -37,10 +37,14 @@ export function ProductActions({
   const handleIncrease = () => setQuantity(q => q + 1);
 
   const displayPrice = price || 'R$ 0,00'; // Replace with real logic later if fetched
+  const isConsult = displayPrice === 'R$ 0,00' || displayPrice.toLowerCase().includes('consulta');
+  const finalPriceLabel = isConsult ? 'Preço sob consulta' : displayPrice;
 
   const cartUrl = lojaIntegradaId
     ? `https://www.diamanteprofissional.com.br/carrinho/produto/${lojaIntegradaId}/adicionar?quantidade=${quantity}`
     : `https://www.diamanteprofissional.com.br/buscar?q=${encodeURIComponent(productTitle)}`;
+
+  const consultUrl = `https://wa.me/551938176156?text=${encodeURIComponent(`Olá! Quero consultar o valor e a disponibilidade do produto ${productTitle}.`)}`;
 
   const handleCepChange = (value: string) => {
     const digits = value.replace(/\D/g, '').slice(0, 8);
@@ -117,29 +121,38 @@ export function ProductActions({
   return (
     <div className={styles.container}>
       <div className={styles.priceContainer}>
-        <span className={styles.price}>{displayPrice}</span>
-        <span className={styles.installments}>até <strong>3x</strong> de <strong>R$ {((parseFloat(displayPrice.replace('R$', '').replace(',', '.')) || 0) / 3).toFixed(2).replace('.', ',')}</strong> sem juros</span>
+        <span className={styles.price} style={isConsult ? { fontSize: '28px' } : undefined}>{finalPriceLabel}</span>
+        {!isConsult && (
+          <span className={styles.installments}>até <strong>3x</strong> de <strong>R$ {((parseFloat(displayPrice.replace('R$', '').replace(',', '.')) || 0) / 3).toFixed(2).replace('.', ',')}</strong> sem juros</span>
+        )}
       </div>
 
       <div className={styles.buySection}>
-        <div className={styles.quantityContainer}>
-          <button onClick={handleDecrease} className={styles.qtyBtn}>-</button>
-          <span className={styles.qtyValue}>{quantity}</span>
-          <button onClick={handleIncrease} className={styles.qtyBtn}>+</button>
-        </div>
+        {!isConsult && (
+          <div className={styles.quantityContainer}>
+            <button onClick={handleDecrease} className={styles.qtyBtn}>-</button>
+            <span className={styles.qtyValue}>{quantity}</span>
+            <button onClick={handleIncrease} className={styles.qtyBtn}>+</button>
+          </div>
+        )}
         
-        {lojaIntegradaId && available ? (
+        {lojaIntegradaId && available && !isConsult ? (
           <a 
             href={cartUrl} 
             className={styles.buyBtn}
             target="_blank"
             rel="noopener noreferrer"
           >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+              <path d="M3 6h18"></path>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
             COMPRAR
           </a>
         ) : (
           <a
-            href={`https://wa.me/551938176156?text=${encodeURIComponent(`Olá! Quero consultar a disponibilidade do produto ${productTitle}.`)}`}
+            href={consultUrl}
             className={styles.buyBtn}
             target="_blank"
             rel="noopener noreferrer"
