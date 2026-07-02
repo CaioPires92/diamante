@@ -7,41 +7,36 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import { useTranslations } from 'next-intl';
 import { Container } from './Container';
-import { ProductCard } from './ProductCard';
 import styles from './ProductSection.module.css';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-const productsData = [
+const categories = [
   {
-    id: 'shampoo-supreme',
-    slug: 'shampoo-caviar-1l',
-    image: '/images/products/caviar/prod_2.png',
-    lojaIntegradaId: '79169048',
+    id: 'powder',
+    image: '/images/products/coloracao/p-descolorante-azul.png',
   },
   {
-    id: 'mask-supreme',
-    slug: 'mascara-caviar-900g',
-    image: '/images/products/caviar/prod_3.png',
-    lojaIntegradaId: '79168997',
+    id: 'peroxide',
+    image: '/images/products/coloracao/p-descolorante-branco.png',
   },
   {
-    id: 'serum-supreme',
-    slug: 'leave-in-caviar-250ml',
-    image: '/images/products/caviar/prod_4.png',
-    lojaIntegradaId: '79168990',
-  }
-];
+    id: 'masks',
+    image: '/images/products/matizadores/prod_8.png',
+  },
+  {
+    id: 'schedule',
+    image: '/imgs/lapidacao_4steps.webp',
+  },
+] as const;
 
 export function ProductSection() {
   const t = useTranslations('Products');
-  const common = useTranslations('Common');
   const sectionRef = useRef<HTMLElement>(null);
 
   useGSAP((context) => {
-    // Reveal animation on scroll
     const cards = context.selector?.(`.${styles.cardWrapper}`);
-    
+
     if (cards) {
       gsap.fromTo(cards, {
         y: 60,
@@ -55,12 +50,11 @@ export function ProductSection() {
         y: 0,
         opacity: 1,
         duration: 1,
-        stagger: 0.1,
+        stagger: 0.12,
         ease: 'power3.out'
       });
     }
 
-    // Header reveal
     gsap.fromTo('.prod-header', {
       y: 30,
       opacity: 0,
@@ -79,7 +73,7 @@ export function ProductSection() {
   return (
     <section id="products" className={styles.section} ref={sectionRef}>
       <div className={styles.glow} />
-      
+
       <Container>
         <div className={`${styles.header} prod-header`}>
           <h2 className={styles.title}>{t('title')}</h2>
@@ -87,17 +81,24 @@ export function ProductSection() {
         </div>
 
         <div className={`${styles.grid} prod-grid`}>
-          {productsData.map((product, index) => (
-            <div key={product.id} className={styles.cardWrapper}>
-              <ProductCard
-                id={product.id}
-                slug={product.slug}
-                image={product.image}
-                name={t(`items.${product.id}.name`)}
-                description={t(`items.${product.id}.desc`)}
-                isFeatured={index === 1}
-                lojaIntegradaId={product.lojaIntegradaId}
-              />
+          {categories.map((category) => (
+            <div key={category.id} className={styles.cardWrapper}>
+              <article className={styles.card}>
+                <div className={styles.imageWrap}>
+                  <Image
+                    src={category.image}
+                    alt={t(`items.${category.id}.name`)}
+                    fill
+                    className={styles.image}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                  />
+                </div>
+                <div className={styles.cardContent}>
+                  <span className={styles.cardLabel}>{t('cardLabel')}</span>
+                  <h3 className={styles.cardTitle}>{t(`items.${category.id}.name`)}</h3>
+                  <p className={styles.cardDescription}>{t(`items.${category.id}.desc`)}</p>
+                </div>
+              </article>
             </div>
           ))}
         </div>

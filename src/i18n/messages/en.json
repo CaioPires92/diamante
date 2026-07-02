@@ -1,7 +1,12 @@
 {
   "Home": {
+    "eyebrow": "PRIVATE LABEL HAIRCARE",
     "title": "Salon-quality hair,\nevery single day.\n<highlight>Professional care.</highlight>",
     "subtitle": "<strong>In-house</strong> hair cosmetics, developed for salons and clients who demand <strong>real results</strong>.",
+    "briefingLine": "BE YOUR OWN BOSS. LAUNCH YOUR COSMETIC BRAND WITH US.",
+    "primaryCta": "Create my brand",
+    "secondaryCta": "Talk to a specialist",
+    "whatsAppCta": "Launch my brand",
     "viewCollection": "Discover the professional line",
     "badges": {
       "manufacturing": "IN-HOUSE MANUFACTURING",
@@ -23,20 +28,25 @@
     "contact": "Contact"
   },
   "Products": {
-    "title": "Our Featured Products",
-    "subtitle": "Discover the premium hair care line",
+    "title": "Explore Our Main Product Categories",
+    "subtitle": "Strategic categories for brands that want to launch a strong and commercially attractive haircare line.",
+    "cardLabel": "Manufacturing capability",
     "items": {
-      "shampoo-supreme": {
-        "name": "Caviar Shampoo",
-        "desc": "Cleanses and hydrates, recovering the hair's natural shine. Contains ojon oil and d-panthenol."
+      "powder": {
+        "name": "Bleaching Powder",
+        "desc": "A high-demand professional category, ideal for technical and high-performance lines."
       },
-      "mask-supreme": {
-        "name": "Caviar Mask",
-        "desc": "Provides deep hydration, softness and immediate silkiness with caviar extract."
+      "peroxide": {
+        "name": "Cream Developer",
+        "desc": "An essential item for coloring and chemical processes, with strong market relevance."
       },
-      "serum-supreme": {
-        "name": "Caviar Leave-in",
-        "desc": "Anti-frizz action, detangling combing cream and leave-in heat protectant."
+      "masks": {
+        "name": "Toners",
+        "desc": "A visually appealing category with strong positioning potential for private label brands."
+      },
+      "schedule": {
+        "name": "Hair Schedule Treatments",
+        "desc": "Complete hydration, nutrition and reconstruction lines for professional and retail demand."
       }
     }
   },
@@ -140,7 +150,7 @@
   },
   "PrivateLabel": {
     "tagline": "FOR ENTREPRENEURS",
-    "title": "Private Label: Your Cosmetic Brand Starts Here",
+    "title": "We Manufacture Your Hair Cosmetics Brand",
     "description": "Turn your vision into reality with our cutting-edge infrastructure. We offer in-house manufacturing, exclusive formula development, and full support to create your premium line with Diamante quality.",
     "features": {
       "manufacturing": "Full Infrastructure",
@@ -150,36 +160,53 @@
     },
     "cta": "Talk to a Consultant"
   },
+  "StructureServices": {
+    "tagline": "STRUCTURE AND SERVICES",
+    "title": "More Credibility for Brands That Want to Launch Right",
+    "description": "Beyond manufacturing, Diamante offers support, structure and technical guidance to help new brands launch with more confidence.",
+    "items": {
+      "development": { "title": "Research and Development", "desc": "We follow trends and opportunities to help your brand start stronger." },
+      "support": { "title": "Technical Support", "desc": "Our team guides decisions with more clarity, safety and production vision." },
+      "project": { "title": "Project Advisory", "desc": "We help define the line, direction and best path to turn an idea into a brand." },
+      "quality": { "title": "Quality Control", "desc": "Production quality is part of the trust your brand needs to convey from day one." },
+      "production": { "title": "Structured Production", "desc": "We manufacture with process, consistency and professional presentation in mind." },
+      "commercial": { "title": "Commercial Guidance", "desc": "It is not only about producing, but helping your brand move from idea to reality." }
+    }
+  },
   "Impact": {
     "title": "Our Presence in Numbers",
     "stats": {
       "products": {
         "value": "200",
         "label": "Products in Portfolio",
-        "suffix": "+"
+        "suffix": "+",
+        "description": "Options to build a complete haircare line."
       },
       "countries": {
         "value": "4",
         "label": "Countries Reached",
-        "suffix": ""
+        "suffix": "",
+        "description": "Experience that supports safer brand launches."
       },
       "clients": {
         "value": "10",
         "label": "Thousand Happy Clients",
-        "suffix": "k+"
+        "suffix": "k+",
+        "description": "Operational structure designed for consistency and quality."
       },
       "years": {
         "value": "12",
         "label": "Years of Experience",
-        "suffix": "+"
+        "suffix": "+",
+        "description": "Strategic categories for different market positions."
       }
     }
   },
   "FinalCTA": {
     "title": "Ready to Transform Your Experience?",
     "description": "Whether you are a professional seeking peak performance or an entrepreneur starting your own brand, Diamante is your next step.",
-    "ctaShop": "Go to Online Shop",
-    "ctaBusiness": "Become a Partner"
+    "ctaPrimary": "Launch my brand",
+    "ctaSecondary": "Talk to Diamante"
   },
   "About": {
     "Hero": {

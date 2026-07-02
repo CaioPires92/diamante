@@ -75,11 +75,11 @@ export function FinalCTA() {
           <p className={`${styles.description} cta-animate`}>{t('description')}</p>
           
           <div className={`${styles.buttonGroup} cta-animate`}>
-            <Link href={`/${locale}/shop`} className={styles.btnPrimary}>
-              {t('ctaShop')}
+            <Link href={`/${locale}/private-label`} className={styles.btnPrimary}>
+              {t('ctaPrimary')}
             </Link>
-            <Link href={`/${locale}/distributor`} className={styles.btnSecondary}>
-              {t('ctaBusiness')}
+            <Link href={`/${locale}/contact`} className={styles.btnSecondary}>
+              {t('ctaSecondary')}
             </Link>
           </div>
         </div>

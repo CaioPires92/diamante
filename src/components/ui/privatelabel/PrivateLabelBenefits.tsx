@@ -63,16 +63,17 @@ export function PrivateLabelBenefits() {
           <h2 className={styles.title}>{t('title')}</h2>
         </div>
 
-        <div className={`${styles.grid} benefits-grid`}>
-          {benefitKeys.map((key) => (
-            <div key={key} className={`${styles.card} benefit-card`}>
-              <div className={styles.iconWrapper}>
-                <div className={styles.dot} />
-              </div>
-              <h3 className={styles.cardTitle}>{t(`items.${key}.title`)}</h3>
-              <p className={styles.cardDesc}>{t(`items.${key}.desc`)}</p>
-            </div>
-          ))}
+        <div className={styles.panel}>
+          <div className={`${styles.grid} benefits-grid`}>
+            {benefitKeys.map((key, index) => (
+              <article key={key} className={`${styles.card} benefit-card`}>
+                <span className={styles.cardIndex}>{`0${index + 1}`}</span>
+                <div className={styles.cardLine} />
+                <h3 className={styles.cardTitle}>{t(`items.${key}.title`)}</h3>
+                <p className={styles.cardDesc}>{t(`items.${key}.desc`)}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </Container>
     </section>

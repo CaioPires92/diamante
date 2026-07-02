@@ -1,7 +1,12 @@
 {
   "Home": {
+    "eyebrow": "PRIVATE LABEL CAPILAR",
     "title": "Belleza que transforma.\nCiencia que cuida.\n<highlight>Todos los días.</highlight>",
     "subtitle": "Cosméticos capilares de <strong>fabricación propia</strong>, desarrollados para salones y clientes que exigen <strong>resultados reales</strong>.",
+    "briefingLine": "SÉ TU PROPIO JEFE. LANZA TU MARCA DE COSMÉTICOS CON NOSOTROS.",
+    "primaryCta": "Quiero crear mi marca",
+    "secondaryCta": "Hablar con un especialista",
+    "whatsAppCta": "Quiero lanzar mi marca",
     "viewCollection": "Conocer la línea profesional",
     "badges": {
       "manufacturing": "FABRICACIÓN PROPIA",
@@ -23,20 +28,25 @@
     "contact": "Contacto"
   },
   "Products": {
-    "title": "Nuestros Productos Destacados",
-    "subtitle": "Descubre la línea premium de cuidado capilar",
+    "title": "Conoce Nuestras Principales Categorías",
+    "subtitle": "Categorías estratégicas para marcas que desean lanzar una línea capilar fuerte y con potencial comercial.",
+    "cardLabel": "Capacidad de fabricación",
     "items": {
-      "shampoo-supreme": {
-        "name": "Shampoo Caviar",
-        "desc": "Limpia e hidrata recuperando el brillo de las hebras. Contiene aceite de ojon y d-panthenol."
+      "powder": {
+        "name": "Polvo Decolorante",
+        "desc": "Una categoría de alta demanda en el mercado profesional, ideal para líneas técnicas."
       },
-      "mask-supreme": {
-        "name": "Mascarilla Caviar",
-        "desc": "Proporciona hidratación profunda, suavidad y sedosidad inmediata con extracto de caviar."
+      "peroxide": {
+        "name": "Agua Oxigenada Cremosa",
+        "desc": "Un artículo esencial para coloración y procesos químicos con fuerte presencia en el segmento."
       },
-      "serum-supreme": {
-        "name": "Leave-in Caviar",
-        "desc": "Acción anti-frizz, crema de peinar desenredante y protector térmico sin aclarado."
+      "masks": {
+        "name": "Matizadores",
+        "desc": "Categoría con alto atractivo visual y excelente potencial de posicionamiento para marcas propias."
+      },
+      "schedule": {
+        "name": "Tratamientos para Cronograma Capilar",
+        "desc": "Líneas completas para hidratación, nutrición y reconstrucción con demanda profesional y retail."
       }
     }
   },
@@ -140,7 +150,7 @@
   },
   "PrivateLabel": {
     "tagline": "PARA EMPRENDEDORES",
-    "title": "Private Label: Tu Marca de Cosméticos Comienza Aquí",
+    "title": "Fabricamos Tu Marca de Cosméticos Capilares",
     "description": "Transforma tu visión en realidad con nuestra infraestructura de vanguardia. Ofrecemos fabricación propia, desarrollo de fórmulas exclusivas y soporte completo para crear tu línea premium con la calidad Diamante.",
     "features": {
       "manufacturing": "Infraestructura Completa",
@@ -150,36 +160,53 @@
     },
     "cta": "Hablar con um Consultor"
   },
+  "StructureServices": {
+    "tagline": "ESTRUCTURA Y SERVICIOS",
+    "title": "Más Credibilidad para Marcas que Quieren Lanzarse Bien",
+    "description": "Además de fabricar, Diamante ofrece estructura, acompañamiento y apoyo técnico para lanzar marcas con mayor confianza.",
+    "items": {
+      "development": { "title": "Investigación y Desarrollo", "desc": "Seguimos tendencias y oportunidades para ayudar a que tu marca nazca más fuerte." },
+      "support": { "title": "Apoyo Técnico", "desc": "Nuestro equipo orienta decisiones con más claridad, seguridad y visión de producción." },
+      "project": { "title": "Asesoría de Proyecto", "desc": "Ayudamos a definir la línea y el mejor camino para convertir una idea en marca." },
+      "quality": { "title": "Control de Calidad", "desc": "La calidad de producción forma parte de la confianza que tu marca necesita transmitir." },
+      "production": { "title": "Producción con Estructura", "desc": "Fabricamos con proceso, consistencia y presentación profesional." },
+      "commercial": { "title": "Acompañamiento Comercial", "desc": "No se trata solo de producir, sino de ayudarte a sacar tu marca del papel." }
+    }
+  },
   "Impact": {
     "title": "Nuestra Presencia en Números",
     "stats": {
       "products": {
         "value": "200",
         "label": "Productos en Portafolio",
-        "suffix": "+"
+        "suffix": "+",
+        "description": "Opciones para crear una línea capilar completa."
       },
       "countries": {
         "value": "4",
         "label": "Países Alcanzados",
-        "suffix": ""
+        "suffix": "",
+        "description": "Experiencia para desarrollar marcas con más seguridad."
       },
       "clients": {
         "value": "10",
         "label": "Mil Clientes Atendidos",
-        "suffix": "k+"
+        "suffix": "k+",
+        "description": "Estructura pensada para consistencia y control de calidad."
       },
       "years": {
         "value": "12",
         "label": "Años de Experiencia",
-        "suffix": "+"
+        "suffix": "+",
+        "description": "Categorías estratégicas para distintos posicionamientos."
       }
     }
   },
   "FinalCTA": {
     "title": "¿Listo para Transformar tu Experiencia?",
     "description": "Ya seas un profesional que busca el mejor rendimiento o un emprendedor que desea su propia marca, Diamante es tu próximo paso.",
-    "ctaShop": "Ir a la Tienda Online",
-    "ctaBusiness": "Hazte Socio"
+    "ctaPrimary": "Lanzar mi marca",
+    "ctaSecondary": "Hablar con Diamante"
   },
   "About": {
     "Hero": {

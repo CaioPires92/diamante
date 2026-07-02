@@ -6,18 +6,18 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { Container } from './Container';
 import styles from './HeroSection.module.css';
-import Link from 'next/link';
 import { Button } from './Button';
-import { useTranslations, useLocale } from 'next-intl';
+import { useTranslations } from 'next-intl';
 
 gsap.registerPlugin(useGSAP);
 
 export function HeroSection() {
   const t = useTranslations('Home');
-  const common = useTranslations('Common');
-  const locale = useLocale();
   const sectionRef = useRef<HTMLElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
+  const whatsappUrl = `https://wa.me/551938176156?text=${encodeURIComponent(
+    'Olá! Quero lançar minha marca de cosméticos com a Diamante Profissional.'
+  )}`;
 
   useGSAP((context) => {
     // Background Image Zoom Entrance
@@ -62,9 +62,7 @@ export function HeroSection() {
 
       <Container className={styles.content}>
         <div ref={contentRef} className={styles.textContent}>
-          <div className="anim-item">
-            {/* Tagline removed to match image style or hidden */}
-          </div>
+          <span className={`${styles.eyebrow} anim-item`}>{t('eyebrow')}</span>
 
           <h1 className={`${styles.title} anim-item`}>
             {t.rich('title', {
@@ -79,7 +77,12 @@ export function HeroSection() {
           </p>
 
           <div className={`${styles.actions} anim-item`}>
-            <Link href={`/${locale}/shop`} style={{ textDecoration: 'none' }}>
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ textDecoration: 'none' }}
+            >
               <Button 
                 variant="primary" 
                 className={styles.buyButton}
@@ -96,32 +99,12 @@ export function HeroSection() {
                 }}
               >
                 <div className={styles.shimmer} />
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={styles.bagIcon}>
-                  <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>
-                </svg>
-                <span>{common('buyNow')}</span>
+                <span>{t('whatsAppCta')}</span>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={styles.arrowIcon}>
                   <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
                 </svg>
               </Button>
-            </Link>
-            <Link href={`/${locale}/lines/profissional`} style={{ textDecoration: 'none' }}>
-              <Button 
-                variant="secondary" 
-                className={styles.secondaryButton}
-                onMouseEnter={(e) => {
-                  gsap.to(e.currentTarget, { scale: 1.05, duration: 0.4, ease: "power2.out" });
-                }}
-                onMouseLeave={(e) => {
-                  gsap.to(e.currentTarget, { scale: 1, duration: 0.4, ease: "power2.out" });
-                }}
-              >
-                <span>{t('viewCollection')}</span>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={styles.goldArrow}>
-                  <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
-                </svg>
-              </Button>
-            </Link>
+            </a>
           </div>
 
           <div className={`${styles.trustBadges} anim-item`}>

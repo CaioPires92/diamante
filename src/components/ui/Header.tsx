@@ -19,6 +19,7 @@ export function Header({ locale, lines = [] }: { locale: string; lines?: { name:
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isInstitucionalOpen, setIsInstitucionalOpen] = useState(false);
+  const showCommerceActions = false;
   const menuRef = useRef<HTMLDivElement>(null);
   const navLinksRef = useRef<HTMLDivElement>(null);
 
@@ -185,21 +186,24 @@ export function Header({ locale, lines = [] }: { locale: string; lines?: { name:
 
         {/* Lado Direito: Ações */}
         <div className={styles.actions}>
-          
           <div className={styles.iconActions}>
-            <button aria-label="Search" className={styles.iconButton} disabled title="Em breve">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="11" cy="11" r="8"></circle>
-                <path d="m21 21-4.3-4.3"></path>
-              </svg>
-            </button>
-            <button aria-label="Account" className={styles.iconButton} disabled title="Em breve">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
-                <circle cx="12" cy="7" r="4"></circle>
-              </svg>
-            </button>
-            <div className={styles.divider}></div>
+            {showCommerceActions && (
+              <>
+                <button aria-label="Search" className={styles.iconButton} disabled title="Em breve">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.3-4.3"></path>
+                  </svg>
+                </button>
+                <button aria-label="Account" className={styles.iconButton} disabled title="Em breve">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                </button>
+                <div className={styles.divider}></div>
+              </>
+            )}
             <div className={styles.dropdownContainer}>
               <button className={styles.langToggle}>
                 {locale === 'pt-BR' ? 'PT' : locale.toUpperCase()}

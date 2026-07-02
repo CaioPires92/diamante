@@ -1,13 +1,17 @@
 {
   "Home": {
-    "title": "Cabelo tratado\ncomo em salão,\n<highlight>todos os dias.</highlight>",
-    "subtitle": "Cosméticos capilares de <strong>fabricação própria</strong>, desenvolvidos para salões e clientes que exigem <strong>resultado real</strong>.",
+    "eyebrow": "PRIVATE LABEL CAPILAR",
+    "title": "SEJA SEU PRÓPRIO CHEFE,\nLANCE SUA MARCA DE\n<highlight>COSMÉTICOS CONOSCO.</highlight>",
+    "subtitle": "Da ideia ao produto final, a Diamante oferece <strong>fabricação própria</strong> e suporte para transformar seu projeto em uma linha capilar pronta para o mercado.",
+    "primaryCta": "Quero criar minha marca",
+    "secondaryCta": "Falar com um especialista",
+    "whatsAppCta": "Quero lançar minha marca",
     "viewCollection": "Conhecer a linha profissional",
     "badges": {
       "manufacturing": "FABRICAÇÃO PRÓPRIA",
-      "exclusive": "FÓRMULAS EXCLUSIVAS",
+      "exclusive": "PRIVATE LABEL CAPILAR",
       "quality": "QUALIDADE PROFISSIONAL",
-      "price": "PREÇO JUSTO"
+      "price": "15+ ANOS DE EXPERIÊNCIA"
     }
   },
   "Common": {
@@ -23,20 +27,25 @@
     "contact": "Contato"
   },
   "Products": {
-    "title": "Nossos Produtos em Destaque",
-    "subtitle": "Descubra a linha premium de cuidados com os fios",
+    "title": "Conheça Nossos Principais Produtos",
+    "subtitle": "Essas categorias mostram a capacidade fabril da Diamante para desenvolver linhas capilares com apelo comercial e estrutura de produção.",
+    "cardLabel": "Capacidade fabril",
     "items": {
-      "shampoo-supreme": {
-        "name": "Shampoo Caviar",
-        "desc": "Limpa e hidrata recuperando o brilho dos fios. Contém óleo de ojon e d-pantenol."
+      "powder": {
+        "name": "Pó Descolorante",
+        "desc": "Alta procura no mercado profissional, ideal para compor linhas técnicas e de alta performance."
       },
-      "mask-supreme": {
-        "name": "Máscara Caviar",
-        "desc": "Proporciona hidratação profunda, maciez e sedosidade imediata com extrato de caviar."
+      "peroxide": {
+        "name": "Água Oxigenada Cremosa",
+        "desc": "Item essencial para coloração e processos químicos, com forte presença no segmento capilar."
       },
-      "serum-supreme": {
-        "name": "Leave-in Caviar",
-        "desc": "Ação anti-frizz, creme de pentear desembaraçante e protetor térmico sem enxágue."
+      "masks": {
+        "name": "Matizadores",
+        "desc": "Categoria com alto apelo visual e excelente potencial de posicionamento para marcas próprias."
+      },
+      "schedule": {
+        "name": "Tratamentos para Cronograma Capilar",
+        "desc": "Linhas completas para hidratação, nutrição e reconstrução, com forte aderência no profissional e no varejo."
       }
     }
   },
@@ -55,51 +64,51 @@
     "EmptyState": "Nenhum produto encontrado para esta categoria."
   },
   "Features": {
-    "title": "Por que Diamante Profissional?",
+    "title": "Por que Criar Sua Marca com a Diamante",
     "tagline": "DIFERENCIAIS",
-    "description": "Mais do que produtos, entregamos ciência, performance e cuidado em cada detalhe da sua rotina profissional.",
+    "description": "Aqui, a decisão não é só sobre produzir. É sobre escolher uma empresa com base técnica, consistência de fabricação e visão de mercado.",
     "items": {
       "factory": {
         "title": "Fábrica Própria",
-        "desc": "Controle total da produção — do insumo ao produto final, garantindo pureza e eficácia."
+        "desc": "Controle da produção do início ao fim para garantir consistência, segurança e padrão profissional."
       },
       "tech": {
-        "title": "Tecnologia Bio-Advanced",
-        "desc": "Fórmulas exclusivas que unem ciência e natureza para resultados de salão em casa."
+        "title": "Qualidade de Produção",
+        "desc": "Processos pensados para entregar apresentação, performance e consistência em cada etapa."
       },
       "anvisa": {
-        "title": "Regulamentação ANVISA",
-        "desc": "Toda a nossa linha é rigorosamente testada e aprovada pelos órgãos competentes."
+        "title": "Estrutura Confiável",
+        "desc": "Uma operação preparada para atender projetos com mais organização, segurança e previsibilidade."
       },
       "intl": {
-        "title": "Presença Internacional",
-        "desc": "Exportamos para mais de 4 países, levando a qualidade brasileira para o mundo."
+        "title": "Experiência de Mercado",
+        "desc": "Tempo de mercado, maturidade e leitura comercial para apoiar decisões melhores."
       },
       "portfolio": {
-        "title": "+200 Produtos",
-        "desc": "Um portfólio completo para atender todas as necessidades de cuidados capilares."
+        "title": "Portfólio Estratégico",
+        "desc": "Categorias fortes para estruturar linhas com potencial de venda e bom posicionamento."
       },
       "premium": {
-        "title": "Premium Acessível",
-        "desc": "Alta performance profissional com excelente custo-benefício."
+        "title": "Parceria de Longo Prazo",
+        "desc": "Uma relação pensada para acompanhar o desenvolvimento do projeto com mais proximidade."
       }
     },
     "highlights": {
       "actives": {
-        "title": "Ativos de Alta Performance",
-        "desc": "Ingredientes selecionados globalmente."
+        "title": "Decisão com Clareza",
+        "desc": "Mais visão para definir o caminho certo."
       },
       "safety": {
-        "title": "Segurança e Eficácia",
-        "desc": "Testes rigorosos e controle de qualidade."
+        "title": "Qualidade e Segurança",
+        "desc": "Produção com mais controle e confiança."
       },
       "results": {
-        "title": "Beleza que Transforma",
-        "desc": "Resultados visíveis desde a primeira aplicação."
+        "title": "Resultado de Mercado",
+        "desc": "Linhas pensadas para performar comercialmente."
       },
       "innovation": {
-        "title": "Inovação Constante",
-        "desc": "Pesquisa e desenvolvimento contínuos."
+        "title": "Suporte Contínuo",
+        "desc": "Apoio para desenvolver com mais consistência."
       }
     }
   },
@@ -128,47 +137,82 @@
     "cta": "Conhecer a Linha Completa"
   },
   "PrivateLabel": {
-    "tagline": "PARA EMPREENDEDORES",
-    "title": "Private Label: Sua Marca de Cosméticos Começa Aqui",
-    "description": "Transforme sua visão em realidade com nossa infraestrutura de ponta. Oferecemos fabricação própria, desenvolvimento de fórmulas exclusivas e suporte completo para criar sua linha premium com a qualidade Diamante.",
+    "tagline": "Sua Ideia com Estrutura de Produção",
+    "title": "Fabricamos sua marca de cosméticos capilares",
+    "description": "A Diamante entra no projeto com base técnica, fabricação especializada e apoio ao desenvolvimento para transformar sua proposta em uma linha capilar consistente.",
     "features": {
-      "manufacturing": "Infraestrutura Completa",
-      "formulas": "Fórmulas Exclusivas",
-      "design": "Suporte em Design",
-      "quality": "Qualidade Certificada"
+      "manufacturing": "Fabricação Especializada",
+      "formulas": "Linhas com Identidade Própria",
+      "design": "Apoio ao Desenvolvimento",
+      "quality": "Qualidade em Cada Etapa"
     },
-    "cta": "Falar com um Consultor"
+    "cta": "Entender a terceirização"
+  },
+  "StructureServices": {
+    "tagline": "ESTRUTURA E SERVIÇOS",
+    "title": "Terceirize Sua Linha Capilar Conosco!",
+    "description": "Aqui, o foco é mostrar como a Diamante conduz o projeto no dia a dia, com processo, acompanhamento e suporte em cada etapa.",
+    "items": {
+      "development": {
+        "title": "Pesquisa e Desenvolvimento",
+        "desc": "Observamos tendências, categorias e oportunidades para orientar o desenvolvimento da linha."
+      },
+      "support": {
+        "title": "Apoio Técnico",
+        "desc": "Nossa equipe ajuda a tomar decisões com mais clareza, segurança e visão de produção."
+      },
+      "project": {
+        "title": "Assessoria de Projeto",
+        "desc": "Apoiamos a definição da linha, da proposta e do caminho mais viável para o projeto."
+      },
+      "quality": {
+        "title": "Controle de Qualidade",
+        "desc": "Controlar a qualidade em cada etapa é parte essencial da entrega e da confiança na marca."
+      },
+      "production": {
+        "title": "Produção com Estrutura",
+        "desc": "A produção é conduzida com processo, consistência e padrão profissional."
+      },
+      "commercial": {
+        "title": "Acompanhamento Comercial",
+        "desc": "O projeto avança com mais proximidade comercial e melhor leitura de necessidades."
+      }
+    }
   },
   "Impact": {
-    "title": "Nossa Presença em Números",
+    "title": "Números que Reforçam Nossa Credibilidade",
     "stats": {
       "products": {
         "value": "200",
         "label": "Produtos no Portfólio",
-        "suffix": "+"
+        "suffix": "+",
+        "description": "Opções para criar uma linha capilar completa."
       },
       "countries": {
-        "value": "4",
-        "label": "Países Alcançados",
-        "suffix": ""
+        "value": "15",
+        "label": "Anos de Experiência",
+        "suffix": "+",
+        "description": "Know-how para desenvolver marcas com segurança."
       },
       "clients": {
-        "value": "10",
-        "label": "Mil Clientes Atendidos",
-        "suffix": "k+"
+        "value": "100",
+        "label": "Fabricação Própria",
+        "suffix": "%",
+        "description": "Controle interno da produção e qualidade em cada etapa."
       },
       "years": {
-        "value": "12",
-        "label": "Anos de Experiência",
-        "suffix": "+"
+        "value": "4",
+        "label": "Categorias Estratégicas em Destaque",
+        "suffix": "",
+        "description": "Linhas pensadas para diferentes posicionamentos e mercados."
       }
     }
   },
   "FinalCTA": {
-    "title": "Pronto para Transformar sua Experiência?",
-    "description": "Seja você um profissional em busca da melhor performance ou um empreendedor querendo sua própria marca, a Diamante é o seu próximo passo.",
-    "ctaShop": "Ir para Loja Online",
-    "ctaBusiness": "Seja um Parceiro"
+    "title": "Realize Seu Sonho de Ter Sua Própria Marca",
+    "description": "Fale com a Diamante e dê o próximo passo para iniciar seu projeto com mais clareza comercial e suporte de produção.",
+    "ctaPrimary": "Quero lançar minha marca",
+    "ctaSecondary": "Falar com a Diamante"
   },
   "About": {
     "Hero": {
@@ -185,13 +229,8 @@
     },
     "Laboratory": {
       "tagline": "ESTRUTURA",
-      "title": "Fábrica Própria, Loja Modelo e Operação Nacional",
-      "description": "A sede da Diamante Profissional, nossa fábrica e a loja modelo estão localizadas em Amparo/SP. Essa estrutura própria nos permite controlar produção, padrão de qualidade e logística com mais consistência, atendendo clientes em todo o Brasil.",
-      "stats": {
-        "production": "+200 produtos em portfólio",
-        "quality": "empresa ativa desde 05/2010",
-        "tech": "entregas para todo o Brasil"
-      }
+      "title": "Realizando Sonhos Há Mais de 15 Anos",
+      "description": "A sede da Diamante Profissional, nossa fábrica e a loja modelo estão localizadas em Amparo/SP. Esse bloco institucional existe para apresentar a base da empresa, sua trajetória e a estrutura que sustenta a operação."
     },
     "Values": {
       "tagline": "NOSSOS PILARES",
@@ -282,44 +321,44 @@
       "title": "Por que terceirizar com a Diamante?",
       "items": {
         "profit": {
-          "title": "Alta Lucratividade",
-          "desc": "Aumente as margens de lucro do seu salão ou distribuidora vendendo produtos com a sua própria marca."
+          "title": "Mais Margem por Produto",
+          "desc": "Com a sua própria marca, você define o preço e constrói margem real, sem depender de tabelas e intermediários."
         },
         "quality": {
-          "title": "Fórmulas Validadas",
-          "desc": "Acesso ao nosso laboratório premium e fórmulas que já são sucesso no mercado profissional."
+          "title": "Desenvolvimento Técnico de Fórmulas",
+          "desc": "Cada projeto é desenvolvido com base técnica, seleção de ativos e foco em performance real para a proposta da marca."
         },
         "support": {
-          "title": "Suporte Regulatório",
-          "desc": "Cuidamos de toda a burocracia técnica, incluindo registros na ANVISA e adequações legais."
+          "title": "Envase Técnico e Acabamento",
+          "desc": "O envase é conduzido com precisão industrial para garantir consistência de produção e uma apresentação alinhada à sua marca."
         }
       }
     },
     "Process": {
-      "title": "Como Funciona",
+      "title": "Do Sonho ao Lançamento da Sua Marca",
       "steps": {
         "1": {
-          "title": "Diagnóstico & Escolha",
-          "desc": "Definição do mix de produtos e testes das fórmulas em nosso laboratório."
+          "title": "Você apresenta sua ideia",
+          "desc": "Entendemos seu projeto, o posicionamento desejado e o tipo de linha que faz sentido para a sua marca."
         },
         "2": {
-          "title": "Design & Rótulo",
-          "desc": "Nossa equipe ajuda a personalizar as embalagens com a identidade da sua marca."
+          "title": "Definimos a linha ideal",
+          "desc": "Selecionamos as melhores categorias e caminhos para transformar sua visão em uma proposta concreta."
         },
         "3": {
-          "title": "Produção & ANVISA",
-          "desc": "Fabricação em larga escala seguindo rígidos padrões de qualidade e registros."
+          "title": "Estruturamos a produção",
+          "desc": "Organizamos desenvolvimento, apresentação e fabricação com foco em qualidade e consistência."
         },
         "4": {
-          "title": "Pronto para Venda",
-          "desc": "Você recebe os produtos finalizados, prontos para encantar seus clientes."
+          "title": "Sua marca ganha forma",
+          "desc": "Você avança com mais segurança para lançar uma linha pronta para encantar e vender."
         }
       }
     },
     "CTA": {
       "title": "Pronto para Dar o Próximo Passo?",
       "subtitle": "Fale com um consultor comercial e descubra como é fácil lançar a sua marca.",
-      "button": "Falar com Consultor via WhatsApp"
+      "button": "Falar com Consultor"
     }
   },
   "Footer": {
