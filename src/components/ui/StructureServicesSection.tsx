@@ -12,7 +12,8 @@ if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-const serviceKeys = ['development', 'support', 'project', 'quality', 'production', 'commercial'] as const;
+const serviceKeys = ['development', 'manufacturing', 'filling', 'regulatory', 'design'] as const;
+const highlightKeys = ['exclusive', 'performance', 'speed', 'support', 'flexibility'] as const;
 
 export function StructureServicesSection() {
   const t = useTranslations('StructureServices');
@@ -51,7 +52,7 @@ export function StructureServicesSection() {
   }, { scope: sectionRef });
 
   return (
-    <section className={styles.section} ref={sectionRef}>
+    <section id="services" className={styles.section} ref={sectionRef}>
       <Container>
         <div className={`${styles.header} structure-header`}>
           <span className={styles.tagline}>{t('tagline')}</span>
@@ -69,6 +70,21 @@ export function StructureServicesSection() {
                 </div>
                 <h3 className={styles.cardTitle}>{t(`items.${key}.title`)}</h3>
                 <p className={styles.cardDescription}>{t(`items.${key}.desc`)}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        <div className={styles.highlightBlock}>
+          <div className={styles.highlightHeader}>
+            <span className={styles.highlightLabel}>{t('highlightsLabel')}</span>
+          </div>
+
+          <div className={styles.highlightGrid}>
+            {highlightKeys.map((key) => (
+              <article key={key} className={styles.highlightCard}>
+                <h3 className={styles.highlightTitle}>{t(`highlights.${key}.title`)}</h3>
+                <p className={styles.highlightDescription}>{t(`highlights.${key}.desc`)}</p>
               </article>
             ))}
           </div>

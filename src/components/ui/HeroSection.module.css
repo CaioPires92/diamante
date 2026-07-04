@@ -128,6 +128,8 @@
 .highlight {
   color: var(--color-gold);
   font-style: italic;
+  display: inline-block;
+  white-space: nowrap;
 }
 
 .subtitle {
@@ -137,6 +139,11 @@
   max-width: 470px;
   margin-bottom: var(--space-5);
   line-height: var(--leading-relaxed);
+}
+
+.subtitleHighlight {
+  color: var(--color-gold);
+  font-weight: 700;
 }
 
 .actions {

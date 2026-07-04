@@ -68,7 +68,7 @@ export function InstitutionalProofSection() {
   }, { scope: sectionRef });
 
   return (
-    <section className={styles.section} ref={sectionRef}>
+    <section id="certifications" className={styles.section} ref={sectionRef}>
       <Container>
         <div className={styles.layout}>
           <div className={`${styles.content} inst-header`}>

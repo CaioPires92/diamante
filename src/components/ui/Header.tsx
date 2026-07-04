@@ -18,10 +18,14 @@ export function Header({ locale, lines = [] }: { locale: string; lines?: { name:
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isInstitucionalOpen, setIsInstitucionalOpen] = useState(false);
+  const [isCategoriesOpen, setIsCategoriesOpen] = useState(false);
   const showCommerceActions = false;
   const menuRef = useRef<HTMLDivElement>(null);
   const navLinksRef = useRef<HTMLDivElement>(null);
+  const homeHref = `/${locale}`;
+  const servicesHref = `/${locale}/#services`;
+  const categoriesHref = `/${locale}/#products`;
+  const certificationsHref = `/${locale}/#certifications`;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -163,14 +167,20 @@ export function Header({ locale, lines = [] }: { locale: string; lines?: { name:
 
         {/* Centro: Menu */}
         <nav className={styles.nav}>
+          <Link href={homeHref} className={styles.navLink}>{t('home')}</Link>
+          <Link href={`/${locale}/about`} className={styles.navLink}>{t('about')}</Link>
+          <Link href={servicesHref} className={styles.navLink}>{t('services')}</Link>
           <div className={styles.dropdownContainer}>
             <button className={`${styles.navLink} ${styles.dropdownToggle}`}>
-              LINHAS
+              {t('categories')}
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: '4px' }}>
                 <polyline points="6 9 12 15 18 9"></polyline>
               </svg>
             </button>
             <div className={styles.dropdownMenu} data-lenis-prevent>
+              <Link href={categoriesHref} className={styles.dropdownItem}>
+                {t('allCategories')}
+              </Link>
               {lines.map((line) => (
                 <Link key={line.slug} href={`/${locale}/lines/${line.slug}`} className={styles.dropdownItem}>
                   {line.name}
@@ -178,10 +188,9 @@ export function Header({ locale, lines = [] }: { locale: string; lines?: { name:
               ))}
             </div>
           </div>
-          <Link href={`/${locale}/distributor`} className={styles.navLink}>SEJA UM DISTRIBUIDOR</Link>
-          <Link href={`/${locale}/private-label`} className={styles.navLink}>PRIVATE LABEL</Link>
-          <Link href={`/${locale}/about`} className={styles.navLink}>SOBRE NÓS</Link>
-          <Link href={`/${locale}/contact`} className={styles.navLink}>CONTATO</Link>
+          <Link href={`/${locale}/distributor`} className={styles.navLink}>{t('distributor')}</Link>
+          <Link href={certificationsHref} className={styles.navLink}>{t('certifications')}</Link>
+          <Link href={`/${locale}/contact`} className={styles.navLink}>{t('contact')}</Link>
         </nav>
 
         {/* Lado Direito: Ações */}
@@ -236,19 +245,25 @@ export function Header({ locale, lines = [] }: { locale: string; lines?: { name:
       <div className={`${styles.mobileMenu} ${isMenuOpen ? styles.mobileMenuOpen : ''}`} ref={menuRef}>
         <Container className={styles.mobileMenuContainer}>
           <div className={styles.mobileNav} ref={navLinksRef}>
-            <Link href={`/${locale}/products`} className={styles.mobileNavLink} onClick={() => setIsMenuOpen(false)}>
-              {t('products')}
+            <Link href={homeHref} className={styles.mobileNavLink} onClick={() => setIsMenuOpen(false)}>
+              {t('home')}
+            </Link>
+            <Link href={`/${locale}/about`} className={styles.mobileNavLink} onClick={() => setIsMenuOpen(false)}>
+              {t('about')}
+            </Link>
+            <Link href={servicesHref} className={styles.mobileNavLink} onClick={() => setIsMenuOpen(false)}>
+              {t('services')}
             </Link>
             <div className={styles.mobileCollapseContainer}>
               <button 
                 className={styles.mobileNavLink} 
-                onClick={() => setIsInstitucionalOpen(!isInstitucionalOpen)}
+                onClick={() => setIsCategoriesOpen(!isCategoriesOpen)}
                 style={{ display: 'flex', alignItems: 'center', gap: '8px', border: 'none', background: 'none', padding: 0, cursor: 'pointer' }}
               >
-                Institucional
+                {t('categories')}
                 <svg 
                   width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" 
-                  style={{ transform: isInstitucionalOpen ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s ease' }}
+                  style={{ transform: isCategoriesOpen ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s ease' }}
                 >
                   <polyline points="6 9 12 15 18 9"></polyline>
                 </svg>
@@ -257,27 +272,32 @@ export function Header({ locale, lines = [] }: { locale: string; lines?: { name:
               <div 
                 className={styles.mobileCollapseContent}
                 style={{ 
-                  maxHeight: isInstitucionalOpen ? '500px' : '0px', 
-                  opacity: isInstitucionalOpen ? 1 : 0,
-                  pointerEvents: isInstitucionalOpen ? 'all' : 'none'
+                  maxHeight: isCategoriesOpen ? '500px' : '0px', 
+                  opacity: isCategoriesOpen ? 1 : 0,
+                  pointerEvents: isCategoriesOpen ? 'all' : 'none'
                 }}
               >
                 <div className={styles.mobileCollapseInner}>
-                  <Link href={`/${locale}/about`} className={styles.mobileSubNavLink} onClick={() => setIsMenuOpen(false)}>
-                    {t('about')}
+                  <Link href={categoriesHref} className={styles.mobileSubNavLink} onClick={() => setIsMenuOpen(false)}>
+                    {t('allCategories')}
                   </Link>
-                  <Link href={`/${locale}/private-label`} className={styles.mobileSubNavLink} onClick={() => setIsMenuOpen(false)}>
-                    {t('privateLabel')}
-                  </Link>
-                  <Link href={`/${locale}/contact`} className={styles.mobileSubNavLink} onClick={() => setIsMenuOpen(false)}>
-                    {t('contact')}
-                  </Link>
-                  <Link href={`/${locale}/distributor`} className={styles.mobileSubNavLink} onClick={() => setIsMenuOpen(false)}>
-                    Seja Distribuidor
-                  </Link>
+                  {lines.map((line) => (
+                    <Link key={line.slug} href={`/${locale}/lines/${line.slug}`} className={styles.mobileSubNavLink} onClick={() => setIsMenuOpen(false)}>
+                      {line.name}
+                    </Link>
+                  ))}
                 </div>
               </div>
             </div>
+            <Link href={`/${locale}/distributor`} className={styles.mobileNavLink} onClick={() => setIsMenuOpen(false)}>
+              {t('distributor')}
+            </Link>
+            <Link href={certificationsHref} className={styles.mobileNavLink} onClick={() => setIsMenuOpen(false)}>
+              {t('certifications')}
+            </Link>
+            <Link href={`/${locale}/contact`} className={styles.mobileNavLink} onClick={() => setIsMenuOpen(false)}>
+              {t('contact')}
+            </Link>
             
             <div className={styles.mobileActions}>
             </div>

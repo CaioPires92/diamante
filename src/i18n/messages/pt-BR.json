@@ -1,11 +1,11 @@
 {
   "Home": {
     "eyebrow": "PRIVATE LABEL CAPILAR",
-    "title": "SEJA SEU PRÓPRIO CHEFE,\nLANCE SUA MARCA DE\n<highlight>COSMÉTICOS CONOSCO.</highlight>",
-    "subtitle": "Da ideia ao produto final, a Diamante oferece <strong>fabricação própria</strong> e suporte para transformar seu projeto em uma linha capilar pronta para o mercado.",
+    "title": "SEU SONHO MERECE UMA\n<highlight>FÁBRICA À ALTURA.</highlight>",
+    "subtitle": "Transformamos sua ideia em uma marca de cosméticos com <highlight>excelência, inovação e qualidade</highlight> em cada etapa da produção.",
     "primaryCta": "Quero criar minha marca",
     "secondaryCta": "Falar com um especialista",
-    "whatsAppCta": "Quero lançar minha marca",
+    "whatsAppCta": "Falar no WhatsApp",
     "viewCollection": "Conhecer a linha profissional",
     "badges": {
       "manufacturing": "FABRICAÇÃO PRÓPRIA",
@@ -21,9 +21,13 @@
     "whatsapp": "Fale pelo WhatsApp"
   },
   "Header": {
-    "products": "Produtos",
-    "about": "Sobre Nós",
-    "privateLabel": "Private Label",
+    "home": "Início",
+    "about": "Quem Somos",
+    "services": "Serviços",
+    "categories": "Categorias de Produtos",
+    "allCategories": "Ver todas as categorias",
+    "distributor": "Seja um Distribuidor",
+    "certifications": "Certificações",
     "contact": "Contato"
   },
   "Products": {
@@ -151,31 +155,50 @@
   "StructureServices": {
     "tagline": "ESTRUTURA E SERVIÇOS",
     "title": "Terceirize Sua Linha Capilar Conosco!",
-    "description": "Aqui, o foco é mostrar como a Diamante conduz o projeto no dia a dia, com processo, acompanhamento e suporte em cada etapa.",
+    "description": "Desenvolvemos fórmulas, fabricamos, envasamos e apoiamos o projeto para transformar sua ideia em uma linha pronta para venda com mais clareza e segurança.",
+    "highlightsLabel": "Destaques da Operação",
     "items": {
       "development": {
-        "title": "Pesquisa e Desenvolvimento",
-        "desc": "Observamos tendências, categorias e oportunidades para orientar o desenvolvimento da linha."
+        "title": "Desenvolvimento de Fórmula",
+        "desc": "Criamos formulações alinhadas à proposta da sua marca, ao posicionamento da linha e ao tipo de produto desejado."
+      },
+      "manufacturing": {
+        "title": "Fabricação",
+        "desc": "A produção é conduzida com estrutura própria, processo industrial e controle para manter consistência em cada lote."
+      },
+      "filling": {
+        "title": "Envase",
+        "desc": "O envase é realizado com padrão técnico e acabamento pensado para entregar um produto pronto para comercialização."
+      },
+      "regulatory": {
+        "title": "Suporte Regulatório",
+        "desc": "Orientamos as etapas regulatórias do projeto para que a linha avance com mais segurança documental e técnica."
+      },
+      "design": {
+        "title": "Design e Apresentação",
+        "desc": "Apoiamos a construção visual da linha para que a apresentação acompanhe o posicionamento e a proposta da marca."
+      }
+    },
+    "highlights": {
+      "exclusive": {
+        "title": "Fórmulas Exclusivas",
+        "desc": "Projetos pensados para dar identidade própria à linha."
+      },
+      "performance": {
+        "title": "Alta Performance",
+        "desc": "Produtos desenvolvidos com foco em resultado e percepção de qualidade."
+      },
+      "speed": {
+        "title": "Rapidez na Entrega",
+        "desc": "Fluxo produtivo estruturado para avançar o projeto com mais agilidade."
       },
       "support": {
-        "title": "Apoio Técnico",
-        "desc": "Nossa equipe ajuda a tomar decisões com mais clareza, segurança e visão de produção."
+        "title": "Suporte Regulatório",
+        "desc": "Mais segurança para conduzir as exigências do projeto com orientação técnica."
       },
-      "project": {
-        "title": "Assessoria de Projeto",
-        "desc": "Apoiamos a definição da linha, da proposta e do caminho mais viável para o projeto."
-      },
-      "quality": {
-        "title": "Controle de Qualidade",
-        "desc": "Controlar a qualidade em cada etapa é parte essencial da entrega e da confiança na marca."
-      },
-      "production": {
-        "title": "Produção com Estrutura",
-        "desc": "A produção é conduzida com processo, consistência e padrão profissional."
-      },
-      "commercial": {
-        "title": "Acompanhamento Comercial",
-        "desc": "O projeto avança com mais proximidade comercial e melhor leitura de necessidades."
+      "flexibility": {
+        "title": "Flexibilidade de Produção",
+        "desc": "Estrutura preparada para atender diferentes propostas e composições de linha."
       }
     }
   },

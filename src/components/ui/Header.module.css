@@ -73,7 +73,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 40px;
+  padding: 0 24px;
 }
 
 .logoWrapper {
@@ -124,18 +124,21 @@
 
 .nav {
   display: flex;
-  gap: 32px;
+  gap: clamp(14px, 1.4vw, 24px);
   align-items: center;
+  flex: 1;
+  justify-content: center;
+  min-width: 0;
 }
 
 .navLink {
   font-family: var(--font-inter);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
   color: #3d3733;
   text-decoration: none;
   transition: all 0.3s ease;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   white-space: nowrap;
   display: flex;
@@ -228,7 +231,31 @@
   justify-self: end;
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.logoWrapper {
+  flex-shrink: 0;
+}
+
+@media (max-width: 1380px) {
+  .headerContainer {
+    padding: 0 18px;
+  }
+
+  .nav {
+    gap: 14px;
+  }
+
+  .navLink {
+    font-size: 10px;
+    letter-spacing: 0.06em;
+  }
+
+  .logoTextMain {
+    font-size: 1.62rem;
+  }
 }
 
 .cta {
@@ -643,4 +670,3 @@
 .darkHeader .hamburger span {
   background-color: #FAFAF8 !important;
 }
-

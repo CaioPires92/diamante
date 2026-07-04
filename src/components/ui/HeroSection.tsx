@@ -72,7 +72,8 @@ export function HeroSection() {
 
           <p className={`${styles.subtitle} anim-item`}>
             {t.rich('subtitle', {
-              strong: (chunks) => <strong>{chunks}</strong>
+              strong: (chunks) => <strong>{chunks}</strong>,
+              highlight: (chunks) => <span className={styles.subtitleHighlight}>{chunks}</span>
             })}
           </p>
 
