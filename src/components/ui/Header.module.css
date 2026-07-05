@@ -652,13 +652,8 @@
   color: #FAFAF8 !important;
 }
 
-.darkHeader .lang {
+.darkHeader .langToggle {
   color: #FAFAF8 !important;
-}
-
-.darkHeader .langWrapper {
-  border-color: rgba(255, 255, 255, 0.18) !important;
-  background: transparent !important;
 }
 
 .darkHeader .cta {

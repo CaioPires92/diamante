@@ -46,9 +46,9 @@ export function HeroSection() {
   return (
     <section className={styles.hero} ref={sectionRef}>
       <div className={styles.background}>
-        <Image 
-          src="/imgs/hero_v1.png" 
-          alt="Diamante Background" 
+        <Image
+          src="/imgs/hero_v1.new.png"
+          alt="Diamante Background"
           width={1920}
           height={1080}
           priority
@@ -62,13 +62,15 @@ export function HeroSection() {
 
       <Container className={styles.content}>
         <div ref={contentRef} className={styles.textContent}>
-          <span className={`${styles.eyebrow} anim-item`}>{t('eyebrow')}</span>
-
           <h1 className={`${styles.title} anim-item`}>
             {t.rich('title', {
               highlight: (chunks) => <span className={styles.highlight}>{chunks}</span>
             })}
           </h1>
+
+          <div className={`${styles.glowDivider} anim-item`} aria-hidden="true">
+            <span className={styles.glowDividerSpark} />
+          </div>
 
           <p className={`${styles.subtitle} anim-item`}>
             {t.rich('subtitle', {
@@ -84,8 +86,8 @@ export function HeroSection() {
               rel="noopener noreferrer"
               style={{ textDecoration: 'none' }}
             >
-              <Button 
-                variant="primary" 
+              <Button
+                variant="primary"
                 className={styles.buyButton}
                 onMouseEnter={(e) => {
                   const target = e.currentTarget;
@@ -102,7 +104,7 @@ export function HeroSection() {
                 <div className={styles.shimmer} />
                 <span>{t('whatsAppCta')}</span>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={styles.arrowIcon}>
-                  <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+                  <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
                 </svg>
               </Button>
             </a>
@@ -110,37 +112,48 @@ export function HeroSection() {
 
           <div className={`${styles.trustBadges} anim-item`}>
             <div className={styles.badgeItem}>
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={styles.badgeIcon}>
-                <path d="M3.85 8.62a4 4 0 0 1 4.77-4.77 4 4 0 0 1 6.76 0 4 4 0 0 1 4.77 4.77 4 4 0 0 1 0 6.76 4 4 0 0 1-4.77 4.77 4 4 0 0 1-6.76 0 4 4 0 0 1-4.77-4.77 4 4 0 0 1 0-6.76Z" />
-                <path d="m9 12 2 2 4-4" />
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" className={styles.badgeIcon}>
+                <path d="M10 2v8L4.5 20.29A1 1 0 0 0 5.4 21.7h13.2a1 1 0 0 0 .9-1.41L14 10V2" />
+                <path d="M8.5 2h7" />
+              </svg>
+              <span>{t('badges.development')}</span>
+            </div>
+            <div className={styles.badgeDivider} />
+            <div className={styles.badgeItem}>
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" className={styles.badgeIcon}>
+                <path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z" />
+                <path d="M17 18h1" />
+                <path d="M12 18h1" />
+                <path d="M7 18h1" />
               </svg>
               <span>{t('badges.manufacturing')}</span>
             </div>
             <div className={styles.badgeDivider} />
             <div className={styles.badgeItem}>
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={styles.badgeIcon}>
-                <path d="M10 2v8L4.5 20.29A1 1 0 0 0 5.4 21.7h13.2a1 1 0 0 0 .9-1.41L14 10V2" />
-                <path d="M8.5 2h7" />
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" className={styles.badgeIcon}>
+                <path d="m7.5 4.27 9 5.15" />
+                <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z" />
+                <path d="m3.3 7 8.7 5 8.7-5" />
+                <path d="M12 22V12" />
               </svg>
-              <span>{t('badges.exclusive')}</span>
+              <span>{t('badges.filling')}</span>
             </div>
             <div className={styles.badgeDivider} />
             <div className={styles.badgeItem}>
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" className={styles.badgeIcon}>
-                <path d="M6 3h12l4 6-10 13L2 9Z"/>
-                <path d="M11 3 8 9l4 13"/>
-                <path d="M13 3l3 6-4 13"/>
-                <path d="M2 9h20"/>
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <path d="m9 12 2 2 4-4" />
               </svg>
               <span>{t('badges.quality')}</span>
             </div>
             <div className={styles.badgeDivider} />
             <div className={styles.badgeItem}>
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" className={styles.badgeIcon}>
-                <path d="M11 15h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 17" />
-                <path d="m7 21 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-5.4a2 2 0 0 0-2.8-2.8L15 13" />
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <path d="M14 2v6h6" />
+                <path d="m9 15 2 2 4-4" />
               </svg>
-              <span>{t('badges.price')}</span>
+              <span>{t('badges.regulatory')}</span>
             </div>
           </div>
         </div>

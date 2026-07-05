@@ -2,16 +2,17 @@
   "Home": {
     "eyebrow": "PRIVATE LABEL CAPILAR",
     "title": "SEU SONHO MERECE UMA\n<highlight>FÁBRICA À ALTURA.</highlight>",
-    "subtitle": "Transformamos sua ideia em uma marca de cosméticos com <highlight>excelência, inovação e qualidade</highlight> em cada etapa da produção.",
+    "subtitle": "Transformamos sua ideia em\numa marca de cosméticos com\n<highlight>excelência,inovação e qualidade</highlight>\nem cada etapa da produção.",
     "primaryCta": "Quero criar minha marca",
     "secondaryCta": "Falar com um especialista",
     "whatsAppCta": "Falar no WhatsApp",
     "viewCollection": "Conhecer a linha profissional",
     "badges": {
-      "manufacturing": "FABRICAÇÃO PRÓPRIA",
-      "exclusive": "PRIVATE LABEL CAPILAR",
-      "quality": "QUALIDADE PROFISSIONAL",
-      "price": "15+ ANOS DE EXPERIÊNCIA"
+      "development": "DESENVOLVIMENTO DE FÓRMULAS",
+      "manufacturing": "FABRICAÇÃO COM TECNOLOGIA AVANÇADA",
+      "filling": "ENVASE E EMBALAGEM",
+      "quality": "QUALIDADE E SEGURANÇA",
+      "regulatory": "SUPORTE REGULATÓRIO E DOCUMENTAÇÃO"
     }
   },
   "Common": {
@@ -397,6 +398,7 @@
       "support": {
         "title": "Suporte",
         "privacy": "Política de Privacidade",
+        "terms": "Termos de Uso",
         "payment": "Formas de Pagamento",
         "shipping": "Políticas de Envio",
         "returns": "Trocas e Devoluções"
@@ -406,7 +408,16 @@
       "title": "Fale Conosco",
       "address": "Rua Treze de Maio, 17 Centro – Amparo/SP",
       "email": "contato@diamanteprofissional.com.br",
-      "phone": "(19) 3817-6156"
+      "phone": "(19) 3817-6156",
+      "instagram": "@diamante.profissional",
+      "linkedin": "LinkedIn Diamante",
+      "labels": {
+        "whatsapp": "WhatsApp",
+        "email": "E-mail",
+        "location": "Localização",
+        "instagram": "Instagram",
+        "linkedin": "LinkedIn"
+      }
     },
     "rights": "© {year} Diamante Profissional. Todos os direitos reservados."
   },
@@ -426,6 +437,10 @@
     "Privacy": {
       "title": "Política de Privacidade",
       "content": "A sua privacidade é importante para nós. É política da Diamante Profissional respeitar a sua privacidade em relação a qualquer informação sua que possamos coletar no site e em outros canais que operamos.\n\nSolicitamos informações pessoais apenas quando realmente precisamos delas para fornecer um serviço. Isso é feito por meios justos e legais, com conhecimento e consentimento do usuário. Também informamos por que estamos coletando os dados e como eles serão utilizados.\n\nRetemos as informações coletadas apenas pelo tempo necessário para fornecer o serviço solicitado. Quando armazenamos dados, protegemos essas informações dentro de meios comercialmente aceitáveis para evitar perdas, roubos, acesso, divulgação, cópia, uso ou modificação não autorizados.\n\nNão compartilhamos informações de identificação pessoal publicamente ou com terceiros, exceto quando exigido por lei.\n\nNosso site pode ter links para sites externos que não são operados por nós. Não temos controle sobre o conteúdo e as práticas desses sites e não podemos aceitar responsabilidade por suas respectivas políticas de privacidade.\n\nO usuário é livre para recusar a solicitação de informações pessoais, entendendo que talvez não possamos fornecer alguns dos serviços desejados.\n\nO uso continuado do site será considerado como aceitação de nossas práticas em torno de privacidade e informações pessoais. Se houver dúvidas sobre como lidamos com dados do usuário e informações pessoais, o contato pode ser feito diretamente com a Diamante Profissional.\n\nCOMPROMISSO DO USUÁRIO\n\nO usuário se compromete a fazer uso adequado dos conteúdos e das informações oferecidas no site, incluindo não se envolver em atividades ilegais, não difundir conteúdo ilícito e não causar danos aos sistemas da empresa, fornecedores ou terceiros.\n\nEsta política de privacidade é apresentada como referência institucional de como tratamos dados, navegação e relacionamento digital no ambiente da marca."
+    },
+    "Terms": {
+      "title": "Termos de Uso",
+      "content": "Esta pagina reune os termos gerais de uso do ambiente digital da Diamante Profissional.\n\nNo momento, este conteudo institucional esta em atualizacao para consolidar as regras de navegacao, uso de formularios, relacionamento comercial e demais condicoes aplicaveis ao site.\n\nEm caso de duvidas sobre uso do site, atendimento, privacidade ou relacionamento comercial, entre em contato com a nossa equipe pelos canais oficiais apresentados na pagina de Contato."
     }
   }
 }

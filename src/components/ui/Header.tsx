@@ -108,7 +108,8 @@ export function Header({ locale, lines = [] }: { locale: string; lines?: { name:
     '/terceirizacao-de-comesticos-private-label',
     '/terceirizacao-de-cosmeticos-private-label'
   ];
-  const isDarkPage = darkPageSegments.some((segment) => pathname?.includes(segment));
+  const isHomePage = pathname === `/${locale}` || pathname === `/${locale}/` || pathname === '/';
+  const isDarkPage = isHomePage || darkPageSegments.some((segment) => pathname?.includes(segment));
 
   return (
     <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''} ${isDarkPage && !isScrolled ? styles.darkHeader : ''}`} ref={headerRef}>
