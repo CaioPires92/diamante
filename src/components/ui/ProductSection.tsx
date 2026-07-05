@@ -1,14 +1,12 @@
 'use client';
 
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import { useTranslations } from 'next-intl';
-import { FeatureCard } from './FeatureCard';
 import { Section } from './Section';
-import { SectionHeader } from './SectionHeader';
 import styles from './ProductSection.module.css';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
@@ -32,29 +30,54 @@ const categories = [
   },
 ] as const;
 
-const categoryKeys = ['creams', 'shampoos', 'serums', 'makeup'] as const;
-
 export function ProductSection() {
   const t = useTranslations('Products');
   const sectionRef = useRef<HTMLElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setActiveIndex((current) => (current + 1) % categories.length);
+    }, 3500);
+
+    return () => window.clearInterval(interval);
+  }, []);
 
   useGSAP((context) => {
-    const cards = context.selector?.(`.${styles.cardWrapper}`);
+    const products = context.selector?.(`.${styles.productItem}`);
+    const visual = context.selector?.(`.${styles.visualPanel}`);
 
-    if (cards) {
-      gsap.fromTo(cards, {
-        y: 60,
+    if (products) {
+      gsap.fromTo(products, {
+        x: -30,
         opacity: 0,
       }, {
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: 'top 75%',
+          start: 'top 78%',
           once: true,
         },
-        y: 0,
+        x: 0,
+        opacity: 1,
+        duration: 0.9,
+        stagger: 0.12,
+        ease: 'power3.out'
+      });
+    }
+
+    if (visual) {
+      gsap.fromTo(visual, {
+        x: 34,
+        opacity: 0,
+      }, {
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top 76%',
+          once: true,
+        },
+        x: 0,
         opacity: 1,
         duration: 1,
-        stagger: 0.12,
         ease: 'power3.out'
       });
     }
@@ -78,54 +101,62 @@ export function ProductSection() {
     <Section id="products" className={styles.section} ref={sectionRef}>
       <div className={styles.glow} />
 
-      <SectionHeader
-        title={t('title')}
-        description={t('subtitle')}
-        className={`prod-header ${styles.header}`}
-      />
+      <div className={styles.layout}>
+        <div className={`${styles.contentPanel} prod-header`}>
+          <h2 className={styles.title}>{t('title')}</h2>
+          <ul className={styles.productList}>
+            {categories.map((category, index) => (
+              <li key={category.id}>
+                <button
+                  type="button"
+                  className={`${styles.productItem} ${index === activeIndex ? styles.productItemActive : ''}`}
+                  onClick={() => setActiveIndex(index)}
+                >
+                  <span className={styles.productIndex}>{String(index + 1).padStart(2, '0')}</span>
+                  <span className={styles.productName}>{t(`items.${category.id}.name`)}</span>
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
 
-      <div className={`${styles.grid} prod-grid`}>
-        {categories.map((category) => (
-          <div key={category.id} className={styles.cardWrapper}>
-            <article className={styles.card}>
-              <div className={styles.imageWrap}>
-                <Image
-                  src={category.image}
-                  alt={t(`items.${category.id}.name`)}
-                  fill
-                  className={styles.image}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                />
+        <div className={styles.visualPanel}>
+          <div className={styles.visualFrame}>
+            {categories.map((category, index) => (
+              <div
+                key={category.id}
+                className={`${styles.slide} ${index === activeIndex ? styles.slideActive : ''}`}
+                aria-hidden={index !== activeIndex}
+              >
+                <div className={styles.imageWrap}>
+                  <Image
+                    src={category.image}
+                    alt={t(`items.${category.id}.name`)}
+                    fill
+                    className={styles.image}
+                    sizes="(max-width: 1024px) 100vw, 40vw"
+                  />
+                </div>
               </div>
-              <div className={styles.cardContent}>
-                <span className={styles.cardLabel}>{t('cardLabel')}</span>
-                <h3 className={styles.cardTitle}>{t(`items.${category.id}.name`)}</h3>
-                <p className={styles.cardDescription}>{t(`items.${category.id}.desc`)}</p>
-              </div>
-            </article>
+            ))}
           </div>
-        ))}
+
+          <div className={styles.carouselDots}>
+            {categories.map((category, index) => (
+              <button
+                key={category.id}
+                type="button"
+                className={`${styles.dot} ${index === activeIndex ? styles.dotActive : ''}`}
+                onClick={() => setActiveIndex(index)}
+                aria-label={t(`items.${category.id}.name`)}
+              />
+            ))}
+          </div>
+        </div>
       </div>
 
-      <div className={styles.categoryPanel}>
-        <SectionHeader
-          eyebrow={t('categories.eyebrow')}
-          title={t('categories.title')}
-          description={t('categories.subtitle')}
-          className={styles.categoryHeader}
-        />
-
-        <div className={styles.categoryGrid}>
-          {categoryKeys.map((key) => (
-            <FeatureCard
-              key={key}
-              variant="compact"
-              className={styles.categoryCard}
-              title={t(`categories.items.${key}.name`)}
-              description={t(`categories.items.${key}.desc`)}
-            />
-          ))}
-        </div>
+      <div className={styles.highlightLine}>
+        <p className={styles.highlightText}>{t('highlight')}</p>
       </div>
     </Section>
   );

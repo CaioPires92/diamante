@@ -7,6 +7,7 @@ import { PrivateLabelProcess } from '@/components/ui/privatelabel/PrivateLabelPr
 import { StructureServicesSection } from '@/components/ui/StructureServicesSection';
 import { InstitutionalProofSection } from '@/components/ui/InstitutionalProofSection';
 import { QualityComplianceSection } from '@/components/ui/QualityComplianceSection';
+import { DreamsBannerSection } from '@/components/ui/DreamsBannerSection';
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <ImpactNumbers />
       <PrivateLabelTeaser />
       <ProductSection />
+      <DreamsBannerSection />
       <StructureServicesSection />
       <QualityComplianceSection />
       <InstitutionalProofSection />
