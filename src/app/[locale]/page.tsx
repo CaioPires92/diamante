@@ -6,6 +6,7 @@ import { FinalCTA } from '@/components/ui/FinalCTA';
 import { PrivateLabelProcess } from '@/components/ui/privatelabel/PrivateLabelProcess';
 import { StructureServicesSection } from '@/components/ui/StructureServicesSection';
 import { InstitutionalProofSection } from '@/components/ui/InstitutionalProofSection';
+import { QualityComplianceSection } from '@/components/ui/QualityComplianceSection';
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <PrivateLabelTeaser />
       <ProductSection />
       <StructureServicesSection />
+      <QualityComplianceSection />
       <InstitutionalProofSection />
       <PrivateLabelProcess />
       <FinalCTA />

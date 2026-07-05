@@ -30,6 +30,8 @@ const categories = [
   },
 ] as const;
 
+const categoryKeys = ['creams', 'shampoos', 'serums', 'makeup'] as const;
+
 export function ProductSection() {
   const t = useTranslations('Products');
   const sectionRef = useRef<HTMLElement>(null);
@@ -101,6 +103,23 @@ export function ProductSection() {
               </article>
             </div>
           ))}
+        </div>
+
+        <div className={styles.categoryPanel}>
+          <div className={styles.categoryHeader}>
+            <span className={styles.categoryEyebrow}>{t('categories.eyebrow')}</span>
+            <h3 className={styles.categoryTitle}>{t('categories.title')}</h3>
+            <p className={styles.categorySubtitle}>{t('categories.subtitle')}</p>
+          </div>
+
+          <div className={styles.categoryGrid}>
+            {categoryKeys.map((key) => (
+              <article key={key} className={styles.categoryCard}>
+                <h4 className={styles.categoryCardTitle}>{t(`categories.items.${key}.name`)}</h4>
+                <p className={styles.categoryCardDescription}>{t(`categories.items.${key}.desc`)}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </Container>
     </section>

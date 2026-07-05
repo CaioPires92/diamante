@@ -27,7 +27,7 @@
     "services": "Serviços",
     "categories": "Categorias de Produtos",
     "allCategories": "Ver todas as categorias",
-    "distributor": "Seja um Distribuidor",
+    "distributor": "Como Funciona",
     "certifications": "Certificações",
     "contact": "Contato"
   },
@@ -35,6 +35,29 @@
     "title": "Conheça Nossos Principais Produtos",
     "subtitle": "Essas categorias mostram a capacidade fabril da Diamante para desenvolver linhas capilares com apelo comercial e estrutura de produção.",
     "cardLabel": "Capacidade fabril",
+    "categories": {
+      "eyebrow": "Categorias que Desenvolvemos",
+      "title": "Capacidade para Diferentes Categorias de Cosméticos",
+      "subtitle": "Além das linhas capilares em destaque, a Diamante também pode atuar no desenvolvimento de categorias amplas para marcas com diferentes propostas e posicionamentos.",
+      "items": {
+        "creams": {
+          "name": "Cremes",
+          "desc": "Formulações para hidratação, tratamento e manutenção, com possibilidades de posicionamento profissional ou comercial."
+        },
+        "shampoos": {
+          "name": "Shampoos",
+          "desc": "Linhas pensadas para limpeza, tratamento e performance, com espaço para diferentes propostas de marca."
+        },
+        "serums": {
+          "name": "Séruns",
+          "desc": "Categoria de maior valor percebido, ideal para marcas que buscam sofisticação e apelo técnico."
+        },
+        "makeup": {
+          "name": "Maquiagem",
+          "desc": "Possibilidade de ampliar o portfólio com categorias de beleza que reforçam identidade e presença de marca."
+        }
+      }
+    },
     "items": {
       "powder": {
         "name": "Pó Descolorante",
@@ -200,6 +223,21 @@
       "flexibility": {
         "title": "Flexibilidade de Produção",
         "desc": "Estrutura preparada para atender diferentes propostas e composições de linha."
+      }
+    }
+  },
+  "Compliance": {
+    "tagline": "QUALIDADE E CONFORMIDADE",
+    "title": "Segurança Regulatória para Sua Marca Nascer com Base Sólida",
+    "description": "A Diamante combina suporte técnico, desenvolvimento e conformidade regulatória para que o projeto avance com mais segurança, clareza e estrutura.",
+    "points": {
+      "labeling": {
+        "title": "Rótulos, Embalagens e Registro",
+        "text": "Atuamos com desenvolvimento de rótulos, embalagens e suporte para notificação e registro junto à ANVISA."
+      },
+      "anvisa": {
+        "title": "Linha Autorizada e Regulamentada",
+        "text": "Toda a linha de produtos produzidos e comercializados pela Diamante Profissional é autorizada e regulamentada pela ANVISA, reforçando nosso compromisso com segurança, legalidade e qualidade."
       }
     }
   },

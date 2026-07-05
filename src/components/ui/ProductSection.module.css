@@ -82,6 +82,7 @@
   gap: var(--space-8);
   position: relative;
   z-index: 10;
+  margin-bottom: var(--space-14);
 }
 
 .cardWrapper {
@@ -150,8 +151,82 @@
   color: #6b625a;
 }
 
+.categoryPanel {
+  position: relative;
+  z-index: 10;
+  border-radius: 30px;
+  border: 1px solid rgba(197, 148, 65, 0.12);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(248, 244, 239, 0.92) 100%);
+  box-shadow: 0 18px 44px rgba(45, 42, 38, 0.05);
+  padding: clamp(1.5rem, 3vw, 2.2rem);
+}
+
+.categoryHeader {
+  max-width: 760px;
+  margin: 0 auto var(--space-10);
+  text-align: center;
+}
+
+.categoryEyebrow {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  color: var(--color-gold);
+  text-transform: uppercase;
+  margin-bottom: 0.85rem;
+}
+
+.categoryTitle {
+  font-family: var(--font-playfair);
+  font-size: clamp(1.85rem, 3vw, 2.5rem);
+  line-height: 1.12;
+  color: #2d2a26;
+  margin-bottom: 0.8rem;
+}
+
+.categorySubtitle {
+  font-family: var(--font-inter);
+  font-size: 0.98rem;
+  line-height: 1.75;
+  color: #6b625a;
+}
+
+.categoryGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-5);
+}
+
+.categoryCard {
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(197, 148, 65, 0.1);
+  padding: 1.25rem 1.1rem;
+  min-height: 180px;
+}
+
+.categoryCardTitle {
+  font-family: var(--font-playfair);
+  font-size: 1.35rem;
+  line-height: 1.14;
+  color: #2d2a26;
+  margin-bottom: 0.65rem;
+}
+
+.categoryCardDescription {
+  font-family: var(--font-inter);
+  font-size: 0.94rem;
+  line-height: 1.65;
+  color: #6b625a;
+}
+
 @media (max-width: 1024px) {
   .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .categoryGrid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -167,5 +242,17 @@
   
   .title {
     font-size: var(--text-h2);
+  }
+
+  .grid {
+    margin-bottom: var(--space-10);
+  }
+
+  .categoryGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .categoryCard {
+    min-height: auto;
   }
 }
