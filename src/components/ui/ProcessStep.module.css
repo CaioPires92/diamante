@@ -1,0 +1,59 @@
+.step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+.numberWrap {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid rgba(184, 138, 58, 0.2);
+  background: rgba(230, 209, 165, 0.16);
+}
+
+.number {
+  font-family: var(--font-playfair);
+  font-size: clamp(1.6rem, 2.2vw, 2rem);
+  font-weight: 700;
+  color: #b88a3a;
+}
+
+.content {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.title {
+  font-family: var(--font-inter);
+  font-size: 1.08rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #1c1713;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.description {
+  font-size: 0.94rem;
+  line-height: 1.7;
+  color: #6f6257;
+}
+
+@media (min-width: 1024px) {
+  .withConnector::after {
+    content: "";
+    position: absolute;
+    top: 32px;
+    left: calc(100% - 12px);
+    width: calc(100% - 40px);
+    height: 1px;
+    background: linear-gradient(90deg, rgba(184, 138, 58, 0.18), rgba(184, 138, 58, 0.06));
+  }
+}

@@ -1,0 +1,86 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: 270px;
+  padding: 1.75rem 1.15rem 1.4rem;
+}
+
+.withDivider::after {
+  content: "";
+  position: absolute;
+  top: 12%;
+  right: 0;
+  width: 1px;
+  height: 76%;
+  background: linear-gradient(180deg, transparent 0%, rgba(184, 138, 58, 0.18) 12%, rgba(184, 138, 58, 0.28) 50%, rgba(184, 138, 58, 0.18) 88%, transparent 100%);
+}
+
+.iconWrap {
+  margin-bottom: 1rem;
+}
+
+.numberWrapper {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  margin-bottom: 0.4rem;
+}
+
+.value {
+  font-family: var(--font-playfair);
+  font-size: clamp(2.8rem, 4vw, 3.7rem);
+  font-weight: 700;
+  color: #b88a3a;
+  line-height: 0.95;
+}
+
+.suffix {
+  margin-left: 4px;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #b88a3a;
+}
+
+.line {
+  width: 34px;
+  height: 2px;
+  margin-bottom: 0.85rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(184, 138, 58, 0.2) 0%, rgba(184, 138, 58, 0.85) 50%, rgba(184, 138, 58, 0.2) 100%);
+}
+
+.label {
+  max-width: 220px;
+  font-size: var(--text-sm);
+  font-weight: 700;
+  line-height: 1.45;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #2d2a26;
+}
+
+.description {
+  margin-top: 1rem;
+  max-width: 210px;
+  font-size: 0.96rem;
+  line-height: 1.55;
+  color: #6b625a;
+}
+
+@media (max-width: 767px) {
+  .card {
+    min-height: 240px;
+    padding: 1.3rem 1rem;
+  }
+
+  .withDivider::after {
+    display: none;
+  }
+
+  .description {
+    max-width: 240px;
+  }
+}

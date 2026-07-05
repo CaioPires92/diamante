@@ -6,7 +6,9 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import { useTranslations } from 'next-intl';
-import { Container } from './Container';
+import { FeatureCard } from './FeatureCard';
+import { Section } from './Section';
+import { SectionHeader } from './SectionHeader';
 import styles from './ProductSection.module.css';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
@@ -73,55 +75,58 @@ export function ProductSection() {
   }, { scope: sectionRef, dependencies: [] });
 
   return (
-    <section id="products" className={styles.section} ref={sectionRef}>
+    <Section id="products" className={styles.section} ref={sectionRef}>
       <div className={styles.glow} />
 
-      <Container>
-        <div className={`${styles.header} prod-header`}>
-          <h2 className={styles.title}>{t('title')}</h2>
-          <p className={styles.subtitle}>{t('subtitle')}</p>
-        </div>
+      <SectionHeader
+        title={t('title')}
+        description={t('subtitle')}
+        className={`prod-header ${styles.header}`}
+      />
 
-        <div className={`${styles.grid} prod-grid`}>
-          {categories.map((category) => (
-            <div key={category.id} className={styles.cardWrapper}>
-              <article className={styles.card}>
-                <div className={styles.imageWrap}>
-                  <Image
-                    src={category.image}
-                    alt={t(`items.${category.id}.name`)}
-                    fill
-                    className={styles.image}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                  />
-                </div>
-                <div className={styles.cardContent}>
-                  <span className={styles.cardLabel}>{t('cardLabel')}</span>
-                  <h3 className={styles.cardTitle}>{t(`items.${category.id}.name`)}</h3>
-                  <p className={styles.cardDescription}>{t(`items.${category.id}.desc`)}</p>
-                </div>
-              </article>
-            </div>
+      <div className={`${styles.grid} prod-grid`}>
+        {categories.map((category) => (
+          <div key={category.id} className={styles.cardWrapper}>
+            <article className={styles.card}>
+              <div className={styles.imageWrap}>
+                <Image
+                  src={category.image}
+                  alt={t(`items.${category.id}.name`)}
+                  fill
+                  className={styles.image}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                />
+              </div>
+              <div className={styles.cardContent}>
+                <span className={styles.cardLabel}>{t('cardLabel')}</span>
+                <h3 className={styles.cardTitle}>{t(`items.${category.id}.name`)}</h3>
+                <p className={styles.cardDescription}>{t(`items.${category.id}.desc`)}</p>
+              </div>
+            </article>
+          </div>
+        ))}
+      </div>
+
+      <div className={styles.categoryPanel}>
+        <SectionHeader
+          eyebrow={t('categories.eyebrow')}
+          title={t('categories.title')}
+          description={t('categories.subtitle')}
+          className={styles.categoryHeader}
+        />
+
+        <div className={styles.categoryGrid}>
+          {categoryKeys.map((key) => (
+            <FeatureCard
+              key={key}
+              variant="compact"
+              className={styles.categoryCard}
+              title={t(`categories.items.${key}.name`)}
+              description={t(`categories.items.${key}.desc`)}
+            />
           ))}
         </div>
-
-        <div className={styles.categoryPanel}>
-          <div className={styles.categoryHeader}>
-            <span className={styles.categoryEyebrow}>{t('categories.eyebrow')}</span>
-            <h3 className={styles.categoryTitle}>{t('categories.title')}</h3>
-            <p className={styles.categorySubtitle}>{t('categories.subtitle')}</p>
-          </div>
-
-          <div className={styles.categoryGrid}>
-            {categoryKeys.map((key) => (
-              <article key={key} className={styles.categoryCard}>
-                <h4 className={styles.categoryCardTitle}>{t(`categories.items.${key}.name`)}</h4>
-                <p className={styles.categoryCardDescription}>{t(`categories.items.${key}.desc`)}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </Container>
-    </section>
+      </div>
+    </Section>
   );
 }

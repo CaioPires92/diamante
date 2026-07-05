@@ -6,7 +6,9 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import { useTranslations } from 'next-intl';
-import { Container } from './Container';
+import { FeatureCard } from './FeatureCard';
+import { Section } from './Section';
+import { SectionHeader } from './SectionHeader';
 import styles from './InstitutionalProofSection.module.css';
 
 if (typeof window !== 'undefined') {
@@ -68,55 +70,60 @@ export function InstitutionalProofSection() {
   }, { scope: sectionRef });
 
   return (
-    <section id="certifications" className={styles.section} ref={sectionRef}>
-      <Container>
-        <div className={styles.layout}>
-          <div className={`${styles.content} inst-header`}>
-            <span className={styles.tagline}>{lab('tagline')}</span>
-            <h2 className={styles.title}>{lab('title')}</h2>
-            <p className={styles.description}>{lab('description')}</p>
+    <Section variant="soft" className={styles.section} ref={sectionRef}>
+      <div className={styles.layout}>
+        <div className={`${styles.content} inst-header`}>
+          <SectionHeader
+            eyebrow={lab('tagline')}
+            title={lab('title')}
+            description={lab('description')}
+            align="left"
+            className={styles.header}
+          />
 
-            <div className={styles.storyBlock}>
-              <p className={styles.storyLead}>{manifesto('paragraph1')}</p>
-              <p className={styles.storyText}>{manifesto('paragraph4')}</p>
-            </div>
-          </div>
-
-          <div className={`${styles.mediaPanel} inst-media`}>
-            <div className={styles.mainImageCard}>
-              <div className={styles.mainImageWrap}>
-                <Image
-                  src="/images/differentials/factory.png"
-                  alt={lab('title')}
-                  fill
-                  className={styles.mainImage}
-                  sizes="(max-width: 1024px) 100vw, 42vw"
-                />
-              </div>
-            </div>
-            <div className={styles.secondaryImageCard}>
-              <div className={styles.secondaryImageWrap}>
-                <Image
-                  src="/images/differentials/laboratory.png"
-                  alt={lab('tagline')}
-                  fill
-                  className={styles.secondaryImage}
-                  sizes="(max-width: 1024px) 100vw, 18vw"
-                />
-              </div>
-            </div>
+          <div className={styles.storyBlock}>
+            <p className={styles.storyLead}>{manifesto('paragraph1')}</p>
+            <p className={styles.storyText}>{manifesto('paragraph4')}</p>
           </div>
         </div>
 
-        <div className={styles.pillarsGrid}>
-          {pillarKeys.map((key) => (
-            <article key={key} className={`${styles.pillarCard} inst-card`}>
-              <h3 className={styles.pillarTitle}>{values(`items.${key}.title`)}</h3>
-              <p className={styles.pillarDescription}>{values(`items.${key}.desc`)}</p>
-            </article>
-          ))}
+        <div className={`${styles.mediaPanel} inst-media`}>
+          <div className={styles.mainImageCard}>
+            <div className={styles.mainImageWrap}>
+              <Image
+                src="/images/differentials/factory.png"
+                alt={lab('title')}
+                fill
+                className={styles.mainImage}
+                sizes="(max-width: 1024px) 100vw, 42vw"
+              />
+            </div>
+          </div>
+          <div className={styles.secondaryImageCard}>
+            <div className={styles.secondaryImageWrap}>
+              <Image
+                src="/images/differentials/laboratory.png"
+                alt={lab('tagline')}
+                fill
+                className={styles.secondaryImage}
+                sizes="(max-width: 1024px) 100vw, 18vw"
+              />
+            </div>
+          </div>
         </div>
-      </Container>
-    </section>
+      </div>
+
+      <div className={styles.pillarsGrid}>
+        {pillarKeys.map((key) => (
+          <FeatureCard
+            key={key}
+            className={`${styles.pillarCard} inst-card`}
+            variant="compact"
+            title={values(`items.${key}.title`)}
+            description={values(`items.${key}.desc`)}
+          />
+        ))}
+      </div>
+    </Section>
   );
 }

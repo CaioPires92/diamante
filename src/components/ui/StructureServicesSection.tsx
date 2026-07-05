@@ -5,7 +5,9 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import { useTranslations } from 'next-intl';
-import { Container } from './Container';
+import { FeatureCard } from './FeatureCard';
+import { Section } from './Section';
+import { SectionHeader } from './SectionHeader';
 import styles from './StructureServicesSection.module.css';
 
 if (typeof window !== 'undefined') {
@@ -52,44 +54,47 @@ export function StructureServicesSection() {
   }, { scope: sectionRef });
 
   return (
-    <section id="services" className={styles.section} ref={sectionRef}>
-      <Container>
-        <div className={`${styles.header} structure-header`}>
-          <span className={styles.tagline}>{t('tagline')}</span>
-          <h2 className={styles.title}>{t('title')}</h2>
-          <p className={styles.description}>{t('description')}</p>
-        </div>
+    <Section id="services" variant="soft" className={styles.section} ref={sectionRef}>
+      <SectionHeader
+        eyebrow={t('tagline')}
+        title={t('title')}
+        description={t('description')}
+        className={`${styles.header} structure-header`}
+      />
 
-        <div className={styles.panel}>
-          <div className={styles.panelGlow} />
-          <div className={styles.grid}>
-            {serviceKeys.map((key) => (
-              <article key={key} className={`${styles.card} structure-card`}>
-                <div className={styles.cardAccent} aria-hidden="true">
-                  <span className={styles.cardAccentLine} />
-                </div>
-                <h3 className={styles.cardTitle}>{t(`items.${key}.title`)}</h3>
-                <p className={styles.cardDescription}>{t(`items.${key}.desc`)}</p>
-              </article>
-            ))}
-          </div>
+      <div className={styles.panel}>
+        <div className={styles.grid}>
+          {serviceKeys.map((key) => (
+            <FeatureCard
+              key={key}
+              className={`${styles.card} structure-card`}
+              variant="default"
+              accent
+              title={t(`items.${key}.title`)}
+              description={t(`items.${key}.desc`)}
+            />
+          ))}
         </div>
+      </div>
 
-        <div className={styles.highlightBlock}>
-          <div className={styles.highlightHeader}>
-            <span className={styles.highlightLabel}>{t('highlightsLabel')}</span>
-          </div>
+      <div className={styles.highlightBlock}>
+        <SectionHeader
+          eyebrow={t('highlightsLabel')}
+          className={styles.highlightHeader}
+        />
 
-          <div className={styles.highlightGrid}>
-            {highlightKeys.map((key) => (
-              <article key={key} className={styles.highlightCard}>
-                <h3 className={styles.highlightTitle}>{t(`highlights.${key}.title`)}</h3>
-                <p className={styles.highlightDescription}>{t(`highlights.${key}.desc`)}</p>
-              </article>
-            ))}
-          </div>
+        <div className={styles.highlightGrid}>
+          {highlightKeys.map((key) => (
+            <FeatureCard
+              key={key}
+              variant="compact"
+              className={styles.highlightCard}
+              title={t(`highlights.${key}.title`)}
+              description={t(`highlights.${key}.desc`)}
+            />
+          ))}
         </div>
-      </Container>
-    </section>
+      </div>
+    </Section>
   );
 }
