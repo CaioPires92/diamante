@@ -181,11 +181,16 @@
   "StructureServices": {
     "tagline": "ESTRUTURA E SERVIÇOS",
     "title": "Terceirize Sua Linha Capilar Conosco!",
-    "description": "Desenvolvemos fórmulas, fabricamos, envasamos e apoiamos o projeto para transformar sua ideia em uma linha pronta para venda com mais clareza e segurança.",
+    "description": "Transforme sua ideia em uma marca de cosméticos. Desenvolvemos fórmulas, fabricamos, envasamos e entregamos seu produto pronto para venda, com qualidade, segurança e suporte técnico em todas as etapas.",
+    "servicesLabel": "Serviços",
+    "deliveryLabel": "Entrega",
+    "deliveryText": "Entregamos seu produto pronto para venda com qualidade, segurança e suporte técnico em todas as etapas.",
+    "complianceLabel": "Conformidade e legislação",
+    "complianceText": "Atuamos com desenvolvimento de rótulos, embalagens e suporte para notificação e registro junto à ANVISA.",
     "highlightsLabel": "Destaques da Operação",
     "items": {
       "development": {
-        "title": "Desenvolvimento de Fórmula",
+        "title": "Desenvolvimento da fórmula",
         "desc": "Criamos formulações alinhadas à proposta da sua marca, ao posicionamento da linha e ao tipo de produto desejado."
       },
       "manufacturing": {
@@ -193,15 +198,15 @@
         "desc": "A produção é conduzida com estrutura própria, processo industrial e controle para manter consistência em cada lote."
       },
       "filling": {
-        "title": "Envase",
+        "title": "Envasamento",
         "desc": "O envase é realizado com padrão técnico e acabamento pensado para entregar um produto pronto para comercialização."
       },
       "regulatory": {
-        "title": "Suporte Regulatório",
+        "title": "Entregamos seu produto pronto para venda com qualidade, segurança e suporte técnico em todas as etapas",
         "desc": "Orientamos as etapas regulatórias do projeto para que a linha avance com mais segurança documental e técnica."
       },
       "design": {
-        "title": "Design e Apresentação",
+        "title": "Registro e design",
         "desc": "Apoiamos a construção visual da linha para que a apresentação acompanhe o posicionamento e a proposta da marca."
       }
     },
