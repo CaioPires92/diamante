@@ -2,11 +2,8 @@ import { HeroSection } from '@/components/ui/HeroSection';
 import { ProductSection } from '@/components/ui/ProductSection';
 import { PrivateLabelTeaser } from '@/components/ui/PrivateLabelTeaser';
 import { ImpactNumbers } from '@/components/ui/ImpactNumbers';
-import { FinalCTA } from '@/components/ui/FinalCTA';
-import { PrivateLabelProcess } from '@/components/ui/privatelabel/PrivateLabelProcess';
 import { StructureServicesSection } from '@/components/ui/StructureServicesSection';
-import { InstitutionalProofSection } from '@/components/ui/InstitutionalProofSection';
-import { QualityComplianceSection } from '@/components/ui/QualityComplianceSection';
+import { PrivateLabelHighlightsSection } from '@/components/ui/PrivateLabelHighlightsSection';
 import { DreamsBannerSection } from '@/components/ui/DreamsBannerSection';
 
 export default function Home() {
@@ -18,10 +15,7 @@ export default function Home() {
       <ProductSection />
       <DreamsBannerSection />
       <StructureServicesSection />
-      <QualityComplianceSection />
-      <InstitutionalProofSection />
-      <PrivateLabelProcess />
-      <FinalCTA />
+      <PrivateLabelHighlightsSection />
     </main>
   );
 }

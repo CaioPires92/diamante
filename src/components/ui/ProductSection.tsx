@@ -2,10 +2,11 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { Section } from './Section';
 import styles from './ProductSection.module.css';
 
@@ -32,6 +33,7 @@ const categories = [
 
 export function ProductSection() {
   const t = useTranslations('Products');
+  const locale = useLocale();
   const sectionRef = useRef<HTMLElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -118,6 +120,13 @@ export function ProductSection() {
               </li>
             ))}
           </ul>
+
+          <div className={styles.catalogNote}>
+            <p className={styles.catalogText}>{t('catalogText')}</p>
+            <Link href={`/${locale}/products`} className={styles.catalogLink}>
+              {t('catalogCta')}
+            </Link>
+          </div>
         </div>
 
         <div className={styles.visualPanel}>

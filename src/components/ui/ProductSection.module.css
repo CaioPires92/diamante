@@ -50,6 +50,42 @@
   list-style: none;
 }
 
+.catalogNote {
+  display: grid;
+  gap: 0.8rem;
+  margin-top: 1.35rem;
+}
+
+.catalogText {
+  max-width: 50ch;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: #5a5047;
+}
+
+.catalogLink {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding-bottom: 0.15rem;
+  border-bottom: 1px solid rgba(184, 138, 58, 0.35);
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #b88a3a;
+  transition:
+    color var(--duration-normal) var(--ease-default),
+    border-color var(--duration-normal) var(--ease-default),
+    transform var(--duration-normal) var(--ease-default);
+}
+
+.catalogLink:hover {
+  color: #8f6726;
+  border-color: rgba(143, 103, 38, 0.45);
+  transform: translateX(2px);
+}
+
 .productItem {
   width: 100%;
   display: grid;
@@ -197,6 +233,10 @@
 
   .productName {
     white-space: normal;
+  }
+
+  .catalogText {
+    max-width: none;
   }
 }
 

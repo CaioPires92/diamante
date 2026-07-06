@@ -1,48 +1,38 @@
 .section {
   scroll-margin-top: 100px;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  padding: clamp(2.5rem, 4vh, 4rem) 0;
+  height: 100vh;
+  box-sizing: border-box;
+  padding: clamp(1rem, 2vh, 1.5rem) 0;
+  overflow: hidden;
 }
 
 .inner {
-  max-width: min(1380px, 82vw);
+  max-width: min(1360px, 88vw);
+  height: 100%;
 }
 
 .layout {
   display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
-  gap: clamp(2.5rem, 4vw, 5rem);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.96fr);
+  gap: clamp(1.75rem, 2.8vw, 3.25rem);
   align-items: center;
+  height: 100%;
 }
 
 .visualColumn {
-  display: grid;
-  gap: 1rem;
-}
-
-.eyebrow {
-  font-size: 0.82rem;
-  font-weight: 800;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: #b88a3a;
-}
-
-.title {
-  font-family: var(--font-playfair);
-  font-size: clamp(2.5rem, 5vw, 5.2rem);
-  line-height: 0.92;
-  color: #b88a3a;
+  position: relative;
 }
 
 .imageWrap {
   position: relative;
   width: 100%;
-  aspect-ratio: 1.15 / 0.9;
+  height: min(62vh, 36rem);
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.5);
+  border-radius: 1.5rem;
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow:
+    0 18px 42px rgba(138, 108, 61, 0.08),
+    inset 0 0 0 1px rgba(184, 138, 58, 0.1);
 }
 
 .image {
@@ -51,22 +41,43 @@
 
 .contentColumn {
   display: grid;
-  gap: 1.25rem;
+  gap: 1rem;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #bf8e39;
+}
+
+.eyebrow::after {
+  content: '';
+  width: 2.6rem;
+  height: 1px;
+  background: rgba(191, 142, 57, 0.45);
+}
+
+.title {
+  max-width: 18ch;
+  font-family: var(--font-playfair);
+  font-size: clamp(1.85rem, 2.8vw, 3.1rem);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  white-space: pre-line;
+  color: #3d2d24;
 }
 
 .description {
-  max-width: 56ch;
-  font-size: 1rem;
-  line-height: 1.75;
-  color: #5f554d;
-}
-
-.servicesLabel {
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #8d7b68;
+  max-width: 42ch;
+  font-size: clamp(0.88rem, 0.95vw, 1rem);
+  line-height: 1.48;
+  margin-bottom: 0.35rem;
+  color: #4d4037;
 }
 
 .servicesList {
@@ -74,118 +85,180 @@
 }
 
 .serviceItem {
-  padding: 0.8rem 0 0.9rem;
-  border-top: 1px solid rgba(184, 138, 58, 0.18);
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.95rem;
+  align-items: center;
+  padding: 0.95rem 0;
+  border-top: 1px solid rgba(184, 138, 58, 0.2);
+}
+
+.serviceIconWrap {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.serviceIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.3rem;
+  height: 3.3rem;
+  border: 1.25px solid rgba(191, 142, 57, 0.45);
+  border-radius: 999px;
+  color: #bf8e39;
+}
+
+.serviceIcon svg,
+.supportIcon svg,
+.supportNoteIcon svg {
+  width: 1.45rem;
+  height: 1.45rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.serviceNumber {
+  min-width: 2.55rem;
+  font-family: var(--font-playfair);
+  font-size: clamp(1.4rem, 1.8vw, 1.9rem);
+  font-weight: 700;
+  line-height: 1;
+  color: #bf8e39;
+}
+
+.serviceBody {
+  display: grid;
+  gap: 0.3rem;
+  padding-left: 0.9rem;
+  border-left: 1px solid rgba(184, 138, 58, 0.24);
 }
 
 .serviceTitle {
-  font-family: var(--font-inter);
-  font-size: clamp(1rem, 1.15vw, 1.08rem);
-  font-weight: 500;
+  font-family: var(--font-playfair);
+  font-size: clamp(1rem, 1.2vw, 1.28rem);
+  line-height: 1.14;
+  color: #433228;
+}
+
+.serviceDescription {
+  max-width: 37ch;
+  font-size: 0.82rem;
   line-height: 1.45;
-  color: #3f3731;
+  color: #5b4c42;
 }
 
-.deliveryBlock {
+.supportCard {
   display: grid;
-  gap: 0.45rem;
-  padding-top: 0.3rem;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.9rem;
+  align-items: center;
+  padding: 0.8rem 1rem;
+  margin-top: 0.45rem;
+  border: 1px solid rgba(184, 138, 58, 0.18);
+  border-radius: 0.95rem;
+  background: rgba(255, 255, 255, 0.46);
+  box-shadow: 0 8px 20px rgba(138, 108, 61, 0.05);
 }
 
-.deliveryLabel {
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #8d7b68;
-}
-
-.deliveryText {
-  max-width: 60ch;
-  font-size: 0.98rem;
-  line-height: 1.7;
-  color: #3f3731;
-}
-
-.complianceBlock {
-  display: grid;
-  gap: 0.55rem;
-  padding-top: 0.25rem;
-  border-top: 1px solid rgba(184, 138, 58, 0.12);
-  padding-bottom: 0.1rem;
-}
-
-.complianceLabel {
-  font-size: 0.76rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #8d7b68;
-}
-
-.complianceText {
-  max-width: 58ch;
-  font-size: 0.92rem;
-  line-height: 1.7;
-  color: #5b5148;
-}
-
-.highlightsBlock {
-  display: grid;
-  gap: 0.7rem;
-  padding-top: 0.1rem;
-}
-
-.highlightsLabel {
-  font-size: 0.76rem;
-  font-weight: 800;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: #8d7b68;
-}
-
-.highlightsList {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-}
-
-.highlightItem {
+.supportIcon {
   display: inline-flex;
   align-items: center;
-  padding: 0.42rem 0.78rem;
-  border: 1px solid rgba(184, 138, 58, 0.12);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.46);
-  font-size: 0.8rem;
-  font-weight: 500;
-  line-height: 1.3;
-  color: #5a5047;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  color: #bf8e39;
+}
+
+.supportBody {
+  display: grid;
+  gap: 0.3rem;
+  padding-left: 0.9rem;
+  border-left: 1px solid rgba(184, 138, 58, 0.22);
+}
+
+.supportTitle {
+  font-family: var(--font-playfair);
+  font-size: clamp(1rem, 1.18vw, 1.24rem);
+  line-height: 1.14;
+  color: #433228;
+}
+
+.supportText {
+  max-width: 45ch;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: #5d4e44;
+}
+
+.ctaGroup {
+  display: grid;
+  gap: 0.65rem;
+  margin-top: 0.4rem;
 }
 
 .cta {
   justify-self: start;
-  margin-top: 0.15rem;
+  padding: 1rem 1.65rem;
+  border-radius: 0.7rem;
+  font-size: 0.9rem;
+  letter-spacing: 0;
+  text-transform: none;
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(184, 138, 58, 0.24);
 }
 
-@media (max-width: 1200px) {
-  .inner {
-    max-width: min(1380px, 88vw);
-  }
+.ctaArrow {
+  font-size: 1.1rem;
+  line-height: 1;
 }
 
-@media (max-width: 1024px) {
+.supportNote {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: #6e5d50;
+}
+
+.supportNoteIcon {
+  display: inline-flex;
+  color: #bf8e39;
+}
+
+.supportNoteIcon svg {
+  width: 0.95rem;
+  height: 0.95rem;
+}
+
+.supportNoteText {
+  font-size: 0.8rem;
+  line-height: 1.35;
+}
+
+@media (max-width: 1180px) {
   .section {
-    min-height: auto;
-    display: block;
+    height: auto;
   }
 
   .layout {
     grid-template-columns: 1fr;
   }
 
-  .title {
-    font-size: clamp(2.2rem, 8vw, 4rem);
+  .contentColumn {
+    max-width: 56rem;
+  }
+
+  .title,
+  .description {
+    max-width: none;
+  }
+
+  .imageWrap {
+    height: clamp(24rem, 62vw, 42rem);
   }
 }
 
@@ -194,20 +267,75 @@
     max-width: 100%;
   }
 
+  .layout {
+    gap: 2.25rem;
+  }
+
   .imageWrap {
-    aspect-ratio: 1 / 0.78;
+    height: 21rem;
+    border-radius: 1.5rem;
+  }
+
+  .eyebrow {
+    font-size: 0.78rem;
+    letter-spacing: 0.16em;
+  }
+
+  .eyebrow::after {
+    width: 2.8rem;
+  }
+
+  .title {
+    font-size: clamp(2.35rem, 12vw, 3.7rem);
   }
 
   .serviceItem {
-    padding: 0.85rem 0 0.95rem;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1.2rem 0;
   }
 
-  .highlightsList {
-    gap: 0.55rem;
+  .serviceIconWrap {
+    gap: 1rem;
   }
 
-  .highlightItem {
-    padding: 0.4rem 0.7rem;
-    font-size: 0.8rem;
+  .serviceIcon {
+    width: 3.9rem;
+    height: 3.9rem;
+  }
+
+  .serviceNumber {
+    font-size: 1.9rem;
+  }
+
+  .serviceBody,
+  .supportBody {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .serviceTitle,
+  .supportTitle {
+    font-size: 1.55rem;
+  }
+
+  .supportCard {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+    padding: 1.25rem;
+  }
+
+  .supportIcon {
+    width: 3.8rem;
+    height: 3.8rem;
+  }
+
+  .cta {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .supportNote {
+    align-items: flex-start;
   }
 }

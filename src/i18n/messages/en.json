@@ -29,6 +29,8 @@
   },
   "Products": {
     "title": "Explore Our Main Product Categories",
+    "catalogText": "We also develop categories such as creams, shampoos, serums, makeup and other options to expand your brand portfolio.",
+    "catalogCta": "View all products",
     "subtitle": "Strategic categories for brands that want to launch a strong and commercially attractive haircare line.",
     "cardLabel": "Manufacturing capability",
     "items": {
@@ -161,16 +163,35 @@
     "cta": "Talk to a Consultant"
   },
   "StructureServices": {
-    "tagline": "STRUCTURE AND SERVICES",
-    "title": "More Credibility for Brands That Want to Launch Right",
-    "description": "Beyond manufacturing, Diamante offers support, structure and technical guidance to help new brands launch with more confidence.",
+    "tagline": "HAIRCARE CONTRACT MANUFACTURING",
+    "title": "From formula to a product ready for sale",
+    "description": "We develop your haircare line with a complete contract manufacturing structure: formulation, production, filling, packaging design support, regulatory support and final delivery.",
+    "supportTitle": "Regulatory support",
+    "supportText": "We assist with labels, packaging, line visual direction, notifications and registrations with ANVISA.",
+    "supportNote": "Support for brands, distributors and contract manufacturing projects.",
+    "cta": "Talk to a specialist",
     "items": {
-      "development": { "title": "Research and Development", "desc": "We follow trends and opportunities to help your brand start stronger." },
-      "support": { "title": "Technical Support", "desc": "Our team guides decisions with more clarity, safety and production vision." },
-      "project": { "title": "Project Advisory", "desc": "We help define the line, direction and best path to turn an idea into a brand." },
-      "quality": { "title": "Quality Control", "desc": "Production quality is part of the trust your brand needs to convey from day one." },
-      "production": { "title": "Structured Production", "desc": "We manufacture with process, consistency and professional presentation in mind." },
-      "commercial": { "title": "Commercial Guidance", "desc": "It is not only about producing, but helping your brand move from idea to reality." }
+      "development": {
+        "title": "Formula development",
+        "desc": "We create or adjust formulas according to your brand positioning."
+      },
+      "manufacturing": {
+        "title": "Haircare line manufacturing",
+        "desc": "Production with technical control, standardization and oversight at every stage."
+      },
+      "filling": {
+        "title": "Filling and delivery",
+        "desc": "Your finished product, packed and ready for commercialization."
+      }
+    }
+  },
+  "StructureHighlights": {
+    "items": {
+      "exclusive": "Exclusive formula development",
+      "performance": "High-performance products",
+      "speed": "Fast delivery",
+      "support": "Regulatory support",
+      "flexibility": "Production flexibility"
     }
   },
   "Impact": {

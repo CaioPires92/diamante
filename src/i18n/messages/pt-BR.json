@@ -33,6 +33,8 @@
   },
   "Products": {
     "title": "Conheça Nossos Principais Produtos",
+    "catalogText": "Também desenvolvemos categorias como cremes, shampoos, séruns, maquiagem e outras opções para ampliar o portfólio da sua marca.",
+    "catalogCta": "Ver todos os produtos",
     "highlight": "TERCEIRIZE SUA LINHA CAPILAR CONOSCO!",
     "categories": {
       "eyebrow": "Categorias que Desenvolvemos",
@@ -179,58 +181,35 @@
     "title": "REALIZANDO SONHOS A MAIS DE 15 ANOS"
   },
   "StructureServices": {
-    "tagline": "ESTRUTURA E SERVIÇOS",
-    "title": "Terceirize Sua Linha Capilar Conosco!",
-    "description": "Transforme sua ideia em uma marca de cosméticos. Desenvolvemos fórmulas, fabricamos, envasamos e entregamos seu produto pronto para venda, com qualidade, segurança e suporte técnico em todas as etapas.",
-    "servicesLabel": "Serviços",
-    "deliveryLabel": "Entrega",
-    "deliveryText": "Entregamos seu produto pronto para venda com qualidade, segurança e suporte técnico em todas as etapas.",
-    "complianceLabel": "Conformidade e legislação",
-    "complianceText": "Atuamos com desenvolvimento de rótulos, embalagens e suporte para notificação e registro junto à ANVISA.",
-    "highlightsLabel": "Destaques da Operação",
+    "tagline": "TERCEIRIZAÇÃO CAPILAR",
+    "title": "Da fórmula ao produto\npronto para venda",
+    "description": "Desenvolvemos sua linha capilar com estrutura completa para terceirização: formulação, fabricação, envase, apoio no design da embalagem, suporte regulatório e entrega do produto finalizado.",
+    "supportTitle": "Suporte regulatório",
+    "supportText": "Auxiliamos no desenvolvimento de rótulos, embalagens, direção visual da linha, notificações e registros junto à ANVISA.",
+    "supportNote": "Atendimento para marcas, distribuidores e projetos de terceirização.",
+    "cta": "Falar com um especialista",
     "items": {
       "development": {
         "title": "Desenvolvimento da fórmula",
-        "desc": "Criamos formulações alinhadas à proposta da sua marca, ao posicionamento da linha e ao tipo de produto desejado."
+        "desc": "Criamos ou ajustamos fórmulas conforme o posicionamento da sua marca."
       },
       "manufacturing": {
-        "title": "Fabricação",
-        "desc": "A produção é conduzida com estrutura própria, processo industrial e controle para manter consistência em cada lote."
+        "title": "Fabricação da linha capilar",
+        "desc": "Produção com controle técnico, padronização e acompanhamento em cada etapa."
       },
       "filling": {
-        "title": "Envasamento",
-        "desc": "O envase é realizado com padrão técnico e acabamento pensado para entregar um produto pronto para comercialização."
-      },
-      "regulatory": {
-        "title": "Entregamos seu produto pronto para venda com qualidade, segurança e suporte técnico em todas as etapas",
-        "desc": "Orientamos as etapas regulatórias do projeto para que a linha avance com mais segurança documental e técnica."
-      },
-      "design": {
-        "title": "Registro e design",
-        "desc": "Apoiamos a construção visual da linha para que a apresentação acompanhe o posicionamento e a proposta da marca."
+        "title": "Envase e entrega",
+        "desc": "Seu produto finalizado, embalado e pronto para comercialização."
       }
-    },
-    "highlights": {
-      "exclusive": {
-        "title": "Fórmulas Exclusivas",
-        "desc": "Projetos pensados para dar identidade própria à linha."
-      },
-      "performance": {
-        "title": "Alta Performance",
-        "desc": "Produtos desenvolvidos com foco em resultado e percepção de qualidade."
-      },
-      "speed": {
-        "title": "Rapidez na Entrega",
-        "desc": "Fluxo produtivo estruturado para avançar o projeto com mais agilidade."
-      },
-      "support": {
-        "title": "Suporte Regulatório",
-        "desc": "Mais segurança para conduzir as exigências do projeto com orientação técnica."
-      },
-      "flexibility": {
-        "title": "Flexibilidade de Produção",
-        "desc": "Estrutura preparada para atender diferentes propostas e composições de linha."
-      }
+    }
+  },
+  "StructureHighlights": {
+    "items": {
+      "exclusive": "Desenvolvimento de\nfórmulas exclusivas",
+      "performance": "Produtos de alta performance",
+      "speed": "Rapidez na entrega",
+      "support": "Suporte regulatório",
+      "flexibility": "Flexibilidade de produção"
     }
   },
   "Compliance": {
