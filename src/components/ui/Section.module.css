@@ -1,0 +1,35 @@
+.section {
+  position: relative;
+  padding: clamp(4.5rem, 8vw, 7rem) 0;
+  overflow: hidden;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+}
+
+.light {
+  background:
+    radial-gradient(circle at top, rgba(197, 148, 65, 0.08), transparent 24%),
+    linear-gradient(180deg, #fffdf8 0%, #ffffff 100%);
+}
+
+.soft {
+  background:
+    radial-gradient(circle at top right, rgba(197, 148, 65, 0.08), transparent 28%),
+    linear-gradient(180deg, #f8f4ec 0%, #f4ede2 100%);
+}
+
+.dark {
+  background:
+    radial-gradient(circle at top, rgba(197, 148, 65, 0.16), transparent 26%),
+    linear-gradient(180deg, #0d0b09 0%, #17120d 100%);
+  color: var(--color-pure-white);
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: var(--space-16) 0;
+  }
+}

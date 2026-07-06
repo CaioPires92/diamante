@@ -1,17 +1,18 @@
 {
   "Home": {
     "eyebrow": "PRIVATE LABEL CAPILAR",
-    "title": "SEJA SEU PRÓPRIO CHEFE,\nLANCE SUA MARCA DE\n<highlight>COSMÉTICOS CONOSCO.</highlight>",
-    "subtitle": "Da ideia ao produto final, a Diamante oferece <strong>fabricação própria</strong> e suporte para transformar seu projeto em uma linha capilar pronta para o mercado.",
+    "title": "SEU SONHO MERECE UMA\n<highlight>FÁBRICA À ALTURA.</highlight>",
+    "subtitle": "Transformamos sua ideia em\numa marca de cosméticos com\n<highlight>excelência,inovação e qualidade</highlight>\nem cada etapa da produção.",
     "primaryCta": "Quero criar minha marca",
     "secondaryCta": "Falar com um especialista",
-    "whatsAppCta": "Quero lançar minha marca",
+    "whatsAppCta": "Falar no WhatsApp",
     "viewCollection": "Conhecer a linha profissional",
     "badges": {
-      "manufacturing": "FABRICAÇÃO PRÓPRIA",
-      "exclusive": "PRIVATE LABEL CAPILAR",
-      "quality": "QUALIDADE PROFISSIONAL",
-      "price": "15+ ANOS DE EXPERIÊNCIA"
+      "development": "DESENVOLVIMENTO DE FÓRMULAS",
+      "manufacturing": "FABRICAÇÃO COM TECNOLOGIA AVANÇADA",
+      "filling": "ENVASE E EMBALAGEM",
+      "quality": "QUALIDADE E SEGURANÇA",
+      "regulatory": "SUPORTE REGULATÓRIO E DOCUMENTAÇÃO"
     }
   },
   "Common": {
@@ -21,15 +22,41 @@
     "whatsapp": "Fale pelo WhatsApp"
   },
   "Header": {
-    "products": "Produtos",
-    "about": "Sobre Nós",
-    "privateLabel": "Private Label",
+    "home": "Início",
+    "about": "Quem Somos",
+    "services": "Serviços",
+    "categories": "Categorias de Produtos",
+    "allCategories": "Ver todas as categorias",
+    "distributor": "Como Funciona",
+    "certifications": "Certificações",
     "contact": "Contato"
   },
   "Products": {
     "title": "Conheça Nossos Principais Produtos",
-    "subtitle": "Essas categorias mostram a capacidade fabril da Diamante para desenvolver linhas capilares com apelo comercial e estrutura de produção.",
-    "cardLabel": "Capacidade fabril",
+    "highlight": "TERCEIRIZE SUA LINHA CAPILAR CONOSCO!",
+    "categories": {
+      "eyebrow": "Categorias que Desenvolvemos",
+      "title": "Capacidade para Diferentes Categorias de Cosméticos",
+      "subtitle": "Além das linhas capilares em destaque, a Diamante também pode atuar no desenvolvimento de categorias amplas para marcas com diferentes propostas e posicionamentos.",
+      "items": {
+        "creams": {
+          "name": "Cremes",
+          "desc": "Formulações para hidratação, tratamento e manutenção, com possibilidades de posicionamento profissional ou comercial."
+        },
+        "shampoos": {
+          "name": "Shampoos",
+          "desc": "Linhas pensadas para limpeza, tratamento e performance, com espaço para diferentes propostas de marca."
+        },
+        "serums": {
+          "name": "Séruns",
+          "desc": "Categoria de maior valor percebido, ideal para marcas que buscam sofisticação e apelo técnico."
+        },
+        "makeup": {
+          "name": "Maquiagem",
+          "desc": "Possibilidade de ampliar o portfólio com categorias de beleza que reforçam identidade e presença de marca."
+        }
+      }
+    },
     "items": {
       "powder": {
         "name": "Pó Descolorante",
@@ -148,34 +175,76 @@
     },
     "cta": "Entender a terceirização"
   },
+  "DreamsBanner": {
+    "title": "REALIZANDO SONHOS A MAIS DE 15 ANOS"
+  },
   "StructureServices": {
     "tagline": "ESTRUTURA E SERVIÇOS",
     "title": "Terceirize Sua Linha Capilar Conosco!",
-    "description": "Aqui, o foco é mostrar como a Diamante conduz o projeto no dia a dia, com processo, acompanhamento e suporte em cada etapa.",
+    "description": "Transforme sua ideia em uma marca de cosméticos. Desenvolvemos fórmulas, fabricamos, envasamos e entregamos seu produto pronto para venda, com qualidade, segurança e suporte técnico em todas as etapas.",
+    "servicesLabel": "Serviços",
+    "deliveryLabel": "Entrega",
+    "deliveryText": "Entregamos seu produto pronto para venda com qualidade, segurança e suporte técnico em todas as etapas.",
+    "complianceLabel": "Conformidade e legislação",
+    "complianceText": "Atuamos com desenvolvimento de rótulos, embalagens e suporte para notificação e registro junto à ANVISA.",
+    "highlightsLabel": "Destaques da Operação",
     "items": {
       "development": {
-        "title": "Pesquisa e Desenvolvimento",
-        "desc": "Observamos tendências, categorias e oportunidades para orientar o desenvolvimento da linha."
+        "title": "Desenvolvimento da fórmula",
+        "desc": "Criamos formulações alinhadas à proposta da sua marca, ao posicionamento da linha e ao tipo de produto desejado."
+      },
+      "manufacturing": {
+        "title": "Fabricação",
+        "desc": "A produção é conduzida com estrutura própria, processo industrial e controle para manter consistência em cada lote."
+      },
+      "filling": {
+        "title": "Envasamento",
+        "desc": "O envase é realizado com padrão técnico e acabamento pensado para entregar um produto pronto para comercialização."
+      },
+      "regulatory": {
+        "title": "Entregamos seu produto pronto para venda com qualidade, segurança e suporte técnico em todas as etapas",
+        "desc": "Orientamos as etapas regulatórias do projeto para que a linha avance com mais segurança documental e técnica."
+      },
+      "design": {
+        "title": "Registro e design",
+        "desc": "Apoiamos a construção visual da linha para que a apresentação acompanhe o posicionamento e a proposta da marca."
+      }
+    },
+    "highlights": {
+      "exclusive": {
+        "title": "Fórmulas Exclusivas",
+        "desc": "Projetos pensados para dar identidade própria à linha."
+      },
+      "performance": {
+        "title": "Alta Performance",
+        "desc": "Produtos desenvolvidos com foco em resultado e percepção de qualidade."
+      },
+      "speed": {
+        "title": "Rapidez na Entrega",
+        "desc": "Fluxo produtivo estruturado para avançar o projeto com mais agilidade."
       },
       "support": {
-        "title": "Apoio Técnico",
-        "desc": "Nossa equipe ajuda a tomar decisões com mais clareza, segurança e visão de produção."
+        "title": "Suporte Regulatório",
+        "desc": "Mais segurança para conduzir as exigências do projeto com orientação técnica."
       },
-      "project": {
-        "title": "Assessoria de Projeto",
-        "desc": "Apoiamos a definição da linha, da proposta e do caminho mais viável para o projeto."
+      "flexibility": {
+        "title": "Flexibilidade de Produção",
+        "desc": "Estrutura preparada para atender diferentes propostas e composições de linha."
+      }
+    }
+  },
+  "Compliance": {
+    "tagline": "QUALIDADE E CONFORMIDADE",
+    "title": "Segurança Regulatória para Sua Marca Nascer com Base Sólida",
+    "description": "A Diamante combina suporte técnico, desenvolvimento e conformidade regulatória para que o projeto avance com mais segurança, clareza e estrutura.",
+    "points": {
+      "labeling": {
+        "title": "Rótulos, Embalagens e Registro",
+        "text": "Atuamos com desenvolvimento de rótulos, embalagens e suporte para notificação e registro junto à ANVISA."
       },
-      "quality": {
-        "title": "Controle de Qualidade",
-        "desc": "Controlar a qualidade em cada etapa é parte essencial da entrega e da confiança na marca."
-      },
-      "production": {
-        "title": "Produção com Estrutura",
-        "desc": "A produção é conduzida com processo, consistência e padrão profissional."
-      },
-      "commercial": {
-        "title": "Acompanhamento Comercial",
-        "desc": "O projeto avança com mais proximidade comercial e melhor leitura de necessidades."
+      "anvisa": {
+        "title": "Linha Autorizada e Regulamentada",
+        "text": "Toda a linha de produtos produzidos e comercializados pela Diamante Profissional é autorizada e regulamentada pela ANVISA, reforçando nosso compromisso com segurança, legalidade e qualidade."
       }
     }
   },
@@ -374,6 +443,7 @@
       "support": {
         "title": "Suporte",
         "privacy": "Política de Privacidade",
+        "terms": "Termos de Uso",
         "payment": "Formas de Pagamento",
         "shipping": "Políticas de Envio",
         "returns": "Trocas e Devoluções"
@@ -383,7 +453,16 @@
       "title": "Fale Conosco",
       "address": "Rua Treze de Maio, 17 Centro – Amparo/SP",
       "email": "contato@diamanteprofissional.com.br",
-      "phone": "(19) 3817-6156"
+      "phone": "(19) 3817-6156",
+      "instagram": "@diamante.profissional",
+      "linkedin": "LinkedIn Diamante",
+      "labels": {
+        "whatsapp": "WhatsApp",
+        "email": "E-mail",
+        "location": "Localização",
+        "instagram": "Instagram",
+        "linkedin": "LinkedIn"
+      }
     },
     "rights": "© {year} Diamante Profissional. Todos os direitos reservados."
   },
@@ -403,6 +482,10 @@
     "Privacy": {
       "title": "Política de Privacidade",
       "content": "A sua privacidade é importante para nós. É política da Diamante Profissional respeitar a sua privacidade em relação a qualquer informação sua que possamos coletar no site e em outros canais que operamos.\n\nSolicitamos informações pessoais apenas quando realmente precisamos delas para fornecer um serviço. Isso é feito por meios justos e legais, com conhecimento e consentimento do usuário. Também informamos por que estamos coletando os dados e como eles serão utilizados.\n\nRetemos as informações coletadas apenas pelo tempo necessário para fornecer o serviço solicitado. Quando armazenamos dados, protegemos essas informações dentro de meios comercialmente aceitáveis para evitar perdas, roubos, acesso, divulgação, cópia, uso ou modificação não autorizados.\n\nNão compartilhamos informações de identificação pessoal publicamente ou com terceiros, exceto quando exigido por lei.\n\nNosso site pode ter links para sites externos que não são operados por nós. Não temos controle sobre o conteúdo e as práticas desses sites e não podemos aceitar responsabilidade por suas respectivas políticas de privacidade.\n\nO usuário é livre para recusar a solicitação de informações pessoais, entendendo que talvez não possamos fornecer alguns dos serviços desejados.\n\nO uso continuado do site será considerado como aceitação de nossas práticas em torno de privacidade e informações pessoais. Se houver dúvidas sobre como lidamos com dados do usuário e informações pessoais, o contato pode ser feito diretamente com a Diamante Profissional.\n\nCOMPROMISSO DO USUÁRIO\n\nO usuário se compromete a fazer uso adequado dos conteúdos e das informações oferecidas no site, incluindo não se envolver em atividades ilegais, não difundir conteúdo ilícito e não causar danos aos sistemas da empresa, fornecedores ou terceiros.\n\nEsta política de privacidade é apresentada como referência institucional de como tratamos dados, navegação e relacionamento digital no ambiente da marca."
+    },
+    "Terms": {
+      "title": "Termos de Uso",
+      "content": "Esta pagina reune os termos gerais de uso do ambiente digital da Diamante Profissional.\n\nNo momento, este conteudo institucional esta em atualizacao para consolidar as regras de navegacao, uso de formularios, relacionamento comercial e demais condicoes aplicaveis ao site.\n\nEm caso de duvidas sobre uso do site, atendimento, privacidade ou relacionamento comercial, entre em contato com a nossa equipe pelos canais oficiais apresentados na pagina de Contato."
     }
   }
 }

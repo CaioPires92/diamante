@@ -5,7 +5,9 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import { useTranslations } from 'next-intl';
-import { Container } from '../Container';
+import { ProcessStep } from '../ProcessStep';
+import { Section } from '../Section';
+import { SectionHeader } from '../SectionHeader';
 import styles from './PrivateLabelProcess.module.css';
 
 if (typeof window !== 'undefined') {
@@ -57,26 +59,21 @@ export function PrivateLabelProcess() {
   }, { scope: sectionRef });
 
   return (
-    <section className={styles.section} ref={sectionRef}>
-      <Container>
-        <div className={`${styles.header} process-header`}>
-          <h2 className={styles.title}>{t('title')}</h2>
-        </div>
+    <Section className={styles.section} ref={sectionRef}>
+      <SectionHeader title={t('title')} className={`${styles.header} process-header`} />
 
-        <div className={`${styles.grid} process-grid`}>
-          {stepKeys.map((key) => (
-            <div key={key} className={`${styles.step} process-step`}>
-              <div className={styles.numberWrapper}>
-                <span className={styles.number}>{key}</span>
-              </div>
-              <div className={styles.content}>
-                <h3 className={styles.stepTitle}>{t(`steps.${key}.title`)}</h3>
-                <p className={styles.stepDesc}>{t(`steps.${key}.desc`)}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </Container>
-    </section>
+      <div className={`${styles.grid} process-grid`}>
+        {stepKeys.map((key, index) => (
+          <ProcessStep
+            key={key}
+            className="process-step"
+            number={key}
+            title={t(`steps.${key}.title`)}
+            description={t(`steps.${key}.desc`)}
+            withConnector={index < stepKeys.length - 1}
+          />
+        ))}
+      </div>
+    </Section>
   );
 }

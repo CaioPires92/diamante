@@ -9,17 +9,16 @@ import { Section } from './Section';
 import { SectionHeader } from './SectionHeader';
 import styles from './PrivateLabelTeaser.module.css';
 
-// Register GSAP plugins
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-export function PrivateLabelTeaser() {
-  const t = useTranslations('PrivateLabel');
+export function DreamsBannerSection() {
+  const t = useTranslations('DreamsBanner');
   const sectionRef = useRef<HTMLElement>(null);
 
   useGSAP((context) => {
-    const phrase = context.selector?.('.pl-phrase');
+    const phrase = context.selector?.('.dreams-phrase');
 
     if (phrase) {
       gsap.fromTo(phrase, {
@@ -39,10 +38,10 @@ export function PrivateLabelTeaser() {
   }, { scope: sectionRef, dependencies: [] });
 
   return (
-    <Section id="private-label" variant="soft" className={styles.section} ref={sectionRef}>
+    <Section variant="soft" className={styles.section} ref={sectionRef}>
       <SectionHeader
         title={t('title')}
-        className={`pl-phrase ${styles.header}`}
+        className={`dreams-phrase ${styles.header}`}
       />
     </Section>
   );

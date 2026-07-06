@@ -1,31 +1,15 @@
 .section {
-  padding: clamp(6rem, 10vw, 10rem) 0;
-  background-color: #FFFFFF;
   position: relative;
-  z-index: 1;
 }
 
 .header {
-  text-align: center;
-  margin-bottom: var(--space-16);
   max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.title {
-  font-family: var(--font-playfair);
-  font-size: clamp(2rem, 4vw, 3rem);
-  color: #2D2A26;
-  line-height: var(--leading-tight);
-  font-weight: 500;
 }
 
 .grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-12);
-  position: relative;
 }
 
 @media (min-width: 768px) {
@@ -37,73 +21,5 @@
 @media (min-width: 1024px) {
   .grid {
     grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-.step {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  position: relative;
-}
-
-.numberWrapper {
-  width: 60px;
-  height: 60px;
-  background-color: #F8F4EF;
-  border-radius: var(--radius-full);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: var(--space-6);
-  border: 1px solid rgba(197, 148, 65, 0.2);
-  transition: all var(--duration-normal) var(--ease-out);
-}
-
-.step:hover .numberWrapper {
-  background-color: var(--color-gold);
-  border-color: var(--color-gold);
-}
-
-.number {
-  font-family: var(--font-playfair);
-  font-size: var(--text-h3);
-  color: var(--color-gold);
-  font-weight: 700;
-  transition: color var(--duration-normal) var(--ease-out);
-}
-
-.step:hover .number {
-  color: #FFFFFF;
-}
-
-.stepTitle {
-  font-family: var(--font-inter);
-  font-size: var(--text-lg);
-  font-weight: 600;
-  color: #2D2A26;
-  margin-bottom: var(--space-3);
-  letter-spacing: var(--tracking-tight);
-}
-
-.stepDesc {
-  font-family: var(--font-inter);
-  font-size: var(--text-sm);
-  color: #6B625A;
-  line-height: var(--leading-relaxed);
-}
-
-/* Connectors on desktop */
-@media (min-width: 1024px) {
-  .step:not(:last-child)::after {
-    content: '';
-    position: absolute;
-    top: 30px;
-    left: 70%;
-    width: 60%;
-    height: 1px;
-    background-color: rgba(197, 148, 65, 0.1);
-    z-index: -1;
   }
 }

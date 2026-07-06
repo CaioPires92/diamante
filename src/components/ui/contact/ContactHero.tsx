@@ -32,25 +32,21 @@ export function ContactHero() {
 
   return (
     <section className={styles.section} ref={sectionRef}>
-      <div className={styles.backgroundGlow} />
+      <Image
+        src="/imgs/about-hero-generated-v1.png"
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        className={styles.backgroundImage}
+      />
+      <div className={styles.overlay} />
       <Container size="wide">
         <div className={styles.layout}>
           <div className={styles.content}>
             <span className={`${styles.tagline} hero-anim`}>{t('tagline')}</span>
             <h1 className={`${styles.title} hero-anim`}>{t('title')}</h1>
             <p className={`${styles.subtitle} hero-anim`}>{t('subtitle')}</p>
-          </div>
-
-          <div className={`${styles.visual} hero-anim`} aria-hidden="true">
-            <Image
-              src="/imgs/final_cta_parallax_bg.png"
-              alt=""
-              fill
-              priority
-              sizes="(max-width: 900px) 90vw, 42vw"
-              className={styles.image}
-            />
-            <div className={styles.visualOverlay} />
           </div>
         </div>
       </Container>
