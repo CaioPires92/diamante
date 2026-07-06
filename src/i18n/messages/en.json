@@ -4,9 +4,9 @@
     "title": "Salon-quality hair,\nevery single day.\n<highlight>Professional care.</highlight>",
     "subtitle": "<strong>In-house</strong> hair cosmetics, developed for salons and clients who demand <strong>real results</strong>.",
     "briefingLine": "BE YOUR OWN BOSS. LAUNCH YOUR COSMETIC BRAND WITH US.",
-    "primaryCta": "Create my brand",
-    "secondaryCta": "Talk to a specialist",
-    "whatsAppCta": "Launch my brand",
+    "primaryCta": "Create My Cosmetics Brand",
+    "secondaryCta": "Talk to a Specialist",
+    "whatsAppCta": "Create My Cosmetics Brand",
     "viewCollection": "Discover the professional line",
     "badges": {
       "manufacturing": "IN-HOUSE MANUFACTURING",
@@ -15,11 +15,29 @@
       "price": "FAIR PRICE"
     }
   },
+  "HomeLeadModal": {
+    "tagline": "INITIAL BRIEFING",
+    "title": "I Want to Create My Cosmetics Brand",
+    "description": "Fill in the details below so our team can understand your idea and start the first project direction.",
+    "close": "Close modal",
+    "submit": "Send My Idea",
+    "sending": "Sending...",
+    "successTitle": "We received your idea",
+    "successDescription": "Our commercial team will review your briefing and contact you to continue the project.",
+    "closeCta": "Talk to a Specialist",
+    "fields": {
+      "name": "Name",
+      "whatsapp": "WhatsApp",
+      "email": "E-mail",
+      "brand": "Brand or project name",
+      "message": "Tell us your idea"
+    }
+  },
   "Common": {
-    "learnMore": "Learn more",
-    "contact": "Contact",
-    "buyNow": "Buy now",
-    "whatsapp": "Contact via WhatsApp"
+    "learnMore": "Receive Catalog",
+    "contact": "Talk to a Specialist",
+    "buyNow": "Request a Quote",
+    "whatsapp": "Talk to a Specialist"
   },
   "Header": {
     "products": "Products",
@@ -30,7 +48,7 @@
   "Products": {
     "title": "Explore Our Main Product Categories",
     "catalogText": "We also develop categories such as creams, shampoos, serums, makeup and other options to expand your brand portfolio.",
-    "catalogCta": "View all products",
+    "catalogCta": "Receive Catalog",
     "subtitle": "Strategic categories for brands that want to launch a strong and commercially attractive haircare line.",
     "cardLabel": "Manufacturing capability",
     "items": {
@@ -58,7 +76,7 @@
       "benefits": "Technical Benefits",
       "ingredients": "Composition / Actives",
       "related": "You may also like",
-      "buyNow": "Request via WhatsApp",
+      "buyNow": "Request a Quote",
       "line": "Line",
       "features": "Differentials"
     }
@@ -160,7 +178,7 @@
       "design": "Design Support",
       "quality": "Certified Quality"
     },
-    "cta": "Talk to a Consultant"
+    "cta": "Start Project"
   },
   "StructureServices": {
     "tagline": "HAIRCARE CONTRACT MANUFACTURING",
@@ -226,8 +244,8 @@
   "FinalCTA": {
     "title": "Ready to Transform Your Experience?",
     "description": "Whether you are a professional seeking peak performance or an entrepreneur starting your own brand, Diamante is your next step.",
-    "ctaPrimary": "Launch my brand",
-    "ctaSecondary": "Talk to Diamante"
+    "ctaPrimary": "Create My Brand",
+    "ctaSecondary": "Talk to a Specialist"
   },
   "About": {
     "Hero": {
@@ -314,10 +332,44 @@
         "distributor": "Become a Distributor",
         "privateLabel": "Private Label"
       },
-      "submit": "Send Message",
+      "submit": "Send My Idea",
       "sending": "Sending...",
       "successTitle": "Message Sent!",
       "successMessage": "Thank you for getting in touch. Our team will get back to you as soon as possible."
+    }
+  },
+  "DistributorPage": {
+    "Process": {
+      "tagline": "HOW IT WORKS",
+      "title": "From Project to Delivery of Your Brand",
+      "description": "Each stage is designed to turn your idea into a product line ready for commercialization, with more clarity, agility and technical support.",
+      "steps": {
+        "1": {
+          "title": "You send your project",
+          "desc": "We receive your idea, goals and product category to understand the best development path.",
+          "action": "Send project"
+        },
+        "2": {
+          "title": "You receive the quote",
+          "desc": "We present the commercial proposal with technical direction, scope and next steps.",
+          "action": "Receive quote"
+        },
+        "3": {
+          "title": "You approve the sample",
+          "desc": "We develop the sample for validation before moving into production.",
+          "action": "Approve sample"
+        },
+        "4": {
+          "title": "We start production",
+          "desc": "After approval, we structure manufacturing, filling and technical follow-up according to the defined project.",
+          "action": "Production"
+        },
+        "5": {
+          "title": "Your line is delivered",
+          "desc": "Your finished product is delivered ready for sale, with support through the delivery stage.",
+          "action": "Delivery"
+        }
+      }
     }
   },
   "PrivateLabelPage": {
@@ -367,7 +419,7 @@
     "CTA": {
       "title": "Ready to Take the Next Step?",
       "subtitle": "Speak to a business consultant and discover how easy it is to launch your brand.",
-      "button": "Speak to a Consultant via WhatsApp"
+      "button": "Schedule Meeting"
     }
   },
   "Footer": {

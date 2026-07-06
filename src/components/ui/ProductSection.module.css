@@ -66,24 +66,32 @@
 .catalogLink {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   width: fit-content;
-  padding-bottom: 0.15rem;
-  border-bottom: 1px solid rgba(184, 138, 58, 0.35);
-  font-size: 0.84rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  padding: 0.82rem 1.15rem;
+  border: 2px solid rgba(89, 67, 28, 0.9);
+  border-radius: 0.45rem;
+  background: rgba(255, 251, 243, 0.92);
+  box-shadow: 0 8px 18px rgba(184, 138, 58, 0.08);
+  font-size: 0.92rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: #b88a3a;
   transition:
+    background-color var(--duration-normal) var(--ease-default),
     color var(--duration-normal) var(--ease-default),
     border-color var(--duration-normal) var(--ease-default),
+    box-shadow var(--duration-normal) var(--ease-default),
     transform var(--duration-normal) var(--ease-default);
 }
 
 .catalogLink:hover {
   color: #8f6726;
-  border-color: rgba(143, 103, 38, 0.45);
-  transform: translateX(2px);
+  background: rgba(255, 247, 229, 0.98);
+  border-color: rgba(89, 67, 28, 1);
+  box-shadow: 0 12px 24px rgba(184, 138, 58, 0.14);
+  transform: translateY(-1px);
 }
 
 .productItem {

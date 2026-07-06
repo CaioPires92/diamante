@@ -42,6 +42,24 @@ npm install
 npm run dev
 ```
 
+## ✉️ Envio de Leads por E-mail
+
+O modal do hero envia os dados para `POST /api/lead`, que dispara um e-mail usando a API da Resend.
+
+Configure estas variáveis em `web/.env.local`:
+
+```bash
+RESEND_API_KEY=re_xxxxxxxxx
+LEAD_RECEIVER_EMAIL=contato@diamanteprofissional.com.br
+LEAD_SENDER_EMAIL=onboarding@resend.dev
+```
+
+Notas:
+- `LEAD_RECEIVER_EMAIL` define quem recebe o lead.
+- `LEAD_SENDER_EMAIL` deve ser um remetente aceito pela Resend.
+- Para produção, o ideal é usar um domínio verificado, por exemplo `leads@seudominio.com`.
+- Se `LEAD_RECEIVER_EMAIL` não for definido, o fallback será `contato@diamanteprofissional.com.br`.
+
 ## 🌍 Internacionalização (i18n)
 O projeto utiliza `next-intl` para suporte multi-idioma:
 - **Português (pt-BR)**

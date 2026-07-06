@@ -6,7 +6,7 @@ import Link from 'next/link';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
-import { useLocale, useTranslations } from 'next-intl';
+import { useTranslations } from 'next-intl';
 import { Section } from './Section';
 import styles from './ProductSection.module.css';
 
@@ -33,9 +33,11 @@ const categories = [
 
 export function ProductSection() {
   const t = useTranslations('Products');
-  const locale = useLocale();
   const sectionRef = useRef<HTMLElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const catalogUrl = `https://wa.me/551938176156?text=${encodeURIComponent(
+    'Olá! Gostaria de receber o catálogo completo da Diamante Profissional.'
+  )}`;
 
   useEffect(() => {
     const interval = window.setInterval(() => {
@@ -123,7 +125,12 @@ export function ProductSection() {
 
           <div className={styles.catalogNote}>
             <p className={styles.catalogText}>{t('catalogText')}</p>
-            <Link href={`/${locale}/products`} className={styles.catalogLink}>
+            <Link
+              href={catalogUrl}
+              className={styles.catalogLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {t('catalogCta')}
             </Link>
           </div>

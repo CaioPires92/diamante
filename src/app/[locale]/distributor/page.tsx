@@ -3,6 +3,7 @@ import { Container } from '@/components/ui/Container';
 import { PrivateLabelTeaser } from '@/components/ui/PrivateLabelTeaser';
 import { DistributorHero } from '@/components/ui/distributor/DistributorHero';
 import { DistributorForm } from '@/components/ui/distributor/DistributorForm';
+import { DistributorProcessSection } from '@/components/ui/distributor/DistributorProcessSection';
 
 export default function DistributorPage() {
   return (
@@ -13,6 +14,8 @@ export default function DistributorPage() {
 
       {/* Reaproveitando PrivateLabelTeaser como proof of concept */}
       <PrivateLabelTeaser />
+
+      <DistributorProcessSection />
 
       {/* Formulário de Aplicação */}
       <section style={{ padding: '80px 0', backgroundColor: '#F8F4EF' }}>

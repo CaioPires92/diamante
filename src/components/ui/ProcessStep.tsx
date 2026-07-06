@@ -6,6 +6,7 @@ interface ProcessStepProps extends React.HTMLAttributes<HTMLDivElement> {
   number: string;
   title: string;
   description: string;
+  actionLabel?: string;
   withConnector?: boolean;
 }
 
@@ -13,6 +14,7 @@ export function ProcessStep({
   number,
   title,
   description,
+  actionLabel,
   withConnector = false,
   className,
   ...props
@@ -25,6 +27,7 @@ export function ProcessStep({
       <div className={styles.content}>
         <h3 className={styles.title}>{title}</h3>
         <p className={styles.description}>{description}</p>
+        {actionLabel ? <span className={styles.actionLabel}>{actionLabel}</span> : null}
       </div>
     </div>
   );

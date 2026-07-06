@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import Image from 'next/image';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
@@ -8,6 +8,7 @@ import { Container } from './Container';
 import styles from './HeroSection.module.css';
 import { Button } from './Button';
 import { useTranslations } from 'next-intl';
+import { HeroLeadModal } from './HeroLeadModal';
 
 gsap.registerPlugin(useGSAP);
 
@@ -15,9 +16,7 @@ export function HeroSection() {
   const t = useTranslations('Home');
   const sectionRef = useRef<HTMLElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
-  const whatsappUrl = `https://wa.me/551938176156?text=${encodeURIComponent(
-    'Olá! Quero lançar minha marca de cosméticos com a Diamante Profissional.'
-  )}`;
+  const [isLeadModalOpen, setIsLeadModalOpen] = useState(false);
 
   useGSAP((context) => {
     // Background Image Zoom Entrance
@@ -80,34 +79,29 @@ export function HeroSection() {
           </p>
 
           <div className={`${styles.actions} anim-item`}>
-            <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ textDecoration: 'none' }}
+            <Button
+              type="button"
+              variant="primary"
+              className={styles.buyButton}
+              onClick={() => setIsLeadModalOpen(true)}
+              onMouseEnter={(e) => {
+                const target = e.currentTarget;
+                gsap.to(target, { scale: 1.05, duration: 0.4, ease: "power2.out" });
+                const shimmer = target.querySelector(`.${styles.shimmer}`);
+                if (shimmer) {
+                  gsap.fromTo(shimmer, { left: '-100%' }, { left: '150%', duration: 1, ease: "power1.inOut" });
+                }
+              }}
+              onMouseLeave={(e) => {
+                gsap.to(e.currentTarget, { scale: 1, duration: 0.4, ease: "power2.out" });
+              }}
             >
-              <Button
-                variant="primary"
-                className={styles.buyButton}
-                onMouseEnter={(e) => {
-                  const target = e.currentTarget;
-                  gsap.to(target, { scale: 1.05, duration: 0.4, ease: "power2.out" });
-                  const shimmer = target.querySelector(`.${styles.shimmer}`);
-                  if (shimmer) {
-                    gsap.fromTo(shimmer, { left: '-100%' }, { left: '150%', duration: 1, ease: "power1.inOut" });
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  gsap.to(e.currentTarget, { scale: 1, duration: 0.4, ease: "power2.out" });
-                }}
-              >
-                <div className={styles.shimmer} />
-                <span>{t('whatsAppCta')}</span>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={styles.arrowIcon}>
-                  <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
-                </svg>
-              </Button>
-            </a>
+              <div className={styles.shimmer} />
+              <span>{t('whatsAppCta')}</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={styles.arrowIcon}>
+                <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
+              </svg>
+            </Button>
           </div>
 
           <div className={`${styles.trustBadges} anim-item`}>
@@ -158,6 +152,11 @@ export function HeroSection() {
           </div>
         </div>
       </Container>
+
+      <HeroLeadModal
+        isOpen={isLeadModalOpen}
+        onClose={() => setIsLeadModalOpen(false)}
+      />
     </section>
   );
 }

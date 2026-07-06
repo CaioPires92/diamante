@@ -3,9 +3,9 @@
     "eyebrow": "PRIVATE LABEL CAPILAR",
     "title": "SEU SONHO MERECE UMA\n<highlight>FÁBRICA À ALTURA.</highlight>",
     "subtitle": "Transformamos sua ideia em\numa marca de cosméticos com\n<highlight>excelência,inovação e qualidade</highlight>\nem cada etapa da produção.",
-    "primaryCta": "Quero criar minha marca",
-    "secondaryCta": "Falar com um especialista",
-    "whatsAppCta": "Falar no WhatsApp",
+    "primaryCta": "Quero Criar Minha Marca de Cosméticos",
+    "secondaryCta": "Falar com um Especialista",
+    "whatsAppCta": "Quero Criar Minha Marca de Cosméticos",
     "viewCollection": "Conhecer a linha profissional",
     "badges": {
       "development": "DESENVOLVIMENTO DE FÓRMULAS",
@@ -15,11 +15,29 @@
       "regulatory": "SUPORTE REGULATÓRIO E DOCUMENTAÇÃO"
     }
   },
+  "HomeLeadModal": {
+    "tagline": "BRIEFING INICIAL",
+    "title": "Quero Criar Minha Marca de Cosméticos",
+    "description": "Preencha os dados abaixo para nossa equipe entender sua ideia e iniciar o primeiro direcionamento do projeto.",
+    "close": "Fechar modal",
+    "submit": "Enviar Minha Ideia",
+    "sending": "Enviando...",
+    "successTitle": "Recebemos sua ideia",
+    "successDescription": "Nossa equipe comercial vai analisar seu briefing e entrar em contato para dar sequência ao projeto.",
+    "closeCta": "Falar com um Especialista",
+    "fields": {
+      "name": "Nome",
+      "whatsapp": "WhatsApp",
+      "email": "E-mail",
+      "brand": "Nome da marca ou projeto",
+      "message": "Conte sua ideia"
+    }
+  },
   "Common": {
-    "learnMore": "Ver detalhes",
-    "contact": "Contato",
-    "buyNow": "Comprar agora",
-    "whatsapp": "Fale pelo WhatsApp"
+    "learnMore": "Receber Catálogo",
+    "contact": "Falar com um Especialista",
+    "buyNow": "Solicitar Orçamento",
+    "whatsapp": "Falar com um Especialista"
   },
   "Header": {
     "home": "Início",
@@ -34,7 +52,7 @@
   "Products": {
     "title": "Conheça Nossos Principais Produtos",
     "catalogText": "Também desenvolvemos categorias como cremes, shampoos, séruns, maquiagem e outras opções para ampliar o portfólio da sua marca.",
-    "catalogCta": "Ver todos os produtos",
+    "catalogCta": "Receber Catálogo",
     "highlight": "TERCEIRIZE SUA LINHA CAPILAR CONOSCO!",
     "categories": {
       "eyebrow": "Categorias que Desenvolvemos",
@@ -163,7 +181,7 @@
         "description": "Brilho extremo e maciez de longa duração."
       }
     },
-    "cta": "Conhecer a Linha Completa"
+    "cta": "Receber Catálogo"
   },
   "PrivateLabel": {
     "tagline": "Sua Ideia com Estrutura de Produção",
@@ -175,7 +193,7 @@
       "design": "Apoio ao Desenvolvimento",
       "quality": "Qualidade em Cada Etapa"
     },
-    "cta": "Entender a terceirização"
+    "cta": "Iniciar Projeto"
   },
   "DreamsBanner": {
     "title": "REALIZANDO SONHOS A MAIS DE 15 ANOS"
@@ -205,7 +223,7 @@
   },
   "StructureHighlights": {
     "items": {
-      "exclusive": "Desenvolvimento de\nfórmulas exclusivas",
+      "exclusive": "Desenvolvimento de fórmulas exclusivas",
       "performance": "Produtos de alta performance",
       "speed": "Rapidez na entrega",
       "support": "Suporte regulatório",
@@ -259,8 +277,8 @@
   "FinalCTA": {
     "title": "Realize Seu Sonho de Ter Sua Própria Marca",
     "description": "Fale com a Diamante e dê o próximo passo para iniciar seu projeto com mais clareza comercial e suporte de produção.",
-    "ctaPrimary": "Quero lançar minha marca",
-    "ctaSecondary": "Falar com a Diamante"
+    "ctaPrimary": "Quero Criar Minha Marca",
+    "ctaSecondary": "Falar com um Especialista"
   },
   "About": {
     "Hero": {
@@ -342,10 +360,44 @@
         "distributor": "Quero ser Distribuidor",
         "privateLabel": "Private Label"
       },
-      "submit": "Enviar Mensagem",
+      "submit": "Enviar Minha Ideia",
       "sending": "Enviando...",
       "successTitle": "Mensagem Enviada!",
       "successMessage": "Obrigado por entrar em contato. Nossa equipe retornará o mais breve possível."
+    }
+  },
+  "DistributorPage": {
+    "Process": {
+      "tagline": "COMO FUNCIONA",
+      "title": "Do Projeto à Entrega da Sua Marca",
+      "description": "Cada etapa foi pensada para transformar sua ideia em uma linha pronta para comercialização, com mais clareza, agilidade e suporte técnico.",
+      "steps": {
+        "1": {
+          "title": "Você envia seu projeto",
+          "desc": "Recebemos sua ideia, objetivos e categoria de produto para entender o melhor caminho para o desenvolvimento.",
+          "action": "Enviar projeto"
+        },
+        "2": {
+          "title": "Você recebe o orçamento",
+          "desc": "Apresentamos a proposta comercial com direcionamento técnico, escopo e próximos passos do projeto.",
+          "action": "Receber orçamento"
+        },
+        "3": {
+          "title": "Você aprova a amostra",
+          "desc": "Desenvolvemos a amostra para validação da proposta antes de avançar para a etapa produtiva.",
+          "action": "Aprovar amostra"
+        },
+        "4": {
+          "title": "Iniciamos a produção",
+          "desc": "Com a aprovação, estruturamos fabricação, envase e acompanhamento técnico conforme o projeto definido.",
+          "action": "Produção"
+        },
+        "5": {
+          "title": "Sua linha é entregue",
+          "desc": "Seu produto finalizado segue pronto para venda, com suporte até a etapa de entrega.",
+          "action": "Entrega"
+        }
+      }
     }
   },
   "ProductDetail": {
@@ -354,7 +406,7 @@
       "benefits": "Benefícios Técnicos",
       "ingredients": "Composição / Ativos",
       "related": "Você também pode gostar",
-      "buyNow": "Solicitar via WhatsApp",
+      "buyNow": "Solicitar Orçamento",
       "line": "Linha",
       "features": "Diferenciais"
     }
@@ -406,7 +458,7 @@
     "CTA": {
       "title": "Pronto para Dar o Próximo Passo?",
       "subtitle": "Fale com um consultor comercial e descubra como é fácil lançar a sua marca.",
-      "button": "Falar com Consultor"
+      "button": "Agendar Reunião"
     }
   },
   "Footer": {

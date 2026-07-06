@@ -40,6 +40,7 @@
   padding: 1rem 1.1rem 0.5rem;
   text-align: center;
   border-right: 1px solid rgba(201, 145, 53, 0.18);
+
 }
 
 .item:last-child {
@@ -64,12 +65,14 @@
 }
 
 .label {
-  max-width: 12ch;
+  max-width: 16ch;
+  margin: 0 auto;
+  text-align: center;
+  text-wrap: balance;
   font-size: clamp(0.92rem, 1.1vw, 1.05rem);
   font-weight: 700;
   line-height: 1.12;
   text-transform: uppercase;
-  white-space: pre-line;
   color: #f0ece6;
 }
 
