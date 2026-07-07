@@ -64,6 +64,7 @@ export async function POST(request: Request) {
         Authorization: `Bearer ${resendApiKey}`,
         'Content-Type': 'application/json',
       },
+      signal: AbortSignal.timeout(15000),
       body: JSON.stringify({
         from: senderEmail,
         to: [receiverEmail],
@@ -76,6 +77,28 @@ export async function POST(request: Request) {
 
     if (!response.ok) {
       const errorBody = await response.text();
+
+      try {
+        const resendError = JSON.parse(errorBody) as {
+          name?: string;
+          message?: string;
+        };
+
+        if (
+          resendError.name === 'validation_error' &&
+          resendError.message?.includes('You can only send testing emails to your own email address')
+        ) {
+          return NextResponse.json(
+            {
+              error:
+                'A Resend ainda esta em modo de teste. Nesse modo, voce so pode enviar para o seu proprio e-mail cadastrado na Resend. Para enviar para contato@diamanteprofissional.com.br, verifique um dominio na Resend e troque LEAD_SENDER_EMAIL para um remetente desse dominio, como leads@diamanteprofissional.com.br.',
+            },
+            { status: 502 },
+          );
+        }
+      } catch {
+        // Keep generic fallback below when the provider response is not JSON.
+      }
 
       return NextResponse.json(
         { error: `Falha ao enviar lead: ${errorBody}` },

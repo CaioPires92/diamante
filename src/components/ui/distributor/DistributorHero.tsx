@@ -50,8 +50,8 @@ export function DistributorHero() {
                   <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
                 </svg>
                 <div className={styles.badgeText}>
-                  <h4>Margem Atrativa</h4>
-                  <p>Tabela de preços escalonada e alta lucratividade</p>
+                  <h4>Desenvolvimento de fórmulas exclusivas</h4>
+                  <p>Soluções personalizadas para criar linhas com identidade própria</p>
                 </div>
               </div>
 
@@ -60,8 +60,8 @@ export function DistributorHero() {
                   <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
                 </svg>
                 <div className={styles.badgeText}>
-                  <h4>+200 Produtos</h4>
-                  <p>Portfólio completo com fabricação própria e ANVISA</p>
+                  <h4>Produtos de alta performance</h4>
+                  <p>Formulações desenvolvidas para resultado, qualidade e consistência</p>
                 </div>
               </div>
 
@@ -73,8 +73,8 @@ export function DistributorHero() {
                   <circle cx="18.5" cy="18.5" r="2.5"></circle>
                 </svg>
                 <div className={styles.badgeText}>
-                  <h4>Logística Integrada</h4>
-                  <p>Entrega para todo o Brasil via Correios, Jadlog e TNT</p>
+                  <h4>Rapidez na entrega</h4>
+                  <p>Operação estruturada para dar mais agilidade ao projeto</p>
                 </div>
               </div>
 
@@ -84,8 +84,22 @@ export function DistributorHero() {
                   <polyline points="22 4 12 14.01 9 11.01"></polyline>
                 </svg>
                 <div className={styles.badgeText}>
-                  <h4>Suporte & Exclusividade</h4>
-                  <p>Treinamentos de produto e exclusividade regional</p>
+                  <h4>Suporte regulatório</h4>
+                  <p>Apoio em rótulos, embalagens, notificações e registros</p>
+                </div>
+              </div>
+
+              <div className={styles.badgeItem}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={styles.badgeIcon}>
+                  <path d="M8 3H5a2 2 0 0 0-2 2v3"></path>
+                  <path d="M16 3h3a2 2 0 0 1 2 2v3"></path>
+                  <path d="M8 21H5a2 2 0 0 1-2-2v-3"></path>
+                  <path d="M16 21h3a2 2 0 0 0 2-2v-3"></path>
+                  <path d="M9 9h6v6H9z"></path>
+                </svg>
+                <div className={styles.badgeText}>
+                  <h4>Flexibilidade de produção</h4>
+                  <p>Estrutura adaptável para diferentes demandas e formatos de linha</p>
                 </div>
               </div>
             </div>
