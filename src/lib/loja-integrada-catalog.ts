@@ -333,6 +333,44 @@ async function getProductDetail(productId: number) {
   return lojaIntegradaFetch<LojaIntegradaProductDetail>(`/v1/produto/${productId}`);
 }
 
+async function mapProductDetail(
+  detail: LojaIntegradaProductDetail,
+  categoriesMap: Map<number, LojaIntegradaCategory>,
+  price: LojaIntegradaPrice | null,
+  stock: LojaIntegradaStock | null,
+) {
+  const lineSlug = inferLineSlug(detail, categoriesMap);
+  const gallery = getGallery(detail);
+  const parsedDescription = splitDescription(detail.descricao_completa || '');
+  const quantityAvailable = stock?.quantidade_disponivel;
+
+  return {
+    id: String(detail.id),
+    lojaIntegradaId: String(detail.id),
+    slug: extractSlug(detail),
+    title: detail.nome || `Produto ${detail.id}`,
+    name: detail.nome || `Produto ${detail.id}`,
+    description: parsedDescription.description,
+    gallery: gallery.length > 0 ? gallery : [PLACEHOLDER_IMAGE],
+    image: gallery[0] || PLACEHOLDER_IMAGE,
+    line: lineNamesMap[lineSlug] || lineSlug,
+    lineSlug,
+    price: formatCurrency(price?.promocional || price?.cheio),
+    size: parseSize(detail.nome || ''),
+    code: detail.sku || undefined,
+    howToUse: parsedDescription.howToUse,
+    benefits: parsedDescription.benefits,
+    ingredients: parsedDescription.ingredients,
+    available: detail.ativo && !detail.bloqueado && (stock?.gerenciado ? (quantityAvailable || 0) > 0 : true),
+    quantityAvailable,
+    features: [
+      stock?.gerenciado ? `Estoque disponível: ${quantityAvailable || 0}` : 'Disponibilidade sob consulta',
+      detail.sku ? `SKU: ${detail.sku}` : 'Produto oficial Diamante Profissional',
+      price?.promocional ? 'Preço promocional ativo' : 'Compra oficial pela loja',
+    ],
+  };
+}
+
 function inferLineSlug(
   product: LojaIntegradaProductListItem,
   categoriesMap: Map<number, LojaIntegradaCategory>,
@@ -479,36 +517,24 @@ export async function getStoreProductBySlug(slug: string) {
     getProductStock(summary.id).catch(() => null),
   ]);
 
-  const lineSlug = inferLineSlug(detail, categoriesMap);
-  const gallery = getGallery(detail);
-  const parsedDescription = splitDescription(detail.descricao_completa || '');
-  const quantityAvailable = stock?.quantidade_disponivel;
+  return mapProductDetail(detail, categoriesMap, price, stock);
+}
 
-  return {
-    id: String(detail.id),
-    lojaIntegradaId: String(detail.id),
-    slug: extractSlug(detail),
-    title: detail.nome || `Produto ${detail.id}`,
-    name: detail.nome || `Produto ${detail.id}`,
-    description: parsedDescription.description,
-    gallery: gallery.length > 0 ? gallery : [PLACEHOLDER_IMAGE],
-    image: gallery[0] || PLACEHOLDER_IMAGE,
-    line: lineNamesMap[lineSlug] || lineSlug,
-    lineSlug,
-    price: formatCurrency(price?.promocional || price?.cheio),
-    size: parseSize(detail.nome || ''),
-    code: detail.sku || undefined,
-    howToUse: parsedDescription.howToUse,
-    benefits: parsedDescription.benefits,
-    ingredients: parsedDescription.ingredients,
-    available: detail.ativo && !detail.bloqueado && (stock?.gerenciado ? (quantityAvailable || 0) > 0 : true),
-    quantityAvailable,
-    features: [
-      stock?.gerenciado ? `Estoque disponível: ${quantityAvailable || 0}` : 'Disponibilidade sob consulta',
-      detail.sku ? `SKU: ${detail.sku}` : 'Produto oficial Diamante Profissional',
-      price?.promocional ? 'Preço promocional ativo' : 'Compra oficial pela loja',
-    ],
-  };
+export async function getStoreProductsByIds(ids: string[]) {
+  const categoriesMap = await getAllCategories();
+
+  return Promise.all(
+    ids.map(async (id) => {
+      const productId = Number(id);
+      const [detail, price, stock] = await Promise.all([
+        getProductDetail(productId),
+        getProductPrice(productId).catch(() => null),
+        getProductStock(productId).catch(() => null),
+      ]);
+
+      return mapProductDetail(detail, categoriesMap, price, stock);
+    }),
+  );
 }
 
 export async function getRelatedStoreProducts(lineSlug: string, currentProductId: string, limit = 3) {

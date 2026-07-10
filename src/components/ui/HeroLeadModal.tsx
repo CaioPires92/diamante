@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { Button } from './Button';
+import { buildWhatsAppUrl, requestWhatsAppChoice } from '@/lib/whatsapp';
 import styles from './HeroLeadModal.module.css';
 
 interface HeroLeadModalProps {
@@ -33,12 +34,6 @@ export function HeroLeadModal({ isOpen, onClose }: HeroLeadModalProps) {
       window.removeEventListener('keydown', handleEscape);
     };
   }, [isOpen, onClose]);
-
-  useEffect(() => {
-    if (!isOpen) {
-      setIsSubmitting(false);
-    }
-  }, [isOpen]);
 
   if (!isOpen) {
     return null;
@@ -78,9 +73,9 @@ export function HeroLeadModal({ isOpen, onClose }: HeroLeadModalProps) {
       payload.message,
     ].join('\n');
 
-    const whatsappUrl = `https://wa.me/551938176156?text=${encodeURIComponent(whatsappMessage)}`;
+    const whatsappUrl = buildWhatsAppUrl(whatsappMessage);
 
-    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+    requestWhatsAppChoice(whatsappUrl);
     event.currentTarget.reset();
     setIsSubmitting(false);
     onClose();
