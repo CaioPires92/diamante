@@ -2,10 +2,10 @@
   "Home": {
     "eyebrow": "PRIVATE LABEL CAPILAR",
     "title": "SEU SONHO MERECE UMA\n<highlight>FÁBRICA À ALTURA.</highlight>",
-    "subtitle": "Transformamos sua ideia em\numa marca de cosméticos com\n<highlight>excelência,inovação e qualidade</highlight>\nem cada etapa da produção.",
-    "primaryCta": "Quero Criar Minha Marca de Cosméticos",
+    "subtitle": "Transformamos sua ideia em\numa marca de cosméticos com\n<highlight>excelência, inovação e qualidade</highlight>\nem cada etapa da produção.",
+    "primaryCta": "Quero Criar Minha Marca",
     "secondaryCta": "Falar com um Especialista",
-    "whatsAppCta": "Quero Criar Minha Marca de Cosméticos",
+    "whatsAppCta": "Quero Criar Minha Marca",
     "viewCollection": "Conhecer a linha profissional",
     "badges": {
       "development": "DESENVOLVIMENTO DE FÓRMULAS",
@@ -17,7 +17,7 @@
   },
   "HomeLeadModal": {
     "tagline": "BRIEFING INICIAL",
-    "title": "Quero Criar Minha Marca de Cosméticos",
+    "title": "Quero Criar Minha Marca",
     "description": "Preencha os dados abaixo para nossa equipe entender sua ideia e iniciar o primeiro direcionamento do projeto.",
     "close": "Fechar modal",
     "submit": "Enviar Minha Ideia",
@@ -108,7 +108,52 @@
       "finishing": "Finalizadores",
       "wash": "Lavatório"
     },
-    "EmptyState": "Nenhum produto encontrado para esta categoria."
+    "EmptyState": "Nenhum produto encontrado para esta categoria.",
+    "Showcase": {
+      "eyebrow": "Categorias Fabricadas",
+      "title": "Produtos Organizados por Categoria",
+      "description": "Estruturamos a página para você visualizar as categorias da Diamante em trilhos horizontais, com foco comercial e acesso rápido aos produtos e CTAs de fabricação.",
+      "buttons": {
+        "manufacture": "Iniciar Projeto",
+        "quote": "Solicitar Orçamento",
+        "brand": "Quero Criar Minha Marca"
+      },
+      "messages": {
+        "manufacture": "Olá! Quero fabricar produtos da categoria {{category}} com a Diamante Profissional.",
+        "quote": "Olá! Quero solicitar um orçamento para produtos da categoria {{category}}.",
+        "brand": "Olá! Quero personalizar minha marca para a categoria {{category}} com a Diamante Profissional."
+      },
+      "sections": {
+        "shampoos": {
+          "title": "Shampoos e Condicionadores",
+          "description": "Linhas voltadas para limpeza, tratamento e manutenção, com opções para posicionamento profissional e comercial."
+        },
+        "creams": {
+          "title": "Cremes, Máscaras e Tratamentos",
+          "description": "Categoria estratégica para hidratação, nutrição, reconstrução e cronogramas completos."
+        },
+        "serums": {
+          "title": "Séruns e Finalizadores",
+          "description": "Produtos com maior valor percebido, acabamento refinado e forte apelo para linhas premium."
+        },
+        "perfumes": {
+          "title": "Perfumes e Perfumaria",
+          "description": "Opções para ampliar o portfólio com fragrância, presença de marca e maior variedade comercial."
+        },
+        "makeup": {
+          "title": "Maquiagem e Beleza",
+          "description": "Extensão de linha para marcas que desejam atuar além do cuidado capilar e reforçar presença no mercado."
+        },
+        "technical": {
+          "title": "Coloração e Técnicos",
+          "description": "Itens de uso técnico e alta procura, ideais para linhas com foco profissional e performance."
+        },
+        "others": {
+          "title": "Outros Produtos",
+          "description": "Demais itens do catálogo reunidos em uma faixa complementar para ampliar sua visão do portfólio."
+        }
+      }
+    }
   },
   "Features": {
     "title": "Por que Criar Sua Marca com a Diamante",
@@ -185,7 +230,7 @@
   },
   "PrivateLabel": {
     "tagline": "Sua Ideia com Estrutura de Produção",
-    "title": "Fabricamos sua marca de cosméticos capilares",
+    "title": "FABRICAMOS SUA MARCA DE COSMÉTICOS CAPILARES",
     "description": "A Diamante entra no projeto com base técnica, fabricação especializada e apoio ao desenvolvimento para transformar sua proposta em uma linha capilar consistente.",
     "features": {
       "manufacturing": "Fabricação Especializada",
@@ -196,7 +241,7 @@
     "cta": "Iniciar Projeto"
   },
   "DreamsBanner": {
-    "title": "REALIZANDO SONHOS A MAIS DE 15 ANOS"
+    "title": "REALIZANDO SONHOS HÁ MAIS DE 15 ANOS"
   },
   "StructureServices": {
     "tagline": "TERCEIRIZAÇÃO CAPILAR",
@@ -204,8 +249,8 @@
     "description": "Desenvolvemos sua linha capilar com estrutura completa para terceirização: formulação, fabricação, envase, apoio no design da embalagem, suporte regulatório e entrega do produto finalizado.",
     "supportTitle": "Suporte regulatório",
     "supportText": "Auxiliamos no desenvolvimento de rótulos, embalagens, direção visual da linha, notificações e registros junto à ANVISA.",
-    "supportNote": "Atendimento para marcas, distribuidores e projetos de terceirização.",
-    "cta": "Falar com um especialista",
+    "supportNote": "Atendimento para marcas, salões e projetos de terceirização.",
+    "cta": "Falar com um Especialista",
     "items": {
       "development": {
         "title": "Desenvolvimento da fórmula",
@@ -232,7 +277,7 @@
   },
   "Compliance": {
     "tagline": "QUALIDADE E CONFORMIDADE",
-    "title": "Segurança Regulatória para Sua Marca Nascer com Base Sólida",
+    "title": "Qualidade, Segurança e Conformidade em Cada Etapa",
     "description": "A Diamante combina suporte técnico, desenvolvimento e conformidade regulatória para que o projeto avance com mais segurança, clareza e estrutura.",
     "points": {
       "labeling": {
@@ -275,9 +320,9 @@
     }
   },
   "FinalCTA": {
-    "title": "Realize Seu Sonho de Ter Sua Própria Marca",
-    "description": "Fale com a Diamante e dê o próximo passo para iniciar seu projeto com mais clareza comercial e suporte de produção.",
-    "ctaPrimary": "Quero Criar Minha Marca",
+    "title": "TERCEIRIZE SUA LINHA CAPILAR CONOSCO",
+    "description": "Fale com a Diamante e comece a tirar sua marca do papel com estrutura, suporte técnico e fabricação profissional.",
+    "ctaPrimary": "Iniciar Projeto",
     "ctaSecondary": "Falar com um Especialista"
   },
   "About": {
@@ -288,15 +333,15 @@
     },
     "Manifesto": {
       "title": "Quem Somos",
-      "paragraph1": "A Diamante Profissional foi fundada em 2010, na cidade de Amparo, interior de São Paulo, por Mário Juliano Scavroni com o propósito de produzir e comercializar cosméticos de qualidade a preço justo. Hoje, a marca reúne mais de 200 produtos para cabelos, entre linhas profissionais e home care, além de perfumaria fina, maquiagem e hidratação corporal.",
-      "paragraph2": "Somos líderes de mercado no estado de São Paulo e seguimos expandindo a marca por todo o Brasil com salões parceiros que confiam na nossa performance. Essa trajetória também já levou a Diamante para fora do país, com exportações para França, Marrocos, Turquia e Suécia.",
+      "paragraph1": "A Diamante Profissional foi fundada em 2010, na cidade de Amparo, interior de São Paulo, por Mário Juliano Scavroni com o propósito de produzir e comercializar cosméticos de qualidade a preço justo. Hoje, com mais de 15 anos de trajetória, a marca reúne mais de 200 produtos para cabelos, entre linhas profissionais e home care, além de perfumaria fina, maquiagem e hidratação corporal.",
+      "paragraph2": "Somos líderes de mercado no estado de São Paulo e seguimos expandindo a marca por todo o Brasil com salões parceiros que confiam na nossa performance. Essa trajetória também levou a Diamante para fora do país, com exportações para França, Marrocos, Turquia e Suécia.",
       "paragraph3": "Toda a linha produzida e comercializada pela Diamante Profissional é autorizada e regulamentada pela ANVISA, reforçando nosso compromisso com segurança, legalidade e qualidade original em cada produto.",
       "paragraph4": "Além da marca própria, também atuamos com terceirização e desenvolvimento para marcas de salão e distribuição, apoiando profissionais e empreendedores que desejam criar uma linha com identidade própria e estrutura confiável."
     },
     "Laboratory": {
       "tagline": "ESTRUTURA",
       "title": "Realizando Sonhos Há Mais de 15 Anos",
-      "description": "A sede da Diamante Profissional, nossa fábrica e a loja modelo estão localizadas em Amparo/SP. Esse bloco institucional existe para apresentar a base da empresa, sua trajetória e a estrutura que sustenta a operação."
+      "description": "A sede da Diamante Profissional, nossa fábrica e a loja modelo estão localizadas em Amparo/SP. É dessa estrutura que nascem produtos de marca própria, linhas profissionais e projetos de terceirização com padrão confiável."
     },
     "Values": {
       "tagline": "NOSSOS PILARES",
@@ -317,6 +362,10 @@
         "partnership": {
           "title": "Parceria para Crescer",
           "desc": "Atendemos salões, distribuidores e empreendedores com soluções de marca própria e terceirização."
+        },
+        "delivery": {
+          "title": "Entrega Nacional",
+          "desc": "Atendemos pedidos em todo o Brasil por Correios e transportadoras, conforme disponibilidade da região."
         }
       }
     }
@@ -357,7 +406,7 @@
       },
       "subjects": {
         "general": "Dúvida Geral",
-        "distributor": "Quero ser Distribuidor",
+        "distributor": "Terceirização / Private Label",
         "privateLabel": "Private Label"
       },
       "submit": "Enviar Minha Ideia",
@@ -468,8 +517,9 @@
         "title": "Institucional",
         "about": "Sobre Nós",
         "privateLabel": "Private Label",
+        "process": "Como Funciona",
         "contact": "Fale Conosco",
-        "distributor": "Seja Distribuidor"
+        "distributor": "Como Funciona"
       },
       "support": {
         "title": "Suporte",

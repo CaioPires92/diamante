@@ -41,12 +41,13 @@ export function FinalCTA() {
   }, { scope: sectionRef, dependencies: [] });
 
   return (
-    <Section variant="dark" className={styles.section} ref={sectionRef}>
+    <Section variant="dark" className={styles.section} ref={sectionRef} fullBleed>
       <div className={styles.bgWrap} aria-hidden="true">
         <Image
           src="/imgs/final_cta_parallax_bg.png"
           alt=""
           fill
+          sizes="100vw"
           className={styles.bgImage}
           priority
         />

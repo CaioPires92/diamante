@@ -7,6 +7,7 @@ interface SectionProps extends React.HTMLAttributes<HTMLElement> {
   variant?: 'light' | 'soft' | 'dark';
   containerSize?: 'default' | 'wide' | 'narrow';
   innerClassName?: string;
+  fullBleed?: boolean;
 }
 
 export const Section = React.forwardRef<HTMLElement, SectionProps>(function Section(
@@ -15,11 +16,20 @@ export const Section = React.forwardRef<HTMLElement, SectionProps>(function Sect
     containerSize = 'default',
     className,
     innerClassName,
+    fullBleed = false,
     children,
     ...props
   },
   ref
 ) {
+  if (fullBleed) {
+    return (
+      <section ref={ref} className={cn(styles.section, styles[variant], className)} {...props}>
+        {children}
+      </section>
+    );
+  }
+
   return (
     <section ref={ref} className={cn(styles.section, styles[variant], className)} {...props}>
       <Container size={containerSize} className={cn(styles.inner, innerClassName)}>

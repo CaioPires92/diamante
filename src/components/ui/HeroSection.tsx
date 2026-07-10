@@ -48,13 +48,12 @@ export function HeroSection() {
         <Image
           src="/imgs/hero_v1.new.png"
           alt="Diamante Background"
-          width={1920}
-          height={1080}
+          fill
           priority
           className={styles.backgroundImage}
+          sizes="100vw"
           quality={100}
         />
-
       </div>
 
       <div className={styles.shimmerOverlay} />

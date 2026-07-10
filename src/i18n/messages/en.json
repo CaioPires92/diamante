@@ -93,7 +93,52 @@
       "finishing": "Finishers",
       "wash": "Wash"
     },
-    "EmptyState": "No products found for this category."
+    "EmptyState": "No products found for this category.",
+    "Showcase": {
+      "eyebrow": "Manufactured Categories",
+      "title": "Products Organized by Category",
+      "description": "We organized the page into horizontal category rails so you can review the Diamante portfolio with faster product access and clearer manufacturing CTAs.",
+      "buttons": {
+        "manufacture": "I want to manufacture this product",
+        "quote": "Request a quote",
+        "brand": "Customize my brand"
+      },
+      "messages": {
+        "manufacture": "Hello! I want to manufacture products in the {{category}} category with Diamante Profissional.",
+        "quote": "Hello! I would like to request a quote for products in the {{category}} category.",
+        "brand": "Hello! I want to customize my brand for the {{category}} category with Diamante Profissional."
+      },
+      "sections": {
+        "shampoos": {
+          "title": "Shampoos and Conditioners",
+          "description": "Lines focused on cleansing, treatment and maintenance, with options for professional and commercial positioning."
+        },
+        "creams": {
+          "title": "Creams, Masks and Treatments",
+          "description": "A strategic category for hydration, nourishment, reconstruction and complete hair schedules."
+        },
+        "serums": {
+          "title": "Serums and Finishers",
+          "description": "Products with higher perceived value, refined finish and strong appeal for premium lines."
+        },
+        "perfumes": {
+          "title": "Perfumes and Fragrances",
+          "description": "Options to expand the portfolio with fragrance, brand presence and broader commercial variety."
+        },
+        "makeup": {
+          "title": "Makeup and Beauty",
+          "description": "A line extension for brands that want to go beyond hair care and strengthen market presence."
+        },
+        "technical": {
+          "title": "Color and Technical Products",
+          "description": "Technical and high-demand items, ideal for lines focused on professional performance."
+        },
+        "others": {
+          "title": "Other Products",
+          "description": "Additional catalog items grouped into a complementary rail to broaden your view of the portfolio."
+        }
+      }
+    }
   },
   "Features": {
     "title": "Why Diamante Profissional?",
@@ -329,7 +374,7 @@
       },
       "subjects": {
         "general": "General Inquiry",
-        "distributor": "Become a Distributor",
+        "distributor": "Private Label / Outsourcing",
         "privateLabel": "Private Label"
       },
       "submit": "Send My Idea",
@@ -429,8 +474,9 @@
         "title": "Institutional",
         "about": "About Us",
         "privateLabel": "Private Label",
+        "process": "How It Works",
         "contact": "Contact Us",
-        "distributor": "Become a Distributor"
+        "distributor": "How It Works"
       },
       "support": {
         "title": "Support",

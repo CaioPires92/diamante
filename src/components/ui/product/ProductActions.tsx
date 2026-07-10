@@ -148,7 +148,7 @@ export function ProductActions({
               <path d="M3 6h18"></path>
               <path d="M16 10a4 4 0 0 1-8 0"></path>
             </svg>
-            SOLICITAR ORCAMENTO
+            SOLICITAR ORÇAMENTO
           </a>
         ) : (
           <a
@@ -158,7 +158,7 @@ export function ProductActions({
             rel="noopener noreferrer"
             style={{ background: '#8F857D', boxShadow: 'none' }}
           >
-            SOLICITAR ORCAMENTO
+            SOLICITAR ORÇAMENTO
           </a>
         )}
       </div>

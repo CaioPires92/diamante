@@ -92,7 +92,7 @@ export function PrivateLabelHighlightsSection() {
   }, { scope: sectionRef });
 
   return (
-    <Section variant="dark" className={styles.section} innerClassName={styles.inner} ref={sectionRef}>
+    <Section variant="light" className={styles.section} innerClassName={styles.inner} ref={sectionRef}>
       <div className={styles.grid}>
         {highlightKeys.map((key) => {
           const Icon = icons[key];

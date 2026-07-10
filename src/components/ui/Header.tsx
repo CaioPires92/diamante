@@ -23,8 +23,9 @@ export function Header({ locale, lines = [] }: { locale: string; lines?: { name:
   const menuRef = useRef<HTMLDivElement>(null);
   const navLinksRef = useRef<HTMLDivElement>(null);
   const homeHref = `/${locale}`;
-  const servicesHref = `/${locale}/#services`;
-  const categoriesHref = `/${locale}/#products`;
+  const servicesHref = `/${locale}/servicos`;
+  const processHref = `/${locale}/servicos#processo`;
+  const categoriesHref = `/${locale}/lines/products`;
   const certificationsHref = `/${locale}/#certifications`;
 
   useEffect(() => {
@@ -38,8 +39,7 @@ export function Header({ locale, lines = [] }: { locale: string; lines?: { name:
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleLocaleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const newLocale = e.target.value;
+  const handleLocaleChange = (newLocale: string) => {
     const currentPath = pathname || '/';
     
     // Replace the current locale segment with the new locale
@@ -102,8 +102,6 @@ export function Header({ locale, lines = [] }: { locale: string; lines?: { name:
   }, { dependencies: [isMenuOpen] });
 
   const darkPageSegments = [
-    '/distributor',
-    '/distribuidor',
     '/private-label',
     '/terceirizacao-de-comesticos-private-label',
     '/terceirizacao-de-cosmeticos-private-label'
@@ -172,12 +170,12 @@ export function Header({ locale, lines = [] }: { locale: string; lines?: { name:
           <Link href={`/${locale}/about`} className={styles.navLink}>{t('about')}</Link>
           <Link href={servicesHref} className={styles.navLink}>{t('services')}</Link>
           <div className={styles.dropdownContainer}>
-            <button className={`${styles.navLink} ${styles.dropdownToggle}`}>
+            <Link href={categoriesHref} className={`${styles.navLink} ${styles.dropdownToggle}`}>
               {t('categories')}
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: '4px' }}>
                 <polyline points="6 9 12 15 18 9"></polyline>
               </svg>
-            </button>
+            </Link>
             <div className={styles.dropdownMenu} data-lenis-prevent>
               <Link href={categoriesHref} className={styles.dropdownItem}>
                 {t('allCategories')}
@@ -189,7 +187,7 @@ export function Header({ locale, lines = [] }: { locale: string; lines?: { name:
               ))}
             </div>
           </div>
-          <Link href={`/${locale}/distributor`} className={styles.navLink}>{t('distributor')}</Link>
+          <Link href={processHref} className={styles.navLink}>{t('distributor')}</Link>
           <Link href={certificationsHref} className={styles.navLink}>{t('certifications')}</Link>
           <Link href={`/${locale}/contact`} className={styles.navLink}>{t('contact')}</Link>
         </nav>
@@ -222,10 +220,10 @@ export function Header({ locale, lines = [] }: { locale: string; lines?: { name:
                 </svg>
               </button>
               <div className={styles.langMenu} data-lenis-prevent>
-                <button onClick={() => handleLocaleChange({ target: { value: 'pt-BR' } } as any)} className={styles.langItem}>Português (PT)</button>
-                <button onClick={() => handleLocaleChange({ target: { value: 'en' } } as any)} className={styles.langItem}>English (EN)</button>
-                <button onClick={() => handleLocaleChange({ target: { value: 'es' } } as any)} className={styles.langItem}>Español (ES)</button>
-                <button onClick={() => handleLocaleChange({ target: { value: 'ar' } } as any)} className={styles.langItem}>العربية (AR)</button>
+                <button onClick={() => handleLocaleChange('pt-BR')} className={styles.langItem}>Português (PT)</button>
+                <button onClick={() => handleLocaleChange('en')} className={styles.langItem}>English (EN)</button>
+                <button onClick={() => handleLocaleChange('es')} className={styles.langItem}>Español (ES)</button>
+                <button onClick={() => handleLocaleChange('ar')} className={styles.langItem}>العربية (AR)</button>
               </div>
             </div>
           </div>
@@ -290,7 +288,7 @@ export function Header({ locale, lines = [] }: { locale: string; lines?: { name:
                 </div>
               </div>
             </div>
-            <Link href={`/${locale}/distributor`} className={styles.mobileNavLink} onClick={() => setIsMenuOpen(false)}>
+            <Link href={processHref} className={styles.mobileNavLink} onClick={() => setIsMenuOpen(false)}>
               {t('distributor')}
             </Link>
             <Link href={certificationsHref} className={styles.mobileNavLink} onClick={() => setIsMenuOpen(false)}>

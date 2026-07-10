@@ -53,8 +53,8 @@ export function Footer({ locale }: { locale?: string }) {
               <ul className={styles.navList}>
                 <li><Link href={`/${effectiveLocale}/about`}>{t('links.institutional.about')}</Link></li>
                 <li><Link href={`/${effectiveLocale}/private-label`}>{t('links.institutional.privateLabel')}</Link></li>
+                <li><Link href={`/${effectiveLocale}/servicos#processo`}>{t('links.institutional.process')}</Link></li>
                 <li><Link href={`/${effectiveLocale}/contact`}>{t('links.institutional.contact')}</Link></li>
-                <li><Link href={`/${effectiveLocale}/distributor`}>{t('links.institutional.distributor')}</Link></li>
               </ul>
             </div>
             <div className={styles.navColumn}>

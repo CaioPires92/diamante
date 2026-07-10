@@ -32,26 +32,23 @@ export function AboutHeroSection() {
 
   return (
     <section className={styles.section} ref={sectionRef}>
-      <div className={styles.backgroundGlow} />
-      <Container size="wide">
+      <div className={styles.heroBackground} aria-hidden="true">
+        <Image
+          src="/imgs/hero_final_v5.png"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className={styles.heroBackgroundImage}
+        />
+      </div>
+
+      <Container size="wide" className={styles.heroContainer}>
         <div className={styles.layout}>
           <div className={styles.content}>
             <span className={`${styles.tagline} hero-anim`}>{t('tagline')}</span>
             <h1 className={`${styles.title} hero-anim`}>{t('title')}</h1>
             <p className={`${styles.subtitle} hero-anim`}>{t('subtitle')}</p>
-          </div>
-
-          <div className={`${styles.imagePanel} hero-anim`} aria-hidden="true">
-            <Image
-              src="/imgs/about-hero-generated-v2.png"
-              alt=""
-              fill
-              priority
-              sizes="(max-width: 900px) 90vw, 42vw"
-              className={styles.image}
-            />
-            <div className={styles.imageGlow} />
-            <div className={styles.imageOverlay} />
           </div>
         </div>
       </Container>

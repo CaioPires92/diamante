@@ -6,16 +6,21 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import { useTranslations } from 'next-intl';
-import { FeatureCard } from './FeatureCard';
 import { Section } from './Section';
-import { SectionHeader } from './SectionHeader';
 import styles from './InstitutionalProofSection.module.css';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-const pillarKeys = ['quality', 'compliance', 'partnership'] as const;
+const pillarKeys = ['quality', 'compliance', 'partnership', 'delivery'] as const;
+
+const stats = [
+  { value: '2010', label: 'Fundação em Amparo/SP' },
+  { value: '200+', label: 'Produtos no portfólio' },
+  { value: '15+', label: 'Anos de experiência' },
+  { value: '4', label: 'Países com exportação' },
+];
 
 export function InstitutionalProofSection() {
   const lab = useTranslations('About.Laboratory');
@@ -24,12 +29,12 @@ export function InstitutionalProofSection() {
   const sectionRef = useRef<HTMLElement>(null);
 
   useGSAP((context) => {
-    const header = context.selector?.('.inst-header');
+    const content = context.selector?.('.inst-content');
     const cards = context.selector?.('.inst-card');
     const media = context.selector?.('.inst-media');
 
-    if (header) {
-      gsap.fromTo(header, { y: 30, opacity: 0 }, {
+    if (content) {
+      gsap.fromTo(content, { y: 30, opacity: 0 }, {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: 'top 80%',
@@ -72,56 +77,48 @@ export function InstitutionalProofSection() {
   return (
     <Section variant="soft" className={styles.section} ref={sectionRef}>
       <div className={styles.layout}>
-        <div className={`${styles.content} inst-header`}>
-          <SectionHeader
-            eyebrow={lab('tagline')}
-            title={lab('title')}
-            description={lab('description')}
-            align="left"
-            className={styles.header}
-          />
+        <div className={`${styles.content} inst-content`}>
+          <span className={styles.eyebrow}>{lab('tagline')}</span>
+          <h2 className={styles.title}>{lab('title')}</h2>
+          <p className={styles.description}>{lab('description')}</p>
 
           <div className={styles.storyBlock}>
             <p className={styles.storyLead}>{manifesto('paragraph1')}</p>
+            <p className={styles.storyText}>{manifesto('paragraph2')}</p>
             <p className={styles.storyText}>{manifesto('paragraph4')}</p>
+          </div>
+
+          <div className={styles.statsRow}>
+            {stats.map((stat) => (
+              <div key={stat.label} className={styles.statItem}>
+                <strong>{stat.value}</strong>
+                <span>{stat.label}</span>
+              </div>
+            ))}
           </div>
         </div>
 
         <div className={`${styles.mediaPanel} inst-media`}>
-          <div className={styles.mainImageCard}>
-            <div className={styles.mainImageWrap}>
-              <Image
-                src="/images/differentials/factory.png"
-                alt={lab('title')}
-                fill
-                className={styles.mainImage}
-                sizes="(max-width: 1024px) 100vw, 42vw"
-              />
-            </div>
-          </div>
-          <div className={styles.secondaryImageCard}>
-            <div className={styles.secondaryImageWrap}>
-              <Image
-                src="/images/differentials/laboratory.png"
-                alt={lab('tagline')}
-                fill
-                className={styles.secondaryImage}
-                sizes="(max-width: 1024px) 100vw, 18vw"
-              />
-            </div>
-          </div>
+          <Image
+            src="/images/differentials/factory.png"
+            alt={lab('title')}
+            fill
+            className={styles.mainImage}
+            sizes="(max-width: 1024px) 100vw, 46vw"
+          />
         </div>
       </div>
 
       <div className={styles.pillarsGrid}>
         {pillarKeys.map((key) => (
-          <FeatureCard
+          <article
             key={key}
             className={`${styles.pillarCard} inst-card`}
-            variant="compact"
-            title={values(`items.${key}.title`)}
-            description={values(`items.${key}.desc`)}
-          />
+          >
+            <span className={styles.pillarNumber}>{String(pillarKeys.indexOf(key) + 1).padStart(2, '0')}</span>
+            <h3>{values(`items.${key}.title`)}</h3>
+            <p>{values(`items.${key}.desc`)}</p>
+          </article>
         ))}
       </div>
     </Section>

@@ -30,8 +30,18 @@ export function DistributorHero() {
 
   return (
     <section className={styles.section} ref={sectionRef}>
-      <div className={styles.backgroundGlow} />
-      <Container size="wide">
+      <div className={styles.heroBackground} aria-hidden="true">
+        <Image
+          src="/imgs/hero_final_v5.png"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className={styles.heroBackgroundImage}
+        />
+      </div>
+
+      <Container size="wide" className={styles.heroContainer}>
         <div className={styles.layout}>
           <div className={styles.content}>
             <span className={`${styles.tagline} hero-anim`}>Parceria B2B</span>
@@ -46,22 +56,22 @@ export function DistributorHero() {
             <div className={`${styles.badges} hero-anim`}>
               <div className={styles.badgeItem}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={styles.badgeIcon}>
-                  <line x1="12" y1="1" x2="12" y2="23"></line>
-                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                  <path d="M9 2h6"></path>
+                  <path d="M10 2v6.5L4.2 19.1A2 2 0 0 0 6 22h12a2 2 0 0 0 1.8-2.9L14 8.5V2"></path>
+                  <path d="M7.5 15h9"></path>
                 </svg>
                 <div className={styles.badgeText}>
                   <h4>Desenvolvimento de fórmulas exclusivas</h4>
-                  <p>Soluções personalizadas para criar linhas com identidade própria</p>
                 </div>
               </div>
 
               <div className={styles.badgeItem}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={styles.badgeIcon}>
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  <path d="M12 3l1.8 4.5L18 9.2l-4.2 1.7L12 16l-1.8-5.1L6 9.2l4.2-1.7L12 3z"></path>
+                  <path d="M19 14l.9 2.1L22 17l-2.1.9L19 20l-.9-2.1L16 17l2.1-.9L19 14z"></path>
                 </svg>
                 <div className={styles.badgeText}>
                   <h4>Produtos de alta performance</h4>
-                  <p>Formulações desenvolvidas para resultado, qualidade e consistência</p>
                 </div>
               </div>
 
@@ -74,7 +84,6 @@ export function DistributorHero() {
                 </svg>
                 <div className={styles.badgeText}>
                   <h4>Rapidez na entrega</h4>
-                  <p>Operação estruturada para dar mais agilidade ao projeto</p>
                 </div>
               </div>
 
@@ -85,36 +94,20 @@ export function DistributorHero() {
                 </svg>
                 <div className={styles.badgeText}>
                   <h4>Suporte regulatório</h4>
-                  <p>Apoio em rótulos, embalagens, notificações e registros</p>
                 </div>
               </div>
 
               <div className={styles.badgeItem}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={styles.badgeIcon}>
-                  <path d="M8 3H5a2 2 0 0 0-2 2v3"></path>
-                  <path d="M16 3h3a2 2 0 0 1 2 2v3"></path>
-                  <path d="M8 21H5a2 2 0 0 1-2-2v-3"></path>
-                  <path d="M16 21h3a2 2 0 0 0 2-2v-3"></path>
-                  <path d="M9 9h6v6H9z"></path>
+                  <path d="M12 2l8 4-8 4-8-4 8-4z"></path>
+                  <path d="M4 10l8 4 8-4"></path>
+                  <path d="M4 14l8 4 8-4"></path>
                 </svg>
                 <div className={styles.badgeText}>
                   <h4>Flexibilidade de produção</h4>
-                  <p>Estrutura adaptável para diferentes demandas e formatos de linha</p>
                 </div>
               </div>
             </div>
-          </div>
-
-          <div className={`${styles.imagePanel} hero-anim`} aria-hidden="true">
-            <Image
-              src="/imgs/distributor_salon.png"
-              alt="Distribuidor Diamante Profissional - Linha Premium em Salão de Luxo"
-              fill
-              priority
-              sizes="(max-width: 900px) 90vw, 42vw"
-              className={styles.image}
-            />
-            <div className={styles.imageOverlay} />
           </div>
         </div>
       </Container>

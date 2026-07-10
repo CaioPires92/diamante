@@ -52,15 +52,16 @@
   justify-content: center;
   justify-self: center;
   margin-top: 0.25rem;
-  padding: 0.7rem 1rem;
+  padding: 0.5rem 0.82rem;
   border-radius: 999px;
-  background: linear-gradient(135deg, rgba(223, 188, 119, 0.92), rgba(201, 157, 74, 0.96));
-  box-shadow: 0 10px 24px rgba(184, 138, 58, 0.16);
-  font-size: 0.76rem;
+  border: 1px solid rgba(184, 138, 58, 0.28);
+  background: rgba(255, 253, 249, 0.42);
+  box-shadow: none;
+  font-size: 0.68rem;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #2b2016;
+  color: #7d5a22;
 }
 
 @media (min-width: 1024px) {

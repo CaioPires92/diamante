@@ -119,6 +119,7 @@ export function StructureServicesSection() {
         ease: 'power2.out'
       });
     }
+
   }, { scope: sectionRef });
 
   return (

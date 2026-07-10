@@ -58,6 +58,7 @@ export function QualityComplianceSection() {
         eyebrow={t('tagline')}
         title={t('title')}
         description={t('description')}
+        align="left"
         className={`compliance-header ${styles.header}`}
       />
 

@@ -5,6 +5,7 @@ import { ImpactNumbers } from '@/components/ui/ImpactNumbers';
 import { StructureServicesSection } from '@/components/ui/StructureServicesSection';
 import { PrivateLabelHighlightsSection } from '@/components/ui/PrivateLabelHighlightsSection';
 import { DreamsBannerSection } from '@/components/ui/DreamsBannerSection';
+import { FinalCTA } from '@/components/ui/FinalCTA';
 
 export default function Home() {
   return (
@@ -12,10 +13,11 @@ export default function Home() {
       <HeroSection />
       <ImpactNumbers />
       <PrivateLabelTeaser />
+      <StructureServicesSection />
       <ProductSection />
       <DreamsBannerSection />
-      <StructureServicesSection />
       <PrivateLabelHighlightsSection />
+      <FinalCTA />
     </main>
   );
 }

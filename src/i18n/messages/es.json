@@ -73,7 +73,52 @@
       "finishing": "Finalizadores",
       "wash": "Lavatorio"
     },
-    "EmptyState": "No se encontraron productos para esta categoría."
+    "EmptyState": "No se encontraron productos para esta categoría.",
+    "Showcase": {
+      "eyebrow": "Categorías Fabricadas",
+      "title": "Productos Organizados por Categoría",
+      "description": "Organizamos la página en franjas horizontales por categoría para revisar el portafolio de Diamante con acceso rápido a productos y CTAs de fabricación.",
+      "buttons": {
+        "manufacture": "Quiero fabricar este producto",
+        "quote": "Solicitar presupuesto",
+        "brand": "Personalizar mi marca"
+      },
+      "messages": {
+        "manufacture": "¡Hola! Quiero fabricar productos de la categoría {{category}} con Diamante Profissional.",
+        "quote": "¡Hola! Quiero solicitar un presupuesto para productos de la categoría {{category}}.",
+        "brand": "¡Hola! Quiero personalizar mi marca para la categoría {{category}} con Diamante Profissional."
+      },
+      "sections": {
+        "shampoos": {
+          "title": "Shampoos y Acondicionadores",
+          "description": "Líneas enfocadas en limpieza, tratamiento y mantenimiento, con opciones para posicionamiento profesional y comercial."
+        },
+        "creams": {
+          "title": "Cremas, Mascarillas y Tratamientos",
+          "description": "Categoría estratégica para hidratación, nutrición, reconstrucción y cronogramas capilares completos."
+        },
+        "serums": {
+          "title": "Sérums y Finalizadores",
+          "description": "Productos con mayor valor percibido, acabado refinado y fuerte atractivo para líneas premium."
+        },
+        "perfumes": {
+          "title": "Perfumes y Fragancias",
+          "description": "Opciones para ampliar el portafolio con fragancia, presencia de marca y mayor variedad comercial."
+        },
+        "makeup": {
+          "title": "Maquillaje y Belleza",
+          "description": "Extensión de línea para marcas que desean ir más allá del cuidado capilar y reforzar su presencia en el mercado."
+        },
+        "technical": {
+          "title": "Coloración y Técnicos",
+          "description": "Ítems de uso técnico y alta demanda, ideales para líneas enfocadas en desempeño profesional."
+        },
+        "others": {
+          "title": "Otros Productos",
+          "description": "Demás ítems del catálogo reunidos en una franja complementaria para ampliar la visión del portafolio."
+        }
+      }
+    }
   },
   "Features": {
     "title": "¿Por qué Diamante Profissional?",
@@ -290,7 +335,7 @@
       },
       "subjects": {
         "general": "Duda General",
-        "distributor": "Quero ser Distribuidor",
+        "distributor": "Terceirización / Private Label",
         "privateLabel": "Private Label"
       },
       "submit": "Enviar Mensaje",
@@ -356,8 +401,9 @@
         "title": "Institucional",
         "about": "Sobre Nosotros",
         "privateLabel": "Private Label",
+        "process": "Cómo Funciona",
         "contact": "Contáctanos",
-        "distributor": "Hazte Distribuidor"
+        "distributor": "Cómo Funciona"
       },
       "support": {
         "title": "Soporte",

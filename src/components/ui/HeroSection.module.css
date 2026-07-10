@@ -10,16 +10,14 @@
 }
 
 .background {
-  position: relative;
+  position: absolute;
+  inset: 0;
   width: 100%;
-  min-height: 100svh;
+  height: 100%;
   z-index: 1;
 }
 
 .backgroundImage {
-  width: 100%;
-  height: 100svh;
-  display: block;
   object-fit: cover;
   object-position: 78% center;
   opacity: 1;
@@ -158,7 +156,6 @@
 
 .highlight {
   color: var(--color-gold);
-  font-style: italic;
   display: inline-block;
   white-space: nowrap;
 }
@@ -176,7 +173,7 @@
 
 .subtitleHighlight {
   color: var(--color-gold);
-  font-weight: 700;
+  font-weight: 400;
 }
 
 .actions {

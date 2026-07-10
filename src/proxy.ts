@@ -18,6 +18,8 @@ export function proxy(request: NextRequest) {
     '/fretes-e-prazo': '/pt-BR/fretes-e-prazo',
     '/politica-de-privacidade': '/pt-BR/politica-de-privacidade',
     '/trocas-e-devolucoes': '/pt-BR/trocas-e-devolucoes',
+    '/servicos': '/pt-BR/servicos',
+    '/services': '/pt-BR/servicos',
     '/private-label': '/pt-BR/private-label',
     '/terceirizacao-de-comesticos-private-label': '/pt-BR/terceirizacao-de-comesticos-private-label',
     '/terceirizacao-de-cosmeticos-private-label': '/pt-BR/terceirizacao-de-cosmeticos-private-label'
@@ -43,6 +45,8 @@ export const config = {
     '/fretes-e-prazo',
     '/politica-de-privacidade',
     '/trocas-e-devolucoes',
+    '/servicos',
+    '/services',
     '/private-label',
     '/terceirizacao-de-comesticos-private-label',
     '/terceirizacao-de-cosmeticos-private-label'

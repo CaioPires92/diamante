@@ -1,13 +1,10 @@
-import { CatalogHero } from '@/components/ui/catalog/CatalogHero';
-import { CatalogGrid } from '@/components/ui/catalog/CatalogGrid';
-import { FinalCTA } from '@/components/ui/FinalCTA';
+import { redirect } from 'next/navigation';
 
-export default function ProductsPage() {
-  return (
-    <main>
-      <CatalogHero />
-      <CatalogGrid />
-      <FinalCTA />
-    </main>
-  );
+export default async function ProductsPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  redirect(`/${locale}/lines/products`);
 }
