@@ -19,7 +19,6 @@ export interface ProductCardProps {
 }
 
 export function ProductCard({
-  id,
   slug,
   image,
   name,

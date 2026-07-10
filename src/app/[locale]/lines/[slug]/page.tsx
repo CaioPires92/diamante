@@ -2,245 +2,16 @@ import React from 'react';
 import { Container } from '@/components/ui/Container';
 import { ProductActions } from '@/components/ui/product/ProductActions';
 import { ExpandableText } from '@/components/ui/ExpandableText';
-import fs from 'fs';
-import path from 'path';
 import { getLineProducts } from '@/lib/loja-integrada-catalog';
 import styles from './page.module.css';
 
-type Product = {
-  id: string;
-  title: string;
-  lojaIntegradaId?: string;
-  code?: string;
-  size?: string;
-  price?: string;
-  image?: string;
-  description?: string;
-  howToUse?: string;
-  available?: boolean;
-  quantityAvailable?: number;
-};
-
-type ProductsMap = Record<string, Product[]>;
-
-const sublineProductFilters: Record<string, { source: string; include: string[]; exclude?: string[] }> = {
-  'acai': { source: 'matizadores', include: ['acai'] },
-  'anti-residuo': { source: 'profissional', include: ['anti residuo'] },
-  'black': { source: 'matizadores', include: ['black'] },
-  'bomba': { source: 'home-care', include: ['bomba'] },
-  'champagne': { source: 'matizadores', include: ['champagne'] },
-  'desmaia-cabelo': { source: 'liso', include: ['desmaia'] },
-  'jaborandi-alecrim': { source: 'home-care', include: ['jaborandi'] },
-  'linha-n': { source: 'home-care', include: ['shampoo n', 'condicionador n'] },
-  'linha-p': { source: 'home-care', include: ['shampoo p', 'condicionador p'] },
-  'liso-perfeito': { source: 'liso', include: ['liso perfeito'] },
-  'mega-carga-de-keratina': { source: 'home-care', include: ['recarga keratina', 'keratina hidrolisada'] },
-  'mega-carga-keratina': { source: 'home-care', include: ['recarga keratina', 'keratina hidrolisada'] },
-  'perola': { source: 'matizadores', include: ['perola'] },
-  'po-descolorante': { source: 'coloracao', include: ['po descolorante'] },
-  'regulador-de-ph': { source: 'profissional', include: ['regulador de ph'] },
-  'reparo-absoluto': { source: 'home-care', include: ['reparo absoluto'] },
-  'serum-gloss': { source: 'home-care', include: ['serum gloss', 'iluminador argan', 'lilly iluminador'] },
-  'super-efeito-cinza': { source: 'matizadores', include: ['super'], exclude: ['prata'] },
-  'super-prata': { source: 'matizadores', include: ['prata'] },
-  'ultra-violeta-ice': { source: 'matizadores', include: ['violeta ice'] },
-};
+type Product = Awaited<ReturnType<typeof getLineProducts>>[number];
 
 function normalizeText(value: string) {
   return value
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '')
     .toLowerCase();
-}
-
-// Função para ler os produtos locais (Fallback)
-function getLocalProducts(slug: string) {
-  try {
-    const filePath = path.join(process.cwd(), 'src', 'data', 'products.json');
-    const fileContents = fs.readFileSync(filePath, 'utf8');
-    const data = JSON.parse(fileContents) as ProductsMap;
-    if (data[slug]) {
-      return data[slug];
-    }
-
-    const sublineFilter = sublineProductFilters[slug];
-    if (!sublineFilter || !data[sublineFilter.source]) {
-      return [];
-    }
-
-    return data[sublineFilter.source].filter((product: Product) => {
-      const normalizedTitle = normalizeText(product.title);
-      const hasIncludedTerm = sublineFilter.include.some((term) => normalizedTitle.includes(normalizeText(term)));
-      const hasExcludedTerm = sublineFilter.exclude?.some((term) => normalizedTitle.includes(normalizeText(term))) || false;
-
-      return hasIncludedTerm && !hasExcludedTerm;
-    });
-  } catch (e) {
-    return [];
-  }
-}
-
-function getAllLocalProducts() {
-  try {
-    const filePath = path.join(process.cwd(), 'src', 'data', 'products.json');
-    const fileContents = fs.readFileSync(filePath, 'utf8');
-    return JSON.parse(fileContents) as ProductsMap;
-  } catch (e) {
-    return {};
-  }
-}
-
-function getProfessionalProducts() {
-  const data = getAllLocalProducts();
-
-  const findProduct = (source: string, title: string, size?: string) => {
-    const sourceProducts = data[source] || [];
-    return sourceProducts.find((product) => {
-      const sameTitle = normalizeText(product.title) === normalizeText(title);
-      const sameSize = !size || normalizeText(product.size || '') === normalizeText(size);
-      return sameTitle && sameSize;
-    });
-  };
-
-  const curatedProducts = [
-    {
-      source: 'profissional',
-      matchTitle: 'Shampoo Anti Resíduo',
-      size: '1 litro',
-      title: 'Shampoo Anti Resíduo 1L',
-    },
-    {
-      source: 'profissional',
-      matchTitle: 'Regulador de pH',
-      size: '300 ml',
-      title: 'Regulador de pH Orgânico 300ml',
-    },
-    {
-      source: 'profissional',
-      matchTitle: 'Regulador de pH',
-      size: '1000 ml',
-      title: 'Regulador de pH Orgânico 1L',
-    },
-    {
-      source: 'coloracao',
-      matchTitle: 'Ox 900 ml',
-      title: 'OX Cremosa 900ml',
-      description: 'Emulsão oxidante para rotinas profissionais de coloração e clareamento, com performance estável em procedimentos técnicos.',
-    },
-    {
-      source: 'coloracao',
-      matchTitle: 'Pó Descolorante Azul',
-      title: 'Pó Descolorante BLUE 500g',
-    },
-    {
-      source: 'coloracao',
-      matchTitle: 'Pó Descolorante Branco',
-      title: 'Pó Descolorante WHITE 500g',
-    },
-    {
-      source: 'lapidacao',
-      matchTitle: 'Passo 01 - Shampoo',
-      title: 'Shampoo Lapidação 1L - Step 1',
-    },
-    {
-      source: 'lapidacao',
-      matchTitle: 'Passo 04 - Hidratação Profissional',
-      title: 'Hidratação Lapidação 1L - Step 4',
-    },
-    {
-      source: 'liso',
-      matchTitle: 'Shampoo Desmaia',
-      title: 'Shampoo Desmaia Cabelo 1L',
-    },
-    {
-      source: 'liso',
-      matchTitle: 'Máscara Desmaia',
-      title: 'Máscara Desmaia Cabelo 900g',
-      image: '/images/products/liso/m-scara-desmaia.png',
-    },
-    {
-      source: 'caviar',
-      matchTitle: 'Shampoo Caviar',
-      title: 'Shampoo Caviar 1L',
-    },
-    {
-      source: 'caviar',
-      matchTitle: 'Máscara Caviar',
-      title: 'Máscara Caviar 900g',
-    },
-    {
-      source: 'matizadores',
-      matchTitle: 'Shampoo Champagne',
-      title: 'Shampoo Efeito Champagne 1L',
-    },
-    {
-      source: 'matizadores',
-      matchTitle: 'Máscara Champagne',
-      title: 'Máscara Efeito Champagne 900g',
-    },
-    {
-      source: 'matizadores',
-      matchTitle: 'Shampoo Pérola',
-      title: 'Shampoo Pérola 1L',
-    },
-    {
-      source: 'home-care',
-      matchTitle: 'Shampoo Bomba',
-      title: 'Shampoo Bomba 1L - Fortalecimento Capilar',
-    },
-    {
-      source: 'home-care',
-      matchTitle: 'Máscara Bomba',
-      title: 'Máscara Bomba 900g',
-    },
-    {
-      source: 'matizadores',
-      matchTitle: 'Máscara Black',
-      title: 'Máscara Tonalizante BLACK 1000g',
-    },
-    {
-      source: 'babosa',
-      matchTitle: 'Máscara Babosa',
-      title: 'Máscara Babosa 2kg',
-    },
-    {
-      source: 'home-care',
-      matchTitle: 'Máscara Reparo Absoluto',
-      title: 'Máscara Reparo Absoluto 250g - Reconstrução Capilar',
-    },
-  ];
-
-  return curatedProducts
-    .map((item, index) => {
-      const baseProduct = findProduct(item.source, item.matchTitle, item.size);
-
-      if (!baseProduct) {
-        return null;
-      }
-
-      return {
-        ...baseProduct,
-        id: `profissional-curated-${index}`,
-        title: item.title,
-        description: item.description || baseProduct.description,
-        image: item.image || baseProduct.image,
-        lineDescription: 'Produtos profissionais com rendimento de salão, preço de fábrica e eficiência para rotinas técnicas em todo o Brasil.',
-      };
-    })
-    .filter(Boolean) as Product[];
-}
-
-function getAlternativeSlugs(slug: string): string[] {
-  const aliases: Record<string, string[]> = {
-    'cachos': ['cachos-and-afro', 'cachos-afro', 'cachos'],
-    'caviar': ['caviar-aminoacidos', 'caviar'],
-    'coloracao': ['coloracao-creme', 'coloracao'],
-    'jaborandi-alecrim': ['jaborandi-and-alecrim', 'jaborandi-alecrim'],
-    'profissional': ['linha-profissional', 'profissional'],
-    'barber-for-men': ['masculina', 'barber', 'barber-for-men'],
-    'babosa': ['barbosa', 'babosa']
-  };
-  return aliases[slug] || [slug];
 }
 
 export const dynamic = 'force-dynamic';
@@ -322,7 +93,7 @@ export default async function LinePage({ params }: { params: Promise<{ locale: s
 
   // Deduplicar produtos com base no código/título e tamanho, priorizando o que possui imagem
   if (products && products.length > 0) {
-    const seen = new Map<string, any>();
+    const seen = new Map<string, Product>();
     for (const p of products) {
       const baseKey = p.code && p.code.trim() ? p.code.trim() : normalizeText(p.title);
       const key = `${baseKey}-${p.size || ''}`;
@@ -340,7 +111,7 @@ export default async function LinePage({ params }: { params: Promise<{ locale: s
 
   // Limpa as descrições gigantescas das tonalidades na página de coloração para manter o layout limpo e uniforme
   if (cleanSlug === 'coloracao') {
-    products = products.map((p: any) => {
+    products = products.map((p: Product) => {
       if (p.description && (p.description.includes('TRATAMENTO COMPLETO') || p.description.includes('Modo de Preparo') || p.description.includes('Modo de Aplicação') || p.description.includes('Composição'))) {
         return {
           ...p,
@@ -356,7 +127,7 @@ export default async function LinePage({ params }: { params: Promise<{ locale: s
   const lineDesc = lineDescriptions[cleanSlug] || `Descubra os produtos incríveis da nossa linha ${lineName}.`;
 
   // Get products with valid images for the hero visual showcase
-  const imagedProducts = products.filter((p: any) => p.image);
+  const imagedProducts = products.filter((p: Product) => p.image);
 
   return (
     <main style={{ minHeight: '100vh', backgroundColor: 'transparent', position: 'relative', paddingBottom: '120px' }}>
@@ -602,7 +373,7 @@ export default async function LinePage({ params }: { params: Promise<{ locale: s
         {/* Premium Catalog Products Grid */}
         {products.length > 0 ? (
           <div className={styles.productGrid}>
-            {products.map((product: any) => (
+            {products.map((product: Product) => (
               <div key={product.id} className={styles.productCard}>
                 
                 {/* Left Side: Product Image with Arch Background */}

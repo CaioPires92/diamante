@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { useTranslations } from 'next-intl';
+import { buildWhatsAppUrl, requestWhatsAppChoice } from '@/lib/whatsapp';
 import styles from './ContactForm.module.css';
 
 export function ContactForm() {
@@ -38,9 +39,9 @@ export function ContactForm() {
       'Mensagem:',
       message,
     ].join('\n');
-    const whatsappUrl = `https://wa.me/551938176156?text=${encodeURIComponent(whatsappMessage)}`;
+    const whatsappUrl = buildWhatsAppUrl(whatsappMessage);
 
-    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+    requestWhatsAppChoice(whatsappUrl);
     setIsSubmitting(false);
     setIsSuccess(true);
   };

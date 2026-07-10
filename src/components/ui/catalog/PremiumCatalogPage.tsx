@@ -4,6 +4,11 @@ import Link from 'next/link';
 import { Container } from '../Container';
 import { CTAButton } from '../CTAButton';
 import { CatalogProductImage } from './CatalogProductImage';
+import {
+  getCatalogProducts,
+  getStoreProductsByIds,
+  type CatalogProduct as StoreCatalogProduct,
+} from '@/lib/loja-integrada-catalog';
 import styles from './PremiumCatalogPage.module.css';
 
 const whatsappPhone = '551938176156';
@@ -19,7 +24,8 @@ type CatalogCategory = {
   number: string;
   title: string;
   description: string;
-  products: CatalogProduct[];
+  matchTerms: string[];
+  products?: CatalogProduct[];
 };
 
 const categories: CatalogCategory[] = [
@@ -29,23 +35,7 @@ const categories: CatalogCategory[] = [
     title: 'Pó Descolorante',
     description:
       'Categoria técnica de alta procura no mercado profissional, ideal para linhas capilares com foco em clareamento, performance e rotina de salão.',
-    products: [
-      {
-        name: 'Pó Descolorante Azul',
-        description: 'Opção para projetos técnicos com apelo profissional e alto potencial de giro no salão.',
-        image: '/images/products/coloracao/p-descolorante-azul.png',
-      },
-      {
-        name: 'Pó Descolorante Branco',
-        description: 'Base estratégica para marcas que desejam atuar em procedimentos de clareamento capilar.',
-        image: '/images/products/coloracao/p-descolorante-branco.png',
-      },
-      {
-        name: 'Descolorante Profissional',
-        description: 'Categoria indicada para compor linhas técnicas com percepção de resultado e qualidade.',
-        image: '/images/products/coloracao/p-descolorante-azul.png',
-      },
-    ],
+    matchTerms: ['po descolorante', 'descolorante'],
   },
   {
     id: 'category-02',
@@ -53,23 +43,7 @@ const categories: CatalogCategory[] = [
     title: 'Água Oxigenada Cremosa',
     description:
       'Produto complementar para linhas de coloração e descoloração, com presença forte em projetos profissionais de marca própria.',
-    products: [
-      {
-        name: 'Água Oxigenada Cremosa',
-        description: 'Item essencial para rotinas técnicas de coloração, clareamento e uso profissional.',
-        image: '/images/products/coloracao/p-descolorante-branco.png',
-      },
-      {
-        name: 'Oxidante para Coloração',
-        description: 'Produto pensado para compor kits técnicos e linhas de suporte para salão.',
-        image: '/images/products/coloracao/p-descolorante-branco.png',
-      },
-      {
-        name: 'Revelador Cremoso',
-        description: 'Categoria de alta recorrência para marcas que desejam presença em processos químicos.',
-        image: '/images/products/coloracao/p-descolorante-branco.png',
-      },
-    ],
+    matchTerms: ['agua oxigenada', 'oxigenada', 'ox '],
   },
   {
     id: 'category-03',
@@ -77,23 +51,7 @@ const categories: CatalogCategory[] = [
     title: 'Matizadores',
     description:
       'Categoria com forte apelo visual e técnico, ideal para marcas que desejam atuar em manutenção de loiros, platinados e tons especiais.',
-    products: [
-      {
-        name: 'Máscara Matizadora',
-        description: 'Produto de tratamento e correção visual para linhas com posicionamento técnico.',
-        image: '/images/products/matizadores/prod_8.png',
-      },
-      {
-        name: 'Shampoo Matizador',
-        description: 'Opção para manutenção de cor e cuidado capilar em rotinas profissionais e home care.',
-        image: '/images/products/matizadores/shampoo-prata.jpg',
-      },
-      {
-        name: 'Condicionador Matizador',
-        description: 'Complemento para linhas matizadoras com proposta de cuidado, brilho e acabamento.',
-        image: '/images/products/matizadores/condicionador-prata.jpg',
-      },
-    ],
+    matchTerms: ['matizador', 'prata', 'perola', 'champagne', 'violeta', 'efeito cinza'],
   },
   {
     id: 'category-04',
@@ -101,23 +59,7 @@ const categories: CatalogCategory[] = [
     title: 'Tratamentos Capilares',
     description:
       'Linhas para cronograma capilar, hidratação, nutrição e reconstrução, com alto potencial para marcas que desejam portfólio completo.',
-    products: [
-      {
-        name: 'Cronograma Capilar',
-        description: 'Linha completa para estruturar rituais de tratamento com proposta comercial clara.',
-        image: '/imgs/lapidacao_4steps.webp',
-      },
-      {
-        name: 'Tratamento Reconstrutor',
-        description: 'Categoria voltada para recuperação da fibra, percepção técnica e valor agregado.',
-        image: '/images/products/lapidacao/prod_3.png',
-      },
-      {
-        name: 'Tratamento Hidratante',
-        description: 'Produto essencial para linhas capilares com foco em cuidado, brilho e maciez.',
-        image: '/images/products/lapidacao/prod_4.png',
-      },
-    ],
+    matchTerms: ['lapidacao', 'mascara', 'tratamento', 'reconstrutor', 'hidratacao'],
   },
   {
     id: 'category-05',
@@ -125,73 +67,80 @@ const categories: CatalogCategory[] = [
     title: 'Shampoos',
     description:
       'Categoria base para qualquer linha capilar, com possibilidades para limpeza, manutenção, tratamento e posicionamento profissional.',
-    products: [
-      {
-        name: 'Shampoo Profissional',
-        description: 'Produto de entrada para linhas capilares com alto uso recorrente e fácil entendimento comercial.',
-        image: '/images/products/profissional/shampoo-1l.png',
-      },
-      {
-        name: 'Shampoo de Tratamento',
-        description: 'Opção para marcas que desejam associar limpeza, cuidado e performance em um único produto.',
-        image: '/images/products/caviar/shampoo-caviar.png',
-      },
-      {
-        name: 'Shampoo Antirresíduo',
-        description: 'Categoria técnica para preparo dos fios antes de tratamentos e procedimentos profissionais.',
-        image: '/images/products/profissional/shampoo-anti-res-duo.png',
-      },
-    ],
+    matchTerms: ['shampoo'],
   },
   {
     id: 'category-06',
     number: '06',
-    title: 'Máscaras Capilares',
-    description:
-      'Categoria de alto valor percebido para hidratação, nutrição, reconstrução e rotinas de tratamento intensivo.',
-    products: [
-      {
-        name: 'Máscara de Tratamento',
-        description: 'Produto estratégico para linhas capilares com foco em resultado e percepção premium.',
-        image: '/images/products/caviar/m-scara-caviar.png',
-      },
-      {
-        name: 'Máscara Reconstrutora',
-        description: 'Categoria voltada para reparação, força e cuidado técnico da fibra capilar.',
-        image: '/images/products/home-care/m-scara-reparo-absoluto.png',
-      },
-      {
-        name: 'Máscara Profissional',
-        description: 'Opção para linhas de salão com maior volume, rendimento e apelo técnico.',
-        image: '/images/products/profissional/m-scara-900g.png',
-      },
-    ],
-  },
-  {
-    id: 'category-07',
-    number: '07',
     title: 'Finalizadores',
     description:
       'Produtos de acabamento para ampliar o portfólio da marca com proteção, disciplina, brilho e finalização dos fios.',
-    products: [
-      {
-        name: 'Leave-in Capilar',
-        description: 'Finalizador de uso recorrente para proteção, desembaraço e acabamento no dia a dia.',
-        image: '/images/products/caviar/leave-in-caviar.png',
-      },
-      {
-        name: 'Spray Finalizador',
-        description: 'Produto para linhas que buscam praticidade, acabamento e percepção profissional.',
-        image: '/images/products/caviar/leave-in-spray-caviar.png',
-      },
-      {
-        name: 'Finalizador de Tratamento',
-        description: 'Categoria complementar para reforçar resultado, brilho e experiência de uso.',
-        image: '/images/products/liso/leave-in-desmaia.png',
-      },
-    ],
+    matchTerms: ['leave-in', 'leave in', 'serum', 'fluido', 'oleo'],
   },
 ];
+
+function normalizeText(value: string) {
+  return value
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase();
+}
+
+function matchesTerms(product: StoreCatalogProduct, terms: string[]) {
+  const normalizedTitle = normalizeText(product.title);
+
+  return terms.some((term) => normalizedTitle.includes(normalizeText(term)));
+}
+
+function productDescription(product: StoreCatalogProduct) {
+  if (!product.description || product.description === 'Produto oficial da Diamante Profissional.') {
+    return 'Produto oficial da Diamante Profissional, puxado diretamente da Loja Integrada.';
+  }
+
+  return product.description.length > 150
+    ? `${product.description.slice(0, 147).trim()}...`
+    : product.description;
+}
+
+async function getCategoriesWithStoreProducts() {
+  const catalogProducts = await getCatalogProducts();
+  const selectedIds = new Set<string>();
+  const productIdsByCategory = categories.map((category) => {
+    const ids = catalogProducts
+      .filter((product) => matchesTerms(product, category.matchTerms))
+      .filter((product) => {
+        if (selectedIds.has(product.id)) return false;
+        selectedIds.add(product.id);
+        return true;
+      })
+      .slice(0, 3)
+      .map((product) => product.id);
+
+    return { category, ids };
+  });
+  const detailedProductsById = new Map(
+    (await getStoreProductsByIds(productIdsByCategory.flatMap((item) => item.ids)))
+      .map((product) => [product.id, product]),
+  );
+
+  return productIdsByCategory.map(({ category, ids }) => ({
+    ...category,
+    products: ids
+      .flatMap((id) => {
+        const product = detailedProductsById.get(id);
+
+        if (!product) {
+          return [];
+        }
+
+        return [{
+          name: product.name,
+          description: productDescription(product),
+          image: product.image,
+        }];
+      }),
+  }));
+}
 
 function whatsappUrl(message: string) {
   return `https://wa.me/${whatsappPhone}?text=${encodeURIComponent(message)}`;
@@ -226,7 +175,9 @@ function WhatsAppIcon() {
   );
 }
 
-export function PremiumCatalogPage() {
+export async function PremiumCatalogPage() {
+  const categoriesWithProducts = await getCategoriesWithStoreProducts();
+
   return (
     <main className={styles.page}>
       <section className={styles.hero}>
@@ -291,7 +242,7 @@ export function PremiumCatalogPage() {
       <section className={styles.categories}>
         <Container size="wide" className={styles.categoriesContainer}>
           <div className={styles.categoriesStack}>
-            {categories.map((category) => (
+            {categoriesWithProducts.map((category) => (
               <section key={category.id} id={category.id} className={styles.categorySection}>
                 <div className={styles.categoryMeta}>
                   <span className={styles.categoryNumber}>{category.number}</span>

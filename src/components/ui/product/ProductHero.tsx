@@ -28,12 +28,6 @@ export function ProductHero({ product }: ProductHeroProps) {
   const productName = product.name;
   const productDesc = product.description;
 
-  const handleWhatsAppClick = () => {
-    const phone = '551938176156';
-    const message = encodeURIComponent(`Olá! Tenho interesse no produto: ${productName} da linha ${product.line}.`);
-    window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
-  };
-
   return (
     <section className={styles.section}>
       <Container>

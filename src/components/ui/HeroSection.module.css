@@ -41,7 +41,12 @@
 @media (max-width: 968px) {
   .hero {
     padding-bottom: 0;
-    min-height: auto;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    background:
+      linear-gradient(180deg, rgba(10, 10, 10, 0) 0%, #0A0A0A 42%),
+      #0A0A0A;
   }
 
   .content {
@@ -50,22 +55,38 @@
     left: auto;
     transform: none;
     height: auto;
-    padding: 0 var(--space-6);
-    margin-top: -120px;
-    /* Reduzido de -180px para dar mais respiro ao texto */
+    flex: 1;
+    align-items: flex-start;
+    padding: 18.75rem var(--space-5) var(--space-10);
+    margin-top: 0;
     z-index: 10;
   }
 
   .background {
-    min-height: auto;
+    height: 27rem;
+    min-height: 27rem;
+    overflow: hidden;
+  }
+
+  .background::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(10, 10, 10, 0.08) 0%, rgba(10, 10, 10, 0.35) 46%, #0A0A0A 100%),
+      linear-gradient(90deg, rgba(10, 10, 10, 0.42) 0%, rgba(10, 10, 10, 0.04) 58%, rgba(10, 10, 10, 0.22) 100%);
+    z-index: 2;
+    pointer-events: none;
   }
 
   .backgroundImage {
-    min-height: 500px;
-    height: auto;
+    min-height: 100%;
     object-fit: cover;
-    object-position: 70% 100%;
-    /* Foca nos produtos no canto inferior direito */
+    object-position: 70% top;
+  }
+
+  .shimmerOverlay {
+    display: none;
   }
 }
 
@@ -83,21 +104,7 @@
     max-width: 100%;
     align-items: center;
     text-align: center;
-    background: linear-gradient(to top, rgba(10, 10, 10, 1) 50%, rgba(10, 10, 10, 0) 100%);
-    padding-top: 150px;
-    /* Área do gradiente para transição suave */
-    padding-bottom: 3rem;
-  }
-
-  .title {
-    max-width: 100%;
-    font-size: clamp(2.8rem, 12vw, 4.4rem);
-    overflow-wrap: anywhere;
-  }
-
-  .subtitle,
-  .briefingLine {
-    max-width: 100%;
+    padding: 0 0 2rem;
   }
 }
 
@@ -176,6 +183,31 @@
   font-weight: 400;
 }
 
+@media (max-width: 968px) {
+  .title {
+    max-width: 100%;
+    font-size: clamp(2.45rem, 10vw, 3.35rem);
+    line-height: 1.02;
+    margin-bottom: var(--space-3);
+    text-wrap: balance;
+  }
+
+  .subtitle,
+  .briefingLine {
+    max-width: 100%;
+  }
+
+  .subtitle {
+    font-size: clamp(1.18rem, 4.8vw, 1.5rem);
+    line-height: 1.35;
+    margin-bottom: var(--space-6);
+  }
+
+  .highlight {
+    white-space: normal;
+  }
+}
+
 .actions {
   display: flex;
   flex-direction: row;
@@ -191,6 +223,8 @@
     align-items: center;
     margin: 0 auto;
     justify-content: center;
+    width: 100%;
+    gap: 0.75rem;
   }
 
   .actions button {
@@ -210,6 +244,9 @@
   .glowDivider {
     margin-left: auto;
     margin-right: auto;
+    margin-top: var(--space-3);
+    margin-bottom: var(--space-6);
+    width: min(100%, 18rem);
   }
 }
 
@@ -319,10 +356,10 @@
 
 @media (max-width: 968px) {
   .trustBadges {
-    margin-top: var(--space-8);
+    margin-top: var(--space-7);
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--space-6);
+    gap: var(--space-4);
     width: 100%;
   }
 
@@ -332,16 +369,18 @@
 
   .badgeItem {
     padding-top: 0;
+    gap: 0.7rem;
   }
 
   .badgeIcon {
-    width: 42px;
-    height: 42px;
+    width: 34px;
+    height: 34px;
   }
 
   .badgeItem span {
-    font-size: 0.82rem;
+    font-size: 0.72rem;
     max-width: none;
+    line-height: 1.22;
   }
 }
 
@@ -388,8 +427,41 @@
 }
 
 @media (max-width: 480px) {
-  .badgeItem {
-    flex: 1 1 100%;
+  .content {
+    padding: 17.75rem var(--space-4) var(--space-8);
+  }
+
+  .background {
+    height: 25.5rem;
+    min-height: 25.5rem;
+  }
+
+  .backgroundImage {
+    object-position: 68% top;
+  }
+
+  .title {
+    font-size: clamp(2.1rem, 9.8vw, 2.75rem);
+  }
+
+  .trustBadges {
+    gap: var(--space-4) var(--space-3);
+  }
+
+  .buyButton,
+  .whatsappButton {
+    min-height: 3.15rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .content {
+    padding-left: var(--space-3);
+    padding-right: var(--space-3);
+  }
+
+  .trustBadges {
+    grid-template-columns: 1fr;
   }
 }
 

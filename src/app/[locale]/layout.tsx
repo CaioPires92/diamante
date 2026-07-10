@@ -7,6 +7,7 @@ import { Footer } from '@/components/ui/Footer';
 import { SmoothScroll } from '@/components/ui/SmoothScroll';
 import { FluidBackground } from '@/components/ui/FluidBackground';
 import { WhatsAppButton } from '@/components/ui/WhatsAppButton';
+import { WhatsAppChoiceHandler } from '@/components/ui/WhatsAppChoiceHandler';
 import { getLines } from '@/lib/lines';
 import '../globals.css';
 
@@ -60,6 +61,7 @@ export default async function LocaleLayout({
             {children}
             <Footer locale={locale} />
             <WhatsAppButton />
+            <WhatsAppChoiceHandler />
           </SmoothScroll>
         </NextIntlClientProvider>
       </body>

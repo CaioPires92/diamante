@@ -426,6 +426,11 @@
 }
 
 @media (max-width: 968px) {
+  .topBar,
+  .scrolled .topBar {
+    display: none;
+  }
+
   .nav, .cta {
     display: none;
   }
@@ -436,9 +441,6 @@
     padding: 0 24px;
   }
   
-  .hamburger {
-    display: flex;
-  }
 }
 
 @media (max-width: 480px) {
@@ -500,6 +502,12 @@
   border-radius: 2px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   transform-origin: left center;
+}
+
+@media (max-width: 968px) {
+  .hamburger {
+    display: flex;
+  }
 }
 
 .menuActive span:nth-child(1) {
