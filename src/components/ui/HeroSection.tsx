@@ -2,6 +2,7 @@
 
 import React, { useRef, useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { Container } from './Container';
@@ -101,6 +102,15 @@ export function HeroSection() {
                 <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
               </svg>
             </Button>
+
+            <Link
+              href="https://wa.me/551938176156?text=Ol%C3%A1!%20Quero%20falar%20com%20a%20Diamante%20sobre%20terceiriza%C3%A7%C3%A3o%20e%20private%20label."
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.whatsappButton}
+            >
+              Falar no WhatsApp
+            </Link>
           </div>
 
           <div className={`${styles.trustBadges} anim-item`}>

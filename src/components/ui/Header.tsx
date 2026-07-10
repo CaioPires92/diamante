@@ -24,9 +24,9 @@ export function Header({ locale, lines = [] }: { locale: string; lines?: { name:
   const navLinksRef = useRef<HTMLDivElement>(null);
   const homeHref = `/${locale}`;
   const servicesHref = `/${locale}/servicos`;
-  const processHref = `/${locale}/servicos#processo`;
+  const processHref = `/${locale}/como-funciona`;
   const categoriesHref = `/${locale}/lines/products`;
-  const certificationsHref = `/${locale}/#certifications`;
+  const certificationsHref = `/${locale}/certificacoes`;
 
   useEffect(() => {
     const handleScroll = () => {

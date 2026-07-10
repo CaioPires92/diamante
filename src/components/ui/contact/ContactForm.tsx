@@ -12,12 +12,37 @@ export function ContactForm() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Mock submission delay
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSuccess(true);
-    }, 1500);
+
+    const formData = new FormData(e.currentTarget as HTMLFormElement);
+    const name = String(formData.get('name') || '');
+    const email = String(formData.get('email') || '');
+    const phone = String(formData.get('phone') || '');
+    const subject = String(formData.get('subject') || '');
+    const productType = String(formData.get('productType') || '');
+    const quantity = String(formData.get('quantity') || '');
+    const hasFormula = String(formData.get('hasFormula') || '');
+    const hasPackaging = String(formData.get('hasPackaging') || '');
+    const message = String(formData.get('message') || '');
+    const whatsappMessage = [
+      'Olá, Diamante Profissional! Quero falar com a equipe comercial.',
+      '',
+      `Nome: ${name}`,
+      `E-mail: ${email}`,
+      `Telefone/WhatsApp: ${phone || 'Não informado'}`,
+      `Assunto: ${subject}`,
+      `Tipo de produto: ${productType || 'Não informado'}`,
+      `Quantidade estimada: ${quantity || 'Não informado'}`,
+      `Já possui fórmula?: ${hasFormula || 'Não informado'}`,
+      `Já possui embalagem?: ${hasPackaging || 'Não informado'}`,
+      '',
+      'Mensagem:',
+      message,
+    ].join('\n');
+    const whatsappUrl = `https://wa.me/551938176156?text=${encodeURIComponent(whatsappMessage)}`;
+
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+    setIsSubmitting(false);
+    setIsSuccess(true);
   };
 
   if (isSuccess) {
@@ -47,23 +72,23 @@ export function ContactForm() {
       <form className={styles.form} onSubmit={handleSubmit}>
         <div className={styles.inputGroup}>
           <label htmlFor="name" className={styles.label}>{t('fields.name')}</label>
-          <input type="text" id="name" className={styles.input} required />
+          <input type="text" id="name" name="name" className={styles.input} required />
         </div>
 
         <div className={styles.row}>
           <div className={styles.inputGroup}>
             <label htmlFor="email" className={styles.label}>{t('fields.email')}</label>
-            <input type="email" id="email" className={styles.input} required />
+            <input type="email" id="email" name="email" className={styles.input} required />
           </div>
           <div className={styles.inputGroup}>
             <label htmlFor="phone" className={styles.label}>{t('fields.phone')}</label>
-            <input type="tel" id="phone" className={styles.input} />
+            <input type="tel" id="phone" name="phone" className={styles.input} />
           </div>
         </div>
 
         <div className={styles.inputGroup}>
           <label htmlFor="subject" className={styles.label}>{t('fields.subject')}</label>
-          <select id="subject" className={styles.select} required defaultValue="">
+          <select id="subject" name="subject" className={styles.select} required defaultValue="">
             <option value="" disabled>Selecione um assunto</option>
             <option value="general">{t('subjects.general')}</option>
             <option value="distributor">{t('subjects.distributor')}</option>
@@ -72,8 +97,39 @@ export function ContactForm() {
         </div>
 
         <div className={styles.inputGroup}>
+          <label htmlFor="productType" className={styles.label}>{t('fields.productType')}</label>
+          <input type="text" id="productType" name="productType" className={styles.input} required />
+        </div>
+
+        <div className={styles.row}>
+          <div className={styles.inputGroup}>
+            <label htmlFor="quantity" className={styles.label}>{t('fields.quantity')}</label>
+            <input type="text" id="quantity" name="quantity" className={styles.input} />
+          </div>
+          <div className={styles.inputGroup}>
+            <label htmlFor="hasFormula" className={styles.label}>{t('fields.hasFormula')}</label>
+            <select id="hasFormula" name="hasFormula" className={styles.select} defaultValue="">
+              <option value="" disabled>{t('options.select')}</option>
+              <option value={t('options.yes')}>{t('options.yes')}</option>
+              <option value={t('options.no')}>{t('options.no')}</option>
+              <option value={t('options.notSure')}>{t('options.notSure')}</option>
+            </select>
+          </div>
+        </div>
+
+        <div className={styles.inputGroup}>
+          <label htmlFor="hasPackaging" className={styles.label}>{t('fields.hasPackaging')}</label>
+          <select id="hasPackaging" name="hasPackaging" className={styles.select} defaultValue="">
+            <option value="" disabled>{t('options.select')}</option>
+            <option value={t('options.yes')}>{t('options.yes')}</option>
+            <option value={t('options.no')}>{t('options.no')}</option>
+            <option value={t('options.notSure')}>{t('options.notSure')}</option>
+          </select>
+        </div>
+
+        <div className={styles.inputGroup}>
           <label htmlFor="message" className={styles.label}>{t('fields.message')}</label>
-          <textarea id="message" rows={4} className={styles.textarea} required></textarea>
+          <textarea id="message" name="message" rows={4} className={styles.textarea} required></textarea>
         </div>
 
         <button 

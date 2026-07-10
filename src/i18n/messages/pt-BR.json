@@ -30,7 +30,17 @@
       "whatsapp": "WhatsApp",
       "email": "E-mail",
       "brand": "Nome da marca ou projeto",
+      "productType": "Tipo de produto que deseja fabricar",
+      "quantity": "Quantidade estimada",
+      "hasFormula": "Já possui fórmula?",
+      "hasPackaging": "Já possui embalagem?",
       "message": "Conte sua ideia"
+    },
+    "options": {
+      "select": "Selecione",
+      "yes": "Sim",
+      "no": "Não",
+      "notSure": "Ainda não sei"
     }
   },
   "Common": {
@@ -333,7 +343,7 @@
     },
     "Manifesto": {
       "title": "Quem Somos",
-      "paragraph1": "A Diamante Profissional foi fundada em 2010, na cidade de Amparo, interior de São Paulo, por Mário Juliano Scavroni com o propósito de produzir e comercializar cosméticos de qualidade a preço justo. Hoje, com mais de 15 anos de trajetória, a marca reúne mais de 200 produtos para cabelos, entre linhas profissionais e home care, além de perfumaria fina, maquiagem e hidratação corporal.",
+      "paragraph1": "A Diamante Profissional nasceu em 2010, na cidade de Amparo, interior de São Paulo, com o propósito de produzir e comercializar cosméticos de qualidade a preço justo. Hoje, com mais de 15 anos de trajetória, a marca reúne mais de 200 produtos para cabelos, entre linhas profissionais e home care, além de perfumaria fina, maquiagem e hidratação corporal.",
       "paragraph2": "Somos líderes de mercado no estado de São Paulo e seguimos expandindo a marca por todo o Brasil com salões parceiros que confiam na nossa performance. Essa trajetória também levou a Diamante para fora do país, com exportações para França, Marrocos, Turquia e Suécia.",
       "paragraph3": "Toda a linha produzida e comercializada pela Diamante Profissional é autorizada e regulamentada pela ANVISA, reforçando nosso compromisso com segurança, legalidade e qualidade original em cada produto.",
       "paragraph4": "Além da marca própria, também atuamos com terceirização e desenvolvimento para marcas de salão e distribuição, apoiando profissionais e empreendedores que desejam criar uma linha com identidade própria e estrutura confiável."
@@ -402,12 +412,22 @@
         "email": "E-mail Corporativo",
         "phone": "Telefone / WhatsApp",
         "subject": "Assunto",
+        "productType": "Tipo de produto que deseja fabricar",
+        "quantity": "Quantidade estimada",
+        "hasFormula": "Já possui fórmula?",
+        "hasPackaging": "Já possui embalagem?",
         "message": "Sua Mensagem"
       },
       "subjects": {
         "general": "Dúvida Geral",
         "distributor": "Terceirização / Private Label",
         "privateLabel": "Private Label"
+      },
+      "options": {
+        "select": "Selecione",
+        "yes": "Sim",
+        "no": "Não",
+        "notSure": "Ainda não sei"
       },
       "submit": "Enviar Minha Ideia",
       "sending": "Enviando...",
@@ -536,13 +556,11 @@
       "email": "contato@diamanteprofissional.com.br",
       "phone": "(19) 3817-6156",
       "instagram": "@diamante.profissional",
-      "linkedin": "LinkedIn Diamante",
       "labels": {
         "whatsapp": "WhatsApp",
         "email": "E-mail",
         "location": "Localização",
-        "instagram": "Instagram",
-        "linkedin": "LinkedIn"
+        "instagram": "Instagram"
       }
     },
     "rights": "© {year} Diamante Profissional. Todos os direitos reservados."

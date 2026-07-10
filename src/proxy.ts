@@ -20,6 +20,7 @@ export function proxy(request: NextRequest) {
     '/trocas-e-devolucoes': '/pt-BR/trocas-e-devolucoes',
     '/servicos': '/pt-BR/servicos',
     '/services': '/pt-BR/servicos',
+    '/como-funciona': '/pt-BR/como-funciona',
     '/private-label': '/pt-BR/private-label',
     '/terceirizacao-de-comesticos-private-label': '/pt-BR/terceirizacao-de-comesticos-private-label',
     '/terceirizacao-de-cosmeticos-private-label': '/pt-BR/terceirizacao-de-cosmeticos-private-label'
@@ -47,6 +48,7 @@ export const config = {
     '/trocas-e-devolucoes',
     '/servicos',
     '/services',
+    '/como-funciona',
     '/private-label',
     '/terceirizacao-de-comesticos-private-label',
     '/terceirizacao-de-cosmeticos-private-label'

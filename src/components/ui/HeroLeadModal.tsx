@@ -55,6 +55,10 @@ export function HeroLeadModal({ isOpen, onClose }: HeroLeadModalProps) {
       whatsapp: String(formData.get('whatsapp') || ''),
       email: String(formData.get('email') || ''),
       brand: String(formData.get('brand') || ''),
+      productType: String(formData.get('productType') || ''),
+      quantity: String(formData.get('quantity') || ''),
+      hasFormula: String(formData.get('hasFormula') || ''),
+      hasPackaging: String(formData.get('hasPackaging') || ''),
       message: String(formData.get('message') || ''),
     };
 
@@ -65,6 +69,10 @@ export function HeroLeadModal({ isOpen, onClose }: HeroLeadModalProps) {
       `WhatsApp: ${payload.whatsapp}`,
       `E-mail: ${payload.email}`,
       `Marca/Projeto: ${payload.brand || 'Nao informado'}`,
+      `Tipo de produto: ${payload.productType || 'Nao informado'}`,
+      `Quantidade estimada: ${payload.quantity || 'Nao informado'}`,
+      `Ja possui formula?: ${payload.hasFormula || 'Nao informado'}`,
+      `Ja possui embalagem?: ${payload.hasPackaging || 'Nao informado'}`,
       '',
       'Ideia:',
       payload.message,
@@ -123,6 +131,38 @@ export function HeroLeadModal({ isOpen, onClose }: HeroLeadModalProps) {
           <div className={styles.inputGroup}>
             <label htmlFor="lead-brand" className={styles.label}>{t('fields.brand')}</label>
             <input id="lead-brand" name="brand" className={styles.input} type="text" />
+          </div>
+
+          <div className={styles.inputGroup}>
+            <label htmlFor="lead-product-type" className={styles.label}>{t('fields.productType')}</label>
+            <input id="lead-product-type" name="productType" className={styles.input} type="text" required />
+          </div>
+
+          <div className={styles.row}>
+            <div className={styles.inputGroup}>
+              <label htmlFor="lead-quantity" className={styles.label}>{t('fields.quantity')}</label>
+              <input id="lead-quantity" name="quantity" className={styles.input} type="text" />
+            </div>
+
+            <div className={styles.inputGroup}>
+              <label htmlFor="lead-has-formula" className={styles.label}>{t('fields.hasFormula')}</label>
+              <select id="lead-has-formula" name="hasFormula" className={styles.select} defaultValue="">
+                <option value="" disabled>{t('options.select')}</option>
+                <option value={t('options.yes')}>{t('options.yes')}</option>
+                <option value={t('options.no')}>{t('options.no')}</option>
+                <option value={t('options.notSure')}>{t('options.notSure')}</option>
+              </select>
+            </div>
+          </div>
+
+          <div className={styles.inputGroup}>
+            <label htmlFor="lead-has-packaging" className={styles.label}>{t('fields.hasPackaging')}</label>
+            <select id="lead-has-packaging" name="hasPackaging" className={styles.select} defaultValue="">
+              <option value="" disabled>{t('options.select')}</option>
+              <option value={t('options.yes')}>{t('options.yes')}</option>
+              <option value={t('options.no')}>{t('options.no')}</option>
+              <option value={t('options.notSure')}>{t('options.notSure')}</option>
+            </select>
           </div>
 
           <div className={styles.inputGroup}>

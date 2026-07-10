@@ -26,96 +26,168 @@ const categories: CatalogCategory[] = [
   {
     id: 'category-01',
     number: '01',
-    title: 'Shampoos e Condicionadores',
+    title: 'Pó Descolorante',
     description:
-      'Categoria essencial para marcas que desejam lançar linhas capilares de uso recorrente, com apelo comercial e rotina completa de cuidado.',
+      'Categoria técnica de alta procura no mercado profissional, ideal para linhas capilares com foco em clareamento, performance e rotina de salão.',
     products: [
       {
-        name: 'Shampoo Hidratante Daily Care',
-        description: 'Limpeza suave com toque leve e rotina pensada para manutenção diária dos fios.',
-        image: '/images/products/caviar/shampoo-caviar.png',
+        name: 'Pó Descolorante Azul',
+        description: 'Opção para projetos técnicos com apelo profissional e alto potencial de giro no salão.',
+        image: '/images/products/coloracao/p-descolorante-azul.png',
       },
       {
-        name: 'Condicionador Nutri Repair',
-        description: 'Condicionamento equilibrado com sensação de maciez, alinhamento e brilho.',
-        image: '/images/products/caviar/condicionador-caviar.png',
+        name: 'Pó Descolorante Branco',
+        description: 'Base estratégica para marcas que desejam atuar em procedimentos de clareamento capilar.',
+        image: '/images/products/coloracao/p-descolorante-branco.png',
       },
       {
-        name: 'Shampoo Detox Purificante',
-        description: 'Proposta de limpeza profunda para linhas com apelo profissional e sensação refrescante.',
-        image: '/images/products/profissional/shampoo-anti-res-duo.png',
+        name: 'Descolorante Profissional',
+        description: 'Categoria indicada para compor linhas técnicas com percepção de resultado e qualidade.',
+        image: '/images/products/coloracao/p-descolorante-azul.png',
       },
     ],
   },
   {
     id: 'category-02',
     number: '02',
-    title: 'Cremes e Máscaras',
+    title: 'Água Oxigenada Cremosa',
     description:
-      'Tratamentos com alto valor percebido para hidratação, nutrição, reconstrução e cronogramas capilares de marca própria.',
+      'Produto complementar para linhas de coloração e descoloração, com presença forte em projetos profissionais de marca própria.',
     products: [
       {
-        name: 'Máscara Reconstrutora Intense',
-        description: 'Textura encorpada para linhas focadas em reconstrução, disciplina e cuidado contínuo.',
-        image: '/images/products/caviar/m-scara-caviar.png',
+        name: 'Água Oxigenada Cremosa',
+        description: 'Item essencial para rotinas técnicas de coloração, clareamento e uso profissional.',
+        image: '/images/products/coloracao/p-descolorante-branco.png',
       },
       {
-        name: 'Máscara Nutritiva Óleos Preciosos',
-        description: 'Máscara com proposta nutritiva para rituais de tratamento mais sofisticados.',
-        image: '/images/products/home-care/m-scara-reparo-absoluto.png',
+        name: 'Oxidante para Coloração',
+        description: 'Produto pensado para compor kits técnicos e linhas de suporte para salão.',
+        image: '/images/products/coloracao/p-descolorante-branco.png',
       },
       {
-        name: 'Leave-in Caviar Therapy',
-        description: 'Leave-in com visual premium para proteção, alinhamento e acabamento refinado.',
-        image: '/images/products/caviar/leave-in-caviar.png',
+        name: 'Revelador Cremoso',
+        description: 'Categoria de alta recorrência para marcas que desejam presença em processos químicos.',
+        image: '/images/products/coloracao/p-descolorante-branco.png',
       },
     ],
   },
   {
     id: 'category-03',
     number: '03',
-    title: 'Séruns e Finalizadores',
+    title: 'Matizadores',
     description:
-      'Produtos de acabamento e proteção que ampliam o mix da marca com itens de maior sofisticação e boa percepção de performance.',
+      'Categoria com forte apelo visual e técnico, ideal para marcas que desejam atuar em manutenção de loiros, platinados e tons especiais.',
     products: [
       {
-        name: 'Sérum Anti Frizz Premium',
-        description: 'Acabamento mais polido para linhas que valorizam brilho, toque sedoso e leveza.',
-        image: '/images/products/home-care/s-rum-gloss-ojon.png',
+        name: 'Máscara Matizadora',
+        description: 'Produto de tratamento e correção visual para linhas com posicionamento técnico.',
+        image: '/images/products/matizadores/prod_8.png',
       },
       {
-        name: 'Liso Perfeito Spray',
-        description: 'Spray finalizador com proposta de disciplina e rotina prática para uso diário.',
-        image: '/images/products/liso/liso-perfeito-15-em-1.png',
+        name: 'Shampoo Matizador',
+        description: 'Opção para manutenção de cor e cuidado capilar em rotinas profissionais e home care.',
+        image: '/images/products/matizadores/shampoo-prata.jpg',
       },
       {
-        name: 'Óleo Finalizador Luminosity',
-        description: 'Óleo com presença visual elegante para reforçar brilho e ritual de finalização.',
-        image: '/images/products/home-care/leo-de-coco.png',
+        name: 'Condicionador Matizador',
+        description: 'Complemento para linhas matizadoras com proposta de cuidado, brilho e acabamento.',
+        image: '/images/products/matizadores/condicionador-prata.jpg',
       },
     ],
   },
   {
     id: 'category-04',
     number: '04',
-    title: 'Perfumes e Fragrâncias',
+    title: 'Tratamentos Capilares',
     description:
-      'Possibilidades para criar produtos perfumados e extensões sensoriais de marca, com apresentação comercial alinhada ao posicionamento desejado.',
+      'Linhas para cronograma capilar, hidratação, nutrição e reconstrução, com alto potencial para marcas que desejam portfólio completo.',
     products: [
       {
-        name: 'Perfume Capilar',
-        description: 'Categoria para reforçar assinatura olfativa, finalização e experiência sensorial da linha.',
+        name: 'Cronograma Capilar',
+        description: 'Linha completa para estruturar rituais de tratamento com proposta comercial clara.',
+        image: '/imgs/lapidacao_4steps.webp',
+      },
+      {
+        name: 'Tratamento Reconstrutor',
+        description: 'Categoria voltada para recuperação da fibra, percepção técnica e valor agregado.',
+        image: '/images/products/lapidacao/prod_3.png',
+      },
+      {
+        name: 'Tratamento Hidratante',
+        description: 'Produto essencial para linhas capilares com foco em cuidado, brilho e maciez.',
+        image: '/images/products/lapidacao/prod_4.png',
+      },
+    ],
+  },
+  {
+    id: 'category-05',
+    number: '05',
+    title: 'Shampoos',
+    description:
+      'Categoria base para qualquer linha capilar, com possibilidades para limpeza, manutenção, tratamento e posicionamento profissional.',
+    products: [
+      {
+        name: 'Shampoo Profissional',
+        description: 'Produto de entrada para linhas capilares com alto uso recorrente e fácil entendimento comercial.',
+        image: '/images/products/profissional/shampoo-1l.png',
+      },
+      {
+        name: 'Shampoo de Tratamento',
+        description: 'Opção para marcas que desejam associar limpeza, cuidado e performance em um único produto.',
+        image: '/images/products/caviar/shampoo-caviar.png',
+      },
+      {
+        name: 'Shampoo Antirresíduo',
+        description: 'Categoria técnica para preparo dos fios antes de tratamentos e procedimentos profissionais.',
+        image: '/images/products/profissional/shampoo-anti-res-duo.png',
+      },
+    ],
+  },
+  {
+    id: 'category-06',
+    number: '06',
+    title: 'Máscaras Capilares',
+    description:
+      'Categoria de alto valor percebido para hidratação, nutrição, reconstrução e rotinas de tratamento intensivo.',
+    products: [
+      {
+        name: 'Máscara de Tratamento',
+        description: 'Produto estratégico para linhas capilares com foco em resultado e percepção premium.',
+        image: '/images/products/caviar/m-scara-caviar.png',
+      },
+      {
+        name: 'Máscara Reconstrutora',
+        description: 'Categoria voltada para reparação, força e cuidado técnico da fibra capilar.',
+        image: '/images/products/home-care/m-scara-reparo-absoluto.png',
+      },
+      {
+        name: 'Máscara Profissional',
+        description: 'Opção para linhas de salão com maior volume, rendimento e apelo técnico.',
+        image: '/images/products/profissional/m-scara-900g.png',
+      },
+    ],
+  },
+  {
+    id: 'category-07',
+    number: '07',
+    title: 'Finalizadores',
+    description:
+      'Produtos de acabamento para ampliar o portfólio da marca com proteção, disciplina, brilho e finalização dos fios.',
+    products: [
+      {
+        name: 'Leave-in Capilar',
+        description: 'Finalizador de uso recorrente para proteção, desembaraço e acabamento no dia a dia.',
+        image: '/images/products/caviar/leave-in-caviar.png',
+      },
+      {
+        name: 'Spray Finalizador',
+        description: 'Produto para linhas que buscam praticidade, acabamento e percepção profissional.',
         image: '/images/products/caviar/leave-in-spray-caviar.png',
       },
       {
-        name: 'Body Splash',
-        description: 'Produto de uso diário com potencial para kits, presentes e linhas de cuidado pessoal.',
-        image: '/images/products/home-care/leo-de-coco.png',
-      },
-      {
-        name: 'Fragrância Personalizada',
-        description: 'Solução para desenvolver identidade olfativa própria em extensões de marca.',
-        image: '/images/products/home-care/s-rum-gloss-ojon.png',
+        name: 'Finalizador de Tratamento',
+        description: 'Categoria complementar para reforçar resultado, brilho e experiência de uso.',
+        image: '/images/products/liso/leave-in-desmaia.png',
       },
     ],
   },
@@ -307,12 +379,12 @@ export function PremiumCatalogPage() {
               Cuidamos da fórmula, da apresentação da embalagem e da produção para transformar sua ideia em uma linha pronta para venda com estrutura profissional.
             </p>
             <CTAButton
-              href={whatsappUrl('Olá! Quero receber o catálogo de produtos fabricados pela Diamante Profissional.')}
+              href={whatsappUrl('Olá! Quero falar sobre as categorias capilares que posso fabricar com a Diamante Profissional.')}
               variant="primary"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Receber Catálogo
+              Falar sobre Categorias
             </CTAButton>
           </div>
         </Container>

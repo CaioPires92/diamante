@@ -180,6 +180,8 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
   width: auto;
 }
 
@@ -196,6 +198,11 @@
     width: 100% !important;
     min-width: 0;
     max-width: 400px !important;
+  }
+
+  .whatsappButton {
+    width: 100%;
+    max-width: 400px;
   }
 }
 
@@ -214,11 +221,11 @@
 }
 
 .buyButton {
-  gap: 1.25rem !important;
+  gap: 0.9rem !important;
   color: #4d3a1f !important;
-  font-size: 1.02rem !important;
+  font-size: 0.86rem !important;
   font-weight: 800 !important;
-  padding: 1rem 1.2rem !important;
+  padding: 0.78rem 1.05rem !important;
   width: fit-content !important;
   min-width: 0;
   border-radius: 12px !important;
@@ -262,6 +269,37 @@
 
 .buyButton:hover {
   box-shadow: 0 14px 28px rgba(191, 149, 63, 0.18) !important;
+}
+
+.whatsappButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.95rem;
+  padding: 0.78rem 1.05rem;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff8ef;
+  backdrop-filter: blur(8px);
+  font-family: var(--font-inter);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition:
+    transform 220ms ease,
+    background-color 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.whatsappButton:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.56);
+  background: rgba(255, 255, 255, 0.13);
+  box-shadow: 0 14px 30px rgba(255, 255, 255, 0.12);
 }
 
 .goldArrow {

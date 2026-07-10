@@ -55,9 +55,13 @@ const services = [
 ];
 
 const steps = [
-  'Briefing da marca e escolha da categoria',
-  'Definição técnica da fórmula e embalagem',
-  'Regularização, fabricação, envase e entrega',
+  'Você envia seu projeto',
+  'Recebe a análise da necessidade',
+  'Desenvolvemos ou adaptamos a fórmula',
+  'Apresentamos o orçamento',
+  'Você aprova a amostra',
+  'Iniciamos produção, envase e rotulagem',
+  'Sua linha é entregue pronta para venda',
 ];
 
 const differentials = [
