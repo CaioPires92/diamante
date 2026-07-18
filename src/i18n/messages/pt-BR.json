@@ -46,16 +46,19 @@
   "Common": {
     "learnMore": "Receber Catálogo",
     "contact": "Falar com um Especialista",
-    "buyNow": "Solicitar Orçamento",
+    "buyNow": "Comprar",
     "whatsapp": "Falar com um Especialista"
   },
   "Header": {
     "home": "Início",
     "about": "Quem Somos",
     "services": "Serviços",
-    "categories": "Categorias de Produtos",
-    "allCategories": "Ver todas as categorias",
-    "distributor": "Como Funciona",
+    "categories": "Comprar nossos produtos",
+    "allCategories": "Ver todos os produtos",
+    "process": "Como Funciona",
+    "distributor": "Seja um distribuidor",
+    "careers": "Trabalhe conosco",
+    "more": "Mais",
     "certifications": "Certificações",
     "contact": "Contato"
   },
@@ -125,7 +128,7 @@
       "description": "Estruturamos a página para você visualizar as categorias da Diamante em trilhos horizontais, com foco comercial e acesso rápido aos produtos e CTAs de fabricação.",
       "buttons": {
         "manufacture": "Iniciar Projeto",
-        "quote": "Solicitar Orçamento",
+        "quote": "Comprar",
         "brand": "Quero Criar Minha Marca"
       },
       "messages": {
@@ -398,7 +401,7 @@
       },
       "address": {
         "label": "Matriz",
-        "value": "Rua Treze de Maio, 17 Centro – Amparo/SP"
+        "value": "Rua 13 de Maio, 290 – Amparo/SP"
       },
       "hours": {
         "label": "Horário de Atendimento",
@@ -475,7 +478,7 @@
       "benefits": "Benefícios Técnicos",
       "ingredients": "Composição / Ativos",
       "related": "Você também pode gostar",
-      "buyNow": "Solicitar Orçamento",
+      "buyNow": "Comprar",
       "line": "Linha",
       "features": "Diferenciais"
     }
@@ -552,7 +555,7 @@
     },
     "contact": {
       "title": "Fale Conosco",
-      "address": "Rua Treze de Maio, 17 Centro – Amparo/SP",
+      "address": "Rua 13 de Maio, 290 – Amparo/SP",
       "email": "contato@diamanteprofissional.com.br",
       "phone": "(19) 3817-6156",
       "instagram": "@diamante.profissional",

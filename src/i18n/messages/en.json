@@ -40,6 +40,15 @@
     "whatsapp": "Talk to a Specialist"
   },
   "Header": {
+    "home": "Home",
+    "services": "Services",
+    "categories": "Buy our products",
+    "allCategories": "View all products",
+    "process": "How It Works",
+    "distributor": "Become a distributor",
+    "careers": "Work with us",
+    "more": "More",
+    "certifications": "Certifications",
     "products": "Products",
     "about": "About Us",
     "privateLabel": "Private Label",
@@ -356,7 +365,7 @@
       },
       "address": {
         "label": "Headquarters",
-        "value": "Rua Treze de Maio, 17 Centro – Amparo/SP"
+        "value": "Rua 13 de Maio, 290 – Amparo/SP"
       },
       "hours": {
         "label": "Business Hours",
@@ -488,7 +497,7 @@
     },
     "contact": {
       "title": "Contact Us",
-      "address": "Rua Treze de Maio, 17 Centro – Amparo/SP",
+      "address": "Rua 13 de Maio, 290 – Amparo/SP",
       "email": "contato@diamanteprofissional.com.br",
       "phone": "(19) 3817-6156"
     },

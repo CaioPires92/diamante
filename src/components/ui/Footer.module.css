@@ -61,27 +61,15 @@
 }
 
 .logo {
-  display: flex;
-  flex-direction: column;
-  line-height: 1;
+  display: inline-flex;
+  width: fit-content;
+  text-decoration: none;
 }
 
-.logoText {
-  font-family: var(--font-playfair);
-  font-size: 1.85rem;
-  font-weight: 700;
-  color: #1a1614;
-  letter-spacing: -0.01em;
-}
-
-.logoSub {
-  font-family: var(--font-inter);
-  font-size: 0.65rem;
-  text-transform: uppercase;
-  letter-spacing: 0.4em;
-  color: var(--color-gold);
-  margin-top: 6px;
-  font-weight: 600;
+.logoImage {
+  display: block;
+  width: 190px;
+  height: auto;
 }
 
 .description {

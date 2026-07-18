@@ -265,7 +265,7 @@ export async function PremiumCatalogPage() {
                       rel="noopener noreferrer"
                       className={styles.categoryLink}
                     >
-                      Solicitar Orçamento
+                      Comprar
                       <WhatsAppIcon />
                     </Link>
 

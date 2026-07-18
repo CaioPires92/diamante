@@ -22,6 +22,15 @@
     "whatsapp": "تواصل عبر واتساب"
   },
   "Header": {
+    "home": "الرئيسية",
+    "services": "الخدمات",
+    "categories": "شراء منتجاتنا",
+    "allCategories": "عرض جميع المنتجات",
+    "process": "كيف يعمل",
+    "distributor": "كن موزعًا",
+    "careers": "اعمل معنا",
+    "more": "المزيد",
+    "certifications": "الشهادات",
     "products": "المنتجات",
     "about": "من نحن",
     "privateLabel": "علامة تجارية خاصة",
@@ -317,7 +326,7 @@
       },
       "address": {
         "label": "المقر الرئيسي",
-        "value": "Rua Treze de Maio, 17 Centro – Amparo/SP"
+        "value": "Rua 13 de Maio, 290 – Amparo/SP"
       },
       "hours": {
         "label": "ساعات العمل",
@@ -415,7 +424,7 @@
     },
     "contact": {
       "title": "اتصل بنا",
-      "address": "Rua Treze de Maio, 17 Centro – Amparo/SP",
+      "address": "Rua 13 de Maio, 290 – Amparo/SP",
       "email": "contato@diamanteprofissional.com.br",
       "phone": "(19) 3817-6156"
     },

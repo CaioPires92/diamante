@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { Container } from './Container';
 import styles from './Footer.module.css';
@@ -11,7 +12,7 @@ export function Footer({ locale }: { locale?: string }) {
   const instagramUrl = 'https://www.instagram.com/diamante.profissional';
   const whatsAppUrl = 'https://wa.me/551938176156';
   const emailUrl = `mailto:${t('contact.email')}`;
-  const mapsUrl = 'https://www.google.com/maps/search/?api=1&query=Rua+Treze+de+Maio,+17+Centro,+Amparo+SP';
+  const mapsUrl = 'https://www.google.com/maps/search/?api=1&query=Rua+13+de+Maio,+290,+Amparo+SP';
 
   return (
     <footer className={styles.footer}>
@@ -19,10 +20,15 @@ export function Footer({ locale }: { locale?: string }) {
         <div className={styles.grid}>
           {/* Logo and Description */}
           <div className={styles.brand}>
-            <div className={styles.logo}>
-              <span className={styles.logoText}>Diamante</span>
-              <span className={styles.logoSub}>Profissional</span>
-            </div>
+            <Link href={`/${effectiveLocale}`} className={styles.logo} aria-label="Diamante Profissional - Início">
+              <Image
+                src="/images/logo-diamante-preto.svg"
+                alt="Diamante Profissional"
+                width={142}
+                height={43}
+                className={styles.logoImage}
+              />
+            </Link>
             <p className={styles.description}>
               {t('description')}
             </p>

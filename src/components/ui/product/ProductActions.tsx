@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import styles from './ProductActions.module.css';
 
 type ShippingOption = {
@@ -27,14 +27,13 @@ export function ProductActions({
   quantityAvailable,
   compact = false,
 }: ProductActionsProps) {
-  const [quantity, setQuantity] = useState(1);
+  const quantity = 1;
+  const shippingRef = useRef<HTMLDivElement>(null);
+  const cepInputRef = useRef<HTMLInputElement>(null);
   const [cep, setCep] = useState('');
   const [shippingOptions, setShippingOptions] = useState<ShippingOption[]>([]);
   const [shippingError, setShippingError] = useState('');
   const [isCalculatingShipping, setIsCalculatingShipping] = useState(false);
-
-  const handleDecrease = () => setQuantity(q => Math.max(1, q - 1));
-  const handleIncrease = () => setQuantity(q => q + 1);
 
   const displayPrice = price || 'R$ 0,00'; // Replace with real logic later if fetched
   const isConsult = displayPrice === 'R$ 0,00' || displayPrice.toLowerCase().includes('consulta');
@@ -128,28 +127,27 @@ export function ProductActions({
       </div>
 
       <div className={styles.buySection}>
-        {!isConsult && (
-          <div className={styles.quantityContainer}>
-            <button onClick={handleDecrease} className={styles.qtyBtn}>-</button>
-            <span className={styles.qtyValue}>{quantity}</span>
-            <button onClick={handleIncrease} className={styles.qtyBtn}>+</button>
-          </div>
-        )}
-        
         {lojaIntegradaId && available && !isConsult ? (
-          <a 
-            href={cartUrl} 
+          <button
+            type="button"
             className={styles.buyBtn}
-            target="_blank"
-            rel="noopener noreferrer"
+            onClick={() => {
+              if (compact) {
+                window.location.assign(cartUrl);
+                return;
+              }
+
+              shippingRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+              window.setTimeout(() => cepInputRef.current?.focus(), 350);
+            }}
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
               <path d="M3 6h18"></path>
               <path d="M16 10a4 4 0 0 1-8 0"></path>
             </svg>
-            SOLICITAR ORÇAMENTO
-          </a>
+            COMPRAR
+          </button>
         ) : (
           <a
             href={consultUrl}
@@ -158,7 +156,7 @@ export function ProductActions({
             rel="noopener noreferrer"
             style={{ background: '#8F857D', boxShadow: 'none' }}
           >
-            SOLICITAR ORÇAMENTO
+            CONSULTAR DISPONIBILIDADE
           </a>
         )}
       </div>
@@ -171,7 +169,7 @@ export function ProductActions({
               : 'Estoque: indisponível no momento'}
           </p>
 
-          <div className={styles.shippingSection}>
+          <div className={styles.shippingSection} ref={shippingRef}>
             <span className={styles.shippingLabel}>Calcule o frete</span>
             <form className={styles.shippingInputGroup} onSubmit={handleCalculateShipping}>
               <input
@@ -181,6 +179,7 @@ export function ProductActions({
                 placeholder="CEP"
                 className={styles.shippingInput}
                 value={cep}
+                ref={cepInputRef}
                 onChange={event => handleCepChange(event.target.value)}
               />
               <button
@@ -218,6 +217,12 @@ export function ProductActions({
                   </div>
                 ))}
               </div>
+            ) : null}
+
+            {shippingOptions.length > 0 ? (
+              <a href={cartUrl} className={styles.checkoutBtn}>
+                FINALIZAR COMPRA
+              </a>
             ) : null}
           </div>
 

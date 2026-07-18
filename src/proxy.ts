@@ -13,6 +13,7 @@ export function proxy(request: NextRequest) {
   const legacyRoutes: Record<string, string> = {
     '/quem-somos': '/pt-BR/quem-somos',
     '/distribuidor': '/pt-BR/distribuidor',
+    '/trabalhe-conosco': '/pt-BR/trabalhe-conosco',
     '/fale-conosco': '/pt-BR/fale-conosco',
     '/formas-de-pagamento': '/pt-BR/formas-de-pagamento',
     '/fretes-e-prazo': '/pt-BR/fretes-e-prazo',
@@ -41,6 +42,7 @@ export const config = {
     '/(pt-BR|en|es|ar)/:path*',
     '/quem-somos',
     '/distribuidor',
+    '/trabalhe-conosco',
     '/fale-conosco',
     '/formas-de-pagamento',
     '/fretes-e-prazo',

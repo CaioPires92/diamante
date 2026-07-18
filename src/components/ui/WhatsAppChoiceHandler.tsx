@@ -51,7 +51,7 @@ export function WhatsAppChoiceHandler() {
       const link = target?.closest<HTMLAnchorElement>('a[href]');
       const href = link?.href;
 
-      if (!href || !isWhatsAppUrl(href)) return;
+      if (!href || link?.dataset.whatsappDirect === 'true' || !isWhatsAppUrl(href)) return;
 
       event.preventDefault();
       event.stopPropagation();
@@ -112,6 +112,7 @@ export function WhatsAppChoiceHandler() {
         <div className={styles.actions}>
           <a
             href={pendingUrl}
+            data-whatsapp-direct="true"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.primaryAction}

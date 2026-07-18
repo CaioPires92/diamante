@@ -89,6 +89,26 @@
   box-shadow: 0 4px 12px rgba(45, 42, 38, 0.08);
 }
 
+.checkoutBtn {
+  display: flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background: #c99d4a;
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.checkoutBtn:hover {
+  background: #b38536;
+  transform: translateY(-1px);
+}
+
 .buyBtn:hover {
   background: #c99d4a;
   border-color: #c99d4a;

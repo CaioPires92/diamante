@@ -1,14 +1,14 @@
 import React from 'react';
 import { useTranslations } from 'next-intl';
 import styles from './WhatsAppButton.module.css';
+import { buildWhatsAppUrl } from '@/lib/whatsapp';
 
 export function WhatsAppButton() {
   const common = useTranslations('Common');
   
   // Substitua pelo número real e mensagem desejada
-  const phoneNumber = "551938176156";
   const message = "Olá! Gostaria de saber mais sobre os produtos da Diamante Profissional.";
-  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+  const whatsappUrl = buildWhatsAppUrl(message);
 
   return (
     <a 

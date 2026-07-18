@@ -2,6 +2,7 @@
 
 import React, { useRef, useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import gsap from 'gsap';
@@ -25,6 +26,8 @@ export function Header({ locale, lines = [] }: { locale: string; lines?: { name:
   const homeHref = `/${locale}`;
   const servicesHref = `/${locale}/servicos`;
   const processHref = `/${locale}/como-funciona`;
+  const distributorHref = `/${locale}/distribuidor`;
+  const careersHref = `/${locale}/trabalhe-conosco`;
   const categoriesHref = `/${locale}/lines/products`;
   const certificationsHref = `/${locale}/certificacoes`;
 
@@ -113,54 +116,21 @@ export function Header({ locale, lines = [] }: { locale: string; lines?: { name:
     <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''} ${isDarkPage && !isScrolled ? styles.darkHeader : ''}`} ref={headerRef}>
       <div className={styles.topBar}>
         <Container size="wide" className={styles.topBarContainer}>
-          <div className={styles.topBarItem}>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c99d4a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-              <polygon points="12 2 2 7 12 22 22 7 12 2"></polygon>
-              <polyline points="2 7 12 7 22 7"></polyline>
-              <polyline points="12 22 12 7"></polyline>
-              <polyline points="2 7 7 12 12 7"></polyline>
-              <polyline points="22 7 17 12 12 7"></polyline>
-            </svg>
-            <div className={styles.topBarText}>
-              <span className={styles.topBarTitle}>+ 15 ANOS DE EXCELÊNCIA</span>
-              <span className={styles.topBarSub}>Referência em cosméticos profissionais</span>
-            </div>
-          </div>
-          <div className={styles.topBarItem}>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c99d4a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M10 2v7.31"></path>
-              <path d="M14 9.3V1.99"></path>
-              <path d="M8.5 2h7"></path>
-              <path d="M14 9.3a6.5 6.5 0 1 1-4 0"></path>
-              <path d="M5.52 16h12.96"></path>
-            </svg>
-            <div className={styles.topBarText}>
-              <span className={styles.topBarTitle}>TECNOLOGIA E INOVAÇÃO</span>
-              <span className={styles.topBarSub}>Fórmulas de alta performance</span>
-            </div>
-          </div>
-          <div className={styles.topBarItem}>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c99d4a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path>
-              <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
-            </svg>
-            <div className={styles.topBarText}>
-              <span className={styles.topBarTitle}>BELEZA QUE TRANSFORMA</span>
-              <span className={styles.topBarSub}>Resultados que inspiram</span>
-            </div>
-          </div>
+          <span className={styles.topBarMessage}>REALIZANDO SONHOS HÁ MAIS DE 15 ANOS</span>
         </Container>
       </div>
       <Container size="wide" className={styles.headerContainer}>
         {/* Lado Esquerdo: Logo */}
         <div className={styles.logoWrapper}>
           <Link href={`/${locale}`} className={styles.logoContainer}>
-            <span className={styles.logoTextMain}>DIAMANTE</span>
-            <div className={styles.logoTextSubWrapper}>
-              <span className={styles.logoLine}></span>
-              <span className={styles.logoTextSub}>PROFISSIONAL</span>
-              <span className={styles.logoLine}></span>
-            </div>
+            <Image
+              src="/images/logo-diamante-preto.svg"
+              alt="Diamante Profissional"
+              width={142}
+              height={43}
+              className={styles.logoImage}
+              priority
+            />
           </Link>
         </div>
 
@@ -187,9 +157,21 @@ export function Header({ locale, lines = [] }: { locale: string; lines?: { name:
               ))}
             </div>
           </div>
-          <Link href={processHref} className={styles.navLink}>{t('distributor')}</Link>
+          <Link href={processHref} className={styles.navLink}>{t('process')}</Link>
           <Link href={certificationsHref} className={styles.navLink}>{t('certifications')}</Link>
           <Link href={`/${locale}/contact`} className={styles.navLink}>{t('contact')}</Link>
+          <div className={styles.dropdownContainer}>
+            <button type="button" className={`${styles.navLink} ${styles.dropdownToggle}`} aria-label="Mais opções">
+              {t('more')}
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: '4px' }}>
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div className={styles.dropdownMenu} data-lenis-prevent>
+              <Link href={distributorHref} className={styles.dropdownItem}>{t('distributor')}</Link>
+              <Link href={careersHref} className={styles.dropdownItem}>{t('careers')}</Link>
+            </div>
+          </div>
         </nav>
 
         {/* Lado Direito: Ações */}
@@ -289,7 +271,13 @@ export function Header({ locale, lines = [] }: { locale: string; lines?: { name:
               </div>
             </div>
             <Link href={processHref} className={styles.mobileNavLink} onClick={() => setIsMenuOpen(false)}>
+              {t('process')}
+            </Link>
+            <Link href={distributorHref} className={styles.mobileNavLink} onClick={() => setIsMenuOpen(false)}>
               {t('distributor')}
+            </Link>
+            <Link href={careersHref} className={styles.mobileNavLink} onClick={() => setIsMenuOpen(false)}>
+              {t('careers')}
             </Link>
             <Link href={certificationsHref} className={styles.mobileNavLink} onClick={() => setIsMenuOpen(false)}>
               {t('certifications')}

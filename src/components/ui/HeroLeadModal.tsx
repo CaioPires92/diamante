@@ -49,7 +49,6 @@ export function HeroLeadModal({ isOpen, onClose }: HeroLeadModalProps) {
       name: String(formData.get('name') || ''),
       whatsapp: String(formData.get('whatsapp') || ''),
       email: String(formData.get('email') || ''),
-      brand: String(formData.get('brand') || ''),
       productType: String(formData.get('productType') || ''),
       quantity: String(formData.get('quantity') || ''),
       hasFormula: String(formData.get('hasFormula') || ''),
@@ -63,7 +62,6 @@ export function HeroLeadModal({ isOpen, onClose }: HeroLeadModalProps) {
       `Nome: ${payload.name}`,
       `WhatsApp: ${payload.whatsapp}`,
       `E-mail: ${payload.email}`,
-      `Marca/Projeto: ${payload.brand || 'Nao informado'}`,
       `Tipo de produto: ${payload.productType || 'Nao informado'}`,
       `Quantidade estimada: ${payload.quantity || 'Nao informado'}`,
       `Ja possui formula?: ${payload.hasFormula || 'Nao informado'}`,
@@ -121,11 +119,6 @@ export function HeroLeadModal({ isOpen, onClose }: HeroLeadModalProps) {
               <label htmlFor="lead-email" className={styles.label}>{t('fields.email')}</label>
               <input id="lead-email" name="email" className={styles.input} type="email" required />
             </div>
-          </div>
-
-          <div className={styles.inputGroup}>
-            <label htmlFor="lead-brand" className={styles.label}>{t('fields.brand')}</label>
-            <input id="lead-brand" name="brand" className={styles.input} type="text" />
           </div>
 
           <div className={styles.inputGroup}>

@@ -18,28 +18,57 @@
 
 .topBar {
   width: 100%;
-  max-height: 0;
-  opacity: 0;
-  padding: 0;
+  max-height: 36px;
+  opacity: 1;
+  padding: 8px 0;
   overflow: hidden;
-  background: rgba(248, 246, 240, 0);
-  border-bottom: 1px solid transparent;
+  background: rgba(20, 18, 16, 0.92);
+  border-bottom: 1px solid rgba(201, 157, 74, 0.24);
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .scrolled .topBar {
-  max-height: 60px;
+  max-height: 36px;
   opacity: 1;
-  padding: 10px 0;
-  background: rgba(248, 246, 240, 0.8);
-  border-bottom: 1px solid rgba(201, 157, 74, 0.1);
+  padding: 8px 0;
+  background: rgba(20, 18, 16, 0.96);
+  border-bottom: 1px solid rgba(201, 157, 74, 0.24);
 }
 
 .topBarContainer {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 0 40px;
+}
+
+.topBarMessage {
+  color: rgba(255, 255, 255, 0.72);
+  font-family: var(--font-inter);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.utilityNav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.utilityNav a {
+  color: #fff;
+  font-family: var(--font-inter);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.utilityNav a:hover {
+  color: #dfbc77;
 }
 
 .topBarItem {
@@ -85,6 +114,13 @@
   flex-direction: column;
   align-items: center;
   text-decoration: none;
+}
+
+.logoImage {
+  display: block;
+  width: 172px;
+  height: auto;
+  transition: filter 0.3s ease;
 }
 
 .logoTextMain {
@@ -425,6 +461,16 @@
   }
 }
 
+@media (max-width: 1200px) {
+  .nav, .cta {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
 @media (max-width: 968px) {
   .topBar,
   .scrolled .topBar {
@@ -504,7 +550,7 @@
   transform-origin: left center;
 }
 
-@media (max-width: 968px) {
+@media (max-width: 1200px) {
   .hamburger {
     display: flex;
   }
@@ -641,6 +687,14 @@
 /* Dark Header Overrides for pages with dark backgrounds at the top */
 .darkHeader .logoTextMain {
   color: #FAFAF8 !important;
+}
+
+.darkHeader .logoImage {
+  filter: brightness(0) invert(1);
+}
+
+.scrolled .logoImage {
+  filter: none;
 }
 
 .darkHeader .navLink {
