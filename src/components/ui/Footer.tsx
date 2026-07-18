@@ -54,6 +54,7 @@ export function Footer({ locale }: { locale?: string }) {
                 <li><Link href={`/${effectiveLocale}/about`}>{t('links.institutional.about')}</Link></li>
                 <li><Link href={`/${effectiveLocale}/private-label`}>{t('links.institutional.privateLabel')}</Link></li>
                 <li><Link href={`/${effectiveLocale}/como-funciona`}>{t('links.institutional.process')}</Link></li>
+                <li><Link href={`/${effectiveLocale}/trabalhe-conosco`}>{t('links.institutional.careers')}</Link></li>
                 <li><Link href={`/${effectiveLocale}/contact`}>{t('links.institutional.contact')}</Link></li>
               </ul>
             </div>
