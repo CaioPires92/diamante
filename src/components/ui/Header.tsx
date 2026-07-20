@@ -256,7 +256,11 @@ export function Header({ locale, lines = [] }: { locale: string; lines?: { name:
       </Container>
       
       {/* Mobile Menu Overlay */}
-      <div className={`${styles.mobileMenu} ${isMenuOpen ? styles.mobileMenuOpen : ''}`} ref={menuRef}>
+      <div
+        className={`${styles.mobileMenu} ${isMenuOpen ? styles.mobileMenuOpen : ''}`}
+        ref={menuRef}
+        data-lenis-prevent
+      >
         <Container className={styles.mobileMenuContainer}>
           <div className={styles.mobileNav} ref={navLinksRef}>
             <Link href={homeHref} className={styles.mobileNavLink} onClick={() => setIsMenuOpen(false)}>
@@ -286,7 +290,7 @@ export function Header({ locale, lines = [] }: { locale: string; lines?: { name:
               <div 
                 className={styles.mobileCollapseContent}
                 style={{ 
-                  maxHeight: isCategoriesOpen ? '500px' : '0px', 
+                  maxHeight: isCategoriesOpen ? '2000px' : '0px',
                   opacity: isCategoriesOpen ? 1 : 0,
                   pointerEvents: isCategoriesOpen ? 'all' : 'none'
                 }}
@@ -318,9 +322,6 @@ export function Header({ locale, lines = [] }: { locale: string; lines?: { name:
             <Link href={`/${locale}/contact`} className={styles.mobileNavLink} onClick={() => setIsMenuOpen(false)}>
               {t('contact')}
             </Link>
-            
-            <div className={styles.mobileActions}>
-            </div>
           </div>
         </Container>
       </div>
