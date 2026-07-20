@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 const LOJA_INTEGRADA_STOREFRONT_URL =
-  process.env.LOJA_INTEGRADA_STOREFRONT_URL || 'https://www.diamanteprofissional.com.br';
+  process.env.LOJA_INTEGRADA_STOREFRONT_URL || 'https://diamanteprofissional.lojaintegrada.com.br';
 
 type LojaIntegradaShippingOption = {
   name?: string;

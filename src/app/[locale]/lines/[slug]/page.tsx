@@ -33,6 +33,7 @@ export default async function LinePage({ params }: { params: Promise<{ locale: s
     'barber': 'barber-for-men',
     'barber-for-men': 'barber-for-men',
     'barbosa': 'babosa',
+    'liso': 'liso-perfeito',
   };
   const cleanSlug = lineSlugAliases[cleanSlugFromUrl] || cleanSlugFromUrl;
   
@@ -65,6 +66,7 @@ export default async function LinePage({ params }: { params: Promise<{ locale: s
     'regulador-de-ph': 'Regulador de pH',
     'reparo-absoluto': 'Reparo Absoluto',
     'serum-gloss': 'Sérum Gloss',
+    'oleos': 'Óleos',
     'super-efeito-cinza': 'Super Efeito Cinza',
     'super-prata': 'Super Prata',
     'ultra-violeta-ice': 'Ultra Violeta Ice',
@@ -83,7 +85,8 @@ export default async function LinePage({ params }: { params: Promise<{ locale: s
     'caviar': 'A linha CAVIAR da Diamante Profissional foi desenvolvida para promover máxima hidratação e regeneração capilar, deixando os cabelos mais sedosos e com brilho intenso. A sua composição conta com Óleo de Ojon e Pantenol que são ingredientes importantes na nutrição, hidratação e proteção dos fios. Preservando o cabelo dos danos causados no dia-a-dia.',
     'barber-for-men': 'Cuidado completo para o homem moderno: limpeza, hidratação, barba, finalização e estilo com acabamento profissional.',
     'sequestrante': 'Quelação capilar para remover impurezas, neutralizar metais pesados e recuperar o tom natural dos fios sensibilizados.',
-    'champagne': 'Linha matizadora para cabelos loiros ou grisalhos; neutraliza tons amarelados e promove efeito tonalizante.'
+    'champagne': 'Linha matizadora para cabelos loiros ou grisalhos; neutraliza tons amarelados e promove efeito tonalizante.',
+    'oleos': 'Óleos e séruns finalizadores para nutrição, brilho, proteção térmica e controle do frizz.',
   };
 
   const rawName = decodedSlug.replace(/-/g, ' ');

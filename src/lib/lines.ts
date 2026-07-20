@@ -1,7 +1,3 @@
-import { groq } from 'next-sanity';
-
-import { client, hasSanityConfig } from '@/sanity/lib/client';
-
 export type LineSummary = {
   name: string;
   slug: string;
@@ -17,21 +13,40 @@ const slugAliases: Record<string, string> = {
   'cachos-afro': 'cachos',
   'jaborandi-and-alecrim': 'jaborandi-alecrim',
   'linha-profissional': 'profissional',
-  'liso-perfeito': 'liso',
+  'liso': 'liso-perfeito',
 };
 
-const fallbackLines = [
-  'Caviar',
-  'Liso',
-  'Cachos',
-  'Matizadores',
-  'Home Care',
-  'Babosa',
-  'Lapidação',
-  'Profissional',
-  'Sequestrante',
-  'Coloração',
-  'Masculina',
+const catalogLines: LineSummary[] = [
+  { name: 'Açaí', slug: 'acai' },
+  { name: 'Anti Resíduo', slug: 'anti-residuo' },
+  { name: 'Babosa', slug: 'babosa' },
+  { name: 'Barber For Men', slug: 'barber-for-men' },
+  { name: 'Black', slug: 'black' },
+  { name: 'Bomba', slug: 'bomba' },
+  { name: 'Cachos & Afro', slug: 'cachos' },
+  { name: 'Caviar', slug: 'caviar' },
+  { name: 'Champagne', slug: 'champagne' },
+  { name: 'Coloração', slug: 'coloracao' },
+  { name: 'Desmaia Cabelo', slug: 'desmaia-cabelo' },
+  { name: 'Home Care', slug: 'home-care' },
+  { name: 'Jaborandi & Alecrim', slug: 'jaborandi-alecrim' },
+  { name: 'Lapidação', slug: 'lapidacao' },
+  { name: 'Linha N', slug: 'linha-n' },
+  { name: 'Linha P', slug: 'linha-p' },
+  { name: 'Linha Profissional', slug: 'profissional' },
+  { name: 'Liso Perfeito', slug: 'liso-perfeito' },
+  { name: 'Matizadores', slug: 'matizadores' },
+  { name: 'Mega Carga de Keratina', slug: 'mega-carga-de-keratina' },
+  { name: 'Óleos', slug: 'oleos' },
+  { name: 'Pérola', slug: 'perola' },
+  { name: 'Pó Descolorante', slug: 'po-descolorante' },
+  { name: 'Regulador de pH', slug: 'regulador-de-ph' },
+  { name: 'Reparo Absoluto', slug: 'reparo-absoluto' },
+  { name: 'Sequestrante', slug: 'sequestrante' },
+  { name: 'Sérum Gloss', slug: 'serum-gloss' },
+  { name: 'Super Efeito Cinza', slug: 'super-efeito-cinza' },
+  { name: 'Super Prata', slug: 'super-prata' },
+  { name: 'Ultra Violeta Ice', slug: 'ultra-violeta-ice' },
 ];
 
 const lineDescriptions: Record<string, string> = {
@@ -64,6 +79,24 @@ const lineDisplayNames: Record<string, string> = {
   'sequestrante': 'Sequestrante',
   'champagne': 'Champagne',
   'jaborandi-alecrim': 'Jaborandi & Alecrim',
+  'oleos': 'Óleos',
+  'acai': 'Açaí',
+  'anti-residuo': 'Anti Resíduo',
+  'black': 'Black',
+  'bomba': 'Bomba',
+  'desmaia-cabelo': 'Desmaia Cabelo',
+  'linha-n': 'Linha N',
+  'linha-p': 'Linha P',
+  'liso-perfeito': 'Liso Perfeito',
+  'mega-carga-de-keratina': 'Mega Carga de Keratina',
+  'perola': 'Pérola',
+  'po-descolorante': 'Pó Descolorante',
+  'regulador-de-ph': 'Regulador de pH',
+  'reparo-absoluto': 'Reparo Absoluto',
+  'serum-gloss': 'Sérum Gloss',
+  'super-efeito-cinza': 'Super Efeito Cinza',
+  'super-prata': 'Super Prata',
+  'ultra-violeta-ice': 'Ultra Violeta Ice',
 };
 
 export function normalizeLineKey(value: string) {
@@ -99,28 +132,7 @@ export function dedupeLines(lines: LineSummary[]) {
 }
 
 export async function getLines() {
-  if (hasSanityConfig) {
-    try {
-      const query = groq`*[_type == "line"]{ title, "slug": slug.current } | order(title asc)`;
-      const sanityLines = await client!.fetch(query, {}, { cache: 'no-store' });
-
-      if (sanityLines && sanityLines.length > 0) {
-        return dedupeLines(sanityLines.map((line: { title: string; slug: string }) => ({
-          name: line.title,
-          slug: line.slug,
-        })));
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  }
-
-  return dedupeLines(
-    fallbackLines.map((name) => ({
-      name,
-      slug: normalizeLineKey(name),
-    })),
-  );
+  return catalogLines;
 }
 
 export function getLineDisplayName(slug: string, fallbackName?: string) {

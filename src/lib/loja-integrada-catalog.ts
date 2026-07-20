@@ -101,34 +101,69 @@ const lineNamesMap: Record<string, string> = {
   'regulador-de-ph': 'Regulador de pH',
   'reparo-absoluto': 'Reparo Absoluto',
   'serum-gloss': 'Sérum Gloss',
+  'oleos': 'Óleos',
   'super-efeito-cinza': 'Super Efeito Cinza',
   'super-prata': 'Super Prata',
   'ultra-violeta-ice': 'Ultra Violeta Ice',
   'acai': 'Açaí',
 };
 
-const sublineProductFilters: Record<string, { source: string; include: string[]; exclude?: string[] }> = {
-  'acai': { source: 'matizadores', include: ['acai'] },
-  'anti-residuo': { source: 'profissional', include: ['anti residuo'] },
-  'black': { source: 'matizadores', include: ['black'] },
-  'bomba': { source: 'home-care', include: ['bomba'] },
-  'champagne': { source: 'matizadores', include: ['champagne'] },
-  'desmaia-cabelo': { source: 'liso', include: ['desmaia'] },
-  'jaborandi-alecrim': { source: 'home-care', include: ['jaborandi'] },
-  'linha-n': { source: 'home-care', include: ['shampoo n', 'condicionador n'] },
-  'linha-p': { source: 'home-care', include: ['shampoo p', 'condicionador p'] },
-  'liso-perfeito': { source: 'liso', include: ['liso perfeito'] },
-  'mega-carga-de-keratina': { source: 'home-care', include: ['recarga keratina', 'keratina hidrolisada'] },
-  'mega-carga-keratina': { source: 'home-care', include: ['recarga keratina', 'keratina hidrolisada'] },
-  'perola': { source: 'matizadores', include: ['perola'] },
-  'po-descolorante': { source: 'coloracao', include: ['po descolorante'] },
-  'regulador-de-ph': { source: 'profissional', include: ['regulador de ph'] },
-  'reparo-absoluto': { source: 'home-care', include: ['reparo absoluto'] },
-  'serum-gloss': { source: 'home-care', include: ['serum gloss', 'iluminador argan', 'lilly iluminador'] },
-  'super-efeito-cinza': { source: 'matizadores', include: ['super'], exclude: ['prata'] },
-  'super-prata': { source: 'matizadores', include: ['prata'] },
-  'ultra-violeta-ice': { source: 'matizadores', include: ['violeta ice'] },
-};
+function inferSpecificLineSlug(productName: string) {
+  const name = normalizeText(productName);
+
+  if (name.includes('jaborandi')) return 'jaborandi-alecrim';
+  if (name.includes('caviar')) return 'caviar';
+  if (name.includes('babosa')) return 'babosa';
+  if (name.includes('desmaia')) return 'desmaia-cabelo';
+  if (name.includes('liso perfeito')) return 'liso-perfeito';
+  if (name.includes('cachos')) return 'cachos';
+  if (name.includes('champagne')) return 'champagne';
+  if (name.includes('perola')) return 'perola';
+  if (name.includes('acai')) return 'acai';
+  if (name.includes('violeta') && name.includes('ice')) return 'ultra-violeta-ice';
+  if (name.includes('black')) return 'black';
+  if (name.includes('bomba')) return 'bomba';
+  if (name.includes('super prata') || name.includes('efeito prata')) return 'super-prata';
+  if (name.includes('super efeito cinza') || name.includes('super morango')) return 'super-efeito-cinza';
+  if (name.includes('mega carga') || name.includes('recarga keratina') || name.includes('keratina hidrolisada')) return 'mega-carga-de-keratina';
+  if (name.includes('lapidacao')) return 'lapidacao';
+  if (name.includes('sequestrante')) return 'sequestrante';
+  if (name.includes('reparo absoluto')) return 'reparo-absoluto';
+  if (/\b(shampoo|condicionador) p\b/.test(name)) return 'linha-p';
+  if (/\b(shampoo|condicionador) n\b/.test(name) || name.includes('nutritivo')) return 'linha-n';
+  if (name.includes('po descolorante')) return 'po-descolorante';
+  if (name.includes('regulador de ph')) return 'regulador-de-ph';
+  if (name.includes('anti residuo')) return 'anti-residuo';
+  if (name.includes('serum gloss') || name.includes('serum ojon') || name.includes('iluminador argan') || name.includes('lilly')) return 'serum-gloss';
+  if (name.includes('semi di lino') || name.includes('light blue') || name.includes('oleo de ricino') || name.includes('oleo de coco')) return 'oleos';
+  if (name.includes('barber') || name.includes('masculino') || name.includes('shaving') || name.includes('gel fixador')) return 'barber-for-men';
+  if (name.includes('coloracao diamante') || /^ox \d+ volumes/.test(name)) return 'coloracao';
+
+  return null;
+}
+
+function isProfessionalSalonProduct(productName: string) {
+  const name = normalizeText(productName);
+  return /\b(1l|1 litro|900g|900 g|1000g)\b/.test(name)
+    && /caviar|bomba|champagne|desmaia|super efeito cinza|super morango|black/.test(name);
+}
+
+function matchesRequestedLine(product: LojaIntegradaProductListItem, slug: string) {
+  const specificLine = inferSpecificLineSlug(product.nome || '');
+
+  if (slug === 'profissional') return isProfessionalSalonProduct(product.nome || '');
+  if (slug === 'matizadores') {
+    return ['acai', 'black', 'champagne', 'perola', 'super-efeito-cinza', 'super-prata', 'ultra-violeta-ice'].includes(specificLine || '');
+  }
+  if (slug === 'home-care') {
+    return ['babosa', 'bomba', 'jaborandi-alecrim', 'linha-n', 'linha-p', 'mega-carga-de-keratina', 'reparo-absoluto'].includes(specificLine || '')
+      && !isProfessionalSalonProduct(product.nome || '');
+  }
+  if (slug === 'liso') return specificLine === 'liso-perfeito';
+  if (slug === 'coloracao') return specificLine === 'coloracao';
+
+  return specificLine === slug;
+}
 
 function normalizeText(value: string) {
   return value
@@ -375,6 +410,12 @@ function inferLineSlug(
   product: LojaIntegradaProductListItem,
   categoriesMap: Map<number, LojaIntegradaCategory>,
 ) {
+  const specificLineSlug = inferSpecificLineSlug(product.nome || '');
+
+  if (specificLineSlug) {
+    return specificLineSlug;
+  }
+
   for (const categoryUri of product.categorias || []) {
     const categoryId = parseCategoryId(categoryUri);
 
@@ -446,28 +487,6 @@ async function mapProductSummary(
   };
 }
 
-function matchesLineOrSubline(product: CatalogProduct, slug: string) {
-  if (product.lineSlug === slug) {
-    return true;
-  }
-
-  const sublineFilter = sublineProductFilters[slug];
-
-  if (!sublineFilter || product.lineSlug !== sublineFilter.source) {
-    return false;
-  }
-
-  const normalizedTitle = normalizeText(product.title);
-  const hasIncludedTerm = sublineFilter.include.some((term) =>
-    normalizedTitle.includes(normalizeText(term)),
-  );
-  const hasExcludedTerm = sublineFilter.exclude?.some((term) =>
-    normalizedTitle.includes(normalizeText(term)),
-  ) || false;
-
-  return hasIncludedTerm && !hasExcludedTerm;
-}
-
 export const getCatalogProducts = cache(async () => {
   const [products, categoriesMap] = await Promise.all([
     getAllActiveProducts(),
@@ -483,15 +502,7 @@ export async function getLineProducts(slug: string) {
     getAllCategories(),
   ]);
 
-  const matchingProducts = products.filter((product) => {
-    const lineSlug = inferLineSlug(product, categoriesMap);
-    const baseProduct = {
-      lineSlug,
-      title: product.nome || '',
-    } as CatalogProduct;
-
-    return matchesLineOrSubline(baseProduct, slug);
-  });
+  const matchingProducts = products.filter((product) => matchesRequestedLine(product, slug));
 
   return Promise.all(
     matchingProducts.map((product) => mapProductSummary(product, categoriesMap, true)),

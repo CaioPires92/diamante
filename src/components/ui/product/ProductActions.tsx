@@ -39,9 +39,10 @@ export function ProductActions({
   const isConsult = displayPrice === 'R$ 0,00' || displayPrice.toLowerCase().includes('consulta');
   const finalPriceLabel = isConsult ? 'Preço sob consulta' : displayPrice;
 
+  const storefrontUrl = 'https://diamanteprofissional.lojaintegrada.com.br';
   const cartUrl = lojaIntegradaId
-    ? `https://www.diamanteprofissional.com.br/carrinho/produto/${lojaIntegradaId}/adicionar?quantidade=${quantity}`
-    : `https://www.diamanteprofissional.com.br/buscar?q=${encodeURIComponent(productTitle)}`;
+    ? `${storefrontUrl}/carrinho/produto/${lojaIntegradaId}/adicionar?quantidade=${quantity}`
+    : `${storefrontUrl}/buscar?q=${encodeURIComponent(productTitle)}`;
 
   const consultUrl = `https://wa.me/551938176156?text=${encodeURIComponent(`Olá! Quero consultar o valor e a disponibilidade do produto ${productTitle}.`)}`;
 
