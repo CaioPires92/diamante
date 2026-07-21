@@ -571,7 +571,7 @@
   -webkit-backdrop-filter: blur(20px);
   z-index: 1050;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   clip-path: circle(0% at 100% 0%);
   pointer-events: none;
@@ -629,36 +629,91 @@
   color: #c99d4a;
 }
 
-.mobileCollapseContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.mobileCategoryView {
   width: 100%;
   min-width: 0;
 }
 
-.mobileCollapseContent {
-  overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+.mobileCategoryHeader {
+  position: sticky;
+  top: calc(68px + env(safe-area-inset-top));
+  z-index: 2;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.75rem;
   width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.75rem 0;
+  background: rgba(250, 250, 248, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(201, 157, 74, 0.18);
 }
 
-.mobileCollapseInner {
-  display: flex;
-  flex-direction: column;
+.mobileBackButton {
+  display: inline-flex;
   align-items: center;
-  gap: 12px;
-  padding-top: 14px;
-  padding-bottom: 4px;
+  gap: 0.25rem;
+  min-height: 2.5rem;
+  padding: 0 0.35rem;
+  color: #6b625a;
+  font-family: var(--font-inter);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.mobileCategoryTitle {
+  grid-column: 2;
+  min-width: 0;
+  color: #1a1614;
+  font-family: var(--font-playfair);
+  font-size: clamp(1.05rem, 3vw, 1.35rem);
+  font-weight: 600;
+  line-height: 1.15;
+  text-align: center;
+  overflow-wrap: break-word;
+}
+
+.mobileCategoryList {
+  display: grid;
+  justify-items: center;
+  gap: 0.7rem;
+  width: 100%;
+  padding-bottom: 1rem;
+}
+
+.mobileAllCategoriesLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.6rem;
+  margin-bottom: 0.25rem;
+  padding: 0.6rem 1rem;
+  border: 1px solid rgba(201, 157, 74, 0.32);
+  border-radius: 999px;
+  color: #8d6724;
+  font-family: var(--font-inter);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-decoration: none;
 }
 
 .mobileSubNavLink {
+  display: block;
+  max-width: 100%;
+  padding: 0.25rem 0.5rem;
   font-family: var(--font-inter);
   font-size: 0.95rem;
+  line-height: 1.3;
   color: #6B625A;
+  text-align: center;
   text-decoration: none;
   transition: color 0.3s ease;
   letter-spacing: 0.02em;
+  overflow-wrap: break-word;
 }
 
 .mobileSubNavLink:hover {
@@ -666,9 +721,8 @@
 }
 
 @media (max-width: 480px) {
-  .mobileCollapseInner {
-    gap: 10px;
-    padding-top: 12px;
+  .mobileCategoryHeader {
+    gap: 0.4rem;
   }
 
   .mobileSubNavLink {
@@ -720,4 +774,17 @@
 
 .darkHeader .hamburger span {
   background-color: #FAFAF8 !important;
+}
+
+/* The mobile overlay is light, even when it opens over a dark page. */
+.menuOpenHeader .logoImage {
+  filter: none !important;
+}
+
+.menuOpenHeader .langToggle {
+  color: #1a1614 !important;
+}
+
+.menuOpenHeader .hamburger span {
+  background-color: #1a1614 !important;
 }

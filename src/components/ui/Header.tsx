@@ -59,7 +59,17 @@ export function Header({ locale, lines = [] }: { locale: string; lines?: { name:
   };
 
   const toggleMenu = () => {
+    if (isMenuOpen) setIsCategoriesOpen(false);
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMenuOpen(false);
+    setIsCategoriesOpen(false);
+  };
+
+  const showMobileCategories = (show: boolean) => {
+    setIsCategoriesOpen(show);
   };
 
   useEffect(() => {
@@ -69,6 +79,16 @@ export function Header({ locale, lines = [] }: { locale: string; lines?: { name:
       document.body.style.overflow = '';
     }
   }, [isMenuOpen]);
+
+  useEffect(() => {
+    if (!isMenuOpen) return;
+
+    const frame = window.requestAnimationFrame(() => {
+      menuRef.current?.scrollTo({ top: 0, behavior: 'auto' });
+    });
+
+    return () => window.cancelAnimationFrame(frame);
+  }, [isCategoriesOpen, isMenuOpen]);
 
   useGSAP(() => {
     // Entrance Animation
@@ -113,7 +133,7 @@ export function Header({ locale, lines = [] }: { locale: string; lines?: { name:
   const isDarkPage = isHomePage || darkPageSegments.some((segment) => pathname?.includes(segment));
 
   return (
-    <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''} ${isDarkPage && !isScrolled ? styles.darkHeader : ''}`} ref={headerRef}>
+    <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''} ${isDarkPage && !isScrolled ? styles.darkHeader : ''} ${isMenuOpen ? styles.menuOpenHeader : ''}`} ref={headerRef}>
       <div className={styles.topBar}>
         <Container size="wide" className={styles.topBarContainer}>
           <div className={styles.topBarItem}>
@@ -263,65 +283,51 @@ export function Header({ locale, lines = [] }: { locale: string; lines?: { name:
       >
         <Container className={styles.mobileMenuContainer}>
           <div className={styles.mobileNav} ref={navLinksRef}>
-            <Link href={homeHref} className={styles.mobileNavLink} onClick={() => setIsMenuOpen(false)}>
-              {t('home')}
-            </Link>
-            <Link href={`/${locale}/about`} className={styles.mobileNavLink} onClick={() => setIsMenuOpen(false)}>
-              {t('about')}
-            </Link>
-            <Link href={servicesHref} className={styles.mobileNavLink} onClick={() => setIsMenuOpen(false)}>
-              {t('services')}
-            </Link>
-            <div className={styles.mobileCollapseContainer}>
-              <button 
-                className={styles.mobileNavLink} 
-                onClick={() => setIsCategoriesOpen(!isCategoriesOpen)}
-                style={{ display: 'flex', alignItems: 'center', gap: '8px', border: 'none', background: 'none', padding: 0, cursor: 'pointer' }}
-              >
-                {t('categories')}
-                <svg 
-                  width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" 
-                  style={{ transform: isCategoriesOpen ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s ease' }}
-                >
-                  <polyline points="6 9 12 15 18 9"></polyline>
-                </svg>
-              </button>
-              
-              <div 
-                className={styles.mobileCollapseContent}
-                style={{ 
-                  maxHeight: isCategoriesOpen ? '2000px' : '0px',
-                  opacity: isCategoriesOpen ? 1 : 0,
-                  pointerEvents: isCategoriesOpen ? 'all' : 'none'
-                }}
-              >
-                <div className={styles.mobileCollapseInner}>
-                  <Link href={categoriesHref} className={styles.mobileSubNavLink} onClick={() => setIsMenuOpen(false)}>
+            {isCategoriesOpen ? (
+              <div className={styles.mobileCategoryView}>
+                <div className={styles.mobileCategoryHeader}>
+                  <button
+                    type="button"
+                    className={styles.mobileBackButton}
+                    onClick={() => showMobileCategories(false)}
+                  >
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <polyline points="15 18 9 12 15 6" />
+                    </svg>
+                    Voltar
+                  </button>
+                  <span className={styles.mobileCategoryTitle}>{t('categories')}</span>
+                </div>
+
+                <div className={styles.mobileCategoryList}>
+                  <Link href={categoriesHref} className={styles.mobileAllCategoriesLink} onClick={closeMobileMenu}>
                     {t('allCategories')}
                   </Link>
                   {lines.map((line) => (
-                    <Link key={line.slug} href={`/${locale}/lines/${line.slug}`} className={styles.mobileSubNavLink} onClick={() => setIsMenuOpen(false)}>
+                    <Link key={line.slug} href={`/${locale}/lines/${line.slug}`} className={styles.mobileSubNavLink} onClick={closeMobileMenu}>
                       {line.name}
                     </Link>
                   ))}
                 </div>
               </div>
-            </div>
-            <Link href={processHref} className={styles.mobileNavLink} onClick={() => setIsMenuOpen(false)}>
-              {t('process')}
-            </Link>
-            <Link href={distributorHref} className={styles.mobileNavLink} onClick={() => setIsMenuOpen(false)}>
-              {t('distributor')}
-            </Link>
-            <Link href={careersHref} className={styles.mobileNavLink} onClick={() => setIsMenuOpen(false)}>
-              {t('careers')}
-            </Link>
-            <Link href={certificationsHref} className={styles.mobileNavLink} onClick={() => setIsMenuOpen(false)}>
-              {t('certifications')}
-            </Link>
-            <Link href={`/${locale}/contact`} className={styles.mobileNavLink} onClick={() => setIsMenuOpen(false)}>
-              {t('contact')}
-            </Link>
+            ) : (
+              <>
+                <Link href={homeHref} className={styles.mobileNavLink} onClick={closeMobileMenu}>{t('home')}</Link>
+                <Link href={`/${locale}/about`} className={styles.mobileNavLink} onClick={closeMobileMenu}>{t('about')}</Link>
+                <Link href={servicesHref} className={styles.mobileNavLink} onClick={closeMobileMenu}>{t('services')}</Link>
+                <button type="button" className={styles.mobileNavLink} onClick={() => showMobileCategories(true)}>
+                  {t('categories')}
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <polyline points="9 18 15 12 9 6" />
+                  </svg>
+                </button>
+                <Link href={processHref} className={styles.mobileNavLink} onClick={closeMobileMenu}>{t('process')}</Link>
+                <Link href={distributorHref} className={styles.mobileNavLink} onClick={closeMobileMenu}>{t('distributor')}</Link>
+                <Link href={careersHref} className={styles.mobileNavLink} onClick={closeMobileMenu}>{t('careers')}</Link>
+                <Link href={certificationsHref} className={styles.mobileNavLink} onClick={closeMobileMenu}>{t('certifications')}</Link>
+                <Link href={`/${locale}/contact`} className={styles.mobileNavLink} onClick={closeMobileMenu}>{t('contact')}</Link>
+              </>
+            )}
           </div>
         </Container>
       </div>
