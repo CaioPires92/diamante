@@ -72,13 +72,39 @@ export type CatalogProduct = {
 
 const PAGE_SIZE = 100;
 const PLACEHOLDER_IMAGE = '/imgs/product1.png';
+const PRODUCT_IMAGE_OVERRIDES: Record<string, string> = {
+  'ativador-de-cachos-leve-250ml': '/images/products/cachos/ativador-leve.webp',
+  'ativador-de-cachos-intenso-250ml': '/images/products/cachos/ativador-intenso.webp',
+  'leave-in-spray-desmaia-cabelo-120ml': '/images/products/desmaia-cabelo/leave-in-spray-120ml.webp',
+  'liso-perfeito-15-em-1-200-ml': '/images/products/liso/liso-perfeito-15-em-1.webp',
+  'leave-in-liso-perfeito-250ml': '/images/products/liso/leave-in-liso-perfeito-250ml.png',
+  'shampoo-n-500ml': '/images/products/linha-n/shampoo-n-500ml.png',
+  'condicionador-n-500ml': '/images/products/linha-n/condicionador-n-500ml.png',
+  'mascara-black-profissional-900g': '/images/products/black/mascara-black-profissional-900g.png',
+  'shampoo-reparo-absoluto-300ml': '/images/products/reparo-absoluto/shampoo-reparo-absoluto-300ml.png',
+  'regulador-de-ph-organico-1l': '/images/products/regulador-ph/regulador-ph-1000ml.png',
+  'shampoo-nutritivo-5-litros': '/images/products/nutritivo/shampoo-nutritivo-5l.png',
+  'condicionador-nutritivo-5-litros': '/images/products/nutritivo/condicionador-nutritivo-5l.png',
+  'shampoo-acai-300ml': '/images/products/acai/shampoo-acai-300ml.png',
+  'condicionador-acai-250ml': '/images/products/acai/condicionador-acai-250ml.png',
+  'mascara-acai-250g': '/images/products/acai/mascara-acai-250g.png',
+  'leave-in-spray-acai-120ml': '/images/products/acai/leave-in-spray-acai-120ml.png',
+  'shampoo-p-500ml': '/images/products/linha-p/shampoo-p-500ml.png',
+  'condicionador-p-500ml': '/images/products/linha-p/condicionador-p-500ml.png',
+  'shampoo-lapidacao-1l-step-1': '/images/products/lapidacao/passo-01-limpar.png',
+  'selador-de-cuticula-lapidacao-1l-step-2': '/images/products/lapidacao/passo-02-selar.png',
+  'reconstrutor-lapidacao-1l-step-3': '/images/products/lapidacao/passo-03-reconstruir.png',
+  'hidratacao-lapidacao-1l-step-4': '/images/products/lapidacao/passo-04-hidratar.png',
+};
 
 const lineNamesMap: Record<string, string> = {
   'lapidacao': 'Lapidação',
   'coloracao': 'Coloração Creme',
+  'ox-profissional': 'OX Profissional',
   'matizadores': 'Matizadores',
   'home-care': 'Home Care',
   'profissional': 'Linha Profissional',
+  'nutritivo': 'Nutritivo',
   'cachos': 'Cachos & Afro',
   'liso': 'Liso Perfeito',
   'desmaia-cabelo': 'Desmaia Cabelo',
@@ -111,6 +137,10 @@ const lineNamesMap: Record<string, string> = {
 function inferSpecificLineSlug(productName: string) {
   const name = normalizeText(productName);
 
+  // Color names such as "Pérola" and "Champagne" describe the shade here,
+  // not the hair-care line. Classify color products before matching line names.
+  if (/^ox \d+ volumes/.test(name)) return 'ox-profissional';
+  if (name.includes('coloracao diamante')) return 'coloracao';
   if (name.includes('jaborandi')) return 'jaborandi-alecrim';
   if (name.includes('caviar')) return 'caviar';
   if (name.includes('babosa')) return 'babosa';
@@ -137,8 +167,6 @@ function inferSpecificLineSlug(productName: string) {
   if (name.includes('serum gloss') || name.includes('serum ojon') || name.includes('iluminador argan') || name.includes('lilly')) return 'serum-gloss';
   if (name.includes('semi di lino') || name.includes('light blue') || name.includes('oleo de ricino') || name.includes('oleo de coco')) return 'oleos';
   if (name.includes('barber') || name.includes('masculino') || name.includes('shaving') || name.includes('gel fixador')) return 'barber-for-men';
-  if (name.includes('coloracao diamante') || /^ox \d+ volumes/.test(name)) return 'coloracao';
-
   return null;
 }
 
@@ -148,10 +176,17 @@ function isProfessionalSalonProduct(productName: string) {
     && /caviar|bomba|champagne|desmaia|super efeito cinza|super morango|black/.test(name);
 }
 
+function isNutritivoFiveLiterProduct(productName: string) {
+  const name = normalizeText(productName);
+  return name.includes('nutritivo') && /\b5\s*(?:l|litros?)\b/.test(name);
+}
+
 function matchesRequestedLine(product: LojaIntegradaProductListItem, slug: string) {
   const specificLine = inferSpecificLineSlug(product.nome || '');
 
   if (slug === 'profissional') return isProfessionalSalonProduct(product.nome || '');
+  if (slug === 'nutritivo') return isNutritivoFiveLiterProduct(product.nome || '');
+  if (slug === 'serum-gloss') return specificLine === 'serum-gloss' || specificLine === 'oleos';
   if (slug === 'matizadores') {
     return ['acai', 'black', 'champagne', 'perola', 'super-efeito-cinza', 'super-prata', 'ultra-violeta-ice'].includes(specificLine || '');
   }
@@ -161,6 +196,9 @@ function matchesRequestedLine(product: LojaIntegradaProductListItem, slug: strin
   }
   if (slug === 'liso') return specificLine === 'liso-perfeito';
   if (slug === 'coloracao') return specificLine === 'coloracao';
+  if (slug === 'linha-n') {
+    return specificLine === 'linha-n' && !isNutritivoFiveLiterProduct(product.nome || '');
+  }
 
   return specificLine === slug;
 }
@@ -170,6 +208,82 @@ function normalizeText(value: string) {
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '')
     .toLowerCase();
+}
+
+function isProfessionalDisplayProduct(product: CatalogProduct) {
+  const searchableText = normalizeText(`${product.title} ${product.size || ''}`)
+    .replace(/diamante profissional/g, '');
+
+  return /\bprofissional\b/.test(searchableText)
+    || /\b(?:900|1000)\s*(?:g|ml)\b/.test(searchableText)
+    || /\b1\s*(?:kg|l|litro)\b/.test(searchableText)
+    || /\b5\s*(?:l|litros?)\b/.test(searchableText);
+}
+
+function getHomeCareProductTypeOrder(product: CatalogProduct) {
+  const name = normalizeText(product.title);
+
+  if (/\bshampoo\b/.test(name)) return 0;
+  if (/\bcondicionador\b/.test(name)) return 1;
+  if (/\bshaving\b/.test(name)) return 2;
+  if (/\bserum barber\b/.test(name)) return 3;
+  if (/\bgel fixador\b/.test(name)) return 4;
+  if (/\bmascara\b/.test(name)) return 2;
+  if (/\bleave[ -]?in\b/.test(name) || name.includes('creme sem enxague')) {
+    return name.includes('spray') ? 3.1 : 3;
+  }
+  if (name.includes('ativador')) return name.includes('leve') ? 4 : 4.1;
+
+  return 4.2;
+}
+
+function getExplicitStepOrder(product: CatalogProduct) {
+  const name = normalizeText(product.title);
+  const match = name.match(/\b(?:passo|step)\s*0?(\d+)\b/);
+
+  return match ? Number(match[1]) : null;
+}
+
+function getSerumGlossProductOrder(product: CatalogProduct) {
+  const name = normalizeText(product.title);
+
+  if (name.includes('serum gloss ojon')) return 0;
+  if (name.includes('iluminador argan')) return 1;
+  if (name.includes('lilly iluminador')) return 2;
+  if (name.includes('semi di lino')) return 3;
+  if (name.includes('light blue')) return 4;
+  if (name.includes('oleo de ricino')) return 5;
+  if (name.includes('oleo de coco')) return 6;
+
+  return Number.POSITIVE_INFINITY;
+}
+
+export function sortLineProductsForDisplay(products: CatalogProduct[], lineSlug?: string) {
+  return products
+    .map((product, originalIndex) => ({ product, originalIndex }))
+    .sort((a, b) => {
+      if (lineSlug === 'serum-gloss') {
+        return getSerumGlossProductOrder(a.product) - getSerumGlossProductOrder(b.product)
+          || a.originalIndex - b.originalIndex;
+      }
+
+      const aStepOrder = getExplicitStepOrder(a.product);
+      const bStepOrder = getExplicitStepOrder(b.product);
+      if (aStepOrder !== null || bStepOrder !== null) {
+        return (aStepOrder ?? Number.POSITIVE_INFINITY) - (bStepOrder ?? Number.POSITIVE_INFINITY)
+          || a.originalIndex - b.originalIndex;
+      }
+
+      const aTypeOrder = getHomeCareProductTypeOrder(a.product);
+      const bTypeOrder = getHomeCareProductTypeOrder(b.product);
+      const aProfessional = isProfessionalDisplayProduct(a.product);
+      const bProfessional = isProfessionalDisplayProduct(b.product);
+      const aOrder = aProfessional ? (aTypeOrder === 0 ? 5 : aTypeOrder === 1 ? 6 : 7) : aTypeOrder;
+      const bOrder = bProfessional ? (bTypeOrder === 0 ? 5 : bTypeOrder === 1 ? 6 : 7) : bTypeOrder;
+
+      return aOrder - bOrder || a.originalIndex - b.originalIndex;
+    })
+    .map(({ product }) => product);
 }
 
 function stripHtml(value?: string | null) {
@@ -228,6 +342,9 @@ function imageUrlFromPath(path?: string | null, size: '800x800' | '380x380' = '8
 }
 
 function getGallery(product: LojaIntegradaProductListItem | LojaIntegradaProductDetail) {
+  const overrideImage = PRODUCT_IMAGE_OVERRIDES[extractSlug(product)];
+  if (overrideImage) return [overrideImage];
+
   const images = [
     product.imagem_principal,
     ...(product.imagens || []),
@@ -504,9 +621,11 @@ export async function getLineProducts(slug: string) {
 
   const matchingProducts = products.filter((product) => matchesRequestedLine(product, slug));
 
-  return Promise.all(
+  const mappedProducts = await Promise.all(
     matchingProducts.map((product) => mapProductSummary(product, categoriesMap, true)),
   );
+
+  return sortLineProductsForDisplay(mappedProducts, slug);
 }
 
 export async function getStoreProductBySlug(slug: string) {

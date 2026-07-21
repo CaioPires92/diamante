@@ -1,0 +1,49 @@
+# Pendências
+
+- [ ] Confirmar com o cliente a quantidade real em estoque de cada produto do catálogo.
+- [ ] Após a confirmação, ativar o estoque gerenciado na Loja Integrada e informar as quantidades aprovadas pelo cliente.
+- [ ] Perguntar à cliente se os produtos OX devem ficar junto das tinturas na página Coloração ou se deve ser mantida a página separada OX Profissional.
+- [ ] Integrar o navbar e o footer reais do site novo à Loja Integrada quando o novo site estiver publicado em uma URL estável:
+  - [ ] Usar os mesmos componentes e a mesma fonte de código do site novo; não criar cópias manuais independentes.
+  - [ ] Publicar no domínio do site novo um pacote compartilhado para a Loja Integrada:
+    - [ ] `/integracoes/loja-integrada/diamante-shell.css`.
+    - [ ] `/integracoes/loja-integrada/diamante-header.js`.
+    - [ ] `/integracoes/loja-integrada/diamante-footer.js`.
+  - [ ] Se o site novo usar React ou Next.js, gerar um bundle independente ou Web Component que possa ser carregado fora da aplicação principal.
+  - [ ] Se o site for HTML tradicional, gerar os componentes em JavaScript puro.
+  - [ ] Criar os pontos de montagem `#diamante-shared-header` e `#diamante-shared-footer` na Loja Integrada.
+  - [ ] Transformar os códigos `Cabeçalho Diamante` e `Rodapé Diamante` em carregadores dos arquivos compartilhados.
+  - [ ] Usar URLs absolutas para CSS, JavaScript, imagens, fontes e ícones.
+  - [ ] Definir corretamente o destino de cada link:
+    - [ ] Produtos, conta, carrinho e checkout apontam para a Loja Integrada.
+    - [ ] Páginas institucionais apontam para o domínio do site novo.
+    - [ ] Telefone, WhatsApp e e-mail usam URLs absolutas.
+  - [ ] Isolar os estilos compartilhados com o prefixo BEM `.diamante-shell__*`.
+  - [ ] Não usar seletores globais como `a`, `button`, `input`, `header`, `footer`, `.menu`, `.logo` ou `.container`.
+  - [ ] Manter o cabeçalho e o rodapé nativos da Loja Integrada ocultos.
+  - [ ] Preservar GTM, Analytics, carrinho, frete, cupons, pagamento e pedidos.
+  - [ ] Versionar os arquivos para invalidar cache, por exemplo `?v=2026-07-20-1`.
+  - [ ] Fazer a migração na ordem segura:
+    - [ ] Publicar primeiro o CSS e os JavaScripts compartilhados.
+    - [ ] Abrir diretamente cada arquivo público e confirmar resposta HTTP válida.
+    - [ ] Criar backup dos códigos HTML e do CSS Avançado da Loja Integrada.
+    - [ ] Adicionar os novos carregadores sem remover imediatamente os componentes atuais.
+    - [ ] Testar o novo navbar e footer em uma página controlada.
+    - [ ] Validar menu móvel, busca, conta, carrinho e todos os links.
+    - [ ] Confirmar carregamento em desktop, tablet e celular.
+    - [ ] Confirmar ausência de overflow, sobreposição, ícones quebrados e mudança de layout.
+    - [ ] Somente depois remover os componentes antigos.
+  - [ ] Validar que uma atualização publicada no componente compartilhado aparece no site novo e na Loja Integrada.
+  - [ ] Documentar procedimento de rollback usando os backups anteriores.
+- [ ] Solicitar ou produzir as imagens oficiais que faltam para estas 11 apresentações:
+  - [ ] Shampoo Açaí 300 ml.
+  - [ ] Condicionador Açaí 250 ml.
+  - [ ] Máscara Açaí 250 g.
+  - [ ] Leave-in Spray Açaí 120 ml.
+  - [ ] Leave-in Liso Perfeito 250 ml.
+  - [ ] Shampoo P 500 ml.
+  - [ ] Condicionador P 500 ml.
+  - [ ] Shampoo N 500 ml.
+  - [ ] Condicionador N 500 ml.
+  - [ ] Shampoo Reparo Absoluto 300 ml.
+  - [ ] Leave-in Spray Desmaia Cabelo 120 ml.
