@@ -11,7 +11,7 @@ import {
 } from '@/lib/loja-integrada-catalog';
 import styles from './PremiumCatalogPage.module.css';
 
-const whatsappPhone = '551938176156';
+const whatsappPhone = '551938176226';
 
 type CatalogProduct = {
   name: string;

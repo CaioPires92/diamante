@@ -1,4 +1,4 @@
-export const WHATSAPP_PHONE = '551938176156';
+export const WHATSAPP_PHONE = '551938176226';
 export const WHATSAPP_CHOICE_EVENT = 'diamante:open-whatsapp-choice';
 
 export function buildWhatsAppUrl(message: string, phone = WHATSAPP_PHONE) {

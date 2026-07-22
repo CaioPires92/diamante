@@ -34,7 +34,8 @@
     "products": "المنتجات",
     "about": "من نحن",
     "privateLabel": "علامة تجارية خاصة",
-    "contact": "اتصل بنا"
+    "contact": "اتصل بنا",
+    "whatsapp": "تواصل عبر واتساب"
   },
   "Products": {
     "title": "اكتشف فئاتنا الرئيسية",
@@ -318,7 +319,7 @@
       "title": "قنواتنا",
       "sac": {
         "label": "الدعم التجاري",
-        "value": "(19) 3817-6156"
+        "value": "(19) 3817-6226"
       },
       "email": {
         "label": "البريد الإلكتروني",
@@ -427,7 +428,7 @@
       "title": "اتصل بنا",
       "address": "Rua 13 de Maio, 290 – Amparo/SP",
       "email": "contato@diamanteprofissional.com.br",
-      "phone": "(19) 3817-6156"
+      "phone": "(19) 3817-6226"
     },
     "rights": "© {year} ديامانتي بروفيشينال. جميع الحقوق محفوظة."
   },

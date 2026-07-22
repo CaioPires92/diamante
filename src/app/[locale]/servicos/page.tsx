@@ -6,7 +6,7 @@ import { Container } from '@/components/ui/Container';
 import { CTAButton } from '@/components/ui/CTAButton';
 import styles from './page.module.css';
 
-const whatsappPhone = '551938176156';
+const whatsappPhone = '551938176226';
 
 const services = [
   {

@@ -44,7 +44,7 @@ export function ProductActions({
     ? `${storefrontUrl}/carrinho/produto/${lojaIntegradaId}/adicionar?quantidade=${quantity}`
     : `${storefrontUrl}/buscar?q=${encodeURIComponent(productTitle)}`;
 
-  const consultUrl = `https://wa.me/551938176156?text=${encodeURIComponent(`Olá! Quero consultar o valor e a disponibilidade do produto ${productTitle}.`)}`;
+  const consultUrl = `https://wa.me/551938176226?text=${encodeURIComponent(`Olá! Quero consultar o valor e a disponibilidade do produto ${productTitle}.`)}`;
 
   const handleCepChange = (value: string) => {
     const digits = value.replace(/\D/g, '').slice(0, 8);

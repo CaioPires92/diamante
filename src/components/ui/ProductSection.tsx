@@ -35,7 +35,7 @@ export function ProductSection() {
   const t = useTranslations('Products');
   const sectionRef = useRef<HTMLElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
-  const catalogUrl = `https://wa.me/551938176156?text=${encodeURIComponent(
+  const catalogUrl = `https://wa.me/551938176226?text=${encodeURIComponent(
     'Olá! Gostaria de receber o catálogo completo da Diamante Profissional.'
   )}`;
 

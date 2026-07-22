@@ -10,7 +10,7 @@ export function Footer({ locale }: { locale?: string }) {
   const currentYear = new Date().getFullYear();
   const effectiveLocale = locale || 'pt-BR';
   const instagramUrl = 'https://www.instagram.com/diamante.profissional';
-  const whatsAppUrl = 'https://wa.me/551938176156';
+  const whatsAppUrl = 'https://wa.me/551938176226';
   const emailUrl = `mailto:${t('contact.email')}`;
   const mapsUrl = 'https://www.google.com/maps/search/?api=1&query=Rua+13+de+Maio,+290,+Amparo+SP';
 
@@ -28,6 +28,7 @@ export function Footer({ locale }: { locale?: string }) {
                 height={43}
                 className={styles.logoImage}
               />
+              <span className={styles.logoTagline}>O Poder do Salão na Sua Casa!</span>
             </Link>
             <p className={styles.description}>
               {t('description')}

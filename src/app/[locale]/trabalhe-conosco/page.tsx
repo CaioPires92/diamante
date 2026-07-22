@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 const careersEmail = 'contato@diamanteprofissional.com.br';
 const careersMailto = `mailto:${careersEmail}?subject=${encodeURIComponent('Currículo - Trabalhe conosco')}`;
-const careersWhatsApp = `https://wa.me/551938176156?text=${encodeURIComponent(
+const careersWhatsApp = `https://wa.me/551938176226?text=${encodeURIComponent(
   'Olá! Gostaria de enviar meu currículo e participar do banco de talentos da Diamante Profissional.',
 )}`;
 

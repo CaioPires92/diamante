@@ -60,7 +60,8 @@
     "careers": "Trabalhe conosco",
     "more": "Mais",
     "certifications": "Certificações",
-    "contact": "Contato"
+    "contact": "Contato",
+    "whatsapp": "Falar no WhatsApp"
   },
   "Products": {
     "title": "Conheça Nossos Principais Produtos",
@@ -393,7 +394,7 @@
       "title": "Nossos Canais",
       "sac": {
         "label": "SAC Comercial",
-        "value": "(19) 3817-6156"
+        "value": "(19) 3817-6226"
       },
       "email": {
         "label": "E-mail",
@@ -558,7 +559,7 @@
       "title": "Fale Conosco",
       "address": "Rua 13 de Maio, 290 – Amparo/SP",
       "email": "contato@diamanteprofissional.com.br",
-      "phone": "(19) 3817-6156",
+      "phone": "(19) 3817-6226",
       "instagram": "@diamante.profissional",
       "labels": {
         "whatsapp": "WhatsApp",

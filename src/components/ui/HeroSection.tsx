@@ -104,7 +104,7 @@ export function HeroSection() {
             </Button>
 
             <Link
-              href="https://wa.me/551938176156?text=Ol%C3%A1!%20Quero%20falar%20com%20a%20Diamante%20sobre%20terceiriza%C3%A7%C3%A3o%20e%20private%20label."
+              href="https://wa.me/551938176226?text=Ol%C3%A1!%20Quero%20falar%20com%20a%20Diamante%20sobre%20terceiriza%C3%A7%C3%A3o%20e%20private%20label."
               target="_blank"
               rel="noopener noreferrer"
               className={styles.whatsappButton}

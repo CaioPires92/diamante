@@ -184,6 +184,7 @@ export function Header({ locale, lines = [] }: { locale: string; lines?: { name:
               className={styles.logoImage}
               priority
             />
+            <span className={styles.logoTagline}>O Poder do Salão na Sua Casa!</span>
           </Link>
         </div>
 
@@ -210,9 +211,11 @@ export function Header({ locale, lines = [] }: { locale: string; lines?: { name:
               ))}
             </div>
           </div>
-          <Link href={processHref} className={styles.navLink}>{t('process')}</Link>
-          <Link href={certificationsHref} className={styles.navLink}>{t('certifications')}</Link>
+          <Link href={distributorHref} className={styles.navLink}>{t('distributor')}</Link>
           <Link href={`/${locale}/contact`} className={styles.navLink}>{t('contact')}</Link>
+          <a href="https://wa.me/551938176226" className={`${styles.navLink} ${styles.whatsAppNavLink}`} target="_blank" rel="noopener noreferrer">
+            {t('whatsapp')}
+          </a>
           <div className={styles.dropdownContainer}>
             <button type="button" className={`${styles.navLink} ${styles.dropdownToggle}`} aria-label="Mais opções">
               {t('more')}
@@ -221,7 +224,8 @@ export function Header({ locale, lines = [] }: { locale: string; lines?: { name:
               </svg>
             </button>
             <div className={styles.dropdownMenu} data-lenis-prevent>
-              <Link href={distributorHref} className={styles.dropdownItem}>{t('distributor')}</Link>
+              <Link href={processHref} className={styles.dropdownItem}>{t('process')}</Link>
+              <Link href={certificationsHref} className={styles.dropdownItem}>{t('certifications')}</Link>
               <Link href={careersHref} className={styles.dropdownItem}>{t('careers')}</Link>
             </div>
           </div>
@@ -326,6 +330,9 @@ export function Header({ locale, lines = [] }: { locale: string; lines?: { name:
                 <Link href={careersHref} className={styles.mobileNavLink} onClick={closeMobileMenu}>{t('careers')}</Link>
                 <Link href={certificationsHref} className={styles.mobileNavLink} onClick={closeMobileMenu}>{t('certifications')}</Link>
                 <Link href={`/${locale}/contact`} className={styles.mobileNavLink} onClick={closeMobileMenu}>{t('contact')}</Link>
+                <a href="https://wa.me/551938176226" className={`${styles.mobileNavLink} ${styles.mobileWhatsAppCta}`} target="_blank" rel="noopener noreferrer" onClick={closeMobileMenu}>
+                  {t('whatsapp')}
+                </a>
               </>
             )}
           </div>

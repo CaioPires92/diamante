@@ -12,7 +12,7 @@ export function PrivateLabelHero() {
   const t = useTranslations('PrivateLabelPage.Hero');
   const cta = useTranslations('PrivateLabelPage.CTA');
   const sectionRef = useRef<HTMLElement>(null);
-  const whatsappUrl = `https://wa.me/551938176156?text=${encodeURIComponent(
+  const whatsappUrl = `https://wa.me/551938176226?text=${encodeURIComponent(
     'Olá! Quero falar com um consultor sobre terceirização e marca própria.'
   )}`;
 

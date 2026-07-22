@@ -34,7 +34,8 @@
     "products": "Productos",
     "about": "Sobre Nosotros",
     "privateLabel": "Private Label",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "whatsapp": "Hablar por WhatsApp"
   },
   "Products": {
     "title": "Conoce Nuestras Principales Categorías",
@@ -318,7 +319,7 @@
       "title": "Nuestros Canales",
       "sac": {
         "label": "Atención Comercial",
-        "value": "(19) 3817-6156"
+        "value": "(19) 3817-6226"
       },
       "email": {
         "label": "Correo electrónico",
@@ -427,7 +428,7 @@
       "title": "Contáctanos",
       "address": "Rua 13 de Maio, 290 – Amparo/SP",
       "email": "contato@diamanteprofissional.com.br",
-      "phone": "(19) 3817-6156"
+      "phone": "(19) 3817-6226"
     },
     "rights": "© {year} Diamante Profissional. Todos los derechos reservados."
   },

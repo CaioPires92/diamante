@@ -88,7 +88,7 @@ export default async function ShopPage({ params }: PageProps) {
               </p>
             </div>
             <a 
-              href="https://wa.me/551938176156?text=Olá!%20Gostaria%20de%20conhecer%20e%20comprar%20os%20produtos%20da%20Diamante%20Profissional."
+              href="https://wa.me/551938176226?text=Olá!%20Gostaria%20de%20conhecer%20e%20comprar%20os%20produtos%20da%20Diamante%20Profissional."
               target="_blank"
               rel="noopener noreferrer"
               style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '100%', height: '48px', border: 'none', backgroundColor: '#2D2A26', color: '#FFFFFF', borderRadius: '8px', textDecoration: 'none', fontWeight: 600, fontSize: '0.95rem', letterSpacing: '0.05em', transition: 'background-color 0.3s ease', marginTop: 'auto' }}

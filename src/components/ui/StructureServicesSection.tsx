@@ -183,7 +183,7 @@ export function StructureServicesSection() {
 
           <div className={styles.ctaGroup}>
             <CTAButton
-              href="https://wa.me/551938176156"
+              href="https://wa.me/551938176226"
               variant="primary"
               className={styles.cta}
               target="_blank"
