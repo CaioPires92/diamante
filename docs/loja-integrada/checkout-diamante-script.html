@@ -1,0 +1,393 @@
+<script>
+(function () {
+  if (!/^\/(carrinho|checkout)(\/|$)/.test(location.pathname)) {
+    return;
+  }
+
+  document
+    .querySelectorAll('link[rel="stylesheet"][href*="/avancado.css"]')
+    .forEach(function (stylesheet) {
+      stylesheet.disabled = true;
+      stylesheet.media = "not all";
+    });
+
+  var base = "https://www.diamanteprofissional.com.br/pt-BR";
+  var mountTimer = null;
+
+  document.body.classList.add("dp-checkout-new");
+
+  function copyCartValue(currentRoot, freshRoot, selector) {
+    var currentElements = currentRoot.querySelectorAll(selector);
+    var freshElements = freshRoot.querySelectorAll(selector);
+
+    currentElements.forEach(function (element, index) {
+      if (freshElements[index]) {
+        element.innerHTML = freshElements[index].innerHTML;
+      }
+    });
+  }
+
+  function refreshCartValues(productId) {
+    return fetch("/carrinho/index?dp_refresh=" + Date.now(), {
+      credentials: "same-origin",
+      cache: "no-store"
+    })
+      .then(function (response) {
+        if (!response.ok) {
+          throw new Error("Não foi possível obter os novos valores.");
+        }
+
+        return response.text();
+      })
+      .then(function (html) {
+        var freshDocument = new DOMParser().parseFromString(html, "text/html");
+        var selector = 'tr[data-produto-id="' + productId + '"]';
+        var currentRow = document.querySelector(selector);
+        var freshRow = freshDocument.querySelector(selector);
+
+        if (!currentRow || !freshRow) {
+          location.reload();
+          return;
+        }
+
+        currentRow.setAttribute(
+          "data-produto-quantidade",
+          freshRow.getAttribute("data-produto-quantidade") || ""
+        );
+
+        var currentInput = currentRow.querySelector('input[name="quantidade"]');
+        var freshInput = freshRow.querySelector('input[name="quantidade"]');
+        var currentQuantity = currentRow.querySelector(
+          'input[name="quantidade_atual"]'
+        );
+        var freshQuantity = freshRow.querySelector(
+          'input[name="quantidade_atual"]'
+        );
+        var currentMinus = currentRow.querySelector("a.icon-minus");
+        var freshMinus = freshRow.querySelector("a.icon-minus");
+        var currentPlus = currentRow.querySelector("a.icon-plus");
+        var freshPlus = freshRow.querySelector("a.icon-plus");
+        var currentPrice = currentRow.querySelector(".col-item-unit-price");
+        var freshPrice = freshRow.querySelector(".col-item-unit-price");
+
+        if (currentInput && freshInput) {
+          currentInput.value = freshInput.value;
+        }
+
+        if (currentQuantity && freshQuantity) {
+          currentQuantity.value = freshQuantity.value;
+        }
+
+        if (currentMinus && freshMinus) {
+          currentMinus.href = freshMinus.href;
+        }
+
+        if (currentPlus && freshPlus) {
+          currentPlus.href = freshPlus.href;
+        }
+
+        if (currentPrice && freshPrice) {
+          currentPrice.innerHTML = freshPrice.innerHTML;
+        }
+
+        [
+          ".valor-subtotal",
+          ".valor-total",
+          ".valores-descontos",
+          ".qtd-carrinho"
+        ].forEach(function (valueSelector) {
+          copyCartValue(document, freshDocument, valueSelector);
+        });
+
+        document.dispatchEvent(
+          new CustomEvent("dp:cart-updated", {
+            detail: {
+              productId: productId,
+              quantity: freshInput ? freshInput.value : null
+            }
+          })
+        );
+      });
+  }
+
+  function updateCartWithoutReload(url, control, productId) {
+    var quantityWrapper = control.closest(".dp-checkout__quantity");
+    var committed = false;
+
+    if (!quantityWrapper || quantityWrapper.classList.contains("is-loading")) {
+      return;
+    }
+
+    quantityWrapper.classList.add("is-loading");
+    quantityWrapper.setAttribute("aria-busy", "true");
+
+    fetch(url, {
+      credentials: "same-origin",
+      cache: "no-store",
+      headers: {
+        "X-Requested-With": "XMLHttpRequest",
+        "Accept": "application/json"
+      }
+    })
+      .then(function (response) {
+        if (!response.ok) {
+          throw new Error("A Loja Integrada recusou a atualização.");
+        }
+
+        return response.json();
+      })
+      .then(function (result) {
+        if (!result || result.status !== "sucesso") {
+          throw new Error("A quantidade não foi atualizada.");
+        }
+
+        committed = true;
+        return refreshCartValues(productId);
+      })
+      .catch(function () {
+        if (committed) {
+          location.reload();
+        } else {
+          location.assign(url);
+        }
+      })
+      .finally(function () {
+        if (quantityWrapper.isConnected) {
+          quantityWrapper.classList.remove("is-loading");
+          quantityWrapper.removeAttribute("aria-busy");
+        }
+      });
+  }
+
+  document.addEventListener(
+    "click",
+    function (event) {
+      if (!/^\/carrinho(\/|$)/.test(location.pathname)) {
+        return;
+      }
+
+      var control = event.target.closest(
+        ".tabela-carrinho .dp-checkout__quantity a.icon-minus, " +
+        ".tabela-carrinho .dp-checkout__quantity a.icon-plus"
+      );
+
+      if (!control) {
+        return;
+      }
+
+      var row = control.closest("tr[data-produto-id]");
+
+      if (!row || !control.href) {
+        return;
+      }
+
+      event.preventDefault();
+      event.stopPropagation();
+      event.stopImmediatePropagation();
+
+      updateCartWithoutReload(
+        control.href,
+        control,
+        row.getAttribute("data-produto-id")
+      );
+    },
+    true
+  );
+
+  document.addEventListener(
+    "change",
+    function (event) {
+      if (
+        !/^\/carrinho(\/|$)/.test(location.pathname) ||
+        !event.target.matches(
+          '.tabela-carrinho .dp-checkout__quantity input[name="quantidade"]'
+        )
+      ) {
+        return;
+      }
+
+      var input = event.target;
+      var row = input.closest("tr[data-produto-id]");
+      var currentInput = row && row.querySelector(
+        'input[name="quantidade_atual"]'
+      );
+      var currentQuantity = currentInput
+        ? parseInt(currentInput.value, 10)
+        : 0;
+      var newQuantity = parseInt(input.value, 10);
+      var productId = row && row.getAttribute("data-produto-id");
+
+      if (
+        !row ||
+        !productId ||
+        !newQuantity ||
+        newQuantity < 1 ||
+        newQuantity === currentQuantity
+      ) {
+        if (currentInput) {
+          input.value = currentInput.value;
+        }
+        return;
+      }
+
+      event.preventDefault();
+      event.stopPropagation();
+      event.stopImmediatePropagation();
+
+      updateCartWithoutReload(
+        "/carrinho/produto/" +
+          productId +
+          "/atualizar/" +
+          newQuantity +
+          "/" +
+          currentQuantity,
+        input,
+        productId
+      );
+    },
+    true
+  );
+
+  function mount() {
+    if (!document.querySelector(".dp-checkout__header")) {
+      var header = document.createElement("header");
+
+      header.className = "dp-checkout__header";
+      header.style.setProperty("display", "block", "important");
+      header.style.setProperty("visibility", "visible", "important");
+      header.style.setProperty("opacity", "1", "important");
+      header.style.setProperty("height", "auto", "important");
+      header.style.setProperty("max-height", "none", "important");
+      header.style.setProperty("overflow", "visible", "important");
+      header.innerHTML =
+        '<div class="dp-checkout__header-inner">' +
+          '<a class="dp-checkout__logo" href="' + base + '" aria-label="Diamante Profissional">' +
+            '<img class="dp-checkout__logo-image" src="https://cdn.awsli.com.br/1757/1757440/logo/logo-checkout-slogan-otimizado-q4e1ejh3sz.jpg" alt="Diamante Profissional" width="500" height="165">' +
+          "</a>" +
+          '<nav class="dp-checkout__nav" aria-label="Navegação principal">' +
+            '<a href="' + base + '">Início</a>' +
+            '<a href="' + base + '/quem-somos">Quem somos</a>' +
+            '<a href="' + base + '/servicos">Serviços</a>' +
+            '<a href="' + base + '/produtos">Comprar nossos produtos</a>' +
+            '<a href="' + base + '/como-funciona">Como funciona</a>' +
+            '<a href="' + base + '/contato">Contato</a>' +
+          "</nav>" +
+        "</div>";
+
+      document.body.insertBefore(header, document.body.firstChild);
+    }
+
+    var checkoutHeader = document.querySelector(".dp-checkout__header");
+    var checkoutNav = document.querySelector(".dp-checkout__nav");
+
+    if (checkoutHeader) {
+      checkoutHeader.style.setProperty("display", "block", "important");
+      checkoutHeader.style.setProperty("visibility", "visible", "important");
+      checkoutHeader.style.setProperty("height", "auto", "important");
+      checkoutHeader.style.setProperty("max-height", "none", "important");
+      checkoutHeader.style.setProperty("overflow", "visible", "important");
+    }
+
+    if (checkoutNav) {
+      if (window.matchMedia("(max-width: 650px)").matches) {
+        checkoutNav.style.setProperty("display", "none", "important");
+      } else {
+        checkoutNav.style.removeProperty("display");
+      }
+    }
+
+    if (!document.querySelector(".dp-checkout__footer")) {
+      var footer = document.createElement("footer");
+
+      footer.className = "dp-checkout__footer";
+      footer.innerHTML =
+        '<div class="dp-checkout__footer-inner">' +
+          "<div>" +
+            '<div class="dp-checkout__footer-logo">' +
+              '<img class="dp-checkout__logo-image" src="https://cdn.awsli.com.br/1757/1757440/logo/logo-checkout-slogan-otimizado-q4e1ejh3sz.jpg" alt="Diamante Profissional" width="500" height="165">' +
+            "</div>" +
+          "</div>" +
+          "<div>" +
+            "<h4>Navegação</h4>" +
+            '<p><a href="' + base + '/produtos">Produtos</a><br>' +
+            '<a href="' + base + '/seja-um-distribuidor">Seja um distribuidor</a><br>' +
+            '<a href="' + base + '/trabalhe-conosco">Trabalhe conosco</a></p>' +
+          "</div>" +
+          "<div>" +
+            "<h4>Fale conosco</h4>" +
+            '<p><a href="https://wa.me/551938176156">(19) 3817-6156</a><br>' +
+            '<a href="mailto:contato@diamanteprofissional.com.br">contato@diamanteprofissional.com.br</a><br>' +
+            "Rua 13 de Maio, 290 – Amparo/SP</p>" +
+          "</div>" +
+        "</div>" +
+        '<div class="dp-checkout__footer-bottom">© Diamante Profissional. Todos os direitos reservados.</div>';
+
+      document.body.appendChild(footer);
+    }
+
+    document
+      .querySelectorAll(
+        ".tabela-carrinho td.quantidade, .tabela-carrinho .quantidade"
+      )
+      .forEach(function (container) {
+        if (container.querySelector(".dp-checkout__quantity")) {
+          return;
+        }
+
+        var input = container.querySelector(
+          'input[type="text"], input[type="number"]'
+        );
+
+        if (!input) {
+          return;
+        }
+
+        var minus = container.querySelector(
+          "a.icon-minus, a[class*='minus'], a[title*='menos' i], a[title*='diminuir' i]"
+        );
+
+        var plus = container.querySelector(
+          "a.icon-plus, a[class*='plus'], a[title*='mais' i], a[title*='aumentar' i]"
+        );
+
+        if (!minus || !plus) {
+          return;
+        }
+
+        var updateButton = container.querySelector(
+          'button[type="submit"], input[type="submit"], .botao'
+        );
+
+        if (updateButton) {
+          updateButton.classList.add("dp-checkout__native-update");
+        }
+
+        var wrapper = document.createElement("span");
+        wrapper.className = "dp-checkout__quantity";
+
+        input.parentNode.insertBefore(wrapper, input);
+
+        wrapper.appendChild(minus);
+        wrapper.appendChild(input);
+        wrapper.appendChild(plus);
+
+      });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", mount);
+  } else {
+    mount();
+  }
+
+  window.addEventListener("resize", mount);
+
+  new MutationObserver(function () {
+    clearTimeout(mountTimer);
+    mountTimer = setTimeout(mount, 100);
+  }).observe(document.body, {
+    childList: true,
+    subtree: true
+  });
+})();
+</script>

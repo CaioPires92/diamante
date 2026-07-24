@@ -1,0 +1,261 @@
+/* ═══ CHECKOUT DIAMANTE · SHELL NATIVO · 2026-07-24 ═══════════════════
+   Mantém o layout original da Loja Integrada.
+   Personaliza somente cores, cabeçalho, rodapé e controles do carrinho.
+   ═══════════════════════════════════════════════════════════════════════ */
+body.dp-checkout-new {
+  --dp-checkout-black: #171310;
+  --dp-checkout-gold: #b08540;
+  --dp-checkout-gold-light: #e8d5aa;
+  --dp-checkout-cream: #f7f3eb;
+  --dp-checkout-line: #e5d9c8;
+}
+
+/* O preloader global não deve aparecer no carrinho ou no checkout. */
+html body.dp-checkout-new::before,
+html body.dp-checkout-new::after {
+  content: none !important;
+  display: none !important;
+  visibility: hidden !important;
+  animation: none !important;
+}
+
+body.dp-checkout-new #dpH,
+body.dp-checkout-new #dpFooterFinal,
+body.dp-checkout-new #cabecalho,
+body.dp-checkout-new #rodape,
+body.dp-checkout-new #barraTopo,
+body.dp-checkout-new .li-whatsapp {
+  display: none !important;
+}
+
+body.dp-checkout-new .conteiner-principal > header {
+  display: none !important;
+}
+
+/* Somente cores do conteúdo nativo. Nenhuma grade ou dimensão é alterada. */
+body.dp-checkout-new,
+body.dp-checkout-new #corpo,
+body.dp-checkout-new .conteiner-principal {
+  background-color: var(--dp-checkout-cream) !important;
+}
+
+body.dp-checkout-new a {
+  color: var(--dp-checkout-gold);
+}
+
+body.dp-checkout-new .cor-principal,
+body.dp-checkout-new .cor-secundaria,
+body.dp-checkout-new h1,
+body.dp-checkout-new h2,
+body.dp-checkout-new h3,
+body.dp-checkout-new h4,
+body.dp-checkout-new h5,
+body.dp-checkout-new h6,
+body.dp-checkout-new legend {
+  color: #1a1410 !important;
+}
+
+body.dp-checkout-new input,
+body.dp-checkout-new select,
+body.dp-checkout-new textarea {
+  border-color: var(--dp-checkout-line) !important;
+}
+
+body.dp-checkout-new input:focus,
+body.dp-checkout-new select:focus,
+body.dp-checkout-new textarea:focus {
+  border-color: var(--dp-checkout-gold) !important;
+  box-shadow: 0 0 0 2px rgba(176, 133, 64, 0.12) !important;
+}
+
+body.dp-checkout-new .botao.principal,
+body.dp-checkout-new button.principal {
+  background-color: var(--dp-checkout-black) !important;
+  color: #fff !important;
+}
+
+body.dp-checkout-new .botao.principal:hover,
+body.dp-checkout-new button.principal:hover {
+  background-color: var(--dp-checkout-gold) !important;
+}
+
+/* Cabeçalho exclusivo do carrinho e checkout. */
+.dp-checkout__header {
+  box-sizing: border-box;
+  display: block !important;
+  visibility: visible !important;
+  width: 100%;
+  min-height: 74px;
+  max-height: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: visible !important;
+  background: var(--dp-checkout-black);
+  border-bottom: 1px solid rgba(200, 149, 63, 0.28);
+  position: relative;
+  z-index: 20;
+}
+
+.dp-checkout__header-inner {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1180px;
+  min-height: 74px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.dp-checkout__logo {
+  display: flex;
+  align-items: center;
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
+.dp-checkout__logo-image {
+  display: block;
+  width: 190px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.dp-checkout__nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+  margin-left: auto;
+}
+
+.dp-checkout__nav a {
+  color: #fff !important;
+  text-decoration: none !important;
+  font: 600 11px/1.3 Arial, sans-serif;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.92;
+}
+
+.dp-checkout__nav a:hover {
+  color: #d8a34d !important;
+}
+
+/* Rodapé exclusivo do carrinho e checkout. */
+.dp-checkout__footer {
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 40px;
+  padding: 42px 24px 22px;
+  background: var(--dp-checkout-black);
+  color: #eee;
+  font-family: Arial, sans-serif;
+}
+
+.dp-checkout__footer-inner {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1.2fr;
+  gap: 42px;
+}
+
+.dp-checkout__footer-logo {
+  display: flex;
+  align-items: flex-start;
+}
+
+.dp-checkout__footer-logo .dp-checkout__logo-image {
+  width: 230px;
+}
+
+.dp-checkout__footer h4 {
+  margin: 0 0 15px !important;
+  color: #d8a34d !important;
+  font: 700 12px/1.3 Arial, sans-serif !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase;
+}
+
+.dp-checkout__footer p,
+.dp-checkout__footer a {
+  color: #ddd !important;
+  font: 400 13px/1.8 Arial, sans-serif !important;
+  text-decoration: none !important;
+}
+
+.dp-checkout__footer-bottom {
+  max-width: 1180px;
+  margin: 35px auto 0;
+  padding-top: 20px;
+  border-top: 1px solid #3b332d;
+  color: #aaa;
+  font-size: 11px;
+}
+
+/* Controles necessários para a quantidade assíncrona do carrinho. */
+.dp-checkout__quantity {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+}
+
+.dp-checkout__native-update {
+  position: absolute !important;
+  left: -9999px !important;
+  width: 1px !important;
+  height: 1px !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+.dp-checkout__quantity.is-loading {
+  cursor: wait;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+@media (max-width: 900px) {
+  .dp-checkout__footer-inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+  html body.dp-checkout-new > header.dp-checkout__header {
+    display: block !important;
+    visibility: visible !important;
+    height: auto !important;
+    min-height: 86px !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  .dp-checkout__header-inner {
+    min-height: 86px;
+    padding: 12px 18px;
+    justify-content: center;
+  }
+
+  .dp-checkout__logo-image {
+    width: 180px;
+  }
+
+  .dp-checkout__nav {
+    display: none !important;
+  }
+
+  .dp-checkout__footer {
+    margin-top: 28px;
+    padding: 34px 24px 20px;
+  }
+
+  .dp-checkout__footer-logo {
+    justify-content: center;
+  }
+}
+/* ═══ FIM CHECKOUT DIAMANTE · SHELL NATIVO ════════════════════════════ */
