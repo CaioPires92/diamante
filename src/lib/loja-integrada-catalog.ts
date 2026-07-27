@@ -1,5 +1,6 @@
 import { cache } from 'react';
 
+import localProducts from '@/data/products.json';
 import { lojaIntegradaFetch } from '@/lib/loja-integrada';
 
 type LojaIntegradaImage = {
@@ -69,6 +70,19 @@ export type CatalogProduct = {
   available: boolean;
   quantityAvailable?: number;
 };
+
+type LocalCatalogProduct = {
+  id: string;
+  title: string;
+  code?: string;
+  size?: string;
+  price?: string;
+  image?: string;
+  description?: string;
+  howToUse?: string;
+};
+
+const localProductsByLine = localProducts as Record<string, LocalCatalogProduct[]>;
 
 const PAGE_SIZE = 100;
 const PLACEHOLDER_IMAGE = '/imgs/product1.png';
@@ -614,18 +628,45 @@ export const getCatalogProducts = cache(async () => {
 });
 
 export async function getLineProducts(slug: string) {
-  const [products, categoriesMap] = await Promise.all([
-    getAllActiveProducts(),
-    getAllCategories(),
-  ]);
+  try {
+    const [products, categoriesMap] = await Promise.all([
+      getAllActiveProducts(),
+      getAllCategories(),
+    ]);
 
-  const matchingProducts = products.filter((product) => matchesRequestedLine(product, slug));
+    const matchingProducts = products.filter((product) => matchesRequestedLine(product, slug));
 
-  const mappedProducts = await Promise.all(
-    matchingProducts.map((product) => mapProductSummary(product, categoriesMap, true)),
-  );
+    const mappedProducts = await Promise.all(
+      matchingProducts.map((product) => mapProductSummary(product, categoriesMap, true)),
+    );
 
-  return sortLineProductsForDisplay(mappedProducts, slug);
+    return sortLineProductsForDisplay(mappedProducts, slug);
+  } catch (error) {
+    console.warn(
+      `[Loja Integrada] API indisponível para a linha "${slug}". Usando catálogo local.`,
+      error,
+    );
+
+    return (localProductsByLine[slug] || []).map((product): CatalogProduct => ({
+      id: product.id,
+      lojaIntegradaId: '',
+      slug: product.id,
+      name: product.title,
+      title: product.title,
+      description: product.description || 'Produto oficial da Diamante Profissional.',
+      image: product.image || PLACEHOLDER_IMAGE,
+      gallery: [product.image || PLACEHOLDER_IMAGE],
+      line: lineNamesMap[slug] || slug,
+      lineSlug: slug,
+      price: product.price,
+      size: product.size,
+      code: product.code,
+      howToUse: product.howToUse,
+      benefits: product.description,
+      ingredients: 'Consulte a embalagem do produto para a composição completa.',
+      available: true,
+    }));
+  }
 }
 
 export async function getStoreProductBySlug(slug: string) {

@@ -32,9 +32,11 @@ export async function lojaIntegradaFetch<T>(
   init?: RequestInit & { searchParams?: URLSearchParams },
 ): Promise<T> {
   const { searchParams, headers, ...requestInit } = init || {};
+  const signal = requestInit.signal || AbortSignal.timeout(10_000);
 
   const response = await fetch(buildUrl(path, searchParams), {
     ...requestInit,
+    signal,
     headers: {
       Authorization: getAuthorizationHeader(),
       'Content-Type': 'application/json',

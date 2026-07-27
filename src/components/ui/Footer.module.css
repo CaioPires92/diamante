@@ -68,19 +68,6 @@
   text-decoration: none;
 }
 
-.logoTagline {
-  margin-top: 3px;
-  width: 100%;
-  color: #6b625a;
-  font-family: "Century Gothic", "Avenir Next", var(--font-inter), sans-serif;
-  font-size: 0.78rem;
-  font-weight: 400;
-  letter-spacing: -0.015em;
-  line-height: 1.05;
-  text-align: center;
-  white-space: nowrap;
-}
-
 .logoImage {
   display: block;
   width: 190px;

@@ -161,13 +161,6 @@ export default async function LinePage({ params }: { params: Promise<{ locale: s
 
               <p className={styles.heroSubtitle}>{lineDesc}</p>
 
-              <div className={styles.heroButtons}>
-                <a href="#produtos" className={styles.btnPrimary} style={{ textDecoration: 'none' }}>
-                  Conhecer Produtos
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                </a>
-              </div>
-
               <div className={styles.heroFeatures}>
                 <div className={styles.featureItem}>
                   <div className={styles.featureIcon}>

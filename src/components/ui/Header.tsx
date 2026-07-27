@@ -177,14 +177,13 @@ export function Header({ locale, lines = [] }: { locale: string; lines?: { name:
         <div className={styles.logoWrapper}>
           <Link href={`/${locale}`} className={styles.logoContainer}>
             <Image
-              src="/images/logo-diamante-preto.svg"
+              src="/images/logo-diamante-slogan-preto.png"
               alt="Diamante Profissional"
               width={142}
-              height={43}
+              height={54}
               className={styles.logoImage}
               priority
             />
-            <span className={styles.logoTagline}>O Poder do Salão na Sua Casa!</span>
           </Link>
         </div>
 

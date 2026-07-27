@@ -79,6 +79,13 @@ body.dp-checkout-new button.principal:hover {
   background-color: var(--dp-checkout-gold) !important;
 }
 
+/* Mantém o quadro de segurança, removendo somente "Identificar seu perfil". */
+body.dp-checkout-new
+  .checkout-alerta-seguro-list
+  .checkout-alerta-seguro-item:first-child {
+  display: none !important;
+}
+
 /* Cabeçalho exclusivo do carrinho e checkout. */
 .dp-checkout__header {
   box-sizing: border-box;

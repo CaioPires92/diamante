@@ -358,57 +358,6 @@
   opacity: 0.7;
 }
 
-.heroButtons {
-  display: flex;
-  gap: 1rem;
-  margin-top: 2.5rem;
-  flex-wrap: wrap;
-}
-
-.btnPrimary {
-  background: #c99d4a;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  padding: 1rem 1.5rem;
-  font-weight: 700;
-  font-size: 0.8rem;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(201, 157, 74, 0.3);
-}
-.btnPrimary:hover {
-  background: #b58b3f;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(201, 157, 74, 0.4);
-}
-
-.btnSecondary {
-  background: transparent;
-  color: #2D2A26;
-  border: 1px solid rgba(201, 157, 74, 0.3);
-  border-radius: 6px;
-  padding: 1rem 1.5rem;
-  font-weight: 700;
-  font-size: 0.8rem;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  transition: all 0.3s ease;
-}
-.btnSecondary:hover {
-  background: rgba(201, 157, 74, 0.05);
-  border-color: #c99d4a;
-}
-
 .heroFeatures {
   display: flex;
   gap: 1.5rem;
@@ -448,12 +397,8 @@
   .heroDivider {
     justify-content: center;
   }
-  .heroButtons {
-    justify-content: center;
-  }
   .heroFeatures {
     justify-content: center;
     margin-top: 2rem;
   }
 }
-

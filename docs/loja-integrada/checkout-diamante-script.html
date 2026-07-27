@@ -159,6 +159,19 @@
       });
   }
 
+  function removeProfileIdentificationBenefit() {
+    document.querySelectorAll("li").forEach(function (item) {
+      var text = (item.textContent || "")
+        .replace(/\s+/g, " ")
+        .trim()
+        .toLowerCase();
+
+      if (text === "identificar seu perfil") {
+        item.remove();
+      }
+    });
+  }
+
   document.addEventListener(
     "click",
     function (event) {
@@ -249,6 +262,8 @@
   );
 
   function mount() {
+    removeProfileIdentificationBenefit();
+
     if (!document.querySelector(".dp-checkout__header")) {
       var header = document.createElement("header");
 
