@@ -34,10 +34,12 @@ function buildBusinessUrl(value: string) {
   const query = params.toString();
 
   if (typeof navigator !== 'undefined' && /android/i.test(navigator.userAgent)) {
-    return `intent://send?${query}#Intent;scheme=whatsapp;package=com.whatsapp.w4b;end`;
+    const fallbackUrl = encodeURIComponent(value);
+
+    return `intent://send?${query}#Intent;scheme=whatsapp;package=com.whatsapp.w4b;S.browser_fallback_url=${fallbackUrl};end`;
   }
 
-  return `whatsapp-business://send?${query}`;
+  return `whatsapp-smb://send?${query}`;
 }
 
 export function WhatsAppChoiceHandler() {
