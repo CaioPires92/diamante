@@ -131,6 +131,7 @@ export function Header({ locale, lines = [] }: { locale: string; lines?: { name:
   ];
   const isHomePage = pathname === `/${locale}` || pathname === `/${locale}/` || pathname === '/';
   const isDarkPage = isHomePage || darkPageSegments.some((segment) => pathname?.includes(segment));
+  const useWhiteLogo = isDarkPage && !isScrolled && !isMenuOpen;
 
   return (
     <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''} ${isDarkPage && !isScrolled ? styles.darkHeader : ''} ${isMenuOpen ? styles.menuOpenHeader : ''}`} ref={headerRef}>
@@ -177,10 +178,12 @@ export function Header({ locale, lines = [] }: { locale: string; lines?: { name:
         <div className={styles.logoWrapper}>
           <Link href={`/${locale}`} className={styles.logoContainer}>
             <Image
-              src="/images/logo-diamante-slogan-preto.png"
+              src={useWhiteLogo
+                ? '/images/logo-diamante-oficial-branco.png'
+                : '/images/logo-diamante-oficial-preto.png'}
               alt="Diamante Profissional"
-              width={142}
-              height={54}
+              width={2804}
+              height={754}
               className={styles.logoImage}
               priority
             />

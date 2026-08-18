@@ -118,7 +118,7 @@
 
 .logoImage {
   display: block;
-  width: 172px;
+  width: 220px;
   height: auto;
   transition: filter 0.3s ease;
 }
@@ -776,7 +776,7 @@
 }
 
 .darkHeader .logoImage {
-  filter: brightness(0) invert(1);
+  filter: none;
 }
 
 .scrolled .logoImage {

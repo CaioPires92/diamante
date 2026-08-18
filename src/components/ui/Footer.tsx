@@ -22,10 +22,10 @@ export function Footer({ locale }: { locale?: string }) {
           <div className={styles.brand}>
             <Link href={`/${effectiveLocale}`} className={styles.logo} aria-label="Diamante Profissional - Início">
               <Image
-                src="/images/logo-diamante-slogan-preto.png"
+                src="/images/logo-diamante-oficial-preto.png"
                 alt="Diamante Profissional"
-                width={142}
-                height={54}
+                width={2804}
+                height={754}
                 className={styles.logoImage}
               />
             </Link>

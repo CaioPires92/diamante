@@ -124,7 +124,7 @@ body.dp-checkout-new
 
 .dp-checkout__logo-image {
   display: block;
-  width: 190px;
+  width: 240px;
   max-width: 100%;
   height: auto;
   object-fit: contain;
@@ -177,7 +177,7 @@ body.dp-checkout-new
 }
 
 .dp-checkout__footer-logo .dp-checkout__logo-image {
-  width: 230px;
+  width: 280px;
 }
 
 .dp-checkout__footer h4 {
