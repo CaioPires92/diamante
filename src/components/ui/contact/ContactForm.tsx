@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { buildWhatsAppUrl, requestWhatsAppChoice } from '@/lib/whatsapp';
 import styles from './ContactForm.module.css';
@@ -9,6 +9,22 @@ export function ContactForm() {
   const t = useTranslations('ContactPage.Form');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+
+  useEffect(() => {
+    if (!isSuccess) {
+      return;
+    }
+
+    if (typeof window === 'undefined' || typeof window.gtag !== 'function') {
+      return;
+    }
+
+    window.gtag('event', 'conversion', {
+      send_to: 'AW-877316020/Xs4RCMS3heIaELSPq6ID',
+      value: 1.0,
+      currency: 'BRL',
+    });
+  }, [isSuccess]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -143,4 +159,10 @@ export function ContactForm() {
       </form>
     </div>
   );
+}
+
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+  }
 }

@@ -1,4 +1,5 @@
 import { Metadata, Viewport } from 'next';
+import Script from 'next/script';
 import { Playfair_Display, Inter } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
@@ -53,6 +54,20 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} data-scroll-behavior="smooth" suppressHydrationWarning>
+      <head>
+        <Script
+          strategy="beforeInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=AW-877316020"
+        />
+        <Script id="google-ads-base-tag" strategy="beforeInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){window.dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-877316020');
+          `}
+        </Script>
+      </head>
       <body className={`${playfair.variable} ${inter.variable}`} suppressHydrationWarning>
         <NextIntlClientProvider messages={messages}>
           <SmoothScroll>
