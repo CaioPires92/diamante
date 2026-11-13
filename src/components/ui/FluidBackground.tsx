@@ -1,11 +1,14 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
-import { Canvas } from '@react-three/fiber';
-import { EffectComposer } from '@react-three/postprocessing';
-import { Fluid } from '@whatisjery/react-fluid-distortion';
 import styles from './FluidBackground.module.css';
+
+const FluidCanvas = dynamic(
+  () => import('./FluidCanvas').then((mod) => mod.FluidCanvas),
+  { ssr: false },
+);
 
 export function FluidBackground() {
   const [enableFluid, setEnableFluid] = useState(false);
@@ -42,31 +45,7 @@ export function FluidBackground() {
 
       {enableFluid && (
         <div className={styles.fluidLayer}>
-          <Canvas
-            dpr={[1, 1.5]}
-            gl={{ alpha: true, antialias: true, powerPreference: 'low-power' }}
-            camera={{ position: [0, 0, 1], fov: 45 }}
-            className={styles.canvas}
-          >
-            <EffectComposer>
-              <Fluid
-                fluidColor="#d8b56a"
-                backgroundColor="#000000"
-                showBackground={false}
-                rainbow={false}
-                intensity={1.4}
-                force={0.8}
-                distortion={0.18}
-                radius={0.22}
-                curl={8}
-                swirl={3}
-                blend={1.5}
-                pressure={0.72}
-                densityDissipation={0.98}
-                velocityDissipation={0.995}
-              />
-            </EffectComposer>
-          </Canvas>
+          <FluidCanvas className={styles.canvas} />
         </div>
       )}
     </div>

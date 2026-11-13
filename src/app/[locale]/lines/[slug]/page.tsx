@@ -14,8 +14,12 @@ function normalizeText(value: string) {
     .toLowerCase();
 }
 
-export const dynamic = 'force-dynamic';
-export const revalidate = 0;
+export const revalidate = 900;
+
+// Páginas de linha são geradas sob demanda no primeiro acesso e ficam em cache (ISR).
+export function generateStaticParams() {
+  return [];
+}
 
 export default async function LinePage({ params }: { params: Promise<{ locale: string; slug: string }> }) {
   // No Next.js 15+, os params são uma Promise e precisam de 'await'

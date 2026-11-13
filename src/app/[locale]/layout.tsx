@@ -2,7 +2,7 @@ import { Metadata, Viewport } from 'next';
 import Script from 'next/script';
 import { Playfair_Display, Inter } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
+import { getMessages, setRequestLocale } from 'next-intl/server';
 import { Header } from '@/components/ui/Header';
 import { Footer } from '@/components/ui/Footer';
 import { SmoothScroll } from '@/components/ui/SmoothScroll';
@@ -10,6 +10,7 @@ import { FluidBackground } from '@/components/ui/FluidBackground';
 import { WhatsAppButton } from '@/components/ui/WhatsAppButton';
 import { WhatsAppChoiceHandler } from '@/components/ui/WhatsAppChoiceHandler';
 import { getLines } from '@/lib/lines';
+import { locales } from '@/i18n/request';
 import '../globals.css';
 
 const playfair = Playfair_Display({
@@ -41,6 +42,10 @@ export const viewport: Viewport = {
   maximumScale: 1,
 };
 
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
+
 export default async function LocaleLayout({
   children,
   params
@@ -49,6 +54,7 @@ export default async function LocaleLayout({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+  setRequestLocale(locale);
   const messages = await getMessages();
   const lines = await getLines();
 
@@ -56,10 +62,10 @@ export default async function LocaleLayout({
     <html lang={locale} data-scroll-behavior="smooth" suppressHydrationWarning>
       <head>
         <Script
-          strategy="beforeInteractive"
+          strategy="afterInteractive"
           src="https://www.googletagmanager.com/gtag/js?id=AW-877316020"
         />
-        <Script id="google-ads-base-tag" strategy="beforeInteractive">
+        <Script id="google-ads-base-tag" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){window.dataLayer.push(arguments);}

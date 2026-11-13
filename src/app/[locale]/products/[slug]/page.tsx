@@ -5,6 +5,13 @@ import { RelatedProducts } from '@/components/ui/product/RelatedProducts';
 import { FinalCTA } from '@/components/ui/FinalCTA';
 import { getRelatedStoreProducts, getStoreProductBySlug } from '@/lib/loja-integrada-catalog';
 
+export const revalidate = 900;
+
+// Páginas de produto são geradas sob demanda no primeiro acesso e ficam em cache (ISR).
+export function generateStaticParams() {
+  return [];
+}
+
 interface PageProps {
   params: Promise<{
     locale: string;

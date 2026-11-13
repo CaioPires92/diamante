@@ -84,6 +84,28 @@ type LocalCatalogProduct = {
 
 const localProductsByLine = localProducts as Record<string, LocalCatalogProduct[]>;
 
+function mapLocalProduct(product: LocalCatalogProduct, slug: string): CatalogProduct {
+  return {
+    id: product.id,
+    lojaIntegradaId: '',
+    slug: product.id,
+    name: product.title,
+    title: product.title,
+    description: product.description || 'Produto oficial da Diamante Profissional.',
+    image: product.image || PLACEHOLDER_IMAGE,
+    gallery: [product.image || PLACEHOLDER_IMAGE],
+    line: lineNamesMap[slug] || slug,
+    lineSlug: slug,
+    price: product.price,
+    size: product.size,
+    code: product.code,
+    howToUse: product.howToUse,
+    benefits: product.description,
+    ingredients: 'Consulte a embalagem do produto para a composição completa.',
+    available: true,
+  };
+}
+
 const PAGE_SIZE = 100;
 const PLACEHOLDER_IMAGE = '/imgs/product1.png';
 const PRODUCT_IMAGE_OVERRIDES: Record<string, string> = {
@@ -488,15 +510,21 @@ const getAllActiveProducts = cache(async () => {
 });
 
 async function getProductPrice(productId: number) {
-  return lojaIntegradaFetch<LojaIntegradaPrice>(`/v1/produto_preco/${productId}`);
+  return lojaIntegradaFetch<LojaIntegradaPrice>(`/v1/produto_preco/${productId}`, {
+    next: { revalidate: 300, tags: [`loja-integrada-price-${productId}`] },
+  });
 }
 
 async function getProductStock(productId: number) {
-  return lojaIntegradaFetch<LojaIntegradaStock>(`/v1/produto_estoque/${productId}`);
+  return lojaIntegradaFetch<LojaIntegradaStock>(`/v1/produto_estoque/${productId}`, {
+    next: { revalidate: 300, tags: [`loja-integrada-stock-${productId}`] },
+  });
 }
 
 async function getProductDetail(productId: number) {
-  return lojaIntegradaFetch<LojaIntegradaProductDetail>(`/v1/produto/${productId}`);
+  return lojaIntegradaFetch<LojaIntegradaProductDetail>(`/v1/produto/${productId}`, {
+    next: { revalidate: 1800, tags: [`loja-integrada-product-${productId}`] },
+  });
 }
 
 async function mapProductDetail(
@@ -619,12 +647,20 @@ async function mapProductSummary(
 }
 
 export const getCatalogProducts = cache(async () => {
-  const [products, categoriesMap] = await Promise.all([
-    getAllActiveProducts(),
-    getAllCategories(),
-  ]);
+  try {
+    const [products, categoriesMap] = await Promise.all([
+      getAllActiveProducts(),
+      getAllCategories(),
+    ]);
 
-  return Promise.all(products.map((product) => mapProductSummary(product, categoriesMap)));
+    return Promise.all(products.map((product) => mapProductSummary(product, categoriesMap)));
+  } catch (error) {
+    console.warn('[Loja Integrada] API indisponível. Usando catálogo local.', error);
+
+    return Object.entries(localProductsByLine).flatMap(([slug, products]) =>
+      products.map((product) => mapLocalProduct(product, slug)),
+    );
+  }
 });
 
 export async function getLineProducts(slug: string) {
@@ -647,25 +683,9 @@ export async function getLineProducts(slug: string) {
       error,
     );
 
-    return (localProductsByLine[slug] || []).map((product): CatalogProduct => ({
-      id: product.id,
-      lojaIntegradaId: '',
-      slug: product.id,
-      name: product.title,
-      title: product.title,
-      description: product.description || 'Produto oficial da Diamante Profissional.',
-      image: product.image || PLACEHOLDER_IMAGE,
-      gallery: [product.image || PLACEHOLDER_IMAGE],
-      line: lineNamesMap[slug] || slug,
-      lineSlug: slug,
-      price: product.price,
-      size: product.size,
-      code: product.code,
-      howToUse: product.howToUse,
-      benefits: product.description,
-      ingredients: 'Consulte a embalagem do produto para a composição completa.',
-      available: true,
-    }));
+    return (localProductsByLine[slug] || []).map((product) =>
+      mapLocalProduct(product, slug),
+    );
   }
 }
 
@@ -692,6 +712,21 @@ export async function getStoreProductBySlug(slug: string) {
 }
 
 export async function getStoreProductsByIds(ids: string[]) {
+  const hasApiCredentials = Boolean(
+    (process.env.LOJA_INTEGRADA_API_KEY || process.env.LOJA_INTEGRADA_API)
+      && (process.env.LOJA_INTEGRADA_APPLICATION_KEY || process.env.LOJA_INTEGRADA_APLICACAO),
+  );
+
+  if (!hasApiCredentials) {
+    const requestedIds = new Set(ids);
+
+    return Object.entries(localProductsByLine).flatMap(([slug, products]) =>
+      products
+        .filter((product) => requestedIds.has(product.id))
+        .map((product) => mapLocalProduct(product, slug)),
+    );
+  }
+
   const categoriesMap = await getAllCategories();
 
   return Promise.all(

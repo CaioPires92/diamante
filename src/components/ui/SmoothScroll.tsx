@@ -7,6 +7,11 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 export function SmoothScroll({ children }: { children: ReactNode }) {
   useEffect(() => {
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (reducedMotion.matches) {
+      return;
+    }
+
     // Inicializa o Lenis
     const lenis = new Lenis({
       duration: 1.5, // Duração da animação (mais lento = mais luxuoso)
@@ -20,18 +25,18 @@ export function SmoothScroll({ children }: { children: ReactNode }) {
     lenis.on('scroll', ScrollTrigger.update);
 
     // Adiciona o Lenis ao Ticker do GSAP
-    gsap.ticker.add((time) => {
+    const tick = (time: number) => {
       lenis.raf(time * 1000);
-    });
+    };
+
+    gsap.ticker.add(tick);
 
     // Desativa lagSmoothing do GSAP para evitar conflitos com Lenis
     gsap.ticker.lagSmoothing(0);
 
     // Limpeza ao desmontar
     return () => {
-      gsap.ticker.remove((time) => {
-        lenis.raf(time * 1000);
-      });
+      gsap.ticker.remove(tick);
       lenis.destroy();
     };
   }, []);

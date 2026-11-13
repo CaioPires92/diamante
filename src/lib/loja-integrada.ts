@@ -29,20 +29,32 @@ function buildUrl(path: string, searchParams?: URLSearchParams) {
 
 export async function lojaIntegradaFetch<T>(
   path: string,
-  init?: RequestInit & { searchParams?: URLSearchParams },
+  init?: RequestInit & {
+    searchParams?: URLSearchParams;
+    next?: { revalidate?: number | false; tags?: string[] };
+  },
 ): Promise<T> {
   const { searchParams, headers, ...requestInit } = init || {};
   const signal = requestInit.signal || AbortSignal.timeout(10_000);
+  const hasExplicitCachePolicy =
+    requestInit.cache !== undefined || requestInit.next !== undefined;
 
   const response = await fetch(buildUrl(path, searchParams), {
     ...requestInit,
+    ...(!hasExplicitCachePolicy
+      ? {
+          next: {
+            revalidate: 1800,
+            tags: ['loja-integrada-catalog'],
+          },
+        }
+      : {}),
     signal,
     headers: {
       Authorization: getAuthorizationHeader(),
       'Content-Type': 'application/json',
       ...headers,
     },
-    cache: 'no-store',
   });
 
   if (!response.ok) {

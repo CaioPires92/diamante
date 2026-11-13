@@ -7,10 +7,17 @@ export async function GET(request: NextRequest) {
     const line = request.nextUrl.searchParams.get('line');
     const products = line ? await getLineProducts(line) : await getCatalogProducts();
 
-    return NextResponse.json({
-      objects: products,
-      total: products.length,
-    });
+    return NextResponse.json(
+      {
+        objects: products,
+        total: products.length,
+      },
+      {
+        headers: {
+          'Cache-Control': 'public, s-maxage=900, stale-while-revalidate=3600',
+        },
+      },
+    );
   } catch (error) {
     const message =
       error instanceof Error ? error.message : 'Falha ao buscar produtos na Loja Integrada.';
