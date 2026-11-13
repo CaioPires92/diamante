@@ -10,6 +10,9 @@ const nextConfig: NextConfig = {
     root: process.cwd(),
   },
   images: {
+    // Mantém as imagens otimizadas em cache por 31 dias (padrão: 4h),
+    // evitando novas transformações cobradas pela Vercel.
+    minimumCacheTTL: 2678400,
     qualities: [75, 100],
     remotePatterns: [
       {
